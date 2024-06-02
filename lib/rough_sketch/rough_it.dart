@@ -235,7 +235,7 @@ class RoadIntersectionPainter extends CustomPainter {
 
   void drawZebraCrossing(Canvas canvas, Rect rect) {
     final trafficLightPaint = Paint()
-      ..color = Colors.redAccent
+      ..color = Colors.red
       ..style = PaintingStyle.stroke
       ..strokeWidth = 10
       ..blendMode = BlendMode.darken;
