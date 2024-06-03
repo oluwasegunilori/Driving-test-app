@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:me_pass_drive_test/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:me_pass_drive_test/rough_sketch/road_widget.dart';
 
 void main() {
@@ -29,10 +30,13 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.black, primary: const Color(0XFFfd7e14),
+            secondary: const Color(0xFF04044A)),
+            
         useMaterial3: true,
       ),
-      home: const RoadIntersectionWidget(),
+      home: OnboardingScreen(),
     );
   }
 }
