@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:me_pass_drive_test/rough_sketch/configs.dart';
+import 'package:dri_learn/rough_sketch/configs.dart';
 
 class RoadIntersectionPainter extends CustomPainter {
   final int currentLight;

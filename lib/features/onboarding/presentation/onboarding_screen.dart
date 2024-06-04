@@ -3,10 +3,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:me_pass_drive_test/animation/animation_utils.dart';
-import 'package:me_pass_drive_test/core/button_styles.dart';
-import 'package:me_pass_drive_test/core/spaces.dart';
-import 'package:me_pass_drive_test/core/text_style.dart';
+import 'package:dri_learn/animation/animation_utils.dart';
+import 'package:dri_learn/core/button_styles.dart';
+import 'package:dri_learn/core/spaces.dart';
+import 'package:dri_learn/core/text_style.dart';
 import 'onboarding_bloc.dart';
 import 'onboarding_event.dart';
 import 'onboarding_state.dart';

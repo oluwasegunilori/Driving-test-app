@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:me_pass_drive_test/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
 
 /// The route configuration.
 final GoRouter appRouter = GoRouter(

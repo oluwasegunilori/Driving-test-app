@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:me_pass_drive_test/core/router_config.dart';
-import 'package:me_pass_drive_test/features/onboarding/presentation/onboarding_screen.dart';
-import 'package:me_pass_drive_test/rough_sketch/road_widget.dart';
+import 'package:dri_learn/core/router_config.dart';
+import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:dri_learn/rough_sketch/road_widget.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase
   runApp(const MyApp());
 }
 

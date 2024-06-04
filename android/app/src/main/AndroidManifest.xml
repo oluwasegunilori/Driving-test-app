@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="me_pass_drive_test"
+        android:label="dri_learn"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
