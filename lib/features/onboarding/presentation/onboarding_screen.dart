@@ -1,9 +1,12 @@
 // onboarding_screen.dart
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:me_pass_drive_test/animation/animation_utils.dart';
 import 'package:me_pass_drive_test/core/button_styles.dart';
+import 'package:me_pass_drive_test/core/spaces.dart';
+import 'package:me_pass_drive_test/core/text_style.dart';
 import 'onboarding_bloc.dart';
 import 'onboarding_event.dart';
 import 'onboarding_state.dart';
@@ -119,10 +122,7 @@ class OnboardingScreen extends StatelessWidget {
         if (page == 0) ...[
           Text(
             "Welcome to DriLearn!",
-            style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
+            style: titleMedium(context, size: 24, fontWeight: FontWeight.bold),
           ),
           const SizedBox(
             height: 8,
@@ -134,15 +134,81 @@ class OnboardingScreen extends StatelessWidget {
                   .titleSmall!
                   .copyWith(fontWeight: FontWeight.normal, fontSize: 13)),
           const Spacer(),
-          ElevatedButton(
-              onPressed: () => {onButtonClicked()},
-              style: primaryRaisedButtonStyle(context),
-              child: const Text("Get Started")),
+          primaryButton(
+              context: context,
+              text: "Get Started",
+              onClick: () {
+                onButtonClicked();
+              }),
           const SizedBox(
             height: 30,
           ),
-        ] else
-          ...[]
+        ] else ...[
+          Expanded(
+            child: futureWidget(
+                delayDuration: const Duration(seconds: 1),
+                animationDuration: const Duration(seconds: 1),
+                child: () {
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            const Expanded(
+                                child: Divider(
+                              thickness: 2,
+                              color: Colors.black,
+                            )),
+                            horizontalSpace(10),
+                            Text(
+                              "Sign in with",
+                              style: titleMedium(
+                                context,
+                              ),
+                            ),
+                            horizontalSpace(10),
+                            const Expanded(
+                                child: Divider(
+                              thickness: 2,
+                              color: Colors.black,
+                            ))
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                                child: socialMediaButton(
+                                    context: context,
+                                    text: "Google",
+                                    icon: MdiIcons.google,
+                                    onClick: () {})),
+                            horizontalSpace(20),
+                            Expanded(
+                              child: socialMediaButton(
+                                  context: context,
+                                  text: "Apple",
+                                  icon: MdiIcons.apple,
+                                  onClick: () {}),
+                            ),
+                          ],
+                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Skip",
+                              style: titleMedium(context),
+                            ))
+                      ],
+                    ),
+                  );
+                }),
+          ),
+        ]
       ],
     );
   }
