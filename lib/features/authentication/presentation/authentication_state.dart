@@ -1,3 +1,4 @@
+import 'package:dri_learn/core/errors/errors.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class AuthState extends Equatable {
@@ -20,4 +21,8 @@ class Done extends AuthState {
   List<Object?> get props => [user];
 }
 
-class Error extends AuthState {}
+class Error extends AuthState {
+  final MessageException exception;
+
+  const Error(this.exception);
+}

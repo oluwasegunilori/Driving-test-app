@@ -1,5 +1,9 @@
 // onboarding_screen.dart
 
+// ignore_for_file: invalid_use_of_protected_member
+
+import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
+import 'package:dri_learn/features/authentication/presentation/authentication_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -10,6 +14,7 @@ import 'package:dri_learn/core/text_style.dart';
 import 'onboarding_bloc.dart';
 import 'onboarding_event.dart';
 import 'onboarding_state.dart';
+import '/core/di/injection_container.dart' as di;
 
 class OnboardingScreen extends StatelessWidget {
   final List<String> onboardingPages = [
@@ -22,7 +27,7 @@ class OnboardingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => OnboardingBloc(),
+      create: (_) => di.sl.get<OnboardingBloc>(),
       child: BlocBuilder<OnboardingBloc, OnboardingState>(
         builder: (context, state) {
           final bloc = BlocProvider.of<OnboardingBloc>(context);
@@ -115,6 +120,7 @@ class OnboardingScreen extends StatelessWidget {
 
   Widget bottomPageOnboarding(BuildContext context,
       {required int page, required VoidCallback onButtonClicked}) {
+    final authBloc = BlocProvider.of<AuthBloc>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisSize: MainAxisSize.max,
@@ -186,7 +192,9 @@ class OnboardingScreen extends StatelessWidget {
                                     context: context,
                                     text: "Google",
                                     icon: MdiIcons.google,
-                                    onClick: () {})),
+                                    onClick: () {
+                                      authBloc.add(GoogleSignInRequested());
+                                    })),
                             horizontalSpace(20),
                             Expanded(
                               child: socialMediaButton(

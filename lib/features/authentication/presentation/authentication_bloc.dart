@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:dri_learn/core/errors/errors.dart';
 import 'package:dri_learn/features/authentication/domain/auth_repository.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'authentication_event.dart';
 
@@ -19,8 +21,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(Done(
               user: user.additionalUserInfo!
                   .username)); // Update with actual user data
-        } catch (error) {
-          emit(Error()); // Handle error with appropriate state
+        } on Exception catch (exception) {
+          emit(Error(MessageException(
+              message: exception
+                  .toString()))); // Handle error with appropriate state
         }
       }
     });

@@ -1,17 +1,21 @@
+import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
+import 'package:dri_learn/features/onboarding/presentation/onboarding_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:dri_learn/rough_sketch/road_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'firebase_options.dart';
+import './core/di/injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await FirebaseAuth.instance.useAuthEmulator('localhost', 9104);
+  await di.init();
   runApp(const MyApp());
 }
 
@@ -21,16 +25,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.black,
-            primary: const Color(0XFFfd7e14),
-            secondary: const Color(0xFF04044A)),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AuthBloc>(
+            create: (BuildContext context) => di.sl<AuthBloc>()),
+      ],
+      child: MaterialApp.router(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.black,
+              primary: const Color(0XFFfd7e14),
+              secondary: const Color(0xFF04044A)),
+          useMaterial3: true,
+        ),
+        routerConfig: appRouter,
       ),
-      routerConfig: appRouter,
     );
   }
 }
