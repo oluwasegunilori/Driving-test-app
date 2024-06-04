@@ -3,11 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:dri_learn/rough_sketch/road_widget.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.i
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FirebaseAuth.instance.useAuthEmulator('localhost', 9104);
   runApp(const MyApp());
 }
 

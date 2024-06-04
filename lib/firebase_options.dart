@@ -41,49 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDGnlIezSpmHfpdXLW1nxhIQ7pe7EtnJ04',
-    appId: '1:737388705630:web:8ac41cb55e6f9adaeb01cf',
-    messagingSenderId: '737388705630',
-    projectId: 'dri-learn',
-    authDomain: 'dri-learn.firebaseapp.com',
-    storageBucket: 'dri-learn.appspot.com',
-    measurementId: 'G-WV16EB2JXR',
+    apiKey: 'AIzaSyC7LL9dr29gHOBJOJr4i8filGUWpJH4wxs',
+    appId: '1:910080401209:web:7482a1dc4b4f7c374112e8',
+    messagingSenderId: '910080401209',
+    projectId: 'drilearn',
+    authDomain: 'drilearn.firebaseapp.com',
+    storageBucket: 'drilearn.appspot.com',
+    measurementId: 'G-7XWCDR64VC',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBwdiA2IZ6mtCG4T0LZiQY7lK4znaHxbtM',
-    appId: '1:737388705630:android:40d1bfe0615db1aceb01cf',
-    messagingSenderId: '737388705630',
-    projectId: 'dri-learn',
-    storageBucket: 'dri-learn.appspot.com',
+    apiKey: 'AIzaSyCLRJfobLKBTL5FPYxofMfxQz5iKlPZOp8',
+    appId: '1:910080401209:android:a78504c96ae13efb4112e8',
+    messagingSenderId: '910080401209',
+    projectId: 'drilearn',
+    storageBucket: 'drilearn.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCoJhI4rm62uBbtDFtW_Fg5XndWJapDE54',
-    appId: '1:737388705630:ios:b1a4b3d184ae73e2eb01cf',
-    messagingSenderId: '737388705630',
-    projectId: 'dri-learn',
-    storageBucket: 'dri-learn.appspot.com',
-    iosBundleId: 'com.example.mePassDriveTest',
+    apiKey: 'AIzaSyBuTabhmrwTVLQRG359MXko0mqHciYrhVk',
+    appId: '1:910080401209:ios:b14749f15620ed7c4112e8',
+    messagingSenderId: '910080401209',
+    projectId: 'drilearn',
+    storageBucket: 'drilearn.appspot.com',
+    iosBundleId: 'com.example.driLearn',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCoJhI4rm62uBbtDFtW_Fg5XndWJapDE54',
-    appId: '1:737388705630:ios:b1a4b3d184ae73e2eb01cf',
-    messagingSenderId: '737388705630',
-    projectId: 'dri-learn',
-    storageBucket: 'dri-learn.appspot.com',
-    iosBundleId: 'com.example.mePassDriveTest',
+    apiKey: 'AIzaSyBuTabhmrwTVLQRG359MXko0mqHciYrhVk',
+    appId: '1:910080401209:ios:b14749f15620ed7c4112e8',
+    messagingSenderId: '910080401209',
+    projectId: 'drilearn',
+    storageBucket: 'drilearn.appspot.com',
+    iosBundleId: 'com.example.driLearn',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDGnlIezSpmHfpdXLW1nxhIQ7pe7EtnJ04',
-    appId: '1:737388705630:web:b51ad7f92df99fe6eb01cf',
-    messagingSenderId: '737388705630',
-    projectId: 'dri-learn',
-    authDomain: 'dri-learn.firebaseapp.com',
-    storageBucket: 'dri-learn.appspot.com',
-    measurementId: 'G-CKQXJZNHQZ',
+    apiKey: 'AIzaSyC7LL9dr29gHOBJOJr4i8filGUWpJH4wxs',
+    appId: '1:910080401209:web:ec75bbef6ea144734112e8',
+    messagingSenderId: '910080401209',
+    projectId: 'drilearn',
+    authDomain: 'drilearn.firebaseapp.com',
+    storageBucket: 'drilearn.appspot.com',
+    measurementId: 'G-9M2QFMWP6H',
   );
 
 }

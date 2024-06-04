@@ -1,1 +1,62 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"drilearn","appId":"1:910080401209:android:a78504c96ae13efb4112e8","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"drilearn","appId":"1:910080401209:ios:b14749f15620ed7c4112e8","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"macos":{"default":{"projectId":"drilearn","appId":"1:910080401209:ios:b14749f15620ed7c4112e8","uploadDebugSymbols":false,"fileOutput":"macos/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"dri-learn","configurations":{"android":"1:737388705630:android:40d1bfe0615db1aceb01cf","ios":"1:737388705630:ios:b1a4b3d184ae73e2eb01cf","macos":"1:737388705630:ios:b1a4b3d184ae73e2eb01cf","web":"1:737388705630:web:8ac41cb55e6f9adaeb01cf","windows":"1:737388705630:web:b51ad7f92df99fe6eb01cf"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "drilearn",
+          "appId": "1:910080401209:android:a78504c96ae13efb4112e8",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "drilearn",
+          "appId": "1:910080401209:ios:b14749f15620ed7c4112e8",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "macos": {
+        "default": {
+          "projectId": "drilearn",
+          "appId": "1:910080401209:ios:b14749f15620ed7c4112e8",
+          "uploadDebugSymbols": false,
+          "fileOutput": "macos/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "drilearn",
+          "configurations": {
+            "android": "1:910080401209:android:a78504c96ae13efb4112e8",
+            "ios": "1:910080401209:ios:b14749f15620ed7c4112e8",
+            "macos": "1:910080401209:ios:b14749f15620ed7c4112e8",
+            "web": "1:910080401209:web:7482a1dc4b4f7c374112e8",
+            "windows": "1:910080401209:web:ec75bbef6ea144734112e8"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
