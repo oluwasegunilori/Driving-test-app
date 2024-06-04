@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:dri_learn/rough_sketch/road_widget.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase
+  // await Firebase.i
   runApp(const MyApp());
 }
 

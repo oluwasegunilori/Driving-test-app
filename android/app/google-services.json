@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "910080401209",
+    "project_id": "drilearn",
+    "storage_bucket": "drilearn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910080401209:android:a78504c96ae13efb4112e8",
+        "android_client_info": {
+          "package_name": "com.example.dri_learn"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLRJfobLKBTL5FPYxofMfxQz5iKlPZOp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
