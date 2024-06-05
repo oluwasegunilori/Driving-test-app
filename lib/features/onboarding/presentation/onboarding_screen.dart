@@ -2,10 +2,13 @@
 
 // ignore_for_file: invalid_use_of_protected_member
 
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_event.dart';
+import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:dri_learn/animation/animation_utils.dart';
 import 'package:dri_learn/core/button_styles.dart';
@@ -121,103 +124,134 @@ class OnboardingScreen extends StatelessWidget {
   Widget bottomPageOnboarding(BuildContext context,
       {required int page, required VoidCallback onButtonClicked}) {
     final authBloc = BlocProvider.of<AuthBloc>(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        if (page == 0) ...[
-          Text(
-            "Welcome to DriLearn!",
-            style: titleMedium(context, size: 24, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          Text(
-              "Ace your driving test with our practice tests and lessons. Learn at your own pace and track your progress. Let's get started!",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleSmall!
-                  .copyWith(fontWeight: FontWeight.normal, fontSize: 13)),
-          const Spacer(),
-          primaryButton(
-              context: context,
-              text: "Get Started",
-              onClick: () {
-                onButtonClicked();
-              }),
-          const SizedBox(
-            height: 30,
-          ),
-        ] else ...[
-          Expanded(
-            child: futureWidget(
-                delayDuration: const Duration(seconds: 1),
-                animationDuration: const Duration(seconds: 1),
-                child: () {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Expanded(
-                                child: Divider(
-                              thickness: 2,
-                              color: Colors.black,
-                            )),
-                            horizontalSpace(10),
-                            Text(
-                              "Sign in with",
-                              style: titleMedium(
-                                context,
-                              ),
+    return BlocListener<AuthBloc, AuthState>(
+      listener: (context, state) {
+        if (state is Done) {
+          context.go(ScreenRoutes.provinceSelection().route, extra: state.user);
+        } else if (state is Error) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(state.exception.message),
+            ),
+          );
+        }
+      },
+      child: BlocBuilder<AuthBloc, AuthState>(
+        builder: (context, state) {
+          if (state is Done) {
+            return Center(
+              child: Text(state.user!.email),
+            );
+          } else {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                if (page == 0) ...[
+                  Text(
+                    "Welcome to DriLearn!",
+                    style: titleMedium(context,
+                        size: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Text(
+                      "Ace your driving test with our practice tests and lessons. Learn at your own pace and track your progress. Let's get started!",
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                          fontWeight: FontWeight.normal, fontSize: 13)),
+                  const Spacer(),
+                  primaryButton(
+                      context: context,
+                      text: "Get Started",
+                      onClick: () {
+                        onButtonClicked();
+                      }),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                ] else ...[
+                  Expanded(
+                    child: futureWidget(
+                        delayDuration: const Duration(milliseconds: 300),
+                        animationDuration: const Duration(milliseconds: 300),
+                        child: () {
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 20),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Expanded(
+                                        child: Divider(
+                                      thickness: 2,
+                                      color: Colors.black,
+                                    )),
+                                    horizontalSpace(10),
+                                    Text(
+                                      "Sign in with",
+                                      style: titleMedium(
+                                        context,
+                                      ),
+                                    ),
+                                    horizontalSpace(10),
+                                    const Expanded(
+                                        child: Divider(
+                                      thickness: 2,
+                                      color: Colors.black,
+                                    ))
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Expanded(
+                                        child: socialMediaButton(
+                                            context: context,
+                                            text: "Google",
+                                            icon: MdiIcons.google,
+                                            onClick: () {
+                                              authBloc
+                                                  .add(GoogleSignInRequested());
+                                            })),
+                                    horizontalSpace(20),
+                                    Expanded(
+                                      child: socialMediaButton(
+                                          context: context,
+                                          text: "Apple",
+                                          icon: MdiIcons.apple,
+                                          onClick: () {}),
+                                    ),
+                                  ],
+                                ),
+                                if (state is Loading) ...[
+                                  const LinearProgressIndicator(),
+                                ],
+                                TextButton(
+                                    onPressed: () {
+                                      context.go(
+                                          ScreenRoutes.provinceSelection()
+                                              .route);
+                                    },
+                                    child: Text(
+                                      "Skip",
+                                      style: titleMedium(context),
+                                    ))
+                              ],
                             ),
-                            horizontalSpace(10),
-                            const Expanded(
-                                child: Divider(
-                              thickness: 2,
-                              color: Colors.black,
-                            ))
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Expanded(
-                                child: socialMediaButton(
-                                    context: context,
-                                    text: "Google",
-                                    icon: MdiIcons.google,
-                                    onClick: () {
-                                      authBloc.add(GoogleSignInRequested());
-                                    })),
-                            horizontalSpace(20),
-                            Expanded(
-                              child: socialMediaButton(
-                                  context: context,
-                                  text: "Apple",
-                                  icon: MdiIcons.apple,
-                                  onClick: () {}),
-                            ),
-                          ],
-                        ),
-                        TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Skip",
-                              style: titleMedium(context),
-                            ))
-                      ],
-                    ),
-                  );
-                }),
-          ),
-        ]
-      ],
+                          );
+                        }),
+                  ),
+                ]
+              ],
+            );
+          }
+        },
+      ),
     );
   }
 }
