@@ -1,4 +1,5 @@
 import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
+import 'package:dri_learn/features/provinceSelector/presentation/province_screen.dart';
 import 'package:dri_learn/main.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -11,7 +12,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return OnboardingScreen();
+          return ProvinceSelector();
         }),
     GoRoute(
       path: ScreenRoutes.onBoarding().route,
@@ -22,7 +23,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: ScreenRoutes.provinceSelection().route,
       builder: (BuildContext context, GoRouterState state) {
-        return MyHomePage(title: (state.extra as User?)?.email ?? "");
+        return ProvinceSelector();
       },
     ),
   ],

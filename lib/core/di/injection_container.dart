@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dri_learn/features/authentication/data/repository/auth_repository_impl.dart';
 import 'package:dri_learn/features/authentication/domain/auth_repository.dart';
 import 'package:dri_learn/features/authentication/domain/google_signin_usecase.dart';
@@ -17,4 +18,7 @@ Future<void> init() async {
   //blocs
   sl.registerSingleton<AuthBloc>((AuthBloc(sl.call())));
   sl.registerFactory<OnboardingBloc>(() => OnboardingBloc());
+
+  //Database
+  final fireStoreDb = FirebaseFirestore.instance;
 }

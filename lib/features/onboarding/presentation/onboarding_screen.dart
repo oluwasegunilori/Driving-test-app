@@ -14,17 +14,13 @@ import 'package:dri_learn/animation/animation_utils.dart';
 import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import '../../../utils/onboarding_utils.dart';
 import 'onboarding_bloc.dart';
 import 'onboarding_event.dart';
 import 'onboarding_state.dart';
 import '/core/di/injection_container.dart' as di;
 
 class OnboardingScreen extends StatelessWidget {
-  final List<String> onboardingPages = [
-    'assets/images/onboard_img.jpeg',
-    'assets/images/onboard_img.jpeg',
-  ];
-
   OnboardingScreen({super.key});
 
   @override
@@ -70,32 +66,7 @@ class OnboardingScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Center(
-                              child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "DriLearn",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleLarge!
-                                    .copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 45,
-                                    ),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Icon(
-                                Icons.car_crash_rounded,
-                                color: Colors.white,
-                                size: 40,
-                              )
-                            ],
-                          ))
+                          Center(child: titleAndIcon(context))
                         ],
                       );
                     },

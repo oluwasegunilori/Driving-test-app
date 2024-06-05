@@ -45,6 +45,7 @@ dependencies:
   either_dart: ^1.0.0
   get_it: ^7.7.0
   dio: ^5.4.3+1
+  cloud_firestore: ^4.17.5
 
 dev_dependencies:
   flutter_test:
