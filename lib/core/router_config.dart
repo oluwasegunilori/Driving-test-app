@@ -12,7 +12,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return ProvinceSelector();
+          return OnboardingScreen();
         }),
     GoRoute(
       path: ScreenRoutes.onBoarding().route,
@@ -23,7 +23,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: ScreenRoutes.provinceSelection().route,
       builder: (BuildContext context, GoRouterState state) {
-        return ProvinceSelector();
+        return const ProvinceSelector();
       },
     ),
   ],

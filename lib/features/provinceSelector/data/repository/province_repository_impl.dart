@@ -8,7 +8,7 @@ import 'package:either_dart/src/either.dart';
 import '../../domain/repository/province_repository.dart';
 import '../model/province_dto.dart';
 
-const String ProvinceColl = "Canada-Ontario";
+const String ProvinceColl = "Provinces";
 
 class ProvinceRepositoryImpl extends ProvinceRepository {
   final RemoteDataSource remoteDataSource;
