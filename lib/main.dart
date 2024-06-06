@@ -1,10 +1,6 @@
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
-import 'package:dri_learn/features/onboarding/presentation/onboarding_bloc.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
-import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
-import 'package:dri_learn/rough_sketch/road_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'firebase_options.dart';

@@ -111,7 +111,7 @@ class OnboardingScreen extends StatelessWidget {
         builder: (context, state) {
           if (state is Done) {
             return Center(
-              child: Text(state.user!.email),
+              child: Text(state.user?.email ?? ""),
             );
           } else {
             return Column(

@@ -1,17 +1,15 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
-import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
 import 'package:dri_learn/features/provinceSelector/domain/model/province_model.dart';
 import 'package:dri_learn/features/provinceSelector/domain/repository/province_repository.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_state.dart';
-import 'package:either_dart/either.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'province_event.dart';
 
 class ProvinceBloc extends Bloc<ProvinceEvent, ProvinceState> {
   final ProvinceRepository repository;
 
-  ProvinceBloc(this.repository) : super(InitialState()) {
+  ProvinceBloc(this.repository) : super(const InitialState()) {
     on<GetProvinceEvent>((event, emit) async {
       var response = await repository.getProvinces();
       response.either((er) => null, (data) {
