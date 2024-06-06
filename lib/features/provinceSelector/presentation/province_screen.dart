@@ -97,7 +97,14 @@ class ProvinceSelector extends StatelessWidget {
                                                                 province: e))
                                                       }),
                                             ),
-                                            Divider(),
+                                            Divider(
+                                              color: state.selectedProvinces
+                                                      .contains(e)
+                                                  ? Theme.of(context)
+                                                      .colorScheme
+                                                      .onBackground
+                                                  : null,
+                                            ),
                                           ],
                                         )),
                                     const Spacer(),
