@@ -22,6 +22,6 @@ class LocalDataSourceImpl extends LocalDataSource {
 
   @override
   Future<void> setCurrentUser(User user) async {
-    await pfDb.setString(userKey, json.encode(user.toJson()));
+    pfDb.setString(userKey, json.encode(user.toJson()));
   }
 }

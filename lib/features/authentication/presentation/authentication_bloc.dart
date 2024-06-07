@@ -27,7 +27,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       if (event is GoogleSignInRequested) {
         final response = await _googleSignInUseCase();
         response.fold((error) => {emit(Error(error))},
-            (data) => {emit(Done(user: data))});
+            (data) => {_saveUserDataUsecase(data), emit(Done(user: data))});
       } else if (event is SkipSignIn) {
         _saveUserDataUsecase(User.noSignIn());
       }
