@@ -21,7 +21,7 @@ import 'onboarding_state.dart';
 import '/core/di/injection_container.dart' as di;
 
 class OnboardingScreen extends StatelessWidget {
-  OnboardingScreen({super.key});
+  const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -109,118 +109,114 @@ class OnboardingScreen extends StatelessWidget {
       },
       child: BlocBuilder<AuthBloc, AuthState>(
         builder: (context, state) {
-          if (state is Done) {
-            return Center(
-              child: Text(state.user?.email ?? ""),
-            );
-          } else {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                if (page == 0) ...[
-                  Text(
-                    "Welcome to DriLearn!",
-                    style: titleMedium(context,
-                        size: 24, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                      "Ace your driving test with our practice tests and lessons. Learn at your own pace and track your progress. Let's get started!",
-                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontWeight: FontWeight.normal, fontSize: 13)),
-                  const Spacer(),
-                  primaryButton(
-                      context: context,
-                      text: "Get Started",
-                      onClick: () {
-                        onButtonClicked();
-                      }),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                ] else ...[
-                  Expanded(
-                    child: futureWidget(
-                        delayDuration: const Duration(milliseconds: 300),
-                        animationDuration: const Duration(milliseconds: 300),
-                        child: () {
-                          return Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    const Expanded(
-                                        child: Divider(
-                                      thickness: 2,
-                                      color: Colors.black,
-                                    )),
-                                    horizontalSpace(10),
-                                    Text(
-                                      "Sign in with",
-                                      style: titleMedium(
-                                        context,
-                                      ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              if (page == 0) ...[
+                Text(
+                  "Welcome to DriLearn!",
+                  style: titleMedium(context,
+                      size: 24, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(
+                    "Ace your driving test with our practice tests and lessons. Learn at your own pace and track your progress. Let's get started!",
+                    style: Theme.of(context)
+                        .textTheme
+                        .titleSmall!
+                        .copyWith(fontWeight: FontWeight.normal, fontSize: 13)),
+                const Spacer(),
+                primaryButton(
+                    context: context,
+                    text: "Get Started",
+                    onClick: () {
+                      onButtonClicked();
+                    }),
+                const SizedBox(
+                  height: 30,
+                ),
+              ] else ...[
+                Expanded(
+                  child: futureWidget(
+                      delayDuration: const Duration(milliseconds: 300),
+                      animationDuration: const Duration(milliseconds: 300),
+                      child: () {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 20),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  const Expanded(
+                                      child: Divider(
+                                    thickness: 2,
+                                    color: Colors.black,
+                                  )),
+                                  horizontalSpace(10),
+                                  Text(
+                                    "Sign in with",
+                                    style: titleMedium(
+                                      context,
                                     ),
-                                    horizontalSpace(10),
-                                    const Expanded(
-                                        child: Divider(
-                                      thickness: 2,
-                                      color: Colors.black,
-                                    ))
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Expanded(
-                                        child: socialMediaButton(
-                                            context: context,
-                                            text: "Google",
-                                            icon: MdiIcons.google,
-                                            onClick: () {
-                                              authBloc
-                                                  .add(GoogleSignInRequested());
-                                            })),
-                                    horizontalSpace(20),
-                                    Expanded(
+                                  ),
+                                  horizontalSpace(10),
+                                  const Expanded(
+                                      child: Divider(
+                                    thickness: 2,
+                                    color: Colors.black,
+                                  ))
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
                                       child: socialMediaButton(
                                           context: context,
-                                          text: "Apple",
-                                          icon: MdiIcons.apple,
-                                          onClick: () {}),
-                                    ),
-                                  ],
-                                ),
-                                if (state is Loading) ...[
-                                  const LinearProgressIndicator(),
+                                          text: "Google",
+                                          icon: MdiIcons.google,
+                                          onClick: () {
+                                            authBloc
+                                                .add(GoogleSignInRequested());
+                                          })),
+                                  horizontalSpace(20),
+                                  Expanded(
+                                    child: socialMediaButton(
+                                        context: context,
+                                        text: "Apple",
+                                        icon: MdiIcons.apple,
+                                        onClick: () {}),
+                                  ),
                                 ],
-                                TextButton(
-                                    onPressed: () {
-                                      context.go(
-                                          ScreenRoutes.provinceSelection()
-                                              .route);
-                                    },
-                                    child: Text(
-                                      "Skip",
-                                      style: titleMedium(context),
-                                    ))
+                              ),
+                              if (state is Loading) ...[
+                                const LinearProgressIndicator(),
                               ],
-                            ),
-                          );
-                        }),
-                  ),
-                ]
-              ],
-            );
-          }
+                              TextButton(
+                                  onPressed: () {
+                                    authBloc.add(SkipSignIn());
+                                    context.go(
+                                        ScreenRoutes.provinceSelection().route);
+                                  },
+                                  child: Text(
+                                    "Skip",
+                                    style: titleMedium(context),
+                                  ))
+                            ],
+                          ),
+                        );
+                      }),
+                ),
+              ]
+            ],
+          );
         },
       ),
     );

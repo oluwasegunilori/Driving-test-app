@@ -1,4 +1,5 @@
 import 'package:dri_learn/core/button_styles.dart';
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_bloc.dart';
@@ -112,7 +113,8 @@ class ProvinceSelector extends StatelessWidget {
                                         context: context,
                                         text: "Continue",
                                         onClick: () {
-                                          // context.go(location)
+                                          context.go(
+                                              ScreenRoutes.homePage().route);
                                         })
                                   ],
                                 )

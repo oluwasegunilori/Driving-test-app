@@ -47,8 +47,8 @@ dependencies:
   dio: ^5.4.3+1
   cloud_firestore: ^4.17.5
   bloc: ^8.1.4
-  rx_shared_preferences: ^3.1.0
   uuid: ^4.4.0
+  streaming_shared_preferences: ^2.0.0
 
 dev_dependencies:
   flutter_test:

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'features/authentication/domain/model/user_entity.dart';
+import 'features/authentication/presentation/authentication_state.dart';
 import 'firebase_options.dart';
 import './core/di/injection_container.dart' as di;
 
@@ -16,7 +18,9 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final User? user;
+
+  const MyApp({this.user, super.key});
 
   // This widget is the root of your application.
   @override
@@ -42,7 +46,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -52,8 +56,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -89,7 +91,14 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: BlocBuilder<AuthBloc, AuthState>(
+          builder: (context, state) {
+            if (state is Done) {
+              return Text(state.user?.name ?? "Email");
+            }
+            return Text("Title");
+          },
+        ),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
