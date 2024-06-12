@@ -79,7 +79,7 @@ class HomePageScreen extends StatelessWidget {
                 homeOptions(
                     image: "assets/images/onboard_img.jpeg",
                     onTop: inImageTItles(context,
-                        bigTitle: "Learn",
+                        bigTitle: "Mock Test",
                         bodyTitle:
                             "Test your knowledge and\ntrack your progress"),
                     clicked: () => {}),
@@ -104,7 +104,7 @@ class HomePageScreen extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Learn",
+        Text(bigTitle,
             style: titleLarge(context).copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
