@@ -12,7 +12,7 @@ ElevatedButton primaryButton(
 
 ButtonStyle primaryRaisedButtonStyle(BuildContext context) {
   return ElevatedButton.styleFrom(
-      foregroundColor: Theme.of(context).colorScheme.background,
+      foregroundColor: Colors.white,
       backgroundColor: Theme.of(context).primaryColor);
 }
 
