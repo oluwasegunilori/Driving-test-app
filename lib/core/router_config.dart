@@ -1,6 +1,7 @@
 import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
+import 'package:dri_learn/features/home/home_page.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_screen.dart';
 import 'package:dri_learn/main.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
-        return OnboardingScreen();
+        return const OnboardingScreen();
       },
       redirect: (context, state) {
         if (context.read<AuthBloc>().state is Done &&
@@ -28,7 +29,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: ScreenRoutes.onBoarding().route,
       builder: (BuildContext context, GoRouterState state) {
-        return OnboardingScreen();
+        return const OnboardingScreen();
       },
     ),
     GoRoute(
@@ -40,7 +41,12 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: ScreenRoutes.homePage().route,
       builder: (BuildContext context, GoRouterState state) {
-        return MyHomePage();
+        User? user = (context.read<AuthBloc>().state as Done?)?.user;
+        if (user != null) {
+          return HomePageScreen(user: user);
+        } else {
+          return const OnboardingScreen();
+        }
       },
     ),
   ],

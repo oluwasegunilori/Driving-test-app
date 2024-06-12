@@ -20,8 +20,8 @@ TextStyle titleSmall(BuildContext context,
 
 TextStyle titleLarge(BuildContext context,
     {double? size, FontWeight? fontWeight}) {
-  return _getTextTheme(context).titleMedium!.copyWith(
-      fontSize: size ?? _getTextTheme(context).titleSmall!.fontSize,
+  return _getTextTheme(context).titleLarge!.copyWith(
+      fontSize: size ?? _getTextTheme(context).titleLarge!.fontSize,
       fontWeight: fontWeight ?? _getTextTheme(context).titleLarge!.fontWeight);
 }
 

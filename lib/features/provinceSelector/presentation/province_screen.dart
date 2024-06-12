@@ -114,7 +114,8 @@ class ProvinceSelector extends StatelessWidget {
                                         text: "Continue",
                                         onClick: () {
                                           context.go(
-                                              ScreenRoutes.homePage().route);
+                                              ScreenRoutes.homePage().route,
+                                              );
                                         })
                                   ],
                                 )
