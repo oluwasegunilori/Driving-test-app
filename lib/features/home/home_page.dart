@@ -59,6 +59,7 @@ class HomePageScreen extends StatelessWidget {
           )
         ],
       ),
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: Column(
         children: [
           Padding(
@@ -129,7 +130,6 @@ class HomePageScreen extends StatelessWidget {
           onTap: clicked,
           child: Card(
             margin: const EdgeInsets.all(0),
-            shadowColor: Colors.white,
             elevation: 20,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15.0),

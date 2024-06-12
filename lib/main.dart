@@ -40,6 +40,14 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         routerConfig: appRouter,
+        themeMode: ThemeMode.system,
+        darkTheme: ThemeData.dark().copyWith(
+            colorScheme: ColorScheme.fromSeed(
+                brightness: Brightness.dark,
+                seedColor: Colors.black,
+                primary: const Color(0XFFfd7e14),
+                secondary: const Color(0xFF04044A))),
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
