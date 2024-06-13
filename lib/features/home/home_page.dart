@@ -1,3 +1,4 @@
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../authentication/domain/model/user_entity.dart';
@@ -74,7 +76,7 @@ class HomePageScreen extends StatelessWidget {
           Expanded(
               child: Padding(
             padding: EdgeInsets.fromLTRB(
-                20, 10, 20, MediaQuery.of(context).size.height * 0.15),
+                20, 10, 20, MediaQuery.of(context).size.height * 0.07),
             child: Column(
               children: [
                 homeOptions(
@@ -83,7 +85,10 @@ class HomePageScreen extends StatelessWidget {
                         bigTitle: "Mock Test",
                         bodyTitle:
                             "Test your knowledge and\ntrack your progress"),
-                    clicked: () => {}),
+                    clicked: () => {
+                          context.push(ScreenRoutes.mockTestOptions().route,
+                              extra: user)
+                        }),
                 verticalSpace(MediaQuery.of(context).size.height * 0.03),
                 homeOptions(
                     image: "assets/images/school_crooss.jpeg",
@@ -91,11 +96,26 @@ class HomePageScreen extends StatelessWidget {
                         bigTitle: "Learn",
                         bodyTitle:
                             "Discover lessons and tips\nto ace your driving test"),
-                    clicked: () => {}),
+                    clicked: () => {
+                          context.push(ScreenRoutes.learnTestOptions().route,
+                              extra: user)
+                        }),
               ],
             ),
           ))
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(
+                MdiIcons.home,
+              ),
+              label: ""),
+          BottomNavigationBarItem(
+              icon: Icon(MdiIcons.faceManProfile), label: "")
+        ],
+        elevation: 10,
       ),
     );
   }

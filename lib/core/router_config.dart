@@ -3,6 +3,8 @@ import 'package:dri_learn/features/authentication/presentation/authentication_bl
 import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
 import 'package:dri_learn/features/home/home_page.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_screen.dart';
+import 'package:dri_learn/features/testOptions/learn_test_options.dart';
+import 'package:dri_learn/features/testOptions/mock_test_options.dart';
 import 'package:dri_learn/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,6 +51,22 @@ final GoRouter appRouter = GoRouter(
         }
       },
     ),
+    GoRoute(
+      path: ScreenRoutes.mockTestOptions().route,
+      builder: (BuildContext context, GoRouterState state) {
+        return MockTestOptionsScreen(
+          user: state.extra as User,
+        );
+      },
+    ),
+    GoRoute(
+      path: ScreenRoutes.learnTestOptions().route,
+      builder: (BuildContext context, GoRouterState state) {
+        return LearnTestOptions(
+          user: state.extra as User,
+        );
+      },
+    ),
   ],
 );
 
@@ -58,6 +76,8 @@ sealed class ScreenRoutes {
   factory ScreenRoutes.onBoarding() = Onboarding;
   factory ScreenRoutes.provinceSelection() = ProvinceSelection;
   factory ScreenRoutes.homePage() = HomePage;
+  factory ScreenRoutes.mockTestOptions() = MockTestOption;
+  factory ScreenRoutes.learnTestOptions() = LearnTestOption;
 }
 
 class Onboarding extends ScreenRoutes {
@@ -73,4 +93,14 @@ class ProvinceSelection extends ScreenRoutes {
 class HomePage extends ScreenRoutes {
   @override
   String get route => "/homepage";
+}
+
+class MockTestOption extends ScreenRoutes {
+  @override
+  String get route => "/mocktestoptions";
+}
+
+class LearnTestOption extends ScreenRoutes {
+  @override
+  String get route => "/learntestoptions";
 }
