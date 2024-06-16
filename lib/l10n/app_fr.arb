@@ -1,0 +1,8 @@
+{
+    "@@locale": "fr",
+    "welcomeMessage": "Bienvenue sur RRT!",
+    "aceTestMessage": "Réussissez votre examen de conduite avec nos tests pratiques et nos leçons. Apprenez à votre rythme et suivez vos progrès. Commençons!",
+    "getStarted": "Commencer",
+    "signInWith": "Se connecter avec",
+    "skipText": "Sauter"
+  }

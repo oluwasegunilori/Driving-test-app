@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'features/authentication/domain/model/user_entity.dart';
 import 'features/authentication/presentation/authentication_state.dart';
 import 'firebase_options.dart';
 import './core/di/injection_container.dart' as di;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,6 +50,8 @@ class MyApp extends StatelessWidget {
                 primary: const Color(0XFFfd7e14),
                 secondary: const Color(0xFF04044A))),
         debugShowCheckedModeBanner: false,
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
       ),
     );
   }

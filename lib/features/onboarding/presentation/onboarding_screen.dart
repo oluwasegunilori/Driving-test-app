@@ -19,6 +19,7 @@ import 'onboarding_bloc.dart';
 import 'onboarding_event.dart';
 import 'onboarding_state.dart';
 import '/core/di/injection_container.dart' as di;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -115,15 +116,14 @@ class OnboardingScreen extends StatelessWidget {
             children: [
               if (page == 0) ...[
                 Text(
-                  "Welcome to DriLearn!",
+                  AppLocalizations.of(context)!.welcomeMessage,
                   style: titleMedium(context,
                       size: 24, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(
                   height: 8,
                 ),
-                Text(
-                    "Ace your driving test with our practice tests and lessons. Learn at your own pace and track your progress. Let's get started!",
+                Text(AppLocalizations.of(context)!.aceTestMessage,
                     style: Theme.of(context)
                         .textTheme
                         .titleSmall!
@@ -131,7 +131,7 @@ class OnboardingScreen extends StatelessWidget {
                 const Spacer(),
                 primaryButton(
                     context: context,
-                    text: "Get Started",
+                    text: AppLocalizations.of(context)!.getStarted,
                     onClick: () {
                       onButtonClicked();
                     }),
@@ -160,7 +160,7 @@ class OnboardingScreen extends StatelessWidget {
                                   )),
                                   horizontalSpace(10),
                                   Text(
-                                    "Sign in with",
+                                    AppLocalizations.of(context)!.signInWith,
                                     style: titleMedium(
                                       context,
                                     ),
@@ -206,7 +206,7 @@ class OnboardingScreen extends StatelessWidget {
                                         ScreenRoutes.provinceSelection().route);
                                   },
                                   child: Text(
-                                    "Skip",
+                                    AppLocalizations.of(context)!.skipText,
                                     style: titleMedium(context),
                                   ))
                             ],
