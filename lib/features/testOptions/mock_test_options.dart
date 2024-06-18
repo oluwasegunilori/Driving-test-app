@@ -1,3 +1,4 @@
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +134,9 @@ class MockTestOptionsScreen extends StatelessWidget {
                 right: 15),
             child: Column(
               children: [
-                mockTestOptionCard(context, "G1 test", MdiIcons.book, () {}),
+                mockTestOptionCard(context, "G1 test", MdiIcons.book, () {
+                  context.push(ScreenRoutes.testDescription().route);
+                }),
                 verticalSpace(15),
                 mockTestOptionCard(
                     context, "G2 simulation", MdiIcons.car, () {}),
