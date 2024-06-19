@@ -128,7 +128,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 40, vertical: 6),
                               child: Text(
-                                "Questions ${(state).currentPosition}/${(state).questions.length}",
+                                "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
                                 style: titleMedium(context).copyWith(
                                     color:
                                         Theme.of(context).colorScheme.primary,
