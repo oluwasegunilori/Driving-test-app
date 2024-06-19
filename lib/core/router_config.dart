@@ -78,7 +78,7 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: ScreenRoutes.mockTest().route,
       builder: (BuildContext context, GoRouterState state) {
-        return const MockTestScreen();
+        return MockTestScreen();
       },
     ),
   ],

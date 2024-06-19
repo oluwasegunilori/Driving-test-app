@@ -15,6 +15,7 @@ import 'package:dri_learn/features/onboarding/presentation/onboarding_bloc.dart'
 import 'package:dri_learn/features/provinceSelector/data/repository/province_repository_impl.dart';
 import 'package:dri_learn/features/provinceSelector/domain/repository/province_repository.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_bloc.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
@@ -45,4 +46,5 @@ Future<void> init() async {
   sl.registerSingleton<AuthBloc>((AuthBloc(sl.call(), sl.call(), sl.call())));
   sl.registerFactory<OnboardingBloc>(() => OnboardingBloc());
   sl.registerFactory<ProvinceBloc>(() => ProvinceBloc(sl.call()));
+  sl.registerFactory<MockTestBloc>(() => MockTestBloc());
 }
