@@ -6,11 +6,12 @@ import 'package:dri_learn/features/provinceSelector/presentation/province_screen
 import 'package:dri_learn/features/testOptions/learn_test_options.dart';
 import 'package:dri_learn/features/testOptions/mock_test_options.dart';
 import 'package:dri_learn/features/tests/description/presentation/test_description.dart';
-import 'package:dri_learn/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
+
+import '../features/tests/mock/presentation/mock_test_screen.dart';
 
 /// The route configuration.
 final GoRouter appRouter = GoRouter(
@@ -74,6 +75,12 @@ final GoRouter appRouter = GoRouter(
         return const TestDescripScreen();
       },
     ),
+    GoRoute(
+      path: ScreenRoutes.mockTest().route,
+      builder: (BuildContext context, GoRouterState state) {
+        return const MockTestScreen();
+      },
+    ),
   ],
 );
 
@@ -86,6 +93,7 @@ sealed class ScreenRoutes {
   factory ScreenRoutes.mockTestOptions() = MockTestOption;
   factory ScreenRoutes.learnTestOptions() = LearnTestOption;
   factory ScreenRoutes.testDescription() = TestDescription;
+  factory ScreenRoutes.mockTest() = MockTestScreenRoute;
 }
 
 class Onboarding extends ScreenRoutes {
@@ -116,4 +124,9 @@ class LearnTestOption extends ScreenRoutes {
 class TestDescription extends ScreenRoutes {
   @override
   String get route => "/testdescriptions";
+}
+
+class MockTestScreenRoute extends ScreenRoutes {
+  @override
+  String get route => "/mocktest";
 }

@@ -1,4 +1,5 @@
 import 'package:dri_learn/core/button_styles.dart';
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:flutter/cupertino.dart';
@@ -116,7 +117,11 @@ class TestDescripScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       primaryButton(
-                          context: context, text: "Begin Test", onClick: () {}),
+                          context: context,
+                          text: "Begin Test",
+                          onClick: () {
+                            context.push(ScreenRoutes.mockTest().route);
+                          }),
                     ],
                   ),
                   const Spacer(),

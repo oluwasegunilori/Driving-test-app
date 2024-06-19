@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 ElevatedButton primaryButton(
     {required BuildContext context,
     required String text,
+    ButtonStyle? style,
     required VoidCallback onClick}) {
   return ElevatedButton(
       onPressed: () => {onClick()},
-      style: primaryRaisedButtonStyle(context),
+      style: style ?? primaryRaisedButtonStyle(context),
       child: Text(text));
 }
 
