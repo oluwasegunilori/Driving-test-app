@@ -34,6 +34,10 @@ class TestLoaded extends MockTestState {
         currentPosition: currentPosition ?? this.currentPosition);
   }
 
+  QuestionModel getCurrentQuestion() {
+    return questions[currentPosition];
+  }
+
   @override
   List<Object> get props => [questions, answers, currentPosition];
 }

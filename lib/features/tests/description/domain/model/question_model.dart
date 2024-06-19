@@ -27,7 +27,8 @@ final List<QuestionModel> questionsStat = [
       options: ["Paris", "London", "Rome", "Berlin"],
       answer: 0,
       questionType: QuestionType.Knowledge,
-      id: "00"),
+      id: "00",
+      image: "https://unsplash.com/photos/C7-PNQF5hww/download?force=true"),
   const QuestionModel(
       question: "Which of the following are fruits?",
       options: ["Apple", "Carrot", "Banana", "Potato"],

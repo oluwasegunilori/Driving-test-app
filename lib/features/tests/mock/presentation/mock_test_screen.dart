@@ -30,7 +30,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
 
   @override
   Widget build(BuildContext context) {
-    double imageHeight = MediaQuery.of(context).size.height * 0.35;
+    double imageHeight = MediaQuery.of(context).size.height * 0.32;
     return BlocProvider(
       create: (context) => mockTestBloc,
       child: BlocBuilder<MockTestBloc, MockTestState>(
@@ -54,13 +54,22 @@ class _MockTestScreenState extends State<MockTestScreen> {
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(
                                   15.0), // Adjust the border radius as needed
-                              child: Image.asset(
-                                "assets/images/onboard_img.jpeg",
-                                fit: BoxFit
-                                    .cover, // This makes the image cover the entire area
-                                width: double.infinity,
-                                height: double.infinity,
-                              ),
+                              child: (state is TestLoaded &&
+                                      state.getCurrentQuestion().image != null)
+                                  ? Image.network(
+                                      state.getCurrentQuestion().image!,
+                                      fit: BoxFit
+                                          .cover, // This makes the image cover the entire area
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                    )
+                                  : Image.asset(
+                                      "assets/images/onboard_img.jpeg",
+                                      fit: BoxFit
+                                          .cover, // This makes the image cover the entire area
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                    ),
                             ),
                           ),
                           Container(
@@ -143,7 +152,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
                                     MediaQuery.of(context).size.width * 0.2),
                             child: Center(
                               child: Text(
-                                state.questions[state.currentPosition].question,
+                                state.getCurrentQuestion().question,
                                 style: titleLarge(context,
                                     fontWeight: FontWeight.w600),
                                 textAlign: TextAlign.center,
@@ -261,10 +270,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
 
   Column questionOptionWidget(BuildContext context, TestLoaded state) {
     return Column(
-      children: state.questions[state.currentPosition].options
-          .asMap()
-          .entries
-          .map((entry) {
+      children: state.getCurrentQuestion().options.asMap().entries.map((entry) {
         return Card(
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15))),
