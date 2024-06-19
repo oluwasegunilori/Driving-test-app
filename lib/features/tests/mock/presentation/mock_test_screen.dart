@@ -156,7 +156,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
                                       Theme.of(context)
                                           .colorScheme
                                           .primary
-                                          .withAlpha(100)),
+                                          .withAlpha(80)),
                                   padding: const MaterialStatePropertyAll(
                                       EdgeInsets.symmetric(
                                           vertical: 15, horizontal: 18))),
@@ -164,10 +164,17 @@ class _MockTestScreenState extends State<MockTestScreen> {
                           ),
                           horizontalSpace(10),
                           Expanded(
-                            child: TextButton.icon(
+                            child: TextButton(
                               onPressed: () {},
-                              icon: Icon(MdiIcons.abTesting),
-                              label: Row(
+                              style: ButtonStyle(
+                                  backgroundColor: MaterialStatePropertyAll(
+                                      Theme.of(context).colorScheme.primary),
+                                  overlayColor: const MaterialStatePropertyAll(
+                                      Colors.black12),
+                                  padding: const MaterialStatePropertyAll(
+                                      EdgeInsets.symmetric(
+                                          vertical: 15, horizontal: 18))),
+                              child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
@@ -184,12 +191,6 @@ class _MockTestScreenState extends State<MockTestScreen> {
                                   )
                                 ],
                               ),
-                              style: ButtonStyle(
-                                  backgroundColor: MaterialStatePropertyAll(
-                                      Theme.of(context).colorScheme.primary),
-                                  padding: const MaterialStatePropertyAll(
-                                      EdgeInsets.only(
-                                          top: 15, bottom: 15, right: 18))),
                             ),
                           ),
                         ],
