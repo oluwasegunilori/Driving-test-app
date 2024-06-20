@@ -114,8 +114,7 @@ class HomePageScreen extends StatelessWidget {
                   MdiIcons.home,
                 ),
                 label: ""),
-            BottomNavigationBarItem(
-                icon: Icon(MdiIcons.lightbulb), label: ""),
+            BottomNavigationBarItem(icon: Icon(MdiIcons.lightbulb), label: ""),
             BottomNavigationBarItem(
                 icon: Icon(MdiIcons.faceManProfile), label: ""),
           ],
