@@ -105,17 +105,22 @@ class HomePageScreen extends StatelessWidget {
           ))
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(
-                MdiIcons.home,
-              ),
-              label: ""),
-          BottomNavigationBarItem(
-              icon: Icon(MdiIcons.faceManProfile), label: "")
-        ],
-        elevation: 10,
+      bottomNavigationBar: Card(
+        elevation: 15,
+        child: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  MdiIcons.home,
+                ),
+                label: ""),
+            BottomNavigationBarItem(
+                icon: Icon(MdiIcons.lightbulb), label: ""),
+            BottomNavigationBarItem(
+                icon: Icon(MdiIcons.faceManProfile), label: ""),
+          ],
+          enableFeedback: true,
+        ),
       ),
     );
   }
