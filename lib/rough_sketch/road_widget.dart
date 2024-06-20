@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:dri_learn/rough_sketch/dragger.dart';
+import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 
 import 'rough_it.dart';
@@ -45,26 +47,36 @@ class _RoadIntersectionWidgetState extends State<RoadIntersectionWidget>
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: AnimatedBuilder(
+        child: Stack(children: [
+      AnimatedBuilder(
           animation: _animation,
           builder: (context, child) {
             return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomPaint(
                   size: Size(
                       MediaQuery.of(context).size.width,
-                      MediaQuery.of(context).size.height /
-                          2), // You can specify the size of the canvas here
+                      MediaQuery.of(context).size.height *
+                          0.6), // You can specify the size of the canvas here
                   painter:
                       RoadIntersectionPainter(_currentLight, _animation.value),
-                ),
-                const Expanded(
-                  flex: 1,
-                  child: Center(),
                 ),
               ],
             );
           }),
-    );
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: GameWidget(
+                  game: MyGame(),
+                  backgroundBuilder: (context) => Container(
+                        color: Colors.transparent,
+                      ))),
+        ],
+      ),
+    ]));
   }
 }

@@ -4,6 +4,7 @@ import 'package:dri_learn/features/tests/description/domain/model/answer_model.d
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart';
+import 'package:dri_learn/rough_sketch/road_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -171,7 +172,20 @@ class _MockTestScreenState extends State<MockTestScreen> {
                                 children: [
                                   Expanded(
                                     child: TextButton.icon(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        showModalBottomSheet(
+                                            context: context,
+                                            builder: (context) {
+                                              return Container(
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height *
+                                                      0.8,
+                                                  child:
+                                                      const RoadIntersectionWidget());
+                                            },
+                                            isScrollControlled: true);
+                                      },
                                       icon: Icon(
                                         MdiIcons.television,
                                         color: Theme.of(context)
