@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dri_learn/core/data/local/app_database.dart';
 import 'package:dri_learn/core/data/local/local_data_source.dart';
 import 'package:dri_learn/core/data/local/local_data_source_impl.dart';
 import 'package:dri_learn/core/data/remote/remote_data_source.dart';
@@ -22,13 +23,17 @@ import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  //Database
+  //Remote Database
   final fireStoreDb = FirebaseFirestore.instance;
   sl.registerLazySingleton<RemoteDataSource>(
       () => RemoteDataSourceImpl(db: fireStoreDb));
 
+  //Local database
   final shPf = await StreamingSharedPreferences.instance;
   sl.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl(shPf));
+
+  final floorDb = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+
 
   //repositories
   sl.registerFactory<AuthRepository>(() => AuthRepositoryImpl());

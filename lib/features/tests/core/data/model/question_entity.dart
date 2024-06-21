@@ -1,13 +1,14 @@
 import 'package:equatable/equatable.dart';
 import 'package:floor/floor.dart';
 
-import '../domain/question_type_model.dart';
-import 'converters/string_list_converter.dart';
+import '../../domain/question_type_model.dart';
+import '../converters/string_list_converter.dart';
 
-@entity
+const questionTable = "question_table";
+
+@Entity(tableName: questionTable)
 class QuestionEntity extends Equatable {
-
-  @primaryKey
+  @PrimaryKey()
   final String id;
   final String question;
   @TypeConverters([StringListConverter])
@@ -17,10 +18,10 @@ class QuestionEntity extends Equatable {
   @ColumnInfo(name: "question_type")
   final QuestionType questionType;
 
-  const QuestionEntity(this.id, this.question, this.options, this.image, this.answer, this.questionType);
-
+  const QuestionEntity(this.id, this.question, this.options, this.image,
+      this.answer, this.questionType);
 
   @override
-  List<Object?> get props => [id, question, options, image, answer,questionType];
-
+  List<Object?> get props =>
+      [id, question, options, image, answer, questionType];
 }

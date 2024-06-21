@@ -6,12 +6,12 @@ import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
 class LocalDataSourceImpl extends LocalDataSource {
   String userKey = "USER:DATA";
-  final StreamingSharedPreferences pfDb;
+  final StreamingSharedPreferences _pfDb;
 
-  LocalDataSourceImpl(this.pfDb);
+  LocalDataSourceImpl(this._pfDb);
   @override
   Stream<User?> currentUser() {
-    return pfDb.getString(userKey, defaultValue: "").map((data) {
+    return _pfDb.getString(userKey, defaultValue: "").map((data) {
       if (data.isEmpty) {
         return null;
       } else {
@@ -22,6 +22,6 @@ class LocalDataSourceImpl extends LocalDataSource {
 
   @override
   Future<void> setCurrentUser(User user) async {
-    pfDb.setString(userKey, json.encode(user.toJson()));
+    _pfDb.setString(userKey, json.encode(user.toJson()));
   }
 }
