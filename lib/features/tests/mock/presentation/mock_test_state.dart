@@ -1,7 +1,8 @@
 // mock_test_state.dart
-import 'package:dri_learn/features/tests/description/domain/model/answer_model.dart';
-import 'package:dri_learn/features/tests/description/domain/model/question_model.dart';
+import 'package:dri_learn/features/tests/core/domain/answer_model.dart';
 import 'package:equatable/equatable.dart';
+
+import '../../core/domain/question_model.dart';
 
 abstract class MockTestState extends Equatable {
   const MockTestState();

@@ -1,8 +1,8 @@
 // mock_test_bloc.dart
 import 'dart:collection';
 
-import 'package:dri_learn/features/tests/description/domain/model/question_model.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../core/domain/question_model.dart';
 import 'mock_test_event.dart';
 import 'mock_test_state.dart';
 
