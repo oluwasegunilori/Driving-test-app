@@ -6,7 +6,7 @@ import 'package:floor/floor.dart';
 abstract class QuestionDao {
 
   @insert
-  Future<void> insertQuestion({QuestionEntity question});
+  Future<void> insertQuestion(QuestionEntity question);
 
   @Query('SELECT * FROM $questionTable')
   Future<List<QuestionEntity>> findAllQuestions();
