@@ -178,7 +178,8 @@ class RoadIntersectionPainter extends CustomPainter {
     );
 
     // Draw the lights
-    drawLight(canvas, position + Offset(10, 10), currentLight, animationValue);
+    drawLight(
+        canvas, position + const Offset(10, 10), currentLight, animationValue);
   }
 
   void drawLight(
@@ -193,7 +194,7 @@ class RoadIntersectionPainter extends CustomPainter {
         ..style = PaintingStyle.fill;
 
       canvas.drawCircle(
-          Offset(position.dx + 10, position.dy + 20 * (i + 1)), 10, lightPaint);
+          Offset(position.dx + 5, position.dy + 20 * (i + 1)), 7, lightPaint);
     }
   }
 
@@ -237,7 +238,7 @@ class RoadIntersectionPainter extends CustomPainter {
     final trafficLightPaint = Paint()
       ..color = Colors.red
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 10
+      ..strokeWidth = 15
       ..blendMode = BlendMode.darken;
 
     // Draw the traffic light box

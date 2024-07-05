@@ -15,6 +15,7 @@ class RoadIntersectionWidget extends StatefulWidget {
 
 class _RoadIntersectionWidgetState extends State<RoadIntersectionWidget>
     with SingleTickerProviderStateMixin {
+  List<int> lights = [2, 1, 0];
   int _currentLight = 0;
   late Timer _timer;
   late AnimationController _controller;
@@ -24,15 +25,19 @@ class _RoadIntersectionWidgetState extends State<RoadIntersectionWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(seconds: 4),
+      duration: const Duration(seconds: 1),
       vsync: this,
     )..repeat(reverse: true);
 
-    _animation = Tween<double>(begin: 0.8, end: 1.0).animate(_controller);
+    _animation = Tween<double>(begin: 0.9, end: 1.0).animate(_controller);
 
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
       setState(() {
-        _currentLight = (_currentLight + 1) % 3;
+        if (_currentLight >= lights.length - 1) {
+          _currentLight = 0;
+        } else {
+          _currentLight++;
+        }
       });
     });
   }
@@ -59,8 +64,8 @@ class _RoadIntersectionWidgetState extends State<RoadIntersectionWidget>
                       MediaQuery.of(context).size.width,
                       MediaQuery.of(context).size.height *
                           0.6), // You can specify the size of the canvas here
-                  painter:
-                      RoadIntersectionPainter(_currentLight, _animation.value),
+                  painter: RoadIntersectionPainter(
+                      lights[_currentLight], _animation.value),
                 ),
               ],
             );

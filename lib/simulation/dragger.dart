@@ -31,7 +31,8 @@ class MyGame extends FlameGame with TapDetector {
     sprite2 = CustomSpriteComponent(
         // ignore: use_build_context_synchronously
         startPosition: Vector2(size.x / 2 - 50, 0),
-        endPosition: Vector2(size.x / 2 - 50, size.y),
+        endPosition:
+            Vector2(size.x / 2 - 50, size.y - roadWidthPercent * size.y),
         sprite: await loadSprite('sedan-sports.png'));
 
     spriteComponent1 = sprite1.getSpriteComponent();
@@ -53,16 +54,17 @@ class MyGame extends FlameGame with TapDetector {
       spriteComponent1.position = sprite1.startPosition +
           (sprite1.endPosition - sprite1.startPosition) * progress;
 
-      spriteComponent2.position = sprite2.startPosition +
-          (sprite2.endPosition - sprite2.startPosition) * progress;
+      // spriteComponent2.position = sprite2.startPosition +
+      //     (sprite2.endPosition - sprite2.startPosition) * progress;
 
       // Reset the animation after it completes
       if (progress >= 1.0) {
+        started = false;
         elapsedTime = 0.0; // Reset elapsed time for continuous animation
         // Optionally swap start and end positions for back-and-forth animation
-        final temp = sprite1.startPosition;
-        sprite1.startPosition = sprite1.endPosition;
-        sprite1.endPosition = temp;
+        // final temp = sprite1.startPosition;
+        // sprite1.startPosition = sprite1.endPosition;
+        // sprite1.endPosition = temp;
       }
     }
   }
