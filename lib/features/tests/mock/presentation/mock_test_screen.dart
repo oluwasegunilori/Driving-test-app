@@ -5,6 +5,7 @@ import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart';
 import 'package:dri_learn/simulation/road_widget.dart';
+import 'package:flame/experimental.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -20,14 +21,6 @@ class MockTestScreen extends StatefulWidget {
 
 class _MockTestScreenState extends State<MockTestScreen> {
   final MockTestBloc mockTestBloc = di.sl<MockTestBloc>();
-
-  int? _selectedAnswer;
-
-  void _handleRadioValueChange(int? value) {
-    setState(() {
-      _selectedAnswer = value;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -125,26 +118,73 @@ class _MockTestScreenState extends State<MockTestScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (state is TestLoaded) ...[
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Theme.of(context)
-                                    .colorScheme
-                                    .primary
-                                    .withAlpha(50),
-                                shape: BoxShape.rectangle,
-                                borderRadius: const BorderRadius.all(
-                                    Radius.elliptical(30, 30))),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 40, vertical: 6),
-                              child: Text(
-                                "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
-                                style: titleMedium(context).copyWith(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
-                                    fontWeight: FontWeight.w600),
+                          Row(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .primary
+                                        .withAlpha(50),
+                                    shape: BoxShape.rectangle,
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.elliptical(30, 30))),
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 20, vertical: 6),
+                                  child: Text(
+                                    "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
+                                    style: titleSmall(context).copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        fontWeight: FontWeight.w600),
+                                  ),
+                                ),
                               ),
-                            ),
+                              const Spacer(),
+                              InkWell(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.elliptical(30, 30)),
+                                      border: Border.all(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary)),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20, vertical: 6),
+                                    child: Row(
+                                      children: [
+                                        Icon(MdiIcons.television),
+                                        horizontalSpace(5),
+                                        Text(
+                                          "Visual Learning",
+                                          style: titleSmall(context).copyWith(
+                                              fontWeight: FontWeight.w600),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                onTap: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return Container(
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .height *
+                                                0.8,
+                                            child:
+                                                const RoadIntersectionWidget());
+                                      },
+                                      isScrollControlled: true);
+                                },
+                              ),
+                            ],
                           ),
                           verticalSpace(20),
                           Padding(
@@ -171,79 +211,85 @@ class _MockTestScreenState extends State<MockTestScreen> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Expanded(
-                                    child: TextButton.icon(
-                                      onPressed: () {
-                                        showModalBottomSheet(
-                                            context: context,
-                                            builder: (context) {
-                                              return Container(
-                                                  height: MediaQuery.of(context)
-                                                          .size
-                                                          .height *
-                                                      0.8,
-                                                  child:
-                                                      const RoadIntersectionWidget());
+                                    child: state.currentPosition == 0
+                                        ? const Center()
+                                        : TextButton(
+                                            onPressed: () {
+                                              mockTestBloc
+                                                  .add(PreviousQuestEvent());
                                             },
-                                            isScrollControlled: true);
-                                      },
-                                      icon: Icon(
-                                        MdiIcons.television,
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .onBackground,
-                                      ),
-                                      label: Text(
-                                        "Visual learning",
-                                        style: titleSmall(context).copyWith(),
-                                      ),
-                                      style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStatePropertyAll(
-                                                  Theme.of(context)
+                                            style: ButtonStyle(
+                                                backgroundColor:
+                                                    MaterialStatePropertyAll(
+                                                        Theme.of(context)
+                                                            .colorScheme
+                                                            .primary),
+                                                overlayColor:
+                                                    const MaterialStatePropertyAll(
+                                                        Colors.black12),
+                                                padding:
+                                                    const MaterialStatePropertyAll(
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 12,
+                                                            horizontal: 12))),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  MdiIcons.undo,
+                                                  color: Theme.of(context)
                                                       .colorScheme
-                                                      .primary
-                                                      .withAlpha(80)),
-                                          padding:
-                                              const MaterialStatePropertyAll(
-                                                  EdgeInsets.symmetric(
-                                                      vertical: 15,
-                                                      horizontal: 18))),
-                                    ),
+                                                      .background,
+                                                ),
+                                                horizontalSpace(10),
+                                                Text(
+                                                  "Back",
+                                                  style: titleSmall(context)
+                                                      .copyWith(
+                                                          color: Colors.white),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
                                   ),
                                   horizontalSpace(10),
                                   Expanded(
                                     child: TextButton(
-                                      onPressed: _selectedAnswer != null
+                                      onPressed: state.answers[state
+                                                  .getCurrentQuestion()
+                                                  .id] !=
+                                              null
                                           ? () {
                                               mockTestBloc.add(
                                                   SubmitAnswerEvent(AnswerModel(
                                                       question: state.questions[
                                                           state
                                                               .currentPosition],
-                                                      userAnswer:
-                                                          _selectedAnswer!)));
-                                              _handleRadioValueChange(null);
+                                                      userAnswer: state
+                                                          .answers[state
+                                                              .getCurrentQuestion()
+                                                              .id]!
+                                                          .userAnswer)));
                                             }
                                           : null,
                                       style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStatePropertyAll(
-                                                  Theme.of(context)
-                                                      .colorScheme
-                                                      .primary
-                                                      .withOpacity(
-                                                          _selectedAnswer ==
-                                                                  null
-                                                              ? 0.4
-                                                              : 1)),
-                                          overlayColor:
-                                              const MaterialStatePropertyAll(
-                                                  Colors.black12),
-                                          padding:
-                                              const MaterialStatePropertyAll(
-                                                  EdgeInsets.symmetric(
-                                                      vertical: 15,
-                                                      horizontal: 18))),
+                                          backgroundColor: MaterialStatePropertyAll(
+                                              Theme.of(context)
+                                                  .colorScheme
+                                                  .primary
+                                                  .withOpacity(state.answers[state
+                                                              .getCurrentQuestion()
+                                                              .id] ==
+                                                          null
+                                                      ? 0.4
+                                                      : 1)),
+                                          overlayColor: const MaterialStatePropertyAll(
+                                              Colors.black12),
+                                          padding: const MaterialStatePropertyAll(
+                                              EdgeInsets.symmetric(
+                                                  vertical: 12,
+                                                  horizontal: 12))),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
@@ -283,12 +329,13 @@ class _MockTestScreenState extends State<MockTestScreen> {
   }
 
   Column questionOptionWidget(BuildContext context, TestLoaded state) {
+    var userAnswer = state.answers[state.getCurrentQuestion().id]?.userAnswer;
     return Column(
       children: state.getCurrentQuestion().options.asMap().entries.map((entry) {
         return Card(
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15))),
-          color: _selectedAnswer == entry.key
+          color: userAnswer == entry.key
               ? Theme.of(context).colorScheme.tertiary
               : Theme.of(context).colorScheme.background,
           surfaceTintColor: Colors.white,
@@ -297,7 +344,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
             title: Text(
               entry.value,
               style: titleSmall(context).copyWith(
-                  color: _selectedAnswer == entry.key
+                  color: userAnswer == entry.key
                       ? Colors.white
                       : Theme.of(context).colorScheme.onBackground),
             ),
@@ -305,7 +352,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
               width: 30,
               height: 30,
               decoration: BoxDecoration(
-                  color: _selectedAnswer == entry.key
+                  color: userAnswer == entry.key
                       ? Theme.of(context).colorScheme.primary
                       : Theme.of(context).colorScheme.background,
                   shape: BoxShape.circle,
@@ -313,13 +360,18 @@ class _MockTestScreenState extends State<MockTestScreen> {
                       Border.all(color: Theme.of(context).colorScheme.primary)),
               child: Center(
                 child: Icon(
-                  _selectedAnswer == entry.key ? MdiIcons.check : null,
+                  userAnswer == entry.key ? MdiIcons.check : null,
                   color: Theme.of(context).colorScheme.background,
                 ),
               ),
             ),
             onTap: () {
-              _handleRadioValueChange(entry.key);
+              mockTestBloc.add(SubmitAnswerEvent(
+                  AnswerModel(
+                    question: state.getCurrentQuestion(),
+                    userAnswer: entry.key,
+                  ),
+                  goToNextQuestion: false));
             },
           ),
         );

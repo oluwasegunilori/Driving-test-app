@@ -12,9 +12,12 @@ class LoadTestEvent extends MockTestEvent {}
 
 class SubmitAnswerEvent extends MockTestEvent {
   final AnswerModel answer;
+  final bool goToNextQuestion;
 
-  const SubmitAnswerEvent(this.answer);
+  const SubmitAnswerEvent(this.answer, {this.goToNextQuestion = true});
 
   @override
   List<Object> get props => [answer];
 }
+
+class PreviousQuestEvent extends MockTestEvent {}

@@ -17,7 +17,7 @@ class TestLoading extends MockTestState {}
 
 class TestLoaded extends MockTestState {
   final List<QuestionModel> questions;
-  final Set<AnswerModel> answers;
+  final Map<String, AnswerModel> answers;
   final int currentPosition;
 
   const TestLoaded(
@@ -27,7 +27,7 @@ class TestLoaded extends MockTestState {
 
   TestLoaded copyWith(
       {List<QuestionModel>? questions,
-      Set<AnswerModel>? answers,
+      Map<String, AnswerModel>? answers,
       int? currentPosition}) {
     return TestLoaded(
         questions: questions ?? this.questions,

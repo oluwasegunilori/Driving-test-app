@@ -2,7 +2,7 @@ import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
 import 'package:equatable/equatable.dart';
 
 class QuestionModel extends Equatable {
-  final String? id;
+  final String id;
   final String question;
   final List<String> options;
   final String? image;
@@ -10,7 +10,7 @@ class QuestionModel extends Equatable {
   final QuestionType questionType;
 
   const QuestionModel(
-      {this.id,
+      {required this.id,
       required this.question,
       required this.options,
       this.image,
