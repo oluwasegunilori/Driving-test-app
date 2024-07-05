@@ -8,5 +8,5 @@ class AnswerModel extends Equatable {
   const AnswerModel({required this.question, required this.userAnswer});
 
   @override
-  List<Object?> get props => [question.id];
+  List<Object?> get props => [question, userAnswer];
 }
