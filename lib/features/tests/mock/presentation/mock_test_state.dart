@@ -39,6 +39,8 @@ class TestLoaded extends MockTestState {
     return questions[currentPosition];
   }
 
+  bool isOnLastQuestion() => currentPosition == questions.length -1;
+
   @override
   List<Object> get props => [questions, answers, currentPosition];
 }

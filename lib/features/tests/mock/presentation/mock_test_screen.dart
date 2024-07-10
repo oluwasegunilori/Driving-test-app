@@ -295,7 +295,9 @@ class _MockTestScreenState extends State<MockTestScreen> {
                                             MainAxisAlignment.center,
                                         children: [
                                           Text(
-                                            "Next",
+                                            state.isOnLastQuestion()
+                                                ? "Submit"
+                                                : "Next",
                                             style: titleSmall(context)
                                                 .copyWith(color: Colors.white),
                                           ),

@@ -15,15 +15,18 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
     on<SubmitAnswerEvent>((event, emit) {
       if (state is TestLoaded) {
         TestLoaded currentState = state as TestLoaded;
-        if (currentState.currentPosition + 1 < currentState.questions.length) {
+        if (currentState.currentPosition < currentState.questions.length) {
           var answers = Map<String, AnswerModel>.from(currentState.answers);
           answers[currentState.getCurrentQuestion().id] = event.answer;
-          emit(TestLoaded(
-              questions: currentState.questions,
-              answers: answers,
-              currentPosition: event.goToNextQuestion
-                  ? currentState.currentPosition + 1
-                  : currentState.currentPosition));
+          if (currentState.currentPosition + 1 <
+              currentState.questions.length - 1) {
+            emit(TestLoaded(
+                questions: currentState.questions,
+                answers: answers,
+                currentPosition: event.goToNextQuestion
+                    ? currentState.currentPosition + 1
+                    : currentState.currentPosition));
+          }
         } else {
           print(currentState.answers);
           //Answer all answered
