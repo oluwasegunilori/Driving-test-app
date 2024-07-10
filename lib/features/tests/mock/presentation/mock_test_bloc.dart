@@ -11,11 +11,7 @@ import 'mock_test_state.dart';
 class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
   final CalculateMockTestScore calculateMockTestScore;
   MockTestBloc({required this.calculateMockTestScore}) : super(TestInitial()) {
-    emit(TestLoaded(
-        questions: questionsStat,
-        answers: const {},
-        currentPosition: 0,
-        viewMode: false));
+    resetQuestions();
 
     on<SubmitAnswerEvent>((event, emit) {
       if (state is TestLoaded) {
@@ -68,5 +64,16 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
         emit(currentState.copyWith(currentPosition: 0, viewMode: true));
       }
     });
+    on<LoadTestEvent>((event, emit) {
+      resetQuestions();
+    });
+  }
+
+  void resetQuestions() {
+    emit(TestLoaded(
+        questions: questionsStat,
+        answers: const {},
+        currentPosition: 0,
+        viewMode: false));
   }
 }

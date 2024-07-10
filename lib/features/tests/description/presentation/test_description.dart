@@ -2,7 +2,10 @@ import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -123,6 +126,8 @@ class TestDescripScreen extends StatelessWidget {
                             context: context,
                             text: "Begin Test",
                             onClick: () {
+                              BlocProvider.of<MockTestBloc>(context)
+                                  .add(LoadTestEvent());
                               context.push(ScreenRoutes.mockTest().route);
                             }),
                       ],
