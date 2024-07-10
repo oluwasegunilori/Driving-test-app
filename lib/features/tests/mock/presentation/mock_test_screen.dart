@@ -333,7 +333,7 @@ class MockTestScreen extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(15))),
           color: userAnswer == entry.key
               ? Theme.of(context).colorScheme.tertiary
-              : state.viewMode && entry.key == state.getCurrentQuestion().answer
+              : isViewModeAndCorrectOption(state, entry.key)
                   ? Colors.green
                   : Theme.of(context).colorScheme.surface,
           surfaceTintColor: Colors.white,
@@ -344,7 +344,7 @@ class MockTestScreen extends StatelessWidget {
               style: titleSmall(context).copyWith(
                   color: userAnswer == entry.key
                       ? Colors.white
-                      : Theme.of(context).colorScheme.onBackground),
+                      : Theme.of(context).colorScheme.onSurface),
             ),
             trailing: Container(
               width: 30,
@@ -352,15 +352,28 @@ class MockTestScreen extends StatelessWidget {
               decoration: BoxDecoration(
                   color: userAnswer == entry.key
                       ? Theme.of(context).colorScheme.primary
-                      : Theme.of(context).colorScheme.background,
+                      : Theme.of(context).colorScheme.surface,
                   shape: BoxShape.circle,
-                  border:
-                      Border.all(color: Theme.of(context).colorScheme.primary)),
+                  border: Border.all(
+                      color: isViewModeAndCorrectOption(state, entry.key) &&
+                              userAnswer != entry.key
+                          ? Colors.green
+                          : Theme.of(context).colorScheme.primary)),
               child: Center(
                 child: Icon(
-                  userAnswer == entry.key ? MdiIcons.check : null,
-                  color: Theme.of(context).colorScheme.background,
-                ),
+                    userAnswer == entry.key
+                        ? isViewModeAndCorrectOption(state, entry.key)
+                            ? MdiIcons.check
+                            : !state.viewMode
+                                ? MdiIcons.check
+                                : MdiIcons.close
+                        : isViewModeAndCorrectOption(state, entry.key)
+                            ? MdiIcons.check
+                            : null,
+                    color: isViewModeAndCorrectOption(state, entry.key) &&
+                            userAnswer != entry.key
+                        ? Colors.green
+                        : Theme.of(context).colorScheme.surface),
               ),
             ),
             onTap: () {
@@ -375,5 +388,9 @@ class MockTestScreen extends StatelessWidget {
         );
       }).toList(),
     );
+  }
+
+  bool isViewModeAndCorrectOption(TestLoaded state, int key) {
+    return state.viewMode && key == state.getCurrentQuestion().answer;
   }
 }
