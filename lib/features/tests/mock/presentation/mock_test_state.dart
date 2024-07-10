@@ -5,11 +5,10 @@ import 'package:equatable/equatable.dart';
 import '../../core/domain/question_model.dart';
 
 abstract class MockTestState extends Equatable {
-  final bool viewMode = false;
   const MockTestState();
 
   @override
-  List<Object> get props => [viewMode];
+  List<Object> get props => [];
 }
 
 class TestInitial extends MockTestState {}
@@ -20,14 +19,14 @@ class TestLoaded extends MockTestState {
   final List<QuestionModel> questions;
   final Map<String, AnswerModel> answers;
   final int currentPosition;
-  final bool newViewMode;
+  final bool viewMode;
   final int score;
 
   const TestLoaded(
       {required this.questions,
       required this.answers,
       required this.currentPosition,
-      required this.newViewMode,
+      required this.viewMode,
       this.score = 0});
 
   TestLoaded copyWith({
@@ -41,7 +40,7 @@ class TestLoaded extends MockTestState {
         questions: questions ?? this.questions,
         answers: answers ?? this.answers,
         currentPosition: currentPosition ?? this.currentPosition,
-        newViewMode: viewMode ?? newViewMode,
+        viewMode: viewMode ?? this.viewMode,
         score: score ?? this.score);
   }
 

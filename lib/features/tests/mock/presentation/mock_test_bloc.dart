@@ -15,11 +15,20 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
         questions: questionsStat,
         answers: const {},
         currentPosition: 0,
-        newViewMode: true));
+        viewMode: false));
 
     on<SubmitAnswerEvent>((event, emit) {
       if (state is TestLoaded) {
         TestLoaded currentState = state as TestLoaded;
+        if (currentState.viewMode) {
+          if (!currentState.isOnLastQuestion()) {
+            emit(currentState.copyWith(
+                currentPosition: event.goToNextQuestion
+                    ? currentState.currentPosition + 1
+                    : currentState.currentPosition));
+          }
+          return;
+        }
         if (currentState.currentPosition < currentState.questions.length) {
           var answers = Map<String, AnswerModel>.from(currentState.answers);
           answers[currentState.getCurrentQuestion().id] = event.answer;
@@ -47,10 +56,17 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
         TestLoaded currentState = state as TestLoaded;
         if (currentState.currentPosition > 0) {
           emit(currentState.copyWith(
-              currentPosition: currentState.currentPosition - 1));
+            currentPosition: currentState.currentPosition - 1,
+          ));
         }
       }
     });
-  }
 
+    on<SetViewModeEvent>((event, emit) {
+      if (state is TestLoaded) {
+        TestLoaded currentState = state as TestLoaded;
+        emit(currentState.copyWith(currentPosition: 0, viewMode: true));
+      }
+    });
+  }
 }

@@ -21,3 +21,5 @@ class SubmitAnswerEvent extends MockTestEvent {
 }
 
 class PreviousQuestEvent extends MockTestEvent {}
+
+class SetViewModeEvent extends MockTestEvent {}

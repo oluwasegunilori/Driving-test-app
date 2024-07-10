@@ -333,7 +333,9 @@ class MockTestScreen extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(15))),
           color: userAnswer == entry.key
               ? Theme.of(context).colorScheme.tertiary
-              : Theme.of(context).colorScheme.background,
+              : state.viewMode && entry.key == state.getCurrentQuestion().answer
+                  ? Colors.green
+                  : Theme.of(context).colorScheme.surface,
           surfaceTintColor: Colors.white,
           elevation: 1,
           child: ListTile(
