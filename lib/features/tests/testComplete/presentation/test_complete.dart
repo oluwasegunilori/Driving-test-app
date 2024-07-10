@@ -134,7 +134,9 @@ class TestComplete extends StatelessWidget {
                     children: [
                       Expanded(
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            context.go(ScreenRoutes.homePage().route);
+                          },
                           style: ButtonStyle(
                               backgroundColor: WidgetStatePropertyAll(
                                   Theme.of(context)
@@ -165,7 +167,11 @@ class TestComplete extends StatelessWidget {
                       horizontalSpace(10),
                       Expanded(
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            BlocProvider.of<MockTestBloc>(context)
+                                .add(LoadTestEvent());
+                            context.pop();
+                          },
                           style: ButtonStyle(
                               backgroundColor: WidgetStatePropertyAll(
                                   Theme.of(context)

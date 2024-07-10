@@ -92,7 +92,7 @@ final GoRouter appRouter = GoRouter(
 );
 
 sealed class ScreenRoutes {
-  const ScreenRoutes();
+  ScreenRoutes();
   String get route;
   factory ScreenRoutes.onBoarding() = Onboarding;
   factory ScreenRoutes.provinceSelection() = ProvinceSelection;
@@ -102,6 +102,8 @@ sealed class ScreenRoutes {
   factory ScreenRoutes.testDescription() = TestDescription;
   factory ScreenRoutes.mockTest() = MockTestScreenRoute;
   factory ScreenRoutes.testComplete() = TestCompleteRoute;
+
+  String home = "/";
 }
 
 class Onboarding extends ScreenRoutes {
