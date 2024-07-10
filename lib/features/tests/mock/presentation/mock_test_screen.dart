@@ -1,3 +1,4 @@
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/tests/core/domain/answer_model.dart';
@@ -12,321 +13,314 @@ import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '/core/di/injection_container.dart' as di;
 
-class MockTestScreen extends StatefulWidget {
-  const MockTestScreen({super.key});
-
-  @override
-  State<MockTestScreen> createState() => _MockTestScreenState();
-}
-
-class _MockTestScreenState extends State<MockTestScreen> {
-  final MockTestBloc mockTestBloc = di.sl<MockTestBloc>();
+class MockTestScreen extends StatelessWidget {
+  MockTestScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     double imageHeight = MediaQuery.of(context).size.height * 0.32;
-    return BlocProvider(
-      create: (context) => mockTestBloc,
-      child: BlocBuilder<MockTestBloc, MockTestState>(
-        builder: (context, state) {
-          return Scaffold(
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Stack(
-                  children: [
-                    SizedBox(
-                      height: imageHeight,
-                      child: Stack(
-                        children: [
-                          Card(
-                            margin: const EdgeInsets.all(0),
-                            shadowColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                  15.0), // Adjust the border radius as needed
-                              child: (state is TestLoaded &&
-                                      state.getCurrentQuestion().image != null)
-                                  ? Image.network(
-                                      state.getCurrentQuestion().image!,
-                                      fit: BoxFit
-                                          .cover, // This makes the image cover the entire area
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                    )
-                                  : Image.asset(
-                                      "assets/images/onboard_img.jpeg",
-                                      fit: BoxFit
-                                          .cover, // This makes the image cover the entire area
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                    ),
-                            ),
+    return BlocBuilder<MockTestBloc, MockTestState>(
+      builder: (context, state) {
+        return Scaffold(
+          body: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  SizedBox(
+                    height: imageHeight,
+                    child: Stack(
+                      children: [
+                        Card(
+                          margin: const EdgeInsets.all(0),
+                          shadowColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(15.0),
                           ),
-                          Container(
-                            color: Colors.black.withOpacity(0.5),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(
+                                15.0), // Adjust the border radius as needed
+                            child: (state is TestLoaded &&
+                                    state.getCurrentQuestion().image != null)
+                                ? Image.network(
+                                    state.getCurrentQuestion().image!,
+                                    fit: BoxFit
+                                        .cover, // This makes the image cover the entire area
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                  )
+                                : Image.asset(
+                                    "assets/images/onboard_img.jpeg",
+                                    fit: BoxFit
+                                        .cover, // This makes the image cover the entire area
+                                    width: double.infinity,
+                                    height: double.infinity,
+                                  ),
                           ),
-                          Positioned(
-                              bottom: 15,
+                        ),
+                        Container(
+                          color: Colors.black.withOpacity(0.5),
+                        ),
+                        Positioned(
+                            bottom: 15,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Row(
+                                children: [
+                                  Icon(
+                                    MdiIcons.car,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    size: 36,
+                                  ),
+                                  horizontalSpace(10),
+                                  Text(
+                                    'Mock Test',
+                                    style: titleMedium(context)
+                                        .copyWith(color: Colors.white),
+                                  )
+                                ],
+                              ),
+                            )),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    top: 50,
+                    child: IconButton(
+                      onPressed: () {
+                        if (context.canPop()) {
+                          context.pop();
+                        }
+                      },
+                      icon: Icon(
+                        MdiIcons.chevronLeft,
+                        size: 26,
+                      ),
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  )
+                ],
+              ),
+              Expanded(
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      if (state is TestLoaded) ...[
+                        Row(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .primary
+                                      .withAlpha(50),
+                                  shape: BoxShape.rectangle,
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.elliptical(30, 30))),
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      MdiIcons.car,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 6),
+                                child: Text(
+                                  "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
+                                  style: titleSmall(context).copyWith(
                                       color:
                                           Theme.of(context).colorScheme.primary,
-                                      size: 36,
-                                    ),
-                                    horizontalSpace(10),
-                                    Text(
-                                      'Mock Test',
-                                      style: titleMedium(context)
-                                          .copyWith(color: Colors.white),
-                                    )
-                                  ],
+                                      fontWeight: FontWeight.w600),
                                 ),
-                              )),
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      top: 50,
-                      child: IconButton(
-                        onPressed: () {
-                          if (context.canPop()) {
-                            context.pop();
-                          }
-                        },
-                        icon: Icon(
-                          MdiIcons.chevronLeft,
-                          size: 26,
-                        ),
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    )
-                  ],
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 20, horizontal: 10),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (state is TestLoaded) ...[
-                          Row(
-                            children: [
-                              Container(
+                              ),
+                            ),
+                            const Spacer(),
+                            InkWell(
+                              child: Container(
                                 decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .primary
-                                        .withAlpha(50),
                                     shape: BoxShape.rectangle,
                                     borderRadius: const BorderRadius.all(
-                                        Radius.elliptical(30, 30))),
+                                        Radius.elliptical(30, 30)),
+                                    border: Border.all(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary)),
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 6),
-                                  child: Text(
-                                    "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
-                                    style: titleSmall(context).copyWith(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                        fontWeight: FontWeight.w600),
+                                  child: Row(
+                                    children: [
+                                      Icon(MdiIcons.television),
+                                      horizontalSpace(5),
+                                      Text(
+                                        "Visual Learning",
+                                        style: titleSmall(context).copyWith(
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                              const Spacer(),
-                              InkWell(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.rectangle,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.elliptical(30, 30)),
-                                      border: Border.all(
+                              onTap: () {
+                                showModalBottomSheet(
+                                    context: context,
+                                    builder: (context) {
+                                      return Container(
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.8,
+                                          child:
+                                              const RoadIntersectionWidget());
+                                    },
+                                    isScrollControlled: true);
+                              },
+                            ),
+                          ],
+                        ),
+                        verticalSpace(20),
+                        Padding(
+                          padding: EdgeInsets.symmetric(
+                              horizontal:
+                                  MediaQuery.of(context).size.width * 0.2),
+                          child: Center(
+                            child: Text(
+                              state.getCurrentQuestion().question,
+                              style: titleLarge(context,
+                                  fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        const Spacer(),
+                        questionOptionWidget(context, state),
+                        const Spacer(),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: state.currentPosition == 0
+                                      ? const Center()
+                                      : TextButton(
+                                          onPressed: () {
+                                            BlocProvider.of<MockTestBloc>(
+                                                    context)
+                                                .add(PreviousQuestEvent());
+                                          },
+                                          style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStatePropertyAll(
+                                                      Theme.of(context)
+                                                          .colorScheme
+                                                          .primary),
+                                              overlayColor:
+                                                  const MaterialStatePropertyAll(
+                                                      Colors.black12),
+                                              padding:
+                                                  const MaterialStatePropertyAll(
+                                                      EdgeInsets.symmetric(
+                                                          vertical: 12,
+                                                          horizontal: 12))),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                MdiIcons.undo,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .background,
+                                              ),
+                                              horizontalSpace(10),
+                                              Text(
+                                                "Back",
+                                                style: titleSmall(context)
+                                                    .copyWith(
+                                                        color: Colors.white),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                ),
+                                horizontalSpace(10),
+                                Expanded(
+                                  child: TextButton(
+                                    onPressed: state.answers[state
+                                                .getCurrentQuestion()
+                                                .id] !=
+                                            null
+                                        ? () {
+                                            BlocProvider.of<MockTestBloc>(
+                                                    context)
+                                                .add(SubmitAnswerEvent(AnswerModel(
+                                                    question: state.questions[
+                                                        state.currentPosition],
+                                                    userAnswer: state
+                                                        .answers[state
+                                                            .getCurrentQuestion()
+                                                            .id]!
+                                                        .userAnswer)));
+                                            if (state.isOnLastQuestion()) {
+                                              context.push(
+                                                  TestCompleteRoute().route);
+                                            }
+                                          }
+                                        : null,
+                                    style: ButtonStyle(
+                                        backgroundColor: MaterialStatePropertyAll(
+                                            Theme.of(context)
+                                                .colorScheme
+                                                .primary
+                                                .withOpacity(state.answers[state
+                                                            .getCurrentQuestion()
+                                                            .id] ==
+                                                        null
+                                                    ? 0.4
+                                                    : 1)),
+                                        overlayColor:
+                                            const MaterialStatePropertyAll(
+                                                Colors.black12),
+                                        padding: const MaterialStatePropertyAll(
+                                            EdgeInsets.symmetric(
+                                                vertical: 12, horizontal: 12))),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          state.isOnLastQuestion()
+                                              ? "Submit"
+                                              : "Next",
+                                          style: titleSmall(context)
+                                              .copyWith(color: Colors.white),
+                                        ),
+                                        horizontalSpace(10),
+                                        Icon(
+                                          MdiIcons.redo,
                                           color: Theme.of(context)
                                               .colorScheme
-                                              .primary)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 6),
-                                    child: Row(
-                                      children: [
-                                        Icon(MdiIcons.television),
-                                        horizontalSpace(5),
-                                        Text(
-                                          "Visual Learning",
-                                          style: titleSmall(context).copyWith(
-                                              fontWeight: FontWeight.w600),
-                                        ),
+                                              .background,
+                                        )
                                       ],
                                     ),
                                   ),
                                 ),
-                                onTap: () {
-                                  showModalBottomSheet(
-                                      context: context,
-                                      builder: (context) {
-                                        return Container(
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.8,
-                                            child:
-                                                const RoadIntersectionWidget());
-                                      },
-                                      isScrollControlled: true);
-                                },
-                              ),
-                            ],
-                          ),
-                          verticalSpace(20),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal:
-                                    MediaQuery.of(context).size.width * 0.2),
-                            child: Center(
-                              child: Text(
-                                state.getCurrentQuestion().question,
-                                style: titleLarge(context,
-                                    fontWeight: FontWeight.w600),
-                                textAlign: TextAlign.center,
-                              ),
+                              ],
                             ),
-                          ),
-                          const Spacer(),
-                          questionOptionWidget(context, state),
-                          const Spacer(),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: state.currentPosition == 0
-                                        ? const Center()
-                                        : TextButton(
-                                            onPressed: () {
-                                              mockTestBloc
-                                                  .add(PreviousQuestEvent());
-                                            },
-                                            style: ButtonStyle(
-                                                backgroundColor:
-                                                    MaterialStatePropertyAll(
-                                                        Theme.of(context)
-                                                            .colorScheme
-                                                            .primary),
-                                                overlayColor:
-                                                    const MaterialStatePropertyAll(
-                                                        Colors.black12),
-                                                padding:
-                                                    const MaterialStatePropertyAll(
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 12,
-                                                            horizontal: 12))),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  MdiIcons.undo,
-                                                  color: Theme.of(context)
-                                                      .colorScheme
-                                                      .background,
-                                                ),
-                                                horizontalSpace(10),
-                                                Text(
-                                                  "Back",
-                                                  style: titleSmall(context)
-                                                      .copyWith(
-                                                          color: Colors.white),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                  ),
-                                  horizontalSpace(10),
-                                  Expanded(
-                                    child: TextButton(
-                                      onPressed: state.answers[state
-                                                  .getCurrentQuestion()
-                                                  .id] !=
-                                              null
-                                          ? () {
-                                              mockTestBloc.add(
-                                                  SubmitAnswerEvent(AnswerModel(
-                                                      question: state.questions[
-                                                          state
-                                                              .currentPosition],
-                                                      userAnswer: state
-                                                          .answers[state
-                                                              .getCurrentQuestion()
-                                                              .id]!
-                                                          .userAnswer)));
-                                            }
-                                          : null,
-                                      style: ButtonStyle(
-                                          backgroundColor: MaterialStatePropertyAll(
-                                              Theme.of(context)
-                                                  .colorScheme
-                                                  .primary
-                                                  .withOpacity(state.answers[state
-                                                              .getCurrentQuestion()
-                                                              .id] ==
-                                                          null
-                                                      ? 0.4
-                                                      : 1)),
-                                          overlayColor: const MaterialStatePropertyAll(
-                                              Colors.black12),
-                                          padding: const MaterialStatePropertyAll(
-                                              EdgeInsets.symmetric(
-                                                  vertical: 12,
-                                                  horizontal: 12))),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            state.isOnLastQuestion()
-                                                ? "Submit"
-                                                : "Next",
-                                            style: titleSmall(context)
-                                                .copyWith(color: Colors.white),
-                                          ),
-                                          horizontalSpace(10),
-                                          Icon(
-                                            MdiIcons.redo,
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .background,
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          const Spacer(),
-                        ],
+                          ],
+                        ),
+                        const Spacer(),
                       ],
-                    ),
+                    ],
                   ),
-                )
-              ],
-            ),
-          );
-        },
-      ),
+                ),
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 
@@ -368,7 +362,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
               ),
             ),
             onTap: () {
-              mockTestBloc.add(SubmitAnswerEvent(
+              BlocProvider.of<MockTestBloc>(context).add(SubmitAnswerEvent(
                   AnswerModel(
                     question: state.getCurrentQuestion(),
                     userAnswer: entry.key,

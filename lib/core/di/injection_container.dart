@@ -16,6 +16,7 @@ import 'package:dri_learn/features/onboarding/presentation/onboarding_bloc.dart'
 import 'package:dri_learn/features/provinceSelector/data/repository/province_repository_impl.dart';
 import 'package:dri_learn/features/provinceSelector/domain/repository/province_repository.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_bloc.dart';
+import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
@@ -32,8 +33,8 @@ Future<void> init() async {
   final shPf = await StreamingSharedPreferences.instance;
   sl.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl(shPf));
 
-  final floorDb = await $FloorAppDatabase.databaseBuilder('app_database.db').build();
-
+  final floorDb =
+      await $FloorAppDatabase.databaseBuilder('app_database.db').build();
 
   //repositories
   sl.registerFactory<AuthRepository>(() => AuthRepositoryImpl());
@@ -46,10 +47,12 @@ Future<void> init() async {
   sl.registerFactory<SaveUserDataUsecase>(() => SaveUserDataUsecase(sl.call()));
   sl.registerFactory<GetCurrentUserUseCase>(
       () => GetCurrentUserUseCase(sl.call()));
+  sl.registerFactory<CalculateMockTestScore>(() => CalculateMockTestScore());
 
   //blocs
   sl.registerSingleton<AuthBloc>((AuthBloc(sl.call(), sl.call(), sl.call())));
   sl.registerFactory<OnboardingBloc>(() => OnboardingBloc());
   sl.registerFactory<ProvinceBloc>(() => ProvinceBloc(sl.call()));
-  sl.registerFactory<MockTestBloc>(() => MockTestBloc());
+  sl.registerSingleton<MockTestBloc>(
+      (MockTestBloc(calculateMockTestScore: sl.call())));
 }

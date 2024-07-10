@@ -5,10 +5,11 @@ import 'package:equatable/equatable.dart';
 import '../../core/domain/question_model.dart';
 
 abstract class MockTestState extends Equatable {
+  final bool viewMode = false;
   const MockTestState();
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [viewMode];
 }
 
 class TestInitial extends MockTestState {}
@@ -19,30 +20,40 @@ class TestLoaded extends MockTestState {
   final List<QuestionModel> questions;
   final Map<String, AnswerModel> answers;
   final int currentPosition;
+  final bool newViewMode;
+  final int score;
 
   const TestLoaded(
       {required this.questions,
       required this.answers,
-      required this.currentPosition});
+      required this.currentPosition,
+      required this.newViewMode,
+      this.score = 0});
 
-  TestLoaded copyWith(
-      {List<QuestionModel>? questions,
-      Map<String, AnswerModel>? answers,
-      int? currentPosition}) {
+  TestLoaded copyWith({
+    List<QuestionModel>? questions,
+    Map<String, AnswerModel>? answers,
+    int? currentPosition,
+    bool? viewMode,
+    int? score,
+  }) {
     return TestLoaded(
         questions: questions ?? this.questions,
         answers: answers ?? this.answers,
-        currentPosition: currentPosition ?? this.currentPosition);
+        currentPosition: currentPosition ?? this.currentPosition,
+        newViewMode: viewMode ?? newViewMode,
+        score: score ?? this.score);
   }
 
   QuestionModel getCurrentQuestion() {
     return questions[currentPosition];
   }
 
-  bool isOnLastQuestion() => currentPosition == questions.length -1;
+  bool isOnLastQuestion() => currentPosition == questions.length - 1;
 
   @override
-  List<Object> get props => [questions, answers, currentPosition];
+  List<Object> get props =>
+      [questions, answers, currentPosition, viewMode, score];
 }
 
 class AnswerSubmitted extends MockTestState {

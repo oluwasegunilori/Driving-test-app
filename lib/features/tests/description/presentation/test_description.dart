@@ -123,7 +123,7 @@ class TestDescripScreen extends StatelessWidget {
                             context: context,
                             text: "Begin Test",
                             onClick: () {
-                              context.push(ScreenRoutes.testComplete().route);
+                              context.push(ScreenRoutes.mockTest().route);
                             }),
                       ],
                     ),

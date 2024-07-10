@@ -2,16 +2,20 @@ import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '/core/di/injection_container.dart' as di;
 
 class TestComplete extends StatelessWidget {
   const TestComplete({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double imageHeight = MediaQuery.of(context).size.height * 0.25;
+    final double imageHeight = MediaQuery.of(context).size.height * 0.25;
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,21 +70,6 @@ class TestComplete extends StatelessWidget {
                   ],
                 ),
               ),
-              Positioned(
-                top: 50,
-                child: IconButton(
-                  onPressed: () {
-                    if (context.canPop()) {
-                      context.pop();
-                    }
-                  },
-                  icon: Icon(
-                    MdiIcons.chevronLeft,
-                    size: 26,
-                  ),
-                  color: Theme.of(context).primaryColor,
-                ),
-              )
             ],
           ),
           Expanded(
@@ -117,17 +106,21 @@ class TestComplete extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
-                            "2/10",
-                            style: titleMedium(context)
-                                .copyWith(color: Colors.white),
+                          BlocBuilder<MockTestBloc, MockTestState>(
+                            builder: (context, state) {
+                              return Text(
+                                getScore(state),
+                                style: titleMedium(context)
+                                    .copyWith(color: Colors.white),
+                              );
+                            },
                           ),
                           verticalSpace(10),
                           primaryButton(
                               context: context,
                               text: "   View Details    ",
                               onClick: () {
-                                context.push(ScreenRoutes.mockTest().route);
+                                context.pop();
                               }),
                         ],
                       ),
@@ -207,5 +200,12 @@ class TestComplete extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  String getScore(MockTestState state) {
+    if (state is TestLoaded) {
+      return "${state.score}/${state.questions.length}";
+    }
+    return "";
   }
 }

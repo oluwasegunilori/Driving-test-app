@@ -1,4 +1,5 @@
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -30,6 +31,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<AuthBloc>(
             create: (BuildContext context) => di.sl<AuthBloc>()),
+        BlocProvider<MockTestBloc>(
+            create: (BuildContext context) => di.sl<MockTestBloc>()),
       ],
       child: MaterialApp.router(
         title: 'Flutter Demo',
