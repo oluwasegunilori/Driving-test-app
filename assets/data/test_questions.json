@@ -34,7 +34,7 @@
             "Exit to the right with maximum safe speed"
         ],
         "image": null,
-        "answer": null,
+        "answer": "2",
         "type": "Sign",
         "id": "38a64750-b145-475a-bfd1-14f739f497e8"
     },
@@ -294,7 +294,7 @@
             "flashing red"
         ],
         "image": null,
-        "answer": null,
+        "answer": "3",
         "type": "Knowledge",
         "id": "4696a0f1-2395-4eac-be2a-bb90a42c8c61"
     },
@@ -307,7 +307,7 @@
             "The direction of the wheels doesn't matter as long as the parking brake is set"
         ],
         "image": null,
-        "answer": null,
+        "answer": "2",
         "type": "Knowledge",
         "id": "3623bf31-b08c-42e9-8154-cad9521b577a"
     },
@@ -359,7 +359,7 @@
             "Accelerate and cross the tracks as quickly as possible"
         ],
         "image": null,
-        "answer": null,
+        "answer": "1",
         "type": "Knowledge",
         "id": "de5a8d51-e1bd-4ce4-ab5c-3f74a8324249"
     },
@@ -372,7 +372,7 @@
             "U-turns"
         ],
         "image": null,
-        "answer": null,
+        "answer": "2",
         "type": "Knowledge",
         "id": "46fb3376-a767-46ab-b00d-dbe1ffda9914"
     },
@@ -489,7 +489,7 @@
             "no parking"
         ],
         "image": "link",
-        "answer": null,
+        "answer": "0",
         "type": "Sign",
         "id": "2e25573c-4887-4a9b-a350-ffc0a3c90db8"
     },
@@ -528,7 +528,7 @@
             "The direction of the wheels doesn't matter as long as the parking brake is set"
         ],
         "image": null,
-        "answer": null,
+        "answer": "2",
         "type": "Knowledge",
         "id": "920f1531-df2a-4ca8-8d61-118b6e021668"
     },
@@ -541,7 +541,7 @@
             "Turn from the left curb lane to the right curb lane"
         ],
         "image": null,
-        "answer": null,
+        "answer": "3",
         "type": "Knowledge",
         "id": "31a30672-33c1-4a17-ad5d-90f019648ef6"
     },
@@ -554,7 +554,7 @@
             "0.1"
         ],
         "image": null,
-        "answer": null,
+        "answer": "2",
         "type": "Knowledge",
         "id": "86e3a5a7-23e0-4a56-9a5b-96bc6a28216f"
     },
@@ -567,7 +567,7 @@
             "For a short time regardless of who is in the vehicle"
         ],
         "image": "link",
-        "answer": null,
+        "answer": "2",
         "type": "Knowledge",
         "id": "212dc75c-70c7-4b34-907b-c7266cbc61f1"
     },
@@ -619,7 +619,7 @@
             "A steady yellow light"
         ],
         "image": "link",
-        "answer": null,
+        "answer": "2",
         "type": "Knowledge",
         "id": "b7b7e3cb-4699-42e5-8922-9c4a241c76e2"
     },
@@ -645,7 +645,7 @@
             "Suspended for 6 months"
         ],
         "image": null,
-        "answer": null,
+        "answer": "3",
         "type": "Knowledge",
         "id": "a2643b18-50a3-42ca-b7f2-ddb6a1483f7e"
     },
@@ -684,7 +684,7 @@
             "is permitted if it is safe to do so"
         ],
         "image": null,
-        "answer": null,
+        "answer": "0",
         "type": "Knowledge",
         "id": "838483fd-85fe-45da-a2d4-de603b03c338"
     },
@@ -697,7 +697,7 @@
             "Under no circumstances."
         ],
         "image": "link",
-        "answer": null,
+        "answer": "3",
         "type": "Knowledge",
         "id": "6a7957ff-75d8-4a67-8a44-6926e52c7cb3"
     },
@@ -710,7 +710,7 @@
             "At any time a vehicle is turning left, even if the right shoulder is unpaved"
         ],
         "image": null,
-        "answer": null,
+        "answer": "1",
         "type": "Knowledge",
         "id": "5efe3bde-b0a6-43b5-bf60-f68cd8907d70"
     },
@@ -749,7 +749,7 @@
             "2 metres"
         ],
         "image": null,
-        "answer": null,
+        "answer": "1",
         "type": "Knowledge",
         "id": "99d78e60-bb6b-4d51-a988-61d1fdb0f430"
     }

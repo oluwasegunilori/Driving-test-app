@@ -21,7 +21,7 @@ class QuestionModel extends Equatable {
     return QuestionModel(
         id: json['id'],
         question: json['question'],
-        options: json['options'] as List<String>,
+        options: List<String>.from(json['options']),
         image: json['image'],
         answer: int.parse(json['answer']),
         questionType: QuestionType.fromString(json['type']));

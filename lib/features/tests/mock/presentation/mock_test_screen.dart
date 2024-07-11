@@ -6,19 +6,17 @@ import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart';
 import 'package:dri_learn/simulation/road_widget.dart';
-import 'package:flame/experimental.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import '/core/di/injection_container.dart' as di;
 
 class MockTestScreen extends StatelessWidget {
-  MockTestScreen({super.key});
+  const MockTestScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    double imageHeight = MediaQuery.of(context).size.height * 0.32;
+    double imageHeight = MediaQuery.of(context).size.height * 0.27;
     return BlocBuilder<MockTestBloc, MockTestState>(
       builder: (context, state) {
         return Scaffold(
@@ -41,7 +39,12 @@ class MockTestScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(
                                 15.0), // Adjust the border radius as needed
                             child: (state is TestLoaded &&
-                                    state.getCurrentQuestion().image != null)
+                                    state.getCurrentQuestion().image != null &&
+                                    state
+                                            .getCurrentQuestion()
+                                            .image!
+                                            .toLowerCase() !=
+                                        "link")
                                 ? Image.network(
                                     state.getCurrentQuestion().image!,
                                     fit: BoxFit

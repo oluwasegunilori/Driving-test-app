@@ -7,8 +7,9 @@ import 'package:flutter/services.dart' show rootBundle;
 class QuestionsRepositoryImpl extends QuestionsRepository {
   @override
   Future<List<QuestionModel>> getQuestions() async {
-    final String response = await rootBundle.loadString('assets/data.json');
-    final data = await json.decode(response);
+    final String response =
+        await rootBundle.loadString('assets/data/test_questions.json');
+    final List<dynamic> data = await json.decode(response);
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
     return dataList;

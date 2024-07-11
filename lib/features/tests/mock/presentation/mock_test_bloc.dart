@@ -73,9 +73,10 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
     });
   }
 
-  void resetQuestions() {
+  void resetQuestions() async {
+    List<QuestionModel> questions = await questionsRepository.getQuestions();
     emit(TestLoaded(
-        questions: questionsStat,
+        questions: questions,
         answers: const {},
         currentPosition: 0,
         viewMode: false));
