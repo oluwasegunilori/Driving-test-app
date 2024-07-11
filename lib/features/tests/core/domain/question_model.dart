@@ -17,6 +17,16 @@ class QuestionModel extends Equatable {
       required this.answer,
       required this.questionType});
 
+  factory QuestionModel.fromJson(Map<String, dynamic> json) {
+    return QuestionModel(
+        id: json['id'],
+        question: json['question'],
+        options: json['options'] as List<String>,
+        image: json['image'],
+        answer: int.parse(json['answer']),
+        questionType: QuestionType.fromString(json['type']));
+  }
+
   @override
   List<Object?> get props => [question, options, image, answer, questionType];
 }

@@ -16,6 +16,8 @@ import 'package:dri_learn/features/onboarding/presentation/onboarding_bloc.dart'
 import 'package:dri_learn/features/provinceSelector/data/repository/province_repository_impl.dart';
 import 'package:dri_learn/features/provinceSelector/domain/repository/province_repository.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_bloc.dart';
+import 'package:dri_learn/features/tests/core/data/repository/questions_repository_impl.dart';
+import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -41,6 +43,7 @@ Future<void> init() async {
   sl.registerFactory<ProvinceRepository>(
       () => ProvinceRepositoryImpl(remoteDataSource: sl.call()));
   sl.registerFactory<UserRepository>(() => UserRepositoryImpl(sl.call()));
+  sl.registerFactory<QuestionsRepository>(() => QuestionsRepositoryImpl());
 
   //usecase
   sl.registerFactory<GoogleSignInUseCase>(() => GoogleSignInUseCase(sl.call()));
@@ -53,6 +56,6 @@ Future<void> init() async {
   sl.registerSingleton<AuthBloc>((AuthBloc(sl.call(), sl.call(), sl.call())));
   sl.registerFactory<OnboardingBloc>(() => OnboardingBloc());
   sl.registerFactory<ProvinceBloc>(() => ProvinceBloc(sl.call()));
-  sl.registerSingleton<MockTestBloc>(
-      (MockTestBloc(calculateMockTestScore: sl.call())));
+  sl.registerSingleton<MockTestBloc>((MockTestBloc(
+      calculateMockTestScore: sl.call(), questionsRepository: sl.call())));
 }

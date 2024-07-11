@@ -1,0 +1,756 @@
+[
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "The divided road is ending",
+            "Double parking is not permitted",
+            "Do not enter, one way traffic only",
+            "Do not pass"
+        ],
+        "image": "Link",
+        "answer": "3",
+        "type": "Sign",
+        "id": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Construction zone",
+            "Bump ahead",
+            "Bridge ahead",
+            "Hills ahead"
+        ],
+        "image": "Link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "358960bd-ac27-40aa-9e82-ed084851d2e2"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Road curves right ahead with maximum safe speed",
+            "You must turn right ahead with maximum safe speed",
+            "Speed limit changes ahead to 60 km/h",
+            "Exit to the right with maximum safe speed"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Sign",
+        "id": "38a64750-b145-475a-bfd1-14f739f497e8"
+    },
+    {
+        "question": "A red cycle with a slash through it usually means:",
+        "options": [
+            "A railway crossing Sign",
+            "A warning Sign",
+            "A information and guide Sign",
+            "A prohibition Sign"
+        ],
+        "image": "Link",
+        "answer": "3",
+        "type": "Sign",
+        "id": "661fd0b1-aca0-4564-a088-8b7b5dc0c474"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Bicycles are not allowed on this road",
+            "Bicycles may use this road",
+            "Yield right-of-way to bicycles",
+            "The lane is reserved for bicycles"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "050338c3-45b1-4408-838b-a9402b264848"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "No parking",
+            "No enter",
+            "No truck",
+            "no stopping"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "no right turn",
+            "Sharp left turn in the road ahead",
+            "exit the highway to left",
+            "no left turn"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "858e8441-8eac-47ab-a9a5-9b6459d58a52"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "speed limit changes ahaed",
+            "the maximum speed permitted",
+            "shows maximum safe speed on ramp",
+            "the minimum speed permitted"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "32f23d26-7920-4305-9513-96d7789ed829"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "the pavement ends ahead",
+            "road construction ahead",
+            "no road past this point",
+            "dead end ahead"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "43f2e36f-e88c-46c0-8f13-10d9bc064393"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "there is a steep grade ahead",
+            "no trucks are allowed on the hill",
+            "a logging road is ahead",
+            "there are trucks on the hill"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Snowmobiles may use this road",
+            "Snowmobiles may not use this road",
+            "parking space reserved for snowmobiles",
+            "this sign warns you that snowmobile cross this road ahead"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "fabb5293-6b33-4d13-8622-1160f2ecf671"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "parking space reserved for doctors",
+            "parking space reserved for hospital employees",
+            "parking space reserved for people with disabled parking privileges",
+            "parking space reserve for emergency"
+        ],
+        "image": "link",
+        "answer": "2",
+        "type": "Sign",
+        "id": "acdf7747-a423-4541-abfc-19153aaa4c74"
+    },
+    {
+        "question": "This sign above the road indicates",
+        "options": [
+            "Designated lane, turn left",
+            "a very sharp curve to the left",
+            "detour ahead",
+            "left turns are permitted on a red light"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "cc8ba749-ab9a-4144-933b-9ac826532285"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "you are near a school. watch for children",
+            "Crosswalk for disabled",
+            "school bus stop ahead",
+            "pedestrian crossing"
+        ],
+        "image": "link",
+        "answer": "2",
+        "type": "Sign",
+        "id": "76dfe16e-be36-48b5-8db3-6007a3013f95"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "signal to ferry service",
+            "traffic control signal lights ahead",
+            "Dangerous end ahead",
+            "construction zone ahead"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "a traffic cirlce ahead",
+            "do not enter",
+            "entry restricted to local traffic only",
+            "Dangerous goods vehicles not allowed"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "divided highway",
+            "lane reduction, right lane ends ahead",
+            "cross road",
+            "highway entrance ramp ahead"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "keep right",
+            "hazard on the right",
+            "right turn ahead",
+            "sharp curves to yhe right"
+        ],
+        "image": "link",
+        "answer": "3",
+        "type": "Sign",
+        "id": "cae92b7a-49b3-4e15-82f0-e9f440be4f85"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "yield ahead",
+            "stop then go ahead",
+            "Roundabout ahead",
+            "stop ahead"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Yield Sign",
+            "The vehicle is a slow-moving vechicle traveling at 40km/h or less",
+            "this is emergency vechicle",
+            "railroad crossing"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "50302d1f-aef0-445d-ab80-6262126e8334"
+    },
+    {
+        "question": "If you are involved in a collision that results in injury, you must report to the police:",
+        "options": [
+            "within one week",
+            "within 48hours",
+            "within 24 hours",
+            "Immediately"
+        ],
+        "image": null,
+        "answer": "3",
+        "type": "Knowledge",
+        "id": "a8474b6a-86e0-450d-8558-c3f12cfac19f"
+    },
+    {
+        "question": "To identify harzards in you surroundings while driving, you should",
+        "options": [
+            "scan the driving environment regulary",
+            "only keep your eyes directly on the road ahead",
+            "avoid using your rear view mirrors",
+            "turn your radio to receive local traffic information"
+        ],
+        "image": null,
+        "answer": "0",
+        "type": "Knowledge",
+        "id": "7089687c-78f5-4019-a000-c172aa4d1bc7"
+    },
+    {
+        "question": "A steady yellow light means that a ______ light will soon appear.",
+        "options": [
+            "flashing yellow",
+            "staedy green",
+            "steady red",
+            "flashing red"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "4696a0f1-2395-4eac-be2a-bb90a42c8c61"
+    },
+    {
+        "question": "When parked facing downhill:",
+        "options": [
+            "Turn the steering wheel to the left, towards the road",
+            "The front wheels must be parallel to the curb",
+            "Turn the steering wheel to the right, towards the curb or shoulder",
+            "The direction of the wheels doesn't matter as long as the parking brake is set"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "3623bf31-b08c-42e9-8154-cad9521b577a"
+    },
+    {
+        "question": "If a traffic signal light is green and a police officer signals you to stop, you should:",
+        "options": [
+            "Obey the traffic officer",
+            "Do what the vehicle in front of you does",
+            "Obey the traffic signal",
+            "Tell the officer that this is against the law"
+        ],
+        "image": null,
+        "answer": "0",
+        "type": "Knowledge",
+        "id": "6563dc7b-d4a7-4ab8-8c41-35fb5ceb7556"
+    },
+    {
+        "question": "The driver's left arm and hand are extended downward. This hand signal means that the driver plans to",
+        "options": [
+            "turn left",
+            "turn right",
+            "stop or slow down",
+            "go straight ahead"
+        ],
+        "image": null,
+        "answer": "2",
+        "type": "Knowledge",
+        "id": "48e01247-472c-4c20-8a03-be13323d7dc1"
+    },
+    {
+        "question": "The \"two second\" following rule refers to how drivers should",
+        "options": [
+            "drive behind another vehicle",
+            "cross an intersection that is controlled by a flashing red light",
+            "allow this amount of time to stop at a stop Sign",
+            "yield to other vehicles"
+        ],
+        "image": null,
+        "answer": "0",
+        "type": "Knowledge",
+        "id": "7304137c-373e-4fb5-a292-24009abc4569"
+    },
+    {
+        "question": "When you approach to a railway crossing and a train is coming, you must:",
+        "options": [
+            "Stop at least 5 m from the nearest rail or gate",
+            "Stop at least 1.5 m from the nearest rail or gate",
+            "Slow down and proceed across the tracks with extreme caution",
+            "Accelerate and cross the tracks as quickly as possible"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "de5a8d51-e1bd-4ce4-ab5c-3f74a8324249"
+    },
+    {
+        "question": "On a two-way roadway with a shared center lane, drivers from either direction can make ______ on the center lane.",
+        "options": [
+            "Right turns",
+            "A pass",
+            "Left turns",
+            "U-turns"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "46fb3376-a767-46ab-b00d-dbe1ffda9914"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Hospital",
+            "Crosswalk for disabled",
+            "intersection",
+            "railroad crossing"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "9e5937aa-4646-424a-b79e-ed5dcc275683"
+    },
+    {
+        "question": "A yellow diamond-shaoped sign usually means",
+        "options": [
+            "warning of a hazard",
+            "Yield right of way",
+            "speed limit",
+            "stop"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "54673f76-6557-4735-85c8-e5c7f28f7119"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "school zone",
+            "watch for pedestrians",
+            "Playground, watch for children",
+            "School crossing"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "The lane is only for two-way left turns",
+            "narrow passage",
+            "right tun lane control",
+            "railway crossing control"
+        ],
+        "image": "link",
+        "answer": "0",
+        "type": "Sign",
+        "id": "8963e575-54c0-4e77-8b27-7bc2a869c5be"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "added lane",
+            "ended duvided highway",
+            "merging traffic",
+            "divided highway ahead"
+        ],
+        "image": "link",
+        "answer": "3",
+        "type": "Sign",
+        "id": "3d20b33f-f6d0-4364-bc54-6956af06fa79"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "curve left",
+            "shar turn to the left",
+            "one way street to yhe left",
+            "keep to the left"
+        ],
+        "image": null,
+        "answer": "3",
+        "type": "Sign",
+        "id": "14bde0f7-d5a4-4490-a6d7-1320c8e153b4"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "road forks to the right",
+            "keep to the right lane except when passing",
+            "the driver in this lane must turn right or go straight ahead",
+            "do no drive through"
+        ],
+        "image": "link",
+        "answer": "2",
+        "type": "Sign",
+        "id": "8709c35d-07f3-4af0-805a-c7db25509707"
+    },
+    {
+        "question": "The hand signal means:",
+        "options": [
+            "stopping or slowing down",
+            "left turn",
+            "right turn",
+            "back up"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "0ad8eb00-f83d-43fa-94b8-403158d0faa5"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "no U-turns",
+            "no left turn",
+            "no right turn",
+            "no parking"
+        ],
+        "image": "link",
+        "answer": null,
+        "type": "Sign",
+        "id": "2e25573c-4887-4a9b-a350-ffc0a3c90db8"
+    },
+    {
+        "question": "What does this sign mean?",
+        "options": [
+            "Railway crossing ahead",
+            "This is a pedestrian crossover",
+            "no Pedestrians",
+            "Pedestrians must yield right-of-way"
+        ],
+        "image": "link",
+        "answer": "1",
+        "type": "Sign",
+        "id": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a"
+    },
+    {
+        "question": "Double solid yellow lines painted down the middle of the road mean",
+        "options": [
+            "Lanes of traffic are moving in opposite directions and drivers should not pass",
+            "Lanes of traffic are moving in opposite directions and drivers are permitted to pass when it is safe to do so",
+            "Lanes of traffic are moving in the same direction and drivers should not pass",
+            "Lanes of traffic are moving in the same direction and drivers are permitted to pass when it is safe to do so."
+        ],
+        "image": "link",
+        "answer": "2",
+        "type": "Sign",
+        "id": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd"
+    },
+    {
+        "question": "When parked facing uphill with a curb:",
+        "options": [
+            "Turn the steering wheel to the left",
+            "The front wheels must be parallel to the curb",
+            "Turn the steering wheel to the right",
+            "The direction of the wheels doesn't matter as long as the parking brake is set"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "920f1531-df2a-4ca8-8d61-118b6e021668"
+    },
+    {
+        "question": "When turning left from a one-way road to another one-way road you must:",
+        "options": [
+            "Turn from the right curb lane to the right curb lane",
+            "Turn from the right curb lane to the left curb lane",
+            "Turn from the left curb lane to the left curb lane",
+            "Turn from the left curb lane to the right curb lane"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "31a30672-33c1-4a17-ad5d-90f019648ef6"
+    },
+    {
+        "question": "Driving impaired or with BAC more than _____  is an offence under the than Criminal Code.",
+        "options": [
+            "0.02",
+            "0.05",
+            "0.08",
+            "0.1"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "86e3a5a7-23e0-4a56-9a5b-96bc6a28216f"
+    },
+    {
+        "question": "A driver may park in a space reserved for people with disabilities:",
+        "options": [
+            "Only if the driver is disabled",
+            "If someone in the driver's immediate family is disabled",
+            "If an Accessible Parking Permit is displayed in the windshield of the vehicle and the permit belongs to the driver or one of passengers",
+            "For a short time regardless of who is in the vehicle"
+        ],
+        "image": "link",
+        "answer": null,
+        "type": "Knowledge",
+        "id": "212dc75c-70c7-4b34-907b-c7266cbc61f1"
+    },
+    {
+        "question": "After you have passed a car you should return to the right lane when you",
+        "options": [
+            "See the entire front of the vehicle you are passing in your inside mirror",
+            "Have put your turn signal on.",
+            "Have turned your headlights on.",
+            "Tap your horn to alert the driver been passed"
+        ],
+        "image": null,
+        "answer": "0",
+        "type": "Knowledge",
+        "id": "ca38dc27-9bb9-43bb-832c-fc84160c59ba"
+    },
+    {
+        "question": "Which lights should you use when you are driving in a fog?",
+        "options": [
+            "Parking lights",
+            "High beam headlights",
+            "Low beam headlights",
+            "Fog lights only"
+        ],
+        "image": null,
+        "answer": "2",
+        "type": "Knowledge",
+        "id": "92e8cedb-f2c9-431c-a394-a91520e105d5"
+    },
+    {
+        "question": "Never change lanes in traffic without:",
+        "options": [
+            "Looking in the rear view mirror only.",
+            "Giving proper signal and looking to make sure the move can be made safely.",
+            "Blowing your horn and looking to the rear.",
+            "Decreasing speed and giving correct signal."
+        ],
+        "image": null,
+        "answer": "1",
+        "type": "Knowledge",
+        "id": "2868fa67-8072-434f-8575-1b952a4533cb"
+    },
+    {
+        "question": "What signal at an intersection would be treated the same as a stop sign?",
+        "options": [
+            "A flashing yellow light",
+            "A flashing green light",
+            "A flashing red light",
+            "A steady yellow light"
+        ],
+        "image": "link",
+        "answer": null,
+        "type": "Knowledge",
+        "id": "b7b7e3cb-4699-42e5-8922-9c4a241c76e2"
+    },
+    {
+        "question": "As you approach a curve, you should",
+        "options": [
+            "Stop before entering",
+            "Slam on your brakes",
+            "Slow down before the start of the curve",
+            "Speed up"
+        ],
+        "image": null,
+        "answer": "2",
+        "type": "Knowledge",
+        "id": "d0e0190c-7268-48a7-baca-8c0cbc84951e"
+    },
+    {
+        "question": "If a fully-licensed driver reaches 15 demerit points for the first time, his or her license will be:",
+        "options": [
+            "Suspended for 30 days",
+            "Suspended for 15 days",
+            "Suspended for 7 days",
+            "Suspended for 6 months"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "a2643b18-50a3-42ca-b7f2-ddb6a1483f7e"
+    },
+    {
+        "question": "When you are being passed",
+        "options": [
+            "You should move to the left and let it pass in safety",
+            "You should brake hard to reduce your speed",
+            "You should speed up",
+            "You should move to the right and let it pass in safety"
+        ],
+        "image": null,
+        "answer": "3",
+        "type": "Knowledge",
+        "id": "95ceb1b8-47c3-49f0-ab0b-032b289db22c"
+    },
+    {
+        "question": "The car behind you begins to pass you. You should",
+        "options": [
+            "Increase your speed so traffic will flow smoothly.",
+            "Pull to the right and stop so he can pass.",
+            "Do not increase your speed and stay in your lane",
+            "Blow your horn to allow him to pass."
+        ],
+        "image": null,
+        "answer": "1",
+        "type": "Knowledge",
+        "id": "7c084cd9-dd26-4c2a-81b5-d29c1a8f1f08"
+    },
+    {
+        "question": "Using the shoulder of the road to pass to the right of a car",
+        "options": [
+            "is permitted if the car ahead is waiting to turn left and the shoulder is paved",
+            "is always not allowed",
+            "is permitted if you are turning right at the next corner.",
+            "is permitted if it is safe to do so"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "838483fd-85fe-45da-a2d4-de603b03c338"
+    },
+    {
+        "question": "You may drive around or under a gate that is being lowered at a railroad crossing:",
+        "options": [
+            "You may drive around or under a gate that is being lowered at a railroad crossing:",
+            "If your vehicle can do so without damaging the gate.",
+            "If you first look carefully in both directions.",
+            "Under no circumstances."
+        ],
+        "image": "link",
+        "answer": null,
+        "type": "Knowledge",
+        "id": "6a7957ff-75d8-4a67-8a44-6926e52c7cb3"
+    },
+    {
+        "question": "When may drivers pass on the right shoulder?",
+        "options": [
+            "Never",
+            "Only when passing a vehicle turning left and only if the right shoulder is paved",
+            "At any time",
+            "At any time a vehicle is turning left, even if the right shoulder is unpaved"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "5efe3bde-b0a6-43b5-bf60-f68cd8907d70"
+    },
+    {
+        "question": "When a large vehicle that swings left before turning right at an intersection becomes dangerous for drivers who",
+        "options": [
+            "look over their left shoulder to check the blind spot",
+            "try to squeeze between the large vehicle and the curb",
+            "follow the large vehicle by four second following rule",
+            "stay well back waiting for the large vehicle to clear the lane"
+        ],
+        "image": null,
+        "answer": "1",
+        "type": "Knowledge",
+        "id": "0e677925-65a7-46e5-b913-0a9cc37ec5d5"
+    },
+    {
+        "question": "When following a vehicle at night, lower your high-beam headlights when you are within:",
+        "options": [
+            "300 metres",
+            "100 metres",
+            "60 metres",
+            "150 metres"
+        ],
+        "image": null,
+        "answer": "3",
+        "type": "Knowledge",
+        "id": "1816cccb-d894-4236-8d3a-5f6a21904cca"
+    },
+    {
+        "question": "When passing a cyclist, drivers of motor vehicles must maintain a minimum distance of _______ ., where practical between their vehicle and the cyclist.",
+        "options": [
+            "0.5 metre",
+            "1 metre",
+            "3 metres",
+            "2 metres"
+        ],
+        "image": null,
+        "answer": null,
+        "type": "Knowledge",
+        "id": "99d78e60-bb6b-4d51-a988-61d1fdb0f430"
+    }
+]
