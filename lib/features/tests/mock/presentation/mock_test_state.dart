@@ -5,6 +5,7 @@ import 'package:equatable/equatable.dart';
 import '../../core/domain/question_model.dart';
 
 abstract class MockTestState extends Equatable {
+  
   const MockTestState();
 
   @override

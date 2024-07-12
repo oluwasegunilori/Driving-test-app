@@ -1,6 +1,7 @@
 // mock_test_bloc.dart
 import 'dart:collection';
 
+import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
 import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -12,6 +13,7 @@ import 'mock_test_state.dart';
 class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
   final CalculateMockTestScore calculateMockTestScore;
   final QuestionsRepository questionsRepository;
+  QuestionType? _questionType;
   MockTestBloc(
       {required this.calculateMockTestScore, required this.questionsRepository})
       : super(TestInitial()) {
@@ -71,10 +73,14 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
     on<LoadTestEvent>((event, emit) {
       resetQuestions();
     });
+    on<SetQuestionType>((event, emit) {
+      _questionType = event.questionType;
+    });
   }
 
   void resetQuestions() async {
-    List<QuestionModel> questions = await questionsRepository.getQuestions();
+    List<QuestionModel> questions =
+        await questionsRepository.getQuestions(type: _questionType);
     emit(TestLoaded(
         questions: questions,
         answers: const {},

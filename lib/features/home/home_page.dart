@@ -1,11 +1,14 @@
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -86,6 +89,8 @@ class HomePageScreen extends StatelessWidget {
                         bodyTitle:
                             "Test your knowledge and\ntrack your progress"),
                     clicked: () => {
+                          BlocProvider.of<MockTestBloc>(context)
+                              .add(const SetQuestionType(questionType: null)),
                           context.push(ScreenRoutes.mockTestOptions().route,
                               extra: user)
                         }),

@@ -1,6 +1,10 @@
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -133,11 +137,18 @@ class LearnTestOptions extends StatelessWidget {
                 right: 15),
             child: Column(
               children: [
-                mockTestOptionCard(
-                    context, "Knowledge test", MdiIcons.book, () {}),
+                mockTestOptionCard(context, "Knowledge test", MdiIcons.book,
+                    () {
+                  BlocProvider.of<MockTestBloc>(context).add(
+                      const SetQuestionType(
+                          questionType: QuestionType.Knowledge));
+                }),
                 verticalSpace(15),
-                mockTestOptionCard(
-                    context, "Road sign test", MdiIcons.road, () {}),
+                mockTestOptionCard(context, "Road sign test", MdiIcons.road,
+                    () {
+                  BlocProvider.of<MockTestBloc>(context).add(
+                      const SetQuestionType(questionType: QuestionType.Sign));
+                }),
               ],
             ),
           ),
