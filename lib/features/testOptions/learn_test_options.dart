@@ -1,3 +1,4 @@
+import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
@@ -142,12 +143,14 @@ class LearnTestOptions extends StatelessWidget {
                   BlocProvider.of<MockTestBloc>(context).add(
                       const SetQuestionType(
                           questionType: QuestionType.Knowledge));
+                  context.push(ScreenRoutes.testDescription().route);
                 }),
                 verticalSpace(15),
                 mockTestOptionCard(context, "Road sign test", MdiIcons.road,
                     () {
                   BlocProvider.of<MockTestBloc>(context).add(
                       const SetQuestionType(questionType: QuestionType.Sign));
+                  context.push(ScreenRoutes.testDescription().route);
                 }),
               ],
             ),
