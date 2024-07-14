@@ -17,6 +17,8 @@ class MockTestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double imageHeight = MediaQuery.of(context).size.height * 0.27;
+    String? currentTestType =
+        BlocProvider.of<MockTestBloc>(context).getCurrentTestType();
     return BlocBuilder<MockTestBloc, MockTestState>(
       builder: (context, state) {
         return Scaffold(
@@ -78,7 +80,7 @@ class MockTestScreen extends StatelessWidget {
                                   ),
                                   horizontalSpace(10),
                                   Text(
-                                    'Mock Test',
+                                    currentTestType ?? "Mock Test",
                                     style: titleMedium(context)
                                         .copyWith(color: Colors.white),
                                   )
@@ -184,12 +186,12 @@ class MockTestScreen extends StatelessWidget {
                         Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal:
-                                  MediaQuery.of(context).size.width * 0.2),
+                                  MediaQuery.of(context).size.width * 0.02),
                           child: Center(
                             child: Text(
                               state.getCurrentQuestion().question,
-                              style: titleLarge(context,
-                                  fontWeight: FontWeight.w600),
+                              style: titleMedium(context,
+                                  fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ),

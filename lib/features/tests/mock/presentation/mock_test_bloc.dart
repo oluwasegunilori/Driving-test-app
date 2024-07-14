@@ -75,6 +75,10 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
     });
     on<SetQuestionType>((event, emit) {
       _questionType = event.questionType;
+      resetQuestions();
+    });
+    on<ClearStateEvent>((event, emit) {
+      resetQuestions();
     });
   }
 
@@ -90,5 +94,12 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
 
   bool isMock() {
     return _questionType == null;
+  }
+
+  String? getCurrentTestType() {
+    if (_questionType != null) {
+      return _questionType!.name;
+    }
+    return null;
   }
 }

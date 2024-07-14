@@ -135,7 +135,7 @@ class MockTestOptionsScreen extends StatelessWidget {
             child: Column(
               children: [
                 mockTestOptionCard(context, "G1 test", MdiIcons.book, () {
-                  context.push(ScreenRoutes.testDescription().route);
+                  context.push(ScreenRoutes.mockTest().route);
                 }),
                 verticalSpace(15),
                 mockTestOptionCard(

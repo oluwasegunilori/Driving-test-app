@@ -143,14 +143,14 @@ class LearnTestOptions extends StatelessWidget {
                   BlocProvider.of<MockTestBloc>(context).add(
                       const SetQuestionType(
                           questionType: QuestionType.Knowledge));
-                  context.push(ScreenRoutes.testDescription().route);
+                  context.push(ScreenRoutes.mockTest().route);
                 }),
                 verticalSpace(15),
                 mockTestOptionCard(context, "Road sign test", MdiIcons.road,
                     () {
                   BlocProvider.of<MockTestBloc>(context).add(
                       const SetQuestionType(questionType: QuestionType.Sign));
-                  context.push(ScreenRoutes.testDescription().route);
+                  context.push(ScreenRoutes.mockTest().route);
                 }),
               ],
             ),
