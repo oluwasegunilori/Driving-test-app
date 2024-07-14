@@ -4,6 +4,7 @@ import 'dart:collection';
 import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
 import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
+import 'package:dri_learn/features/tests/mock/presentation/utils/test_ui_utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../core/domain/answer_model.dart';
 import '../../core/domain/question_model.dart';
@@ -45,8 +46,9 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
             ));
             if (event.goToNextQuestion && currentState.isOnLastQuestion()) {
               //Answer all answered
-              int score = calculateMockTestScore.call(currentState.answers);
-              emit(currentState.copyWith(score: score));
+              TestScoreInfo info =
+                  calculateMockTestScore.call(currentState.answers);
+              emit(currentState.copyWith(testScoreInfo: info));
             }
           }
         }
@@ -89,7 +91,8 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
         questions: questions,
         answers: const {},
         currentPosition: 0,
-        viewMode: false));
+        viewMode: false,
+        info: TestScoreInfo(score: 0, grade: Grade.Excellent)));
   }
 
   bool isMock() {
