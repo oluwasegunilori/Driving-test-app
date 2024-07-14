@@ -87,4 +87,8 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
         currentPosition: 0,
         viewMode: false));
   }
+
+  bool isMock() {
+    return _questionType == null;
+  }
 }

@@ -2,6 +2,7 @@ import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/tests/core/data/repository/questions_repository_impl.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,7 @@ class TestDescripScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double imageHeight = MediaQuery.of(context).size.height * 0.35;
+    bool isMock = BlocProvider.of<MockTestBloc>(context).isMock();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(bottom: 10),
@@ -108,7 +110,9 @@ class TestDescripScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 40, vertical: 6),
                         child: Text(
-                          "20 Questions",
+                          isMock
+                              ? "$questionLength Questions"
+                              : "$knowSignLength Questions",
                           style: titleMedium(context).copyWith(
                               color: Theme.of(context).colorScheme.primary,
                               fontWeight: FontWeight.w600),
