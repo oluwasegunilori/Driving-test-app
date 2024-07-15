@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:dri_learn/features/tests/core/domain/question_model.dart';
-import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/question_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/question_type_model.dart';
 import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:flutter/services.dart' show rootBundle;
 

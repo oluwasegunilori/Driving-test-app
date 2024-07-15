@@ -1,5 +1,5 @@
-import 'package:dri_learn/features/tests/core/domain/answer_model.dart';
-import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/question_type_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class MockTestEvent extends Equatable {

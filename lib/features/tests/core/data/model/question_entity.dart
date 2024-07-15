@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:floor/floor.dart';
 
-import '../../domain/question_type_model.dart';
+import '../../domain/model/question_type_model.dart';
 import '../converters/string_list_converter.dart';
 
 const questionTable = "question_table";

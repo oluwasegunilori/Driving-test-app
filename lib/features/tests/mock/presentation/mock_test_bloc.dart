@@ -1,13 +1,13 @@
 // mock_test_bloc.dart
 import 'dart:collection';
 
-import 'package:dri_learn/features/tests/core/domain/question_type_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/question_type_model.dart';
 import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
 import 'package:dri_learn/features/tests/mock/presentation/utils/test_ui_utils.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../core/domain/answer_model.dart';
-import '../../core/domain/question_model.dart';
+import '../../core/domain/model/answer_model.dart';
+import '../../core/domain/model/question_model.dart';
 import 'mock_test_event.dart';
 import 'mock_test_state.dart';
 

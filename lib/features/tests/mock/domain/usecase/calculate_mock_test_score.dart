@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/tests/core/domain/answer_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
 import 'package:dri_learn/features/tests/mock/presentation/utils/test_ui_utils.dart';
 
 class TestScoreInfo {
