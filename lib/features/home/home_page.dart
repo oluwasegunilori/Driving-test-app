@@ -3,11 +3,7 @@ import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -22,11 +18,6 @@ class HomePageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(MdiIcons.menu),
-          color: Theme.of(context).colorScheme.primary,
-        ),
         actions: [
           Card(
             color: Theme.of(context).colorScheme.surface,
@@ -46,8 +37,8 @@ class HomePageScreen extends StatelessWidget {
                   ),
                   horizontalSpace(7),
                   Container(
-                    width: 40,
-                    height: 40,
+                    width: 30,
+                    height: 30,
                     decoration: BoxDecoration(
                         color: Theme.of(context).colorScheme.onBackground,
                         shape: BoxShape.circle),
@@ -125,6 +116,51 @@ class HomePageScreen extends StatelessWidget {
           ],
           enableFeedback: true,
         ),
+      ),
+      drawer: drawer(context),
+    );
+  }
+
+  Drawer drawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          const DrawerHeader(
+            child: Text(
+              '',
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+          ),
+          ListTile(
+            leading: const Icon(Icons.grass_sharp),
+            title: const Text('History'),
+            onTap: () {
+              Navigator.pop(context);
+              // Handle navigation to Home
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
+          ListTile(
+            leading: const Icon(Icons.trending_up_rounded),
+            title: const Text('Statistics'),
+            onTap: () {
+              Navigator.pop(context);
+              // Handle navigation to Settings
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
+          ListTile(
+            leading: const Icon(Icons.book_rounded),
+            title: const Text('G1 Mock Test'),
+            onTap: () {
+              Navigator.pop(context);
+              context.push(ScreenRoutes.mockTest().route);
+              // Handle navigation to Settings
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
+        ],
       ),
     );
   }
