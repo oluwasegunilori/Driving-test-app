@@ -136,8 +136,8 @@ class HomePageScreen extends StatelessWidget {
             leading: const Icon(Icons.grass_sharp),
             title: const Text('History'),
             onTap: () {
-              Navigator.pop(context);
-              // Handle navigation to Home
+              Navigator.of(context).pop();
+              context.push(ScreenRoutes.testHistory().route, extra: user);
             },
             iconColor: Theme.of(context).colorScheme.primary,
           ),

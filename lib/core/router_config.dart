@@ -1,6 +1,7 @@
 import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
+import 'package:dri_learn/features/history/presentation/history_screen.dart';
 import 'package:dri_learn/features/home/home_page.dart';
 import 'package:dri_learn/features/provinceSelector/presentation/province_screen.dart';
 import 'package:dri_learn/features/testOptions/learn_test_options.dart';
@@ -88,6 +89,12 @@ final GoRouter appRouter = GoRouter(
         return const TestComplete();
       },
     ),
+    GoRoute(
+      path: ScreenRoutes.testHistory().route,
+      builder: (BuildContext context, GoRouterState state) {
+        return HistoryScreen(user: state.extra as User);
+      },
+    ),
   ],
 );
 
@@ -102,6 +109,7 @@ sealed class ScreenRoutes {
   factory ScreenRoutes.testDescription() = TestDescription;
   factory ScreenRoutes.mockTest() = MockTestScreenRoute;
   factory ScreenRoutes.testComplete() = TestCompleteRoute;
+  factory ScreenRoutes.testHistory() = TestHistoryRoute;
 
   String home = "/";
 }
@@ -144,4 +152,9 @@ class MockTestScreenRoute extends ScreenRoutes {
 class TestCompleteRoute extends ScreenRoutes {
   @override
   String get route => "/testcomplete";
+}
+
+class TestHistoryRoute extends ScreenRoutes {
+  @override
+  String get route => "/testhistory";
 }
