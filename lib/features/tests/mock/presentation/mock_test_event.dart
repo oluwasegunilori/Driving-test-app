@@ -1,5 +1,6 @@
 import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
 import 'package:dri_learn/features/tests/core/domain/model/question_type_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class MockTestEvent extends Equatable {
@@ -25,10 +26,10 @@ class PreviousQuestEvent extends MockTestEvent {}
 
 class SetViewModeEvent extends MockTestEvent {}
 
-class SetQuestionType extends MockTestEvent {
-  final QuestionType? questionType;
+class SetTestType extends MockTestEvent {
+  final TestType? testType;
 
-  const SetQuestionType({required this.questionType});
+  const SetTestType({required this.testType});
 }
 
 class ClearStateEvent extends MockTestEvent {

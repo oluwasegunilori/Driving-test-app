@@ -2,6 +2,7 @@ import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/tests/core/domain/model/question_type_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/material.dart';
@@ -140,16 +141,15 @@ class LearnTestOptions extends StatelessWidget {
               children: [
                 mockTestOptionCard(context, "Knowledge test", MdiIcons.book,
                     () {
-                  BlocProvider.of<MockTestBloc>(context).add(
-                      const SetQuestionType(
-                          questionType: QuestionType.Knowledge));
+                  BlocProvider.of<MockTestBloc>(context)
+                      .add(const SetTestType(testType: TestType.Knowledge));
                   context.push(ScreenRoutes.mockTest().route);
                 }),
                 verticalSpace(15),
                 mockTestOptionCard(context, "Road sign test", MdiIcons.road,
                     () {
-                  BlocProvider.of<MockTestBloc>(context).add(
-                      const SetQuestionType(questionType: QuestionType.Sign));
+                  BlocProvider.of<MockTestBloc>(context)
+                      .add(const SetTestType(testType: TestType.Sign));
                   context.push(ScreenRoutes.mockTest().route);
                 }),
               ],

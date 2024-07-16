@@ -1,6 +1,7 @@
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +82,7 @@ class HomePageScreen extends StatelessWidget {
                             "Test your knowledge and\ntrack your progress"),
                     clicked: () => {
                           BlocProvider.of<MockTestBloc>(context)
-                              .add(const SetQuestionType(questionType: null)),
+                              .add(const SetTestType(testType: TestType.MockTest)),
                           context.push(ScreenRoutes.mockTestOptions().route,
                               extra: user)
                         }),
