@@ -1,3 +1,4 @@
+import 'package:dri_learn/features/history/data/model/test_history_entity.dart';
 import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:equatable/equatable.dart';
 
@@ -15,4 +16,15 @@ class TestHistoryModel extends Equatable {
 
   @override
   List<Object?> get props => [id, missedQuestionIds, scoreRate, numberOfQuestions, noOfCorrectAnswers, testType, date];
+
+  TestHistoryEntity fromDomain() {
+    return TestHistoryEntity(
+        id: id,
+        missedQuestionIds: missedQuestionIds,
+        scoreRate: scoreRate,
+        numberOfQuestions: numberOfQuestions,
+        noOfCorrectAnswers: noOfCorrectAnswers,
+        testType: testType,
+        date: date.millisecondsSinceEpoch);
+  }
 }

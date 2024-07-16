@@ -74,6 +74,8 @@ class _$AppDatabase extends AppDatabase {
 
   QuestionDao? _questionDaoInstance;
 
+  TestHistoryDao? _testHistoryDaoInstance;
+
   Future<sqflite.Database> open(
     String path,
     List<Migration> migrations, [
@@ -97,6 +99,8 @@ class _$AppDatabase extends AppDatabase {
       onCreate: (database, version) async {
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `question_table` (`id` TEXT NOT NULL, `question` TEXT NOT NULL, `options` TEXT NOT NULL, `image` TEXT, `answer` INTEGER NOT NULL, `question_type` INTEGER NOT NULL, PRIMARY KEY (`id`))');
+        await database.execute(
+            'CREATE TABLE IF NOT EXISTS `test_history_table` (`id` TEXT PRIMARY KEY AUTOINCREMENT NOT NULL, `missed_question_ids` TEXT NOT NULL, `score_rate` REAL NOT NULL, `no_of_questions` INTEGER NOT NULL, `no_of_correct_answers` INTEGER NOT NULL, `test_type` INTEGER NOT NULL, `date` INTEGER NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -107,6 +111,12 @@ class _$AppDatabase extends AppDatabase {
   @override
   QuestionDao get questionDao {
     return _questionDaoInstance ??= _$QuestionDao(database, changeListener);
+  }
+
+  @override
+  TestHistoryDao get testHistoryDao {
+    return _testHistoryDaoInstance ??=
+        _$TestHistoryDao(database, changeListener);
   }
 }
 
@@ -151,6 +161,54 @@ class _$QuestionDao extends QuestionDao {
   Future<void> insertQuestion(QuestionEntity question) async {
     await _questionEntityInsertionAdapter.insert(
         question, OnConflictStrategy.abort);
+  }
+}
+
+class _$TestHistoryDao extends TestHistoryDao {
+  _$TestHistoryDao(
+    this.database,
+    this.changeListener,
+  )   : _queryAdapter = QueryAdapter(database),
+        _testHistoryEntityInsertionAdapter = InsertionAdapter(
+            database,
+            'test_history_table',
+            (TestHistoryEntity item) => <String, Object?>{
+                  'id': item.id,
+                  'missed_question_ids':
+                      _stringListConverter.encode(item.missedQuestionIds),
+                  'score_rate': item.scoreRate,
+                  'no_of_questions': item.numberOfQuestions,
+                  'no_of_correct_answers': item.noOfCorrectAnswers,
+                  'test_type': item.testType.index,
+                  'date': item.date
+                });
+
+  final sqflite.DatabaseExecutor database;
+
+  final StreamController<String> changeListener;
+
+  final QueryAdapter _queryAdapter;
+
+  final InsertionAdapter<TestHistoryEntity> _testHistoryEntityInsertionAdapter;
+
+  @override
+  Future<List<TestHistoryEntity>> findAllTests() async {
+    return _queryAdapter.queryList('SELECT * FROM test_history_table',
+        mapper: (Map<String, Object?> row) => TestHistoryEntity(
+            id: row['id'] as String,
+            missedQuestionIds: _stringListConverter
+                .decode(row['missed_question_ids'] as String),
+            scoreRate: row['score_rate'] as double,
+            numberOfQuestions: row['no_of_questions'] as int,
+            noOfCorrectAnswers: row['no_of_correct_answers'] as int,
+            testType: TestType.values[row['test_type'] as int],
+            date: row['date'] as int));
+  }
+
+  @override
+  Future<void> insertData(TestHistoryEntity entity) async {
+    await _testHistoryEntityInsertionAdapter.insert(
+        entity, OnConflictStrategy.abort);
   }
 }
 

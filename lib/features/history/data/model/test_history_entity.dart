@@ -1,3 +1,4 @@
+import 'package:dri_learn/features/history/domain/model/test_history_model.dart';
 import 'package:dri_learn/features/tests/core/data/converters/string_list_converter.dart';
 import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:equatable/equatable.dart';
@@ -20,7 +21,7 @@ class TestHistoryEntity extends Equatable {
   final int noOfCorrectAnswers;
   @ColumnInfo(name: "test_type")
   final TestType testType;
-  final DateTime date;
+  final int date;
 
   const TestHistoryEntity(
       {required this.id,
@@ -41,4 +42,17 @@ class TestHistoryEntity extends Equatable {
         testType,
         date
       ];
+
+  DateTime get eventDate => DateTime.fromMillisecondsSinceEpoch(date);
+
+  TestHistoryModel toDomain() {
+    return TestHistoryModel(
+        id: id,
+        missedQuestionIds: missedQuestionIds,
+        scoreRate: scoreRate,
+        numberOfQuestions: numberOfQuestions,
+        noOfCorrectAnswers: noOfCorrectAnswers,
+        testType: testType,
+        date: eventDate);
+  }
 }

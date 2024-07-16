@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:dri_learn/core/data/local/local_data_source.dart';
 import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
+import 'package:dri_learn/features/history/domain/model/test_history_model.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
 class LocalDataSourceImpl extends LocalDataSource {
@@ -23,5 +24,10 @@ class LocalDataSourceImpl extends LocalDataSource {
   @override
   Future<void> setCurrentUser(User user) async {
     _pfDb.setString(userKey, json.encode(user.toJson()));
+  }
+
+  @override
+  Future<void> saveTestScore(TestHistoryModel testHistory) async {
+      
   }
 }
