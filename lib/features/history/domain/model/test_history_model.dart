@@ -17,7 +17,7 @@ class TestHistoryModel extends Equatable {
   @override
   List<Object?> get props => [id, missedQuestionIds, scoreRate, numberOfQuestions, noOfCorrectAnswers, testType, date];
 
-  TestHistoryEntity fromDomain() {
+  TestHistoryEntity toEntity() {
     return TestHistoryEntity(
         id: id,
         missedQuestionIds: missedQuestionIds,

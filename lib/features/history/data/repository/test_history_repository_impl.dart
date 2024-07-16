@@ -8,5 +8,7 @@ class TestHistoryRepositoryImpl extends TestHistoryRepository {
   TestHistoryRepositoryImpl(this._localDataSource);
 
   @override
-  Future<void> saveTest(TestHistoryModel testHistoy) async {}
+  Future<void> saveTest(TestHistoryModel testHistory) async {
+    _localDataSource.saveTestScore(testHistory);
+  }
 }

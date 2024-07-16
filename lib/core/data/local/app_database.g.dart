@@ -206,6 +206,22 @@ class _$TestHistoryDao extends TestHistoryDao {
   }
 
   @override
+  Future<List<TestHistoryEntity>> getAllUniqueTest(TestType testType) async {
+    return _queryAdapter.queryList(
+        'SELECT * FROM test_history_table WHERE testType = ?1',
+        mapper: (Map<String, Object?> row) => TestHistoryEntity(
+            id: row['id'] as String,
+            missedQuestionIds: _stringListConverter
+                .decode(row['missed_question_ids'] as String),
+            scoreRate: row['score_rate'] as double,
+            numberOfQuestions: row['no_of_questions'] as int,
+            noOfCorrectAnswers: row['no_of_correct_answers'] as int,
+            testType: _testTypeConverter.decode(row['test_type'] as String),
+            date: row['date'] as int),
+        arguments: [_testTypeConverter.encode(testType)]);
+  }
+
+  @override
   Future<void> insertData(TestHistoryEntity entity) async {
     await _testHistoryEntityInsertionAdapter.insert(
         entity, OnConflictStrategy.abort);

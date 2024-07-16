@@ -36,10 +36,10 @@ Future<void> init() async {
 
   //Local database
   final shPf = await StreamingSharedPreferences.instance;
-  sl.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl(shPf));
-
   final floorDb =
       await $FloorAppDatabase.databaseBuilder('app_database.db').build();
+  sl.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl(shPf, floorDb.testHistoryDao));
+
 
   //repositories
   sl.registerFactory<AuthRepository>(() => AuthRepositoryImpl());
