@@ -16,7 +16,7 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
     final List<dynamic> data = await json.decode(response);
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
-    if (type != null) {
+    if (type != TestType.MockTest) {
       return dataList
           .where((item) => item.testType == type)
           .take(knowSignLength)

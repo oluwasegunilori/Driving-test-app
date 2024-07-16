@@ -17,7 +17,7 @@ class MockTestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double imageHeight = MediaQuery.of(context).size.height * 0.27;
-    String? currentTestType =
+    String currentTestType =
         BlocProvider.of<MockTestBloc>(context).getCurrentTestType();
     return BlocBuilder<MockTestBloc, MockTestState>(
       builder: (context, state) {

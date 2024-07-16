@@ -27,7 +27,7 @@ class PreviousQuestEvent extends MockTestEvent {}
 class SetViewModeEvent extends MockTestEvent {}
 
 class SetTestType extends MockTestEvent {
-  final TestType? testType;
+  final TestType testType;
 
   const SetTestType({required this.testType});
 }

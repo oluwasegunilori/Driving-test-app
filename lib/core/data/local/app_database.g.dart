@@ -100,7 +100,7 @@ class _$AppDatabase extends AppDatabase {
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `question_table` (`id` TEXT NOT NULL, `question` TEXT NOT NULL, `options` TEXT NOT NULL, `image` TEXT, `answer` INTEGER NOT NULL, `question_type` INTEGER NOT NULL, PRIMARY KEY (`id`))');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `test_history_table` (`id` TEXT PRIMARY KEY AUTOINCREMENT NOT NULL, `missed_question_ids` TEXT NOT NULL, `score_rate` REAL NOT NULL, `no_of_questions` INTEGER NOT NULL, `no_of_correct_answers` INTEGER NOT NULL, `test_type` INTEGER NOT NULL, `date` INTEGER NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `test_history_table` (`id` TEXT PRIMARY KEY AUTOINCREMENT NOT NULL, `missed_question_ids` TEXT NOT NULL, `score_rate` REAL NOT NULL, `no_of_questions` INTEGER NOT NULL, `no_of_correct_answers` INTEGER NOT NULL, `test_type` TEXT NOT NULL, `date` INTEGER NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -179,7 +179,7 @@ class _$TestHistoryDao extends TestHistoryDao {
                   'score_rate': item.scoreRate,
                   'no_of_questions': item.numberOfQuestions,
                   'no_of_correct_answers': item.noOfCorrectAnswers,
-                  'test_type': item.testType.index,
+                  'test_type': _testTypeConverter.encode(item.testType),
                   'date': item.date
                 });
 
@@ -201,7 +201,7 @@ class _$TestHistoryDao extends TestHistoryDao {
             scoreRate: row['score_rate'] as double,
             numberOfQuestions: row['no_of_questions'] as int,
             noOfCorrectAnswers: row['no_of_correct_answers'] as int,
-            testType: TestType.values[row['test_type'] as int],
+            testType: _testTypeConverter.decode(row['test_type'] as String),
             date: row['date'] as int));
   }
 
@@ -214,3 +214,4 @@ class _$TestHistoryDao extends TestHistoryDao {
 
 // ignore_for_file: unused_element
 final _stringListConverter = StringListConverter();
+final _testTypeConverter = TestTypeConverter();

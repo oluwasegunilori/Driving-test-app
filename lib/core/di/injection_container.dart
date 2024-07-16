@@ -47,7 +47,8 @@ Future<void> init() async {
       () => ProvinceRepositoryImpl(remoteDataSource: sl.call()));
   sl.registerFactory<UserRepository>(() => UserRepositoryImpl(sl.call()));
   sl.registerFactory<QuestionsRepository>(() => QuestionsRepositoryImpl());
-  sl.registerFactory<TestHistoryRepository>(() => TestHistoryRepositoryImpl(sl.call()));
+  sl.registerFactory<TestHistoryRepository>(
+      () => TestHistoryRepositoryImpl(sl.call()));
 
   //usecase
   sl.registerFactory<GoogleSignInUseCase>(() => GoogleSignInUseCase(sl.call()));
@@ -63,5 +64,7 @@ Future<void> init() async {
   sl.registerFactory<OnboardingBloc>(() => OnboardingBloc());
   sl.registerFactory<ProvinceBloc>(() => ProvinceBloc(sl.call()));
   sl.registerSingleton<MockTestBloc>((MockTestBloc(
-      calculateMockTestScore: sl.call(), questionsRepository: sl.call())));
+      calculateMockTestScore: sl.call(),
+      questionsRepository: sl.call(),
+      saveTestHistoryUsecase: sl.call())));
 }

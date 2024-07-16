@@ -1,5 +1,6 @@
 // mock_test_bloc.dart
 
+import 'package:dri_learn/features/history/domain/usecase/save_test_history_usecase.dart';
 import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
@@ -13,9 +14,12 @@ import 'mock_test_state.dart';
 class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
   final CalculateMockTestScore calculateMockTestScore;
   final QuestionsRepository questionsRepository;
-  TestType? _testType;
+  final SaveTestHistoryUsecase saveTestHistoryUsecase;
+  TestType _testType = TestType.MockTest;
   MockTestBloc(
-      {required this.calculateMockTestScore, required this.questionsRepository})
+      {required this.calculateMockTestScore,
+      required this.questionsRepository,
+      required this.saveTestHistoryUsecase})
       : super(TestInitial()) {
     resetQuestions();
 
@@ -48,6 +52,7 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
               TestScoreInfo info =
                   calculateMockTestScore.call(currentState.answers);
               emit(currentState.copyWith(testScoreInfo: info));
+              saveTestHistoryUsecase.call(currentState.answers, _testType);
             }
           }
         }
@@ -95,13 +100,10 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
   }
 
   bool isMock() {
-    return _testType == null;
+    return _testType == TestType.MockTest;
   }
 
-  String? getCurrentTestType() {
-    if (_testType != null) {
-      return _testType!.name;
-    }
-    return null;
+  String getCurrentTestType() {
+    return _testType.value;
   }
 }

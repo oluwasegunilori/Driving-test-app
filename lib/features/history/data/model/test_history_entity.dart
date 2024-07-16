@@ -20,6 +20,7 @@ class TestHistoryEntity extends Equatable {
   @ColumnInfo(name: "no_of_correct_answers")
   final int noOfCorrectAnswers;
   @ColumnInfo(name: "test_type")
+  @TypeConverters([TestTypeConverter])
   final TestType testType;
   final int date;
 
