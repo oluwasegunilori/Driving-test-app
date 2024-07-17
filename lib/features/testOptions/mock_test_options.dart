@@ -138,8 +138,8 @@ class MockTestOptionsScreen extends StatelessWidget {
                   context.push(ScreenRoutes.mockTest().route);
                 }),
                 verticalSpace(15),
-                mockTestOptionCard(
-                    context, "G2 simulation", MdiIcons.car, () {}),
+                // mockTestOptionCard(
+                //     context, "G2 simulation", MdiIcons.car, () {}),
               ],
             ),
           ),

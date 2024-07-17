@@ -152,32 +152,32 @@ class MockTestScreen extends StatelessWidget {
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 20, vertical: 6),
-                                  child: Row(
-                                    children: [
-                                      Icon(MdiIcons.television),
-                                      horizontalSpace(5),
-                                      Text(
-                                        "Visual Learning",
-                                        style: titleSmall(context).copyWith(
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                    ],
-                                  ),
+                                  // child: Row(
+                                  //   children: [
+                                  //     Icon(MdiIcons.television),
+                                  //     horizontalSpace(5),
+                                  //     Text(
+                                  //       "Visual Learning",
+                                  //       style: titleSmall(context).copyWith(
+                                  //           fontWeight: FontWeight.w600),
+                                  //     ),
+                                  //   ],
+                                  // ),
                                 ),
                               ),
                               onTap: () {
-                                showModalBottomSheet(
-                                    context: context,
-                                    builder: (context) {
-                                      return Container(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height *
-                                              0.8,
-                                          child:
-                                              const RoadIntersectionWidget());
-                                    },
-                                    isScrollControlled: true);
+                                // showModalBottomSheet(
+                                //     context: context,
+                                //     builder: (context) {
+                                //       return Container(
+                                //           height: MediaQuery.of(context)
+                                //                   .size
+                                //                   .height *
+                                //               0.8,
+                                //           child:
+                                //               const RoadIntersectionWidget());
+                                //     },
+                                //     isScrollControlled: true);
                               },
                             ),
                           ],

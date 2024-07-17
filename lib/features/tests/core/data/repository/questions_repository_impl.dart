@@ -17,12 +17,27 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
     if (type != TestType.MockTest) {
-      return dataList
+      var result = dataList
           .where((item) => item.testType == type)
           .take(knowSignLength)
           .toList();
+      result.shuffle();
+      return result;
+    } else {
+      List<QuestionModel> result = [];
+      var knowledgeList = dataList
+          .where((item) => item.testType == TestType.Knowledge)
+          .take(knowSignLength)
+          .toList();
+      knowledgeList.shuffle();
+      var signList = dataList
+          .where((item) => item.testType == TestType.Sign)
+          .take(knowSignLength)
+          .toList();
+      signList.shuffle();
+      result.addAll(knowledgeList);
+      result.addAll(signList);
+      return result;
     }
-    dataList.shuffle();
-    return dataList.take(questionLength).toList();
   }
 }
