@@ -81,8 +81,8 @@ class HomePageScreen extends StatelessWidget {
                         bodyTitle:
                             "Test your knowledge and\ntrack your progress"),
                     clicked: () => {
-                          BlocProvider.of<MockTestBloc>(context)
-                              .add(const SetTestType(testType: TestType.MockTest)),
+                          BlocProvider.of<MockTestBloc>(context).add(
+                              const SetTestType(testType: TestType.MockTest)),
                           context.push(ScreenRoutes.mockTestOptions().route,
                               extra: user)
                         }),
@@ -155,6 +155,8 @@ class HomePageScreen extends StatelessWidget {
             leading: const Icon(Icons.book_rounded),
             title: const Text('G1 Mock Test'),
             onTap: () {
+              BlocProvider.of<MockTestBloc>(context)
+                  .add(const SetTestType(testType: TestType.MockTest));
               Navigator.pop(context);
               context.push(ScreenRoutes.mockTest().route);
               // Handle navigation to Settings
