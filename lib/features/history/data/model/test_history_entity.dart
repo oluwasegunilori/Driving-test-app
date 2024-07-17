@@ -9,7 +9,7 @@ const String testHistoryTable = "test_history_table";
 @Entity(tableName: testHistoryTable)
 class TestHistoryEntity extends Equatable {
   @PrimaryKey(autoGenerate: true)
-  final int id = 0;
+  int? id;
   @ColumnInfo(name: "missed_question_ids")
   @TypeConverters([StringListConverter])
   final List<String> missedQuestionIds;
@@ -24,7 +24,7 @@ class TestHistoryEntity extends Equatable {
   final TestType testType;
   final int date;
 
-  const TestHistoryEntity(
+  TestHistoryEntity(
       {required this.missedQuestionIds,
       required this.scoreRate,
       required this.numberOfQuestions,
