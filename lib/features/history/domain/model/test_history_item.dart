@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:dri_learn/features/history/domain/model/test_history_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:uuid/uuid.dart';
@@ -20,4 +22,17 @@ class TestHistoryItem extends Equatable {
   @override
   List<Object?> get props =>
       [id, averageScore, testType, description, testHistoryModelList];
+
+  String? lastThree() {
+    if (testHistoryModelList.isEmpty) {
+      return null;
+    } else {
+      var result =
+          testHistoryModelList.sublist(max(0, testHistoryModelList.length - 3));
+      return result
+          .map((e) => "${(e.scoreRate * 100).toInt()}%")
+          .toList()
+          .join(" - ");
+    }
+  }
 }

@@ -13,12 +13,12 @@ class CirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = Theme.of(buildContext).colorScheme.primary
+      ..color = Colors.white
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
 
-    final whitePaint = Paint()
-      ..color = Colors.white
+    final primaryPaint = Paint()
+      ..color = Theme.of(buildContext).colorScheme.primary
       ..style = PaintingStyle.stroke
       ..strokeWidth = strokeWidth;
 
@@ -31,7 +31,7 @@ class CirclePainter extends CustomPainter {
     // Define the starting and ending angle for the white arc
     double startAngle = -pi / 2; // Starting from the top
     double sweepAngle =
-        -2 * pi * (whiteSize.width / 100); // Covering 25% of the circle
+        2 * pi * ((whiteSize.height) / 100); // Covering 25% of the circle
 
     // Draw the white arc over the red circle
     canvas.drawArc(
@@ -39,7 +39,7 @@ class CirclePainter extends CustomPainter {
       startAngle,
       sweepAngle,
       false,
-      whitePaint,
+      primaryPaint,
     );
   }
 

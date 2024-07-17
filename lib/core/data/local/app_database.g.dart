@@ -100,7 +100,7 @@ class _$AppDatabase extends AppDatabase {
         await database.execute(
             'CREATE TABLE IF NOT EXISTS `question_table` (`id` TEXT NOT NULL, `question` TEXT NOT NULL, `options` TEXT NOT NULL, `image` TEXT, `answer` INTEGER NOT NULL, `question_type` INTEGER NOT NULL, PRIMARY KEY (`id`))');
         await database.execute(
-            'CREATE TABLE IF NOT EXISTS `test_history_table` (`id` TEXT PRIMARY KEY AUTOINCREMENT NOT NULL, `missed_question_ids` TEXT NOT NULL, `score_rate` REAL NOT NULL, `no_of_questions` INTEGER NOT NULL, `no_of_correct_answers` INTEGER NOT NULL, `test_type` TEXT NOT NULL, `date` INTEGER NOT NULL)');
+            'CREATE TABLE IF NOT EXISTS `test_history_table` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `missed_question_ids` TEXT NOT NULL, `score_rate` REAL NOT NULL, `no_of_questions` INTEGER NOT NULL, `no_of_correct_answers` INTEGER NOT NULL, `test_type` TEXT NOT NULL, `date` INTEGER NOT NULL)');
 
         await callback?.onCreate?.call(database, version);
       },
@@ -195,7 +195,6 @@ class _$TestHistoryDao extends TestHistoryDao {
   Future<List<TestHistoryEntity>> findAllTests() async {
     return _queryAdapter.queryList('SELECT * FROM test_history_table',
         mapper: (Map<String, Object?> row) => TestHistoryEntity(
-            id: row['id'] as String,
             missedQuestionIds: _stringListConverter
                 .decode(row['missed_question_ids'] as String),
             scoreRate: row['score_rate'] as double,
@@ -210,7 +209,6 @@ class _$TestHistoryDao extends TestHistoryDao {
     return _queryAdapter.queryList(
         'SELECT * FROM test_history_table WHERE testType = ?1',
         mapper: (Map<String, Object?> row) => TestHistoryEntity(
-            id: row['id'] as String,
             missedQuestionIds: _stringListConverter
                 .decode(row['missed_question_ids'] as String),
             scoreRate: row['score_rate'] as double,

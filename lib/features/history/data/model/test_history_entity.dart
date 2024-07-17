@@ -9,7 +9,7 @@ const String testHistoryTable = "test_history_table";
 @Entity(tableName: testHistoryTable)
 class TestHistoryEntity extends Equatable {
   @PrimaryKey(autoGenerate: true)
-  final String id;
+  final int id = 0;
   @ColumnInfo(name: "missed_question_ids")
   @TypeConverters([StringListConverter])
   final List<String> missedQuestionIds;
@@ -25,8 +25,7 @@ class TestHistoryEntity extends Equatable {
   final int date;
 
   const TestHistoryEntity(
-      {required this.id,
-      required this.missedQuestionIds,
+      {required this.missedQuestionIds,
       required this.scoreRate,
       required this.numberOfQuestions,
       required this.noOfCorrectAnswers,
@@ -48,7 +47,7 @@ class TestHistoryEntity extends Equatable {
 
   TestHistoryModel toDomain() {
     return TestHistoryModel(
-        id: id,
+        id: id.toString(),
         missedQuestionIds: missedQuestionIds,
         scoreRate: scoreRate,
         numberOfQuestions: numberOfQuestions,
