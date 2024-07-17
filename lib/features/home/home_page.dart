@@ -143,15 +143,6 @@ class HomePageScreen extends StatelessWidget {
             iconColor: Theme.of(context).colorScheme.primary,
           ),
           ListTile(
-            leading: const Icon(Icons.trending_up_rounded),
-            title: const Text('Statistics'),
-            onTap: () {
-              Navigator.pop(context);
-              // Handle navigation to Settings
-            },
-            iconColor: Theme.of(context).colorScheme.primary,
-          ),
-          ListTile(
             leading: const Icon(Icons.book_rounded),
             title: const Text('G1 Mock Test'),
             onTap: () {
