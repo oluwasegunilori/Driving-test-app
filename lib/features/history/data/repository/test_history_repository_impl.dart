@@ -11,4 +11,9 @@ class TestHistoryRepositoryImpl extends TestHistoryRepository {
   Future<void> saveTest(TestHistoryModel testHistory) async {
     _localDataSource.saveTestScore(testHistory);
   }
+
+  @override
+  Future<List<TestHistoryModel>> getTestHistory() {
+    return _localDataSource.getTests();
+  }
 }

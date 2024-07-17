@@ -2,10 +2,14 @@ import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
+import 'package:dri_learn/features/history/domain/model/test_history_item.dart';
+import 'package:dri_learn/features/history/presentation/bloc/test_history_bloc.dart';
 import 'package:dri_learn/features/history/presentation/circle_painter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import '/core/di/injection_container.dart' as di;
 
 class HistoryScreen extends StatelessWidget {
   final User user;
@@ -13,133 +17,147 @@ class HistoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.surface,
-      body: Column(
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.25,
-            child: Card(
-              margin: const EdgeInsets.all(0),
-              shadowColor: Colors.white,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              child: Stack(
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(
-                        15.0), // Adjust the border radius as needed
-                    child: Image.asset(
-                      "assets/images/onboard_img.jpeg",
-                      fit: BoxFit
-                          .cover, // This makes the image cover the entire area
-                      width: double.infinity,
-                      height: double.infinity,
+    return BlocProvider(
+      create: (context) => di.sl.get<TestHistoryBloc>(),
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        body: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.25,
+              child: Card(
+                margin: const EdgeInsets.all(0),
+                shadowColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                          15.0), // Adjust the border radius as needed
+                      child: Image.asset(
+                        "assets/images/onboard_img.jpeg",
+                        fit: BoxFit
+                            .cover, // This makes the image cover the entire area
+                        width: double.infinity,
+                        height: double.infinity,
+                      ),
                     ),
-                  ),
-                  Container(
-                    color: Colors.black.withOpacity(0.4),
-                  ),
-                  Positioned(
-                      top: 50,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          child: Column(
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  IconButton(
-                                    onPressed: () {
-                                      if (context.canPop()) {
-                                        context.pop();
-                                      }
-                                    },
-                                    icon: Icon(
-                                      MdiIcons.chevronLeft,
-                                      size: 26,
+                    Container(
+                      color: Colors.black.withOpacity(0.4),
+                    ),
+                    Positioned(
+                        top: 50,
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: SizedBox(
+                            width: MediaQuery.of(context).size.width,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {
+                                        if (context.canPop()) {
+                                          context.pop();
+                                        }
+                                      },
+                                      icon: Icon(
+                                        MdiIcons.chevronLeft,
+                                        size: 26,
+                                      ),
+                                      color: Theme.of(context).primaryColor,
                                     ),
-                                    color: Theme.of(context).primaryColor,
-                                  ),
-                                  Card(
-                                    color:
-                                        Theme.of(context).colorScheme.surface,
-                                    elevation: 0,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(20),
-                                        side: BorderSide(
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .onSurface,
-                                            width: 0.1)),
-                                    child: Padding(
-                                      padding: const EdgeInsets.fromLTRB(
-                                          20, 3, 5, 3),
-                                      child: Row(
-                                        children: [
-                                          Text(
-                                            user.name ?? "",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleSmall,
-                                          ),
-                                          horizontalSpace(7),
-                                          Container(
-                                            width: 30,
-                                            height: 30,
-                                            decoration: BoxDecoration(
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onSurface,
-                                                shape: BoxShape.circle),
-                                            child: ClipOval(
-                                              child: Image.asset(
-                                                "assets/images/onboard_img.jpeg",
-                                                fit: BoxFit.cover,
-                                                width: 40,
-                                                height: 40,
-                                              ),
+                                    Card(
+                                      color:
+                                          Theme.of(context).colorScheme.surface,
+                                      elevation: 0,
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          side: BorderSide(
+                                              color: Theme.of(context)
+                                                  .colorScheme
+                                                  .onSurface,
+                                              width: 0.1)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            20, 3, 5, 3),
+                                        child: Row(
+                                          children: [
+                                            Text(
+                                              user.name ?? "",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleSmall,
                                             ),
-                                          )
-                                        ],
+                                            horizontalSpace(7),
+                                            Container(
+                                              width: 30,
+                                              height: 30,
+                                              decoration: BoxDecoration(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSurface,
+                                                  shape: BoxShape.circle),
+                                              child: ClipOval(
+                                                child: Image.asset(
+                                                  "assets/images/onboard_img.jpeg",
+                                                  fit: BoxFit.cover,
+                                                  width: 40,
+                                                  height: 40,
+                                                ),
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              verticalSpace(13),
-                            ],
+                                  ],
+                                ),
+                                verticalSpace(13),
+                              ],
+                            ),
                           ),
-                        ),
+                        )),
+                    Positioned(
+                      bottom: 10,
+                      left: 0,
+                      right: 0,
+                      child: Center(
+                          child: Text(
+                        "History",
+                        style: titleLarge(context).copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       )),
-                  Positioned(
-                    bottom: 10,
-                    left: 0,
-                    right: 0,
-                    child: Center(
-                        child: Text(
-                      "History",
-                      style: titleLarge(context).copyWith(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    )),
-                  ),
-                ],
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          verticalSpace(13),
-          mockTestOptionCard(context, "title", Icons.abc_outlined, () {})
-        ],
+            verticalSpace(13),
+            BlocBuilder<TestHistoryBloc, TestHistoryState>(
+              builder: (context, state) {
+                if (state is TestHistoryLoaded) {
+                  return Column(
+                      children: state.data.values
+                          .map((e) => mockTestOptionCard(context, e, () {}))
+                          .toList());
+                }
+                return Center();
+              },
+            )
+          ],
+        ),
       ),
     );
   }
 
-  Padding mockTestOptionCard(
-      BuildContext context, String title, IconData icon, VoidCallback onClick) {
+  Widget mockTestOptionCard(
+      BuildContext context, TestHistoryItem item, VoidCallback onClick) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Card(
@@ -161,7 +179,7 @@ class HistoryScreen extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("75%",
+                        Text("${item.averageScore.toString()} %",
                             style: titleMedium(context)
                                 .copyWith(fontWeight: FontWeight.bold)),
                         Text("Score",
@@ -170,8 +188,8 @@ class HistoryScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                title: Text(title),
-                subtitle: const Text("subtitle"),
+                title: Text(item.testType.value),
+                subtitle: Text(item.description),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15)),
                 iconColor: Theme.of(context).colorScheme.primary,

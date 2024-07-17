@@ -31,12 +31,19 @@ class LocalDataSourceImpl extends LocalDataSource {
 
   @override
   Future<void> saveTestScore(TestHistoryModel testHistory) async {
+    print(testHistory);
     _testHistoryDao.insertData(testHistory.toEntity());
   }
 
   @override
   Future<List<TestHistoryModel>> getUniqueTests(TestType testType) async {
     var result = await _testHistoryDao.getAllUniqueTest(testType);
+    return result.map((e) => e.toDomain()).toList();
+  }
+
+  @override
+  Future<List<TestHistoryModel>> getTests() async {
+    var result = await _testHistoryDao.findAllTests();
     return result.map((e) => e.toDomain()).toList();
   }
 }

@@ -8,4 +8,5 @@ abstract class LocalDataSource {
   Future<void> setCurrentUser(User user);
   Future<void> saveTestScore(TestHistoryModel testHistory);
   Future<List<TestHistoryModel>> getUniqueTests(TestType testType);
+  Future<List<TestHistoryModel>> getTests();
 }

@@ -14,7 +14,9 @@ import 'package:dri_learn/features/authentication/domain/usecase/save_user_data_
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/history/data/repository/test_history_repository_impl.dart';
 import 'package:dri_learn/features/history/domain/repository/test_history_repository.dart';
+import 'package:dri_learn/features/history/domain/usecase/get_test_history_usecase.dart';
 import 'package:dri_learn/features/history/domain/usecase/save_test_history_usecase.dart';
+import 'package:dri_learn/features/history/presentation/bloc/test_history_bloc.dart';
 import 'package:dri_learn/features/onboarding/presentation/onboarding_bloc.dart';
 import 'package:dri_learn/features/provinceSelector/data/repository/province_repository_impl.dart';
 import 'package:dri_learn/features/provinceSelector/domain/repository/province_repository.dart';
@@ -38,8 +40,8 @@ Future<void> init() async {
   final shPf = await StreamingSharedPreferences.instance;
   final floorDb =
       await $FloorAppDatabase.databaseBuilder('app_database.db').build();
-  sl.registerLazySingleton<LocalDataSource>(() => LocalDataSourceImpl(shPf, floorDb.testHistoryDao));
-
+  sl.registerLazySingleton<LocalDataSource>(
+      () => LocalDataSourceImpl(shPf, floorDb.testHistoryDao));
 
   //repositories
   sl.registerFactory<AuthRepository>(() => AuthRepositoryImpl());
@@ -58,6 +60,8 @@ Future<void> init() async {
   sl.registerFactory<CalculateMockTestScore>(() => CalculateMockTestScore());
   sl.registerFactory<SaveTestHistoryUsecase>(
       () => SaveTestHistoryUsecase(repository: sl.call()));
+  sl.registerFactory<GetTestHistoryUsecase>(
+      () => GetTestHistoryUsecase(testHistoryRepository: sl.call()));
 
   //blocs
   sl.registerSingleton<AuthBloc>((AuthBloc(sl.call(), sl.call(), sl.call())));
@@ -67,4 +71,5 @@ Future<void> init() async {
       calculateMockTestScore: sl.call(),
       questionsRepository: sl.call(),
       saveTestHistoryUsecase: sl.call())));
+  sl.registerFactory<TestHistoryBloc>(() => TestHistoryBloc(sl.call()));
 }
