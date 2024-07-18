@@ -47,12 +47,15 @@ class MockTestScreen extends StatelessWidget {
                                             .image!
                                             .toLowerCase() !=
                                         "link")
-                                ? Image.network(
-                                    state.getCurrentQuestion().image!,
-                                    fit: BoxFit
-                                        .cover, // This makes the image cover the entire area
-                                    width: double.infinity,
-                                    height: double.infinity,
+                                ? Padding(
+                                    padding: const EdgeInsets.only(top: 50),
+                                    child: Image.asset(
+                                      "assets/images/${state.getCurrentQuestion().image!}.jpg",
+                                      fit: BoxFit
+                                          .fitHeight, // This makes the image cover the entire area
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                    ),
                                   )
                                 : Image.asset(
                                     "assets/images/onboard_img.jpeg",
@@ -64,7 +67,7 @@ class MockTestScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          color: Colors.black.withOpacity(0.5),
+                          color: Colors.black.withOpacity(0.2),
                         ),
                         Positioned(
                             bottom: 15,

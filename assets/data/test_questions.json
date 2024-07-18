@@ -7,7 +7,7 @@
             "Do not enter, one way traffic only",
             "Do not pass"
         ],
-        "image": "Link",
+        "image": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0",
         "answer": "3",
         "type": "Sign",
         "id": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0"
@@ -20,7 +20,7 @@
             "Bridge ahead",
             "Hills ahead"
         ],
-        "image": "Link",
+        "image": "358960bd-ac27-40aa-9e82-ed084851d2e2",
         "answer": "1",
         "type": "Sign",
         "id": "358960bd-ac27-40aa-9e82-ed084851d2e2"
@@ -46,7 +46,7 @@
             "A information and guide Sign",
             "A prohibition Sign"
         ],
-        "image": "Link",
+        "image": "661fd0b1-aca0-4564-a088-8b7b5dc0c474",
         "answer": "3",
         "type": "Sign",
         "id": "661fd0b1-aca0-4564-a088-8b7b5dc0c474"
@@ -59,7 +59,7 @@
             "Yield right-of-way to bicycles",
             "The lane is reserved for bicycles"
         ],
-        "image": "link",
+        "image": "050338c3-45b1-4408-838b-a9402b264848",
         "answer": "1",
         "type": "Sign",
         "id": "050338c3-45b1-4408-838b-a9402b264848"
@@ -72,8 +72,8 @@
             "No truck",
             "no stopping"
         ],
-        "image": "link",
-        "answer": "0",
+        "image": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5",
+        "answer": "3",
         "type": "Sign",
         "id": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5"
     },
@@ -85,7 +85,7 @@
             "exit the highway to left",
             "no left turn"
         ],
-        "image": "link",
+        "image": "858e8441-8eac-47ab-a9a5-9b6459d58a52",
         "answer": "1",
         "type": "Sign",
         "id": "858e8441-8eac-47ab-a9a5-9b6459d58a52"
@@ -93,12 +93,12 @@
     {
         "question": "What does this sign mean?",
         "options": [
-            "speed limit changes ahaed",
+            "speed limit changes ahead",
             "the maximum speed permitted",
             "shows maximum safe speed on ramp",
             "the minimum speed permitted"
         ],
-        "image": "link",
+        "image": "32f23d26-7920-4305-9513-96d7789ed829",
         "answer": "0",
         "type": "Sign",
         "id": "32f23d26-7920-4305-9513-96d7789ed829"
@@ -111,7 +111,7 @@
             "no road past this point",
             "dead end ahead"
         ],
-        "image": "link",
+        "image": "43f2e36f-e88c-46c0-8f13-10d9bc064393",
         "answer": "0",
         "type": "Sign",
         "id": "43f2e36f-e88c-46c0-8f13-10d9bc064393"
@@ -124,7 +124,7 @@
             "a logging road is ahead",
             "there are trucks on the hill"
         ],
-        "image": "link",
+        "image": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee",
         "answer": "0",
         "type": "Sign",
         "id": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee"
@@ -137,7 +137,7 @@
             "parking space reserved for snowmobiles",
             "this sign warns you that snowmobile cross this road ahead"
         ],
-        "image": "link",
+        "image": "fabb5293-6b33-4d13-8622-1160f2ecf671",
         "answer": "0",
         "type": "Sign",
         "id": "fabb5293-6b33-4d13-8622-1160f2ecf671"
@@ -150,7 +150,7 @@
             "parking space reserved for people with disabled parking privileges",
             "parking space reserve for emergency"
         ],
-        "image": "link",
+        "image": "acdf7747-a423-4541-abfc-19153aaa4c74",
         "answer": "2",
         "type": "Sign",
         "id": "acdf7747-a423-4541-abfc-19153aaa4c74"
@@ -163,7 +163,7 @@
             "detour ahead",
             "left turns are permitted on a red light"
         ],
-        "image": "link",
+        "image": "cc8ba749-ab9a-4144-933b-9ac826532285",
         "answer": "0",
         "type": "Sign",
         "id": "cc8ba749-ab9a-4144-933b-9ac826532285"
@@ -176,7 +176,7 @@
             "school bus stop ahead",
             "pedestrian crossing"
         ],
-        "image": "link",
+        "image": "76dfe16e-be36-48b5-8db3-6007a3013f95",
         "answer": "2",
         "type": "Sign",
         "id": "76dfe16e-be36-48b5-8db3-6007a3013f95"
@@ -189,7 +189,7 @@
             "Dangerous end ahead",
             "construction zone ahead"
         ],
-        "image": "link",
+        "image": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f",
         "answer": "1",
         "type": "Sign",
         "id": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f"
@@ -202,7 +202,7 @@
             "entry restricted to local traffic only",
             "Dangerous goods vehicles not allowed"
         ],
-        "image": "link",
+        "image": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff",
         "answer": "1",
         "type": "Sign",
         "id": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff"
@@ -215,7 +215,7 @@
             "cross road",
             "highway entrance ramp ahead"
         ],
-        "image": "link",
+        "image": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd",
         "answer": "1",
         "type": "Sign",
         "id": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd"
@@ -226,9 +226,9 @@
             "keep right",
             "hazard on the right",
             "right turn ahead",
-            "sharp curves to yhe right"
+            "sharp curves to the right"
         ],
-        "image": "link",
+        "image": "cae92b7a-49b3-4e15-82f0-e9f440be4f85",
         "answer": "3",
         "type": "Sign",
         "id": "cae92b7a-49b3-4e15-82f0-e9f440be4f85"
@@ -241,7 +241,7 @@
             "Roundabout ahead",
             "stop ahead"
         ],
-        "image": "link",
+        "image": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07",
         "answer": "0",
         "type": "Sign",
         "id": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07"
@@ -254,7 +254,7 @@
             "this is emergency vechicle",
             "railroad crossing"
         ],
-        "image": "link",
+        "image": "50302d1f-aef0-445d-ab80-6262126e8334",
         "answer": "1",
         "type": "Sign",
         "id": "50302d1f-aef0-445d-ab80-6262126e8334"
@@ -446,7 +446,7 @@
         "options": [
             "curve left",
             "shar turn to the left",
-            "one way street to yhe left",
+            "one way street to the left",
             "keep to the left"
         ],
         "image": null,

@@ -7,6 +7,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 const questionLength = 40;
 const knowSignLength = 20;
+const singleKnowSignLength = 10;
 
 class QuestionsRepositoryImpl extends QuestionsRepository {
   @override
@@ -17,11 +18,9 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
     if (type != TestType.MockTest) {
-      var result = dataList
-          .where((item) => item.testType == type)
-          .take(knowSignLength)
-          .toList();
+      var result = dataList.where((item) => item.testType == type).toList();
       result.shuffle();
+      result = result.take(singleKnowSignLength).toList();
       return result;
     } else {
       List<QuestionModel> result = [];
