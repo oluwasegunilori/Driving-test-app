@@ -33,7 +33,7 @@
             "Speed limit changes ahead to 60 km/h",
             "Exit to the right with maximum safe speed"
         ],
-        "image": null,
+        "image": "38a64750-b145-475a-bfd1-14f739f497e8",
         "answer": "2",
         "type": "Sign",
         "id": "38a64750-b145-475a-bfd1-14f739f497e8"
@@ -99,7 +99,7 @@
             "the minimum speed permitted"
         ],
         "image": "32f23d26-7920-4305-9513-96d7789ed829",
-        "answer": "0",
+        "answer": "1",
         "type": "Sign",
         "id": "32f23d26-7920-4305-9513-96d7789ed829"
     },
@@ -384,20 +384,20 @@
             "intersection",
             "railroad crossing"
         ],
-        "image": "link",
+        "image": "9e5937aa-4646-424a-b79e-ed5dcc275683",
         "answer": "1",
         "type": "Sign",
         "id": "9e5937aa-4646-424a-b79e-ed5dcc275683"
     },
     {
-        "question": "A yellow diamond-shaoped sign usually means",
+        "question": "A yellow diamond-shaped sign usually means",
         "options": [
             "warning of a hazard",
             "Yield right of way",
             "speed limit",
             "stop"
         ],
-        "image": "link",
+        "image": "54673f76-6557-4735-85c8-e5c7f28f7119",
         "answer": "0",
         "type": "Sign",
         "id": "54673f76-6557-4735-85c8-e5c7f28f7119"
@@ -410,7 +410,7 @@
             "Playground, watch for children",
             "School crossing"
         ],
-        "image": "link",
+        "image": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e",
         "answer": "1",
         "type": "Sign",
         "id": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e"
@@ -423,7 +423,7 @@
             "right tun lane control",
             "railway crossing control"
         ],
-        "image": "link",
+        "image": "8963e575-54c0-4e77-8b27-7bc2a869c5be",
         "answer": "0",
         "type": "Sign",
         "id": "8963e575-54c0-4e77-8b27-7bc2a869c5be"
@@ -432,11 +432,11 @@
         "question": "What does this sign mean?",
         "options": [
             "added lane",
-            "ended duvided highway",
+            "ended divided highway",
             "merging traffic",
             "divided highway ahead"
         ],
-        "image": "link",
+        "image": "3d20b33f-f6d0-4364-bc54-6956af06fa79",
         "answer": "3",
         "type": "Sign",
         "id": "3d20b33f-f6d0-4364-bc54-6956af06fa79"
@@ -449,7 +449,7 @@
             "one way street to the left",
             "keep to the left"
         ],
-        "image": null,
+        "image": "14bde0f7-d5a4-4490-a6d7-1320c8e153b4",
         "answer": "3",
         "type": "Sign",
         "id": "14bde0f7-d5a4-4490-a6d7-1320c8e153b4"
@@ -462,7 +462,7 @@
             "the driver in this lane must turn right or go straight ahead",
             "do no drive through"
         ],
-        "image": "link",
+        "image": "8709c35d-07f3-4af0-805a-c7db25509707",
         "answer": "2",
         "type": "Sign",
         "id": "8709c35d-07f3-4af0-805a-c7db25509707"
@@ -475,8 +475,8 @@
             "right turn",
             "back up"
         ],
-        "image": "link",
-        "answer": "1",
+        "image": "0ad8eb00-f83d-43fa-94b8-403158d0faa5",
+        "answer": "0",
         "type": "Sign",
         "id": "0ad8eb00-f83d-43fa-94b8-403158d0faa5"
     },
@@ -488,7 +488,7 @@
             "no right turn",
             "no parking"
         ],
-        "image": "link",
+        "image": "2e25573c-4887-4a9b-a350-ffc0a3c90db8",
         "answer": "0",
         "type": "Sign",
         "id": "2e25573c-4887-4a9b-a350-ffc0a3c90db8"
@@ -501,7 +501,7 @@
             "no Pedestrians",
             "Pedestrians must yield right-of-way"
         ],
-        "image": "link",
+        "image": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a",
         "answer": "1",
         "type": "Sign",
         "id": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a"
@@ -514,7 +514,7 @@
             "Lanes of traffic are moving in the same direction and drivers should not pass",
             "Lanes of traffic are moving in the same direction and drivers are permitted to pass when it is safe to do so."
         ],
-        "image": "link",
+        "image": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd",
         "answer": "2",
         "type": "Sign",
         "id": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd"

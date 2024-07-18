@@ -43,7 +43,7 @@ ScoreInfo getScoreInfo(BuildContext context, TestLoaded state) {
         return ScoreInfo(
             rating: state.info.grade,
             description: "Excellent result",
-            score: "${state.info.grade}/${state.questions.length}",
+            score: "${state.info.score}/${state.questions.length}",
             title: "Excellent");
       }
   }
