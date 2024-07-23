@@ -752,5 +752,135 @@
         "answer": "1",
         "type": "Knowledge",
         "id": "99d78e60-bb6b-4d51-a988-61d1fdb0f430"
+    },
+    {
+        "question": "What does this sign mean",
+        "options": [
+            "No parking",
+            "Do not pass",
+            "Railway crossing",
+            "Do not stop"
+        ],
+        "image": "99d78e60-bb6b-4d51-a988-7abcfdb0f430",
+        "answer": "2",
+        "type": "Sign",
+        "id": "99d78e60-bb6b-4d51-a988-7abcfdb0f430"
+    },
+    {
+        "question": "What does this sign mean",
+        "options": [
+            "There is a road construction ahead ",
+            "Closed lane is ahead",
+            "Do not enter - Construction ahead",
+            "The end of a construction zone"
+        ],
+        "image": "99d78e60-bb6b-4d51-a988-45rtfdb0f430",
+        "answer": "0",
+        "type": "Sign",
+        "id": "99d78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this sign mean",
+        "options": [
+            "Public bus ahead",
+            "School zone ahead",
+            "There is a school bus stop ahead",
+            "Emergency stopping zone ahead"
+        ],
+        "image": "00d78e60-bb6b-4d51-a988-45rtfdb0f430",
+        "answer": "2",
+        "type": "Sign",
+        "id": "00d78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this sign mean",
+        "options": [
+            "Do not wxit",
+            "Do not drive through the intersection",
+            "A deadend",
+            "Do not enter"
+        ],
+        "image": "11d78e60-bb6b-4d51-a988-45rtfdb0f430",
+        "answer": "1",
+        "type": "Sign",
+        "id": "11d78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "This hand signal mean",
+        "options": [
+            "Driver is slowing down",
+            "Driver is turning right",
+            "Driver is turning left",
+            "Do not move"
+        ],
+        "image": "22e78e60-bb6b-4d51-a988-12werfdb0f430",
+        "answer": "1",
+        "type": "Sign",
+        "id": "22e78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this sign indicate?",
+        "options": [
+            "Sharp turn to the right",
+            "Keep right",
+            "One way at the right",
+            "Curve right"
+        ],
+        "image": "33e78e60-bb6b-4d51-a988-12werfdb0f430",
+        "answer": "0",
+        "type": "Sign",
+        "id": "33e78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this sign indicate?",
+        "options": [
+            "Sharp turn to the right",
+            "Paved surface ends ahead",
+            "Bump ahead",
+            "Construction is ahead"
+        ],
+        "image": "44e78e60-bb6b-4d51-a988-12werfdb0f430",
+        "answer": "1",
+        "type": "Sign",
+        "id": "44e78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this road sign indicate?",
+        "options": [
+            "School bus ahead",
+            "There is a fire truck entrance on the right",
+            "Hidden bus top",
+            "Bus entrance on the right"
+        ],
+        "image": "55e78e60-bb6b-4d51-a988-12werfdb0f430",
+        "answer": "1",
+        "type": "Sign",
+        "id": "55e78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this road sign indicate?",
+        "options": [
+            "Road branching off ahead",
+            "Curve right",
+            "Merging traffic ahead",
+            "Hidden intersection "
+        ],
+        "image": "66e78e60-bb6b-4d51-a988-12werfdb0f430",
+        "answer": "0",
+        "type": "Sign",
+        "id": "66e78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "What does this road sign indicate?",
+        "options": [
+            "Road narrows both sides",
+            "Right lane narrows on the right",
+            "Right lane narrows on the left",
+            "Narrow bridge"
+        ],
+        "image": "77d78e60-bb6b-4d51-a988-12werfdb0f430",
+        "answer": "0",
+        "type": "Sign",
+        "id": "77d78e60-bb6b-4d51-a988-12werfdb0f430"
     }
 ]
