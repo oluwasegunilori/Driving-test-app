@@ -13,7 +13,7 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
   @override
   Future<List<QuestionModel>> getQuestions({TestType? type}) async {
     final String response =
-        await rootBundle.loadString('assets/data/test_questions.json');
+        await rootBundle.loadString('assets/data/ontario_test_questions.json');
     final List<dynamic> data = await json.decode(response);
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
