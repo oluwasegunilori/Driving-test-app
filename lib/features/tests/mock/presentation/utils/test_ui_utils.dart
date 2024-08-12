@@ -2,7 +2,15 @@ import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart'
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
-enum Grade { Poor, Medium, Excellent }
+enum Grade {
+  Poor(img: "poor_score.png" ),
+  Medium(img: "medium_score.png"),
+  Excellent(img: "excellent_score.png");
+
+  final String img;
+
+  const Grade({required this.img});
+}
 
 class ScoreInfo extends Equatable {
   final Grade rating;

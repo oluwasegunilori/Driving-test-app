@@ -77,6 +77,7 @@ class TestComplete extends StatelessWidget {
           Expanded(
             child: BlocBuilder<MockTestBloc, MockTestState>(
               builder: (context, state) {
+                ScoreInfo score = getScoreInfo(context, state as TestLoaded);
                 return Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 22, horizontal: 10),
@@ -85,10 +86,10 @@ class TestComplete extends StatelessWidget {
                     children: [
                       SizedBox(
                           height: imageHeight,
-                          child: Image.asset("assets/images/trophy.png")),
+                          child: Image.asset("assets/images/${state.info.grade.img}")),
                       verticalSpace(20),
                       Text(
-                        getScoreInfo(context, state as TestLoaded).title,
+                        score.title,
                         style: titleMedium(context)
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
