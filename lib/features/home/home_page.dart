@@ -124,14 +124,18 @@ class HomePageScreen extends StatelessWidget {
 
   Drawer drawer(BuildContext context) {
     return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
+      child: Column(
         children: <Widget>[
-          const DrawerHeader(
-            child: Text(
-              '',
-              style: TextStyle(color: Colors.white, fontSize: 24),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.2,
+            width: MediaQuery.of(context).size.width,
+            child: Image.asset(
+              "assets/images/onboard_img.jpeg",
+              fit: BoxFit.cover, // This makes the image cover the entire area
             ),
+          ),
+          const SizedBox(
+            height: 15,
           ),
           ListTile(
             leading: const Icon(Icons.grass_sharp),
@@ -142,6 +146,7 @@ class HomePageScreen extends StatelessWidget {
             },
             iconColor: Theme.of(context).colorScheme.primary,
           ),
+          Divider(),
           ListTile(
             leading: const Icon(Icons.book_rounded),
             title: const Text('G1 Mock Test'),
