@@ -1,6 +1,8 @@
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
+import 'package:dri_learn/features/history/presentation/history_screen.dart';
+import 'package:dri_learn/features/home/home_page_widget.dart';
 import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
@@ -11,9 +13,22 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 
 import '../authentication/domain/model/user_entity.dart';
 
-class HomePageScreen extends StatelessWidget {
+class HomePageScreen extends StatefulWidget {
   final User user;
   const HomePageScreen({super.key, required this.user});
+
+  @override
+  State<HomePageScreen> createState() => _HomePageScreenState();
+}
+
+class _HomePageScreenState extends State<HomePageScreen> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +48,7 @@ class HomePageScreen extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    user.name ?? "",
+                    widget.user.name ?? "",
                     style: Theme.of(context).textTheme.titleSmall,
                   ),
                   horizontalSpace(7),
@@ -57,63 +72,29 @@ class HomePageScreen extends StatelessWidget {
         ],
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: Column(
+      body: IndexedStack(
+        index: _selectedIndex,
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Text(
-              "Get Ready to Ace Your Driving Test with Confidence",
-              style: Theme.of(context).textTheme.displaySmall!.copyWith(),
-              textAlign: TextAlign.center,
-            ),
+          HomePageWidget(user: widget.user),
+          HistoryScreen(
+            user: widget.user,
+            showHeader: false,
           ),
-          verticalSpace(10),
-          Expanded(
-              child: Padding(
-            padding: EdgeInsets.fromLTRB(
-                20, 10, 20, MediaQuery.of(context).size.height * 0.07),
-            child: Column(
-              children: [
-                homeOptions(
-                    image: "assets/images/onboard_img.jpeg",
-                    onTop: inImageTItles(context,
-                        bigTitle: "Mock Test",
-                        bodyTitle:
-                            "Test your knowledge and\ntrack your progress"),
-                    clicked: () => {
-                          BlocProvider.of<MockTestBloc>(context).add(
-                              const SetTestType(testType: TestType.MockTest)),
-                          context.push(ScreenRoutes.mockTestOptions().route,
-                              extra: user)
-                        }),
-                verticalSpace(MediaQuery.of(context).size.height * 0.03),
-                homeOptions(
-                    image: "assets/images/school_crooss.jpeg",
-                    onTop: inImageTItles(context,
-                        bigTitle: "Learn",
-                        bodyTitle:
-                            "Discover lessons and tips\nto ace your driving test"),
-                    clicked: () => {
-                          context.push(ScreenRoutes.learnTestOptions().route,
-                              extra: user)
-                        }),
-              ],
-            ),
-          ))
         ],
       ),
       bottomNavigationBar: Card(
         elevation: 15,
         child: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
           items: [
             BottomNavigationBarItem(
                 icon: Icon(
                   MdiIcons.home,
                 ),
-                label: ""),
-            BottomNavigationBarItem(icon: Icon(MdiIcons.lightbulb), label: ""),
+                label: "Home"),
             BottomNavigationBarItem(
-                icon: Icon(MdiIcons.faceManProfile), label: ""),
+                icon: Icon(MdiIcons.history), label: "History"),
           ],
           enableFeedback: true,
         ),
@@ -124,7 +105,7 @@ class HomePageScreen extends StatelessWidget {
 
   Drawer drawer(BuildContext context) {
     return Drawer(
-      child: Column(
+      child: ListView(
         children: <Widget>[
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.2,
@@ -138,16 +119,6 @@ class HomePageScreen extends StatelessWidget {
             height: 15,
           ),
           ListTile(
-            leading: const Icon(Icons.grass_sharp),
-            title: const Text('History'),
-            onTap: () {
-              Navigator.of(context).pop();
-              context.push(ScreenRoutes.testHistory().route, extra: user);
-            },
-            iconColor: Theme.of(context).colorScheme.primary,
-          ),
-          Divider(),
-          ListTile(
             leading: const Icon(Icons.book_rounded),
             title: const Text('G1 Mock Test'),
             onTap: () {
@@ -159,82 +130,43 @@ class HomePageScreen extends StatelessWidget {
             },
             iconColor: Theme.of(context).colorScheme.primary,
           ),
+          Divider(),
+          ListTile(
+            leading: const Icon(Icons.grass_sharp),
+            title: const Text('History'),
+            onTap: () {
+              Navigator.of(context).pop();
+              context.push(ScreenRoutes.testHistory().route,
+                  extra: widget.user);
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
+          Divider(),
+          ListTile(
+            leading: const Icon(Icons.grass_sharp),
+            title: const Text('Knowledge Test'),
+            onTap: () {
+              Navigator.of(context).pop();
+              BlocProvider.of<MockTestBloc>(context)
+                  .add(const SetTestType(testType: TestType.Knowledge));
+              context.push(ScreenRoutes.mockTest().route);
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
+          Divider(),
+          ListTile(
+            leading: const Icon(Icons.grass_sharp),
+            title: const Text('Road Sign Test'),
+            onTap: () {
+              Navigator.of(context).pop();
+              BlocProvider.of<MockTestBloc>(context)
+                  .add(const SetTestType(testType: TestType.Sign));
+              context.push(ScreenRoutes.mockTest().route);
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
         ],
       ),
     );
-  }
-
-  Column inImageTItles(BuildContext context,
-      {required String bigTitle, required String bodyTitle}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(bigTitle,
-            style: titleLarge(context).copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 40)),
-        verticalSpace(10),
-        Text(
-          bodyTitle,
-          style: titleSmall(context).copyWith(color: Colors.white),
-        )
-      ],
-    );
-  }
-
-  Expanded homeOptions(
-      {required String image,
-      required Widget onTop,
-      required VoidCallback clicked}) {
-    return Expanded(
-        child: Stack(
-      children: [
-        InkWell(
-          onTap: clicked,
-          child: Card(
-            margin: const EdgeInsets.all(0),
-            elevation: 20,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15.0),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(
-                  15.0), // Adjust the border radius as needed
-              child: Stack(
-                children: [
-                  Image.asset(
-                    image,
-                    fit: BoxFit
-                        .cover, // This makes the image cover the entire area
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                  Container(
-                    color: Colors.black.withOpacity(0.6),
-                  )
-                ],
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-          child: onTop,
-        ),
-        Positioned(
-          bottom: 10,
-          right: 20,
-          child: IconButton(
-            onPressed: clicked,
-            icon: Icon(
-              MdiIcons.arrowRight,
-              color: Colors.white,
-            ),
-            iconSize: 40,
-          ),
-        )
-      ],
-    ));
   }
 }
