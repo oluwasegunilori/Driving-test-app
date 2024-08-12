@@ -56,6 +56,8 @@ dependencies:
   flame: ^1.17.0
   floor: ^1.5.0
   flutter_gemini: ^2.0.5
+  envied: ^0.5.4+1
+  envied_generator: ^0.5.4+1
 
 dev_dependencies:
   flutter_test:
