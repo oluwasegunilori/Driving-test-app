@@ -86,7 +86,8 @@ class TestComplete extends StatelessWidget {
                     children: [
                       SizedBox(
                           height: imageHeight,
-                          child: Image.asset("assets/images/${state.info.grade.img}")),
+                          child:
+                              Image.asset("assets/images/${score.rating.img}")),
                       verticalSpace(20),
                       Text(
                         score.title,
@@ -120,7 +121,7 @@ class TestComplete extends StatelessWidget {
                               verticalSpace(10),
                               primaryButton(
                                   context: context,
-                                  text: "   View Details    ",
+                                  text: "   View Feedback    ",
                                   onClick: () {
                                     BlocProvider.of<MockTestBloc>(context)
                                         .add(SetViewModeEvent());
