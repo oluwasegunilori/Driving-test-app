@@ -132,18 +132,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
           Divider(),
           ListTile(
-            leading: const Icon(Icons.grass_sharp),
-            title: const Text('History'),
-            onTap: () {
-              Navigator.of(context).pop();
-              context.push(ScreenRoutes.testHistory().route,
-                  extra: widget.user);
-            },
-            iconColor: Theme.of(context).colorScheme.primary,
-          ),
-          Divider(),
-          ListTile(
-            leading: const Icon(Icons.grass_sharp),
+            leading: const Icon(Icons.library_books),
             title: const Text('Knowledge Test'),
             onTap: () {
               Navigator.of(context).pop();
@@ -155,13 +144,24 @@ class _HomePageScreenState extends State<HomePageScreen> {
           ),
           Divider(),
           ListTile(
-            leading: const Icon(Icons.grass_sharp),
+            leading: const Icon(Icons.add_road),
             title: const Text('Road Sign Test'),
             onTap: () {
               Navigator.of(context).pop();
               BlocProvider.of<MockTestBloc>(context)
                   .add(const SetTestType(testType: TestType.Sign));
               context.push(ScreenRoutes.mockTest().route);
+            },
+            iconColor: Theme.of(context).colorScheme.primary,
+          ),
+          Divider(),
+          ListTile(
+            leading: const Icon(Icons.history),
+            title: const Text('History'),
+            onTap: () {
+              Navigator.of(context).pop();
+              context.push(ScreenRoutes.testHistory().route,
+                  extra: widget.user);
             },
             iconColor: Theme.of(context).colorScheme.primary,
           ),
