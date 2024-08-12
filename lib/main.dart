@@ -1,3 +1,4 @@
+import 'package:dri_learn/config/env.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:flutter/material.dart';
@@ -16,7 +17,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  // Gemini.init(apiKey: apiKey)
+  Gemini.init(apiKey: Env.geminiAPIKEY);
   await di.init();
   runApp(const MyApp());
 }
