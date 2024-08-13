@@ -12,6 +12,9 @@ import 'package:dri_learn/features/authentication/domain/auth_repository.dart';
 import 'package:dri_learn/features/authentication/domain/usecase/google_signin_usecase.dart';
 import 'package:dri_learn/features/authentication/domain/usecase/save_user_data_usecase.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
+import 'package:dri_learn/features/gemini/data/repository/gemini_repo_impl.dart';
+import 'package:dri_learn/features/gemini/domain/repository/gemini_repo.dart';
+import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
 import 'package:dri_learn/features/history/data/repository/test_history_repository_impl.dart';
 import 'package:dri_learn/features/history/domain/repository/test_history_repository.dart';
 import 'package:dri_learn/features/history/domain/usecase/get_test_history_usecase.dart';
@@ -25,6 +28,7 @@ import 'package:dri_learn/features/tests/core/data/repository/questions_reposito
 import 'package:dri_learn/features/tests/core/domain/repository/questions_repository.dart';
 import 'package:dri_learn/features/tests/mock/domain/usecase/calculate_mock_test_score.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:get_it/get_it.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
 
@@ -35,6 +39,9 @@ Future<void> init() async {
   final fireStoreDb = FirebaseFirestore.instance;
   sl.registerLazySingleton<RemoteDataSource>(
       () => RemoteDataSourceImpl(db: fireStoreDb));
+
+  final gemini = Gemini.instance;
+  sl.registerLazySingleton<GeminiRepo>(() => GeminiRepoImpl(gemini));
 
   //Local database
   final shPf = await StreamingSharedPreferences.instance;
@@ -72,4 +79,5 @@ Future<void> init() async {
       questionsRepository: sl.call(),
       saveTestHistoryUsecase: sl.call())));
   sl.registerFactory<TestHistoryBloc>(() => TestHistoryBloc(sl.call()));
+  sl.registerFactory<GeminiBloc>(() => GeminiBloc(sl.call()));
 }

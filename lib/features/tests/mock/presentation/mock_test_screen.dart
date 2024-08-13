@@ -239,7 +239,7 @@ class MockTestScreen extends StatelessWidget {
                                                 MdiIcons.undo,
                                                 color: Theme.of(context)
                                                     .colorScheme
-                                                    .background,
+                                                    .surface,
                                               ),
                                               horizontalSpace(10),
                                               Text(
