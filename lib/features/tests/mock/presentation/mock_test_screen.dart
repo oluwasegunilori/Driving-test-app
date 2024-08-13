@@ -321,17 +321,20 @@ class MockTestScreen extends StatelessWidget {
                                                   .id] !=
                                               null
                                           ? () {
-                                              BlocProvider.of<MockTestBloc>(
-                                                      context)
-                                                  .add(SubmitAnswerEvent(AnswerModel(
-                                                      question: state.questions[
-                                                          state
-                                                              .currentPosition],
-                                                      userAnswer: state
-                                                          .answers[state
-                                                              .getCurrentQuestion()
-                                                              .id]!
-                                                          .userAnswer)));
+                                              if (!state.viewMode) {
+                                                BlocProvider.of<MockTestBloc>(
+                                                        context)
+                                                    .add(SubmitAnswerEvent(AnswerModel(
+                                                        question: state
+                                                                .questions[
+                                                            state
+                                                                .currentPosition],
+                                                        userAnswer: state
+                                                            .answers[state
+                                                                .getCurrentQuestion()
+                                                                .id]!
+                                                            .userAnswer)));
+                                              }
                                               if (state.isOnLastQuestion()) {
                                                 context.push(
                                                     TestCompleteRoute().route);
@@ -361,7 +364,9 @@ class MockTestScreen extends StatelessWidget {
                                         children: [
                                           Text(
                                             state.isOnLastQuestion()
-                                                ? "Submit"
+                                                ? state.viewMode
+                                                    ? "Next"
+                                                    : "Submit"
                                                 : "Next",
                                             style: titleSmall(context)
                                                 .copyWith(color: Colors.white),
