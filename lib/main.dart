@@ -1,5 +1,6 @@
 import 'package:dri_learn/config/env.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
+import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:dri_learn/core/router_config.dart';
@@ -36,6 +37,8 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => di.sl<AuthBloc>()),
         BlocProvider<MockTestBloc>(
             create: (BuildContext context) => di.sl<MockTestBloc>()),
+            BlocProvider<GeminiBloc>(
+            create: (BuildContext context) => di.sl<GeminiBloc>()),
       ],
       child: MaterialApp.router(
         title: 'Flutter Demo',

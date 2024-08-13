@@ -52,6 +52,14 @@ class TestLoaded extends MockTestState {
     return questions[currentPosition];
   }
 
+  QuestionModel getFirstQuestion() {
+    return questions.first;
+  }
+
+  AnswerModel? getCurrentAnswerModel() {
+    return answers[getCurrentQuestion().id];
+  }
+
   bool isOnLastQuestion() => currentPosition == questions.length - 1;
 
   @override

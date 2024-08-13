@@ -1,6 +1,6 @@
 part of 'gemini_bloc.dart';
 
-abstract class GeminiState extends Equatable {
+sealed class GeminiState extends Equatable {
   const GeminiState();
 
   @override
@@ -13,9 +13,17 @@ final class GeminInitial extends GeminiState {
 }
 
 final class GeminiTextStreamer extends GeminiState {
-  final String text;
+  final List<GemQuestionAnswerModel> answerModel;
 
-  const GeminiTextStreamer({required this.text});
+  const GeminiTextStreamer({required this.answerModel});
   @override
-  List<Object> get props => [text,];
+  List<Object> get props => [
+        answerModel,
+      ];
+
+  GemQuestionAnswerModel? getByQuestionId(String id) {
+    return answerModel
+        .where((element) => element.answerModel.question.id == id)
+        .firstOrNull;
+  }
 }

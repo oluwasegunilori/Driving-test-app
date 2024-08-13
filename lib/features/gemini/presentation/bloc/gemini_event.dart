@@ -8,8 +8,9 @@ sealed class GeminiEvent extends Equatable {
 }
 
 class FetchResultEvent extends GeminiEvent {
-  const FetchResultEvent();
+  final AnswerModel answerModel;
+  const FetchResultEvent({required this.answerModel});
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [answerModel];
 }

@@ -79,5 +79,5 @@ Future<void> init() async {
       questionsRepository: sl.call(),
       saveTestHistoryUsecase: sl.call())));
   sl.registerFactory<TestHistoryBloc>(() => TestHistoryBloc(sl.call()));
-  sl.registerFactory<GeminiBloc>(() => GeminiBloc(sl.call()));
+  sl.registerSingleton<GeminiBloc>(GeminiBloc(sl.call()));
 }
