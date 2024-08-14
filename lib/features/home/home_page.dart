@@ -86,6 +86,7 @@ class _HomePageScreenState extends State<HomePageScreen> {
         elevation: 15,
         child: BottomNavigationBar(
           currentIndex: _selectedIndex,
+          selectedItemColor: Theme.of(context).colorScheme.primary,
           onTap: _onItemTapped,
           items: [
             BottomNavigationBarItem(

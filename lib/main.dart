@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
             create: (BuildContext context) => di.sl<AuthBloc>()),
         BlocProvider<MockTestBloc>(
             create: (BuildContext context) => di.sl<MockTestBloc>()),
-            BlocProvider<GeminiBloc>(
+        BlocProvider<GeminiBloc>(
             create: (BuildContext context) => di.sl<GeminiBloc>()),
       ],
       child: MaterialApp.router(
@@ -47,7 +47,8 @@ class MyApp extends StatelessWidget {
               seedColor: Colors.black,
               primary: const Color(0XFFfd7e14),
               secondary: const Color(0xFF04044A),
-              tertiary: const Color(0xFF020222)),
+              tertiary: const Color(0xFF020222),
+              error: Colors.red),
           useMaterial3: true,
         ),
         routerConfig: appRouter,
@@ -58,7 +59,8 @@ class MyApp extends StatelessWidget {
                 seedColor: Colors.black,
                 primary: const Color(0XFFfd7e14),
                 secondary: const Color(0xFF04044A),
-                tertiary: const Color(0xFF020222))),
+                tertiary: const Color(0xFF020222),
+                error: Colors.red)),
         debugShowCheckedModeBanner: false,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,

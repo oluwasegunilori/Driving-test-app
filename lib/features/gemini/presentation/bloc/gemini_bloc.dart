@@ -24,26 +24,25 @@ class GeminiBloc extends Bloc<GeminiEvent, GeminiState> {
     if (event is FetchResultEvent) {
       var answer = "";
       String question = generateGeminiQuestionUsecase(event.answerModel);
-      print(question);
-      geminiRepo.generateAnswer(question).listen(
-        (value) {
-          answer = "$answer${value.output}";
-        },
-        onDone: () {
-          if (state is GeminInitial) {
-            emit(GeminiTextStreamer(answerModel: [
-              GemQuestionAnswerModel(
-                  answerModel: event.answerModel, gemAnswer: answer)
-            ]));
-          } else if (state is GeminiTextStreamer) {
-            List<GemQuestionAnswerModel> currentAnswerModel =
-                List.from((state as GeminiTextStreamer).answerModel);
-            currentAnswerModel.add(GemQuestionAnswerModel(
-                answerModel: event.answerModel, gemAnswer: answer));
-            emit(GeminiTextStreamer(answerModel: currentAnswerModel));
-          }
-        },
-      ).onError((error) {});
+      geminiRepo.generateAnswer(question).then((value) {
+        if (value?.output == null) {
+          answer = "No anwser";
+        } else {
+          answer = "$answer${value?.output}";
+        }
+        if (state is GeminInitial) {
+          emit(GeminiTextStreamer(answerModel: [
+            GemQuestionAnswerModel(
+                answerModel: event.answerModel, gemAnswer: answer)
+          ]));
+        } else if (state is GeminiTextStreamer) {
+          List<GemQuestionAnswerModel> currentAnswerModel =
+              List.from((state as GeminiTextStreamer).answerModel);
+          currentAnswerModel.add(GemQuestionAnswerModel(
+              answerModel: event.answerModel, gemAnswer: answer));
+          emit(GeminiTextStreamer(answerModel: currentAnswerModel));
+        }
+      }).catchError((onError) {});
     }
   }
 
