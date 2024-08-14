@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:dri_learn/features/tests/core/domain/model/question_model.dart';
 import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
@@ -19,7 +20,7 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
         data.map((json) => QuestionModel.fromJson(json)).toList();
     if (type != TestType.MockTest) {
       var result = dataList.where((item) => item.testType == type).toList();
-      result.shuffle();
+      result.shuffle(Random(DateTime.now().microsecondsSinceEpoch));
       result = result.take(singleKnowSignLength).toList();
       return result;
     } else {

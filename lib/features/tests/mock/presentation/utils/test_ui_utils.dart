@@ -43,8 +43,7 @@ ScoreInfo getScoreInfo(BuildContext context, TestLoaded state) {
       {
         return ScoreInfo(
             rating: state.info.grade,
-            description:
-                "Congratulations! You passed the test! Keep up the great work you're one step closer to acing your driving test!",
+            description: "God job but not enough! You need at let 80%.",
             score: "${state.info.score}/${state.questions.length}",
             title: "Medium");
       }
@@ -52,8 +51,7 @@ ScoreInfo getScoreInfo(BuildContext context, TestLoaded state) {
       {
         return ScoreInfo(
             rating: state.info.grade,
-            description:
-                "Congratulations! You passed the test! Keep up the great work you're one step closer to acing your driving test!",
+            description: "Not good enough! Please try again!",
             score: "${state.info.score}/${state.questions.length}",
             title: "Excellent");
       }
