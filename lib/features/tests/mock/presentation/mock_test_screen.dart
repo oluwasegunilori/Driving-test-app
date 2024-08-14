@@ -124,8 +124,9 @@ class MockTestScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: AnsweredHorizontalList(
-                          answers: state.answers.values.toList(),
-                          currentPosition: state.currentPosition,),
+                        answers: state.answers.values.toList(),
+                        currentPosition: state.currentPosition,
+                      ),
                     ),
                     verticalSpace(5),
                   ] else ...[
@@ -182,41 +183,53 @@ class MockTestScreen extends StatelessWidget {
                                                       isGeminiAnswerThere(
                                                           gemState, state)
                                                   ? "Answer"
-                                                  : "Explain Answer",
+                                                  : "Click to Explain Answer",
                                             ),
                                           ),
                                           subtitle: isGeminiAnswerThere(
-                                                      gemState, state) ||
+                                                      gemState, state) &&
                                                   animatedQuestionIds.contains(
                                                       state
                                                           .getCurrentQuestion()
                                                           .id)
                                               ? Text(getGeminiAnswer(
                                                   gemState, state))
-                                              :
-                                              //Animated Gemini text
-                                              AnimatedTextKit(
-                                                  key: Key(state.currentPosition
-                                                      .toString()),
-                                                  animatedTexts: [
-                                                    TypewriterAnimatedText(
-                                                      getGeminiAnswer(
-                                                          gemState, state),
-                                                      speed: const Duration(
-                                                          milliseconds: 30),
+                                              : animatedQuestionIds.contains(
+                                                      state
+                                                          .getCurrentQuestion()
+                                                          .id)
+                                                  ? Text(getGeminiAnswer(
+                                                      gemState, state))
+                                                  :
+                                                  //Animated Gemini text
+                                                  AnimatedTextKit(
+                                                      key: UniqueKey(),
+                                                      animatedTexts: [
+                                                        TypewriterAnimatedText(
+                                                          getGeminiAnswer(
+                                                              gemState, state),
+                                                          speed: const Duration(
+                                                              milliseconds: 50),
+                                                        ),
+                                                      ],
+                                                      totalRepeatCount: 1,
+                                                      pause: const Duration(
+                                                          milliseconds: 200),
+                                                      displayFullTextOnTap:
+                                                          true,
+                                                      stopPauseOnTap: true,
+                                                      onFinished: () => {
+                                                        if (getGeminiAnswer(
+                                                                gemState, state)
+                                                            .isNotEmpty)
+                                                          {
+                                                            animatedQuestionIds
+                                                                .add(state
+                                                                    .getCurrentQuestion()
+                                                                    .id)
+                                                          }
+                                                      },
                                                     ),
-                                                  ],
-                                                  totalRepeatCount: 1,
-                                                  pause: const Duration(
-                                                      milliseconds: 200),
-                                                  displayFullTextOnTap: true,
-                                                  stopPauseOnTap: true,
-                                                  onFinished: () => {
-                                                    animatedQuestionIds.add(state
-                                                        .getCurrentQuestion()
-                                                        .id)
-                                                  },
-                                                ),
                                           trailing: const Icon(Icons.light),
                                         ),
                                       ),

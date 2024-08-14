@@ -11,7 +11,7 @@ class GenerateGeminiQuestionUsecase {
     //User did not get the answer right
     else {
       generateQuestion +=
-          "${model.question.options[model.question.answer]} and not ${model.question.options[model.userAnswer]}";
+          "${model.question.options[model.question.answer]} and the answer shoul not be ${model.question.options[model.userAnswer]}";
     }
     generateQuestion += "Please summarize the answer";
     return generateQuestion;
