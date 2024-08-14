@@ -4,6 +4,7 @@ import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
 import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
+import 'package:dri_learn/features/tests/mock/presentation/answered_horizontal_list.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart';
@@ -117,169 +118,180 @@ class MockTestScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: ListView(
+                if (state is TestLoaded) ...[
+                  verticalSpace(15),
+                  if (state.viewMode) ...[
+                    AnsweredHorizontalList(
+                        answers: state.answers.values.toList()),
+                    verticalSpace(20),
+                  ],
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: MediaQuery.of(context).size.width * 0.02),
+                    child: Row(
                       children: [
-                        if (state is TestLoaded) ...[
-                          Row(
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .primary
-                                        .withAlpha(50),
-                                    shape: BoxShape.rectangle,
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.elliptical(30, 30))),
-                                child: Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20, vertical: 6),
-                                  child: Text(
-                                    "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
-                                    style: titleSmall(context).copyWith(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .primary,
-                                        fontWeight: FontWeight.w600),
-                                  ),
-                                ),
-                              ),
-                              const Spacer(),
-                              InkWell(
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.rectangle,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.elliptical(30, 30)),
-                                      border: Border.all(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary)),
-                                  child: Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20, vertical: 6),
-                                    // child: Row(
-                                    //   children: [
-                                    //     Icon(MdiIcons.television),
-                                    //     horizontalSpace(5),
-                                    //     Text(
-                                    //       "Visual Learning",
-                                    //       style: titleSmall(context).copyWith(
-                                    //           fontWeight: FontWeight.w600),
-                                    //     ),
-                                    //   ],
-                                    // ),
-                                  ),
-                                ),
-                                onTap: () {
-                                  // showModalBottomSheet(
-                                  //     context: context,
-                                  //     builder: (context) {
-                                  //       return Container(
-                                  //           height: MediaQuery.of(context)
-                                  //                   .size
-                                  //                   .height *
-                                  //               0.8,
-                                  //           child:
-                                  //               const RoadIntersectionWidget());
-                                  //     },
-                                  //     isScrollControlled: true);
-                                },
-                              ),
-                            ],
-                          ),
-                          verticalSpace(20),
-                          Padding(
-                            padding: EdgeInsets.symmetric(
-                                horizontal:
-                                    MediaQuery.of(context).size.width * 0.02),
-                            child: Center(
-                              child: Text(
-                                state.getCurrentQuestion().question,
-                                style: titleMedium(context,
-                                    fontWeight: FontWeight.bold),
-                                textAlign: TextAlign.center,
-                              ),
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primary
+                                  .withAlpha(50),
+                              shape: BoxShape.rectangle,
+                              borderRadius: const BorderRadius.all(
+                                  Radius.elliptical(30, 30))),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 6),
+                            child: Text(
+                              "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
+                              style: titleSmall(context).copyWith(
+                                  color: Theme.of(context).colorScheme.primary,
+                                  fontWeight: FontWeight.w600),
                             ),
                           ),
-                          verticalSpace(15),
-                          questionOptionWidget(context, state),
-                          verticalSpace(20),
-                          if (state.viewMode) ...[
-                            BlocBuilder<GeminiBloc, GeminiState>(
-                              builder: (context, gemState) {
-                                return Column(
-                                  children: [
-                                    Card(
-                                      child: ListTile(
-                                        title: InkWell(
-                                          onTap: !isGeminiAnswerThere(
-                                                  gemState, state)
-                                              ? () {
-                                                  geminiBloc.onEvent(
-                                                      FetchResultEvent(
-                                                          answerModel: state
-                                                              .getCurrentAnswerModel()!));
-                                                }
-                                              : null,
-                                          child: Text(
-                                            (gemState is GeminiTextStreamer) &&
-                                                    isGeminiAnswerThere(
-                                                        gemState, state)
-                                                ? "Answer"
-                                                : "Show Answer",
-                                          ),
-                                        ),
-                                        subtitle: isGeminiAnswerThere(
-                                                    gemState, state) &&
-                                                animatedQuestionIds.contains(
-                                                    state
-                                                        .getCurrentQuestion()
-                                                        .id)
-                                            ? Text(getGeminiAnswer(
-                                                gemState, state))
-                                            :
-                                            //Animated Gemini text
-                                            AnimatedTextKit(
-                                                key: Key(state.currentPosition
-                                                    .toString()),
-                                                animatedTexts: [
-                                                  TypewriterAnimatedText(
-                                                    getGeminiAnswer(
-                                                        gemState, state),
-                                                    speed: const Duration(
-                                                        milliseconds: 30),
-                                                  ),
-                                                ],
-                                                totalRepeatCount: 1,
-                                                pause: const Duration(
-                                                    milliseconds: 200),
-                                                displayFullTextOnTap: true,
-                                                stopPauseOnTap: true,
-                                                onFinished: () => {
-                                                  animatedQuestionIds.add(state
-                                                      .getCurrentQuestion()
-                                                      .id)
-                                                },
-                                              ),
-                                        trailing: const Icon(Icons.light),
-                                      ),
-                                    ),
-                                    verticalSpace(15)
-                                  ],
-                                );
-                              },
-                            )
-                          ],
-                        ],
-                        verticalSpace(100),
+                        ),
+                        const Spacer(),
+                        InkWell(
+                          child: Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                borderRadius: const BorderRadius.all(
+                                    Radius.elliptical(30, 30)),
+                                border: Border.all(
+                                    color:
+                                        Theme.of(context).colorScheme.primary)),
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 6),
+                              // child: Row(
+                              //   children: [
+                              //     Icon(MdiIcons.television),
+                              //     horizontalSpace(5),
+                              //     Text(
+                              //       "Visual Learning",
+                              //       style: titleSmall(context).copyWith(
+                              //           fontWeight: FontWeight.w600),
+                              //     ),
+                              //   ],
+                              // ),
+                            ),
+                          ),
+                          onTap: () {
+                            // showModalBottomSheet(
+                            //     context: context,
+                            //     builder: (context) {
+                            //       return Container(
+                            //           height: MediaQuery.of(context)
+                            //                   .size
+                            //                   .height *
+                            //               0.8,
+                            //           child:
+                            //               const RoadIntersectionWidget());
+                            //     },
+                            //     isScrollControlled: true);
+                          },
+                        ),
                       ],
                     ),
                   ),
-                )
+                ],
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Align(
+                      alignment: Alignment.topCenter,
+                      child: ListView(
+                        children: [
+                          if (state is TestLoaded) ...[
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal:
+                                      MediaQuery.of(context).size.width * 0.02),
+                              child: Center(
+                                child: Text(
+                                  state.getCurrentQuestion().question,
+                                  style: titleMedium(context,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                            verticalSpace(15),
+                            questionOptionWidget(context, state),
+                            verticalSpace(20),
+                            if (state.viewMode) ...[
+                              BlocBuilder<GeminiBloc, GeminiState>(
+                                builder: (context, gemState) {
+                                  return Column(
+                                    children: [
+                                      Card(
+                                        child: ListTile(
+                                          title: InkWell(
+                                            onTap: !isGeminiAnswerThere(
+                                                    gemState, state)
+                                                ? () {
+                                                    geminiBloc.onEvent(
+                                                        FetchResultEvent(
+                                                            answerModel: state
+                                                                .getCurrentAnswerModel()!));
+                                                  }
+                                                : null,
+                                            child: Text(
+                                              (gemState is GeminiTextStreamer) &&
+                                                      isGeminiAnswerThere(
+                                                          gemState, state)
+                                                  ? "Answer"
+                                                  : "Show Answer",
+                                            ),
+                                          ),
+                                          subtitle: isGeminiAnswerThere(
+                                                      gemState, state) &&
+                                                  animatedQuestionIds.contains(
+                                                      state
+                                                          .getCurrentQuestion()
+                                                          .id)
+                                              ? Text(getGeminiAnswer(
+                                                  gemState, state))
+                                              :
+                                              //Animated Gemini text
+                                              AnimatedTextKit(
+                                                  key: Key(state.currentPosition
+                                                      .toString()),
+                                                  animatedTexts: [
+                                                    TypewriterAnimatedText(
+                                                      getGeminiAnswer(
+                                                          gemState, state),
+                                                      speed: const Duration(
+                                                          milliseconds: 30),
+                                                    ),
+                                                  ],
+                                                  totalRepeatCount: 1,
+                                                  pause: const Duration(
+                                                      milliseconds: 200),
+                                                  displayFullTextOnTap: true,
+                                                  stopPauseOnTap: true,
+                                                  onFinished: () => {
+                                                    animatedQuestionIds.add(state
+                                                        .getCurrentQuestion()
+                                                        .id)
+                                                  },
+                                                ),
+                                          trailing: const Icon(Icons.light),
+                                        ),
+                                      ),
+                                      verticalSpace(15)
+                                    ],
+                                  );
+                                },
+                              )
+                            ],
+                          ],
+                          verticalSpace(100),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
             floatingActionButton: (state is TestLoaded)
@@ -290,7 +302,7 @@ class MockTestScreen extends StatelessWidget {
                       children: [
                         Expanded(
                           child: state.currentPosition == 0
-                              ? const Center()
+                              ? const Text('')
                               : TextButton(
                                   onPressed: () {
                                     BlocProvider.of<MockTestBloc>(context)
@@ -423,7 +435,11 @@ class MockTestScreen extends StatelessWidget {
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(15))),
           color: userAnswer == entry.key
-              ? Theme.of(context).colorScheme.tertiary
+              ? isViewModeAndNotCorrectOption(state, entry.key)
+                  ? Theme.of(context).colorScheme.error
+                  : isViewModeAndCorrectOption(state, entry.key)
+                      ? Colors.green
+                      : Theme.of(context).colorScheme.tertiary
               : isViewModeAndCorrectOption(state, entry.key)
                   ? Colors.green
                   : Theme.of(context).colorScheme.surface,
@@ -435,11 +451,12 @@ class MockTestScreen extends StatelessWidget {
               style: titleSmall(context).copyWith(
                   color: userAnswer == entry.key
                       ? Colors.white
-                      : Theme.of(context).colorScheme.onSurface),
+                      : Theme.of(context).colorScheme.onSurface,
+                  fontSize: 13),
             ),
             trailing: Container(
-              width: 30,
-              height: 30,
+              width: 25,
+              height: 25,
               decoration: BoxDecoration(
                   color: userAnswer == entry.key
                       ? Theme.of(context).colorScheme.primary
@@ -483,5 +500,12 @@ class MockTestScreen extends StatelessWidget {
 
   bool isViewModeAndCorrectOption(TestLoaded state, int key) {
     return state.viewMode && key == state.getCurrentQuestion().answer;
+  }
+
+  bool isViewModeAndNotCorrectOption(TestLoaded state, int key) {
+    print(key);
+    return state.viewMode &&
+        key != state.getCurrentQuestion().answer &&
+        key == state.getCurrentAnswerModel()!.userAnswer;
   }
 }
