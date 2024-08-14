@@ -29,7 +29,7 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
           .where((item) => item.testType == TestType.Knowledge)
           .take(knowSignLength)
           .toList();
-      knowledgeList.shuffle();
+      knowledgeList.shuffle(Random(DateTime.now().microsecondsSinceEpoch));
       var signList = dataList
           .where((item) => item.testType == TestType.Sign)
           .take(knowSignLength)

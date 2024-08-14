@@ -4,6 +4,7 @@ import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
 import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
+import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:dri_learn/features/tests/mock/presentation/answered_horizontal_list.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
@@ -161,7 +162,9 @@ class MockTestScreen extends StatelessWidget {
                             verticalSpace(15),
                             questionOptionWidget(context, state),
                             verticalSpace(20),
-                            if (state.viewMode) ...[
+                            if (state.viewMode &&
+                                state.getCurrentQuestion().testType ==
+                                    TestType.Knowledge) ...[
                               BlocBuilder<GeminiBloc, GeminiState>(
                                 builder: (context, gemState) {
                                   return Column(
