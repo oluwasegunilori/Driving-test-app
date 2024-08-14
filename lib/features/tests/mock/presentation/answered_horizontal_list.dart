@@ -9,13 +9,13 @@ class AnsweredHorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 70, // Set the height of the container
+      height: 50, // Set the height of the container
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: answers.length,
         itemBuilder: (context, index) {
           return Container(
-            width: 50, // Set the width of each item
+            width: 30, // Set the width of each item
             margin: const EdgeInsets.symmetric(
                 horizontal: 4.0), // Add spacing between items
             decoration: BoxDecoration(
@@ -27,7 +27,8 @@ class AnsweredHorizontalList extends StatelessWidget {
             child: Center(
               child: Text(
                 '${index + 1}', // Display the numbers from 1 to 20
-                style: titleSmall(context),
+                style: titleSmall(context)
+                    .copyWith(color: Theme.of(context).colorScheme.surface),
               ),
             ),
           );

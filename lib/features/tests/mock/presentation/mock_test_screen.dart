@@ -121,83 +121,19 @@ class MockTestScreen extends StatelessWidget {
                 if (state is TestLoaded) ...[
                   verticalSpace(15),
                   if (state.viewMode) ...[
-                    AnsweredHorizontalList(
-                        answers: state.answers.values.toList()),
-                    verticalSpace(20),
-                  ],
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: MediaQuery.of(context).size.width * 0.02),
-                    child: Row(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .primary
-                                  .withAlpha(50),
-                              shape: BoxShape.rectangle,
-                              borderRadius: const BorderRadius.all(
-                                  Radius.elliptical(30, 30))),
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20, vertical: 6),
-                            child: Text(
-                              "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
-                              style: titleSmall(context).copyWith(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  fontWeight: FontWeight.w600),
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        InkWell(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                shape: BoxShape.rectangle,
-                                borderRadius: const BorderRadius.all(
-                                    Radius.elliptical(30, 30)),
-                                border: Border.all(
-                                    color:
-                                        Theme.of(context).colorScheme.primary)),
-                            child: Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 20, vertical: 6),
-                              // child: Row(
-                              //   children: [
-                              //     Icon(MdiIcons.television),
-                              //     horizontalSpace(5),
-                              //     Text(
-                              //       "Visual Learning",
-                              //       style: titleSmall(context).copyWith(
-                              //           fontWeight: FontWeight.w600),
-                              //     ),
-                              //   ],
-                              // ),
-                            ),
-                          ),
-                          onTap: () {
-                            // showModalBottomSheet(
-                            //     context: context,
-                            //     builder: (context) {
-                            //       return Container(
-                            //           height: MediaQuery.of(context)
-                            //                   .size
-                            //                   .height *
-                            //               0.8,
-                            //           child:
-                            //               const RoadIntersectionWidget());
-                            //     },
-                            //     isScrollControlled: true);
-                          },
-                        ),
-                      ],
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: AnsweredHorizontalList(
+                          answers: state.answers.values.toList()),
                     ),
-                  ),
+                    verticalSpace(5),
+                  ],
+                  questionHeader(context, state),
+                  verticalSpace(8),
                 ],
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Align(
                       alignment: Alignment.topCenter,
                       child: ListView(
@@ -206,12 +142,15 @@ class MockTestScreen extends StatelessWidget {
                             Padding(
                               padding: EdgeInsets.symmetric(
                                   horizontal:
-                                      MediaQuery.of(context).size.width * 0.02),
+                                      MediaQuery.of(context).size.width * 0.01),
                               child: Center(
                                 child: Text(
                                   state.getCurrentQuestion().question,
-                                  style: titleMedium(context,
-                                      fontWeight: FontWeight.bold),
+                                  style: titleMedium(
+                                    context,
+                                    fontWeight: FontWeight.w500,
+                                    size: 15,
+                                  ).copyWith(height: 1.2),
                                   textAlign: TextAlign.center,
                                 ),
                               ),
@@ -294,12 +233,12 @@ class MockTestScreen extends StatelessWidget {
                 ),
               ],
             ),
-            floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
             floatingActionButtonLocation:
                 FloatingActionButtonLocation.centerDocked,
             floatingActionButton: (state is TestLoaded)
                 ? Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 6),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 3),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -410,6 +349,73 @@ class MockTestScreen extends StatelessWidget {
     );
   }
 
+  Padding questionHeader(BuildContext context, TestLoaded state) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.02),
+      child: Row(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary.withAlpha(50),
+                shape: BoxShape.rectangle,
+                borderRadius:
+                    const BorderRadius.all(Radius.elliptical(30, 30))),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+              child: Text(
+                "Questions ${(state).currentPosition + 1}/${(state).questions.length}",
+                style: titleSmall(context).copyWith(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+          ),
+          const Spacer(),
+          InkWell(
+            child: Container(
+              decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  borderRadius:
+                      const BorderRadius.all(Radius.elliptical(30, 30)),
+                  border:
+                      Border.all(color: Theme.of(context).colorScheme.primary)),
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 6),
+                // child: Row(
+                //   children: [
+                //     Icon(MdiIcons.television),
+                //     horizontalSpace(5),
+                //     Text(
+                //       "Visual Learning",
+                //       style: titleSmall(context).copyWith(
+                //           fontWeight: FontWeight.w600),
+                //     ),
+                //   ],
+                // ),
+              ),
+            ),
+            onTap: () {
+              // showModalBottomSheet(
+              //     context: context,
+              //     builder: (context) {
+              //       return Container(
+              //           height: MediaQuery.of(context)
+              //                   .size
+              //                   .height *
+              //               0.8,
+              //           child:
+              //               const RoadIntersectionWidget());
+              //     },
+              //     isScrollControlled: true);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   String getGeminiAnswer(GeminiState gemState, TestLoaded state) {
     if (gemState is! GeminiTextStreamer) {
       return "";
@@ -506,7 +512,6 @@ class MockTestScreen extends StatelessWidget {
   }
 
   bool isViewModeAndNotCorrectOption(TestLoaded state, int key) {
-    print(key);
     return state.viewMode &&
         key != state.getCurrentQuestion().answer &&
         key == state.getCurrentAnswerModel()!.userAnswer;
