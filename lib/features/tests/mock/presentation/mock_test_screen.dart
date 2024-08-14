@@ -294,9 +294,12 @@ class MockTestScreen extends StatelessWidget {
                 ),
               ],
             ),
+            floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
+            floatingActionButtonLocation:
+                FloatingActionButtonLocation.centerDocked,
             floatingActionButton: (state is TestLoaded)
                 ? Padding(
-                    padding: const EdgeInsets.only(left: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 6),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

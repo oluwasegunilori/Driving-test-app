@@ -13,6 +13,7 @@ class GenerateGeminiQuestionUsecase {
       generateQuestion +=
           "${model.question.options[model.question.answer]} and not ${model.question.options[model.userAnswer]}";
     }
+    generateQuestion += "Please summarize the answer";
     return generateQuestion;
   }
 }
