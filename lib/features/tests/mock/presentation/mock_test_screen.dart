@@ -180,7 +180,7 @@ class MockTestScreen extends StatelessWidget {
                                                       isGeminiAnswerThere(
                                                           gemState, state)
                                                   ? "Answer"
-                                                  : "Show Answer",
+                                                  : "Explain Answer",
                                             ),
                                           ),
                                           subtitle: isGeminiAnswerThere(

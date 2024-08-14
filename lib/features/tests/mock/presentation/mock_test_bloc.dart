@@ -86,6 +86,13 @@ class MockTestBloc extends Bloc<MockTestEvent, MockTestState> {
     on<ClearStateEvent>((event, emit) {
       resetQuestions();
     });
+
+    on<NavigateToQuestionEvent>((event, emit) {
+      if (state is TestLoaded) {
+        TestLoaded currentState = state as TestLoaded;
+        emit(currentState.copyWith(currentPosition: event.questionNo));
+      }
+    });
   }
 
   void resetQuestions() async {

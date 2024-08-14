@@ -32,5 +32,10 @@ class SetTestType extends MockTestEvent {
   const SetTestType({required this.testType});
 }
 
-class ClearStateEvent extends MockTestEvent {
+class ClearStateEvent extends MockTestEvent {}
+
+class NavigateToQuestionEvent extends MockTestEvent {
+  final int questionNo;
+
+  NavigateToQuestionEvent({required this.questionNo});
 }
