@@ -14,6 +14,7 @@ import 'package:dri_learn/features/authentication/domain/usecase/save_user_data_
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/gemini/data/repository/gemini_repo_impl.dart';
 import 'package:dri_learn/features/gemini/domain/repository/gemini_repo.dart';
+import 'package:dri_learn/features/gemini/domain/usecase/generate_gemini_question.dart';
 import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
 import 'package:dri_learn/features/history/data/repository/test_history_repository_impl.dart';
 import 'package:dri_learn/features/history/domain/repository/test_history_repository.dart';
@@ -69,6 +70,8 @@ Future<void> init() async {
       () => SaveTestHistoryUsecase(repository: sl.call()));
   sl.registerFactory<GetTestHistoryUsecase>(
       () => GetTestHistoryUsecase(testHistoryRepository: sl.call()));
+  sl.registerFactory<GenerateGeminiQuestionUsecase>(
+      () => GenerateGeminiQuestionUsecase());
 
   //blocs
   sl.registerSingleton<AuthBloc>((AuthBloc(sl.call(), sl.call(), sl.call())));
@@ -79,5 +82,5 @@ Future<void> init() async {
       questionsRepository: sl.call(),
       saveTestHistoryUsecase: sl.call())));
   sl.registerFactory<TestHistoryBloc>(() => TestHistoryBloc(sl.call()));
-  sl.registerSingleton<GeminiBloc>(GeminiBloc(sl.call()));
+  sl.registerSingleton<GeminiBloc>(GeminiBloc(sl.call(), sl.call()));
 }

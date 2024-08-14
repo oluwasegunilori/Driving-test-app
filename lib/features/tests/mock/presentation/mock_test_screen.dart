@@ -118,8 +118,7 @@ class MockTestScreen extends StatelessWidget {
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 10, vertical: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: ListView(
                       children: [
                         if (state is TestLoaded) ...[
@@ -213,196 +212,193 @@ class MockTestScreen extends StatelessWidget {
                               builder: (context, gemState) {
                                 return Column(
                                   children: [
-                                    if (gemState is GeminiTextStreamer) ...[
-                                      Card(
-                                        child: ListTile(
-                                          title: InkWell(
-                                            child: Text(
-                                              isGeminiAnswerThere(
-                                                      gemState, state)
-                                                  ? "Answer"
-                                                  : "Show Answer",
-                                            ),
-                                            onTap: () {
-                                              if (isGeminiAnswerThere(
-                                                  gemState, state)) {
-                                                geminiBloc.add(FetchResultEvent(
-                                                    answerModel: state
-                                                        .getCurrentAnswerModel()!));
-                                              }
-                                            },
-                                          ),
-                                          subtitle: isGeminiAnswerThere(
+                                    Card(
+                                      child: ListTile(
+                                        title: InkWell(
+                                          onTap: !isGeminiAnswerThere(
                                                   gemState, state)
-                                              ? AnimatedTextKit(
-                                                  animatedTexts: [
-                                                    TypewriterAnimatedText(
-                                                      gemState
-                                                          .getByQuestionId(state
-                                                              .getCurrentQuestion()
-                                                              .id)!
-                                                          .gemAnswer!,
-                                                      speed: const Duration(
-                                                          milliseconds: 100),
-                                                    ),
-                                                  ],
-                                                  totalRepeatCount: 1,
-                                                  pause: const Duration(
-                                                      milliseconds: 500),
-                                                  displayFullTextOnTap: true,
-                                                  stopPauseOnTap: true,
-                                                )
-                                              : Center(),
-                                          trailing: const Icon(Icons.light),
+                                              ? () {
+                                                  geminiBloc.onEvent(
+                                                      FetchResultEvent(
+                                                          answerModel: state
+                                                              .getCurrentAnswerModel()!));
+                                                }
+                                              : null,
+                                          child: Text(
+                                            (gemState is GeminiTextStreamer) &&
+                                                    isGeminiAnswerThere(
+                                                        gemState, state)
+                                                ? "Answer"
+                                                : "Show Answer",
+                                          ),
                                         ),
+                                        subtitle:
+                                            isGeminiAnswerThere(gemState, state)
+                                                ? Text(getGeminiAnswer(
+                                                    gemState, state))
+                                                : AnimatedTextKit(
+                                                    animatedTexts: [
+                                                      TypewriterAnimatedText(
+                                                        getGeminiAnswer(
+                                                            gemState, state),
+                                                        speed: const Duration(
+                                                            milliseconds: 100),
+                                                      ),
+                                                    ],
+                                                    totalRepeatCount: 1,
+                                                    pause: const Duration(
+                                                        milliseconds: 500),
+                                                    displayFullTextOnTap: true,
+                                                    stopPauseOnTap: true,
+                                                  ),
+                                        trailing: const Icon(Icons.light),
                                       ),
-                                    ],
+                                    ),
                                     verticalSpace(15)
                                   ],
                                 );
                               },
                             )
                           ],
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                    child: state.currentPosition == 0
-                                        ? const Center()
-                                        : TextButton(
-                                            onPressed: () {
-                                              BlocProvider.of<MockTestBloc>(
-                                                      context)
-                                                  .add(PreviousQuestEvent());
-                                            },
-                                            style: ButtonStyle(
-                                                backgroundColor:
-                                                    MaterialStatePropertyAll(
-                                                        Theme.of(context)
-                                                            .colorScheme
-                                                            .primary),
-                                                overlayColor:
-                                                    const MaterialStatePropertyAll(
-                                                        Colors.black12),
-                                                padding:
-                                                    const MaterialStatePropertyAll(
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 12,
-                                                            horizontal: 12))),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Icon(
-                                                  MdiIcons.undo,
-                                                  color: Theme.of(context)
-                                                      .colorScheme
-                                                      .surface,
-                                                ),
-                                                horizontalSpace(10),
-                                                Text(
-                                                  "Back",
-                                                  style: titleSmall(context)
-                                                      .copyWith(
-                                                          color: Colors.white),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                  ),
-                                  horizontalSpace(10),
-                                  Expanded(
-                                    child: TextButton(
-                                      onPressed: state.answers[state
-                                                  .getCurrentQuestion()
-                                                  .id] !=
-                                              null
-                                          ? () {
-                                              if (!state.viewMode) {
-                                                BlocProvider.of<MockTestBloc>(
-                                                        context)
-                                                    .add(SubmitAnswerEvent(AnswerModel(
-                                                        question: state
-                                                                .questions[
-                                                            state
-                                                                .currentPosition],
-                                                        userAnswer: state
-                                                            .answers[state
-                                                                .getCurrentQuestion()
-                                                                .id]!
-                                                            .userAnswer)));
-                                              }
-                                              if (state.isOnLastQuestion()) {
-                                                context.push(
-                                                    TestCompleteRoute().route);
-                                              }
-                                            }
-                                          : null,
-                                      style: ButtonStyle(
-                                          backgroundColor: MaterialStatePropertyAll(
-                                              Theme.of(context)
-                                                  .colorScheme
-                                                  .primary
-                                                  .withOpacity(state.answers[state
-                                                              .getCurrentQuestion()
-                                                              .id] ==
-                                                          null
-                                                      ? 0.4
-                                                      : 1)),
-                                          overlayColor: const MaterialStatePropertyAll(
-                                              Colors.black12),
-                                          padding: const MaterialStatePropertyAll(
-                                              EdgeInsets.symmetric(
-                                                  vertical: 12,
-                                                  horizontal: 12))),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            state.isOnLastQuestion()
-                                                ? state.viewMode
-                                                    ? "Next"
-                                                    : "Submit"
-                                                : "Next",
-                                            style: titleSmall(context)
-                                                .copyWith(color: Colors.white),
-                                          ),
-                                          horizontalSpace(10),
-                                          Icon(
-                                            MdiIcons.redo,
-                                            color: Theme.of(context)
-                                                .colorScheme
-                                                .background,
-                                          )
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
                         ],
+                        verticalSpace(100),
                       ],
                     ),
                   ),
                 )
               ],
             ),
+            floatingActionButton: (state is TestLoaded)
+                ? Padding(
+                    padding: const EdgeInsets.only(left: 30),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: state.currentPosition == 0
+                              ? const Center()
+                              : TextButton(
+                                  onPressed: () {
+                                    BlocProvider.of<MockTestBloc>(context)
+                                        .add(PreviousQuestEvent());
+                                  },
+                                  style: ButtonStyle(
+                                      backgroundColor: MaterialStatePropertyAll(
+                                          Theme.of(context)
+                                              .colorScheme
+                                              .primary),
+                                      overlayColor:
+                                          const MaterialStatePropertyAll(
+                                              Colors.black12),
+                                      padding: const MaterialStatePropertyAll(
+                                          EdgeInsets.symmetric(
+                                              vertical: 12, horizontal: 12))),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Icon(
+                                        MdiIcons.undo,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .surface,
+                                      ),
+                                      horizontalSpace(10),
+                                      Text(
+                                        "Back",
+                                        style: titleSmall(context)
+                                            .copyWith(color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                        ),
+                        horizontalSpace(10),
+                        Expanded(
+                          child: TextButton(
+                            onPressed:
+                                state.answers[state.getCurrentQuestion().id] !=
+                                        null
+                                    ? () {
+                                        BlocProvider.of<MockTestBloc>(context)
+                                            .add(SubmitAnswerEvent(AnswerModel(
+                                                question: state.questions[
+                                                    state.currentPosition],
+                                                userAnswer: state
+                                                    .answers[state
+                                                        .getCurrentQuestion()
+                                                        .id]!
+                                                    .userAnswer)));
+                                        if (state.isOnLastQuestion()) {
+                                          context
+                                              .push(TestCompleteRoute().route);
+                                        }
+                                      }
+                                    : null,
+                            style: ButtonStyle(
+                                backgroundColor: MaterialStatePropertyAll(
+                                    Theme.of(context)
+                                        .colorScheme
+                                        .primary
+                                        .withOpacity(state.answers[state
+                                                    .getCurrentQuestion()
+                                                    .id] ==
+                                                null
+                                            ? 0.4
+                                            : 1)),
+                                overlayColor: const MaterialStatePropertyAll(
+                                    Colors.black12),
+                                padding: const MaterialStatePropertyAll(
+                                    EdgeInsets.symmetric(
+                                        vertical: 12, horizontal: 12))),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  state.isOnLastQuestion()
+                                      ? state.viewMode
+                                          ? "Next"
+                                          : "Submit"
+                                      : "Next",
+                                  style: titleSmall(context)
+                                      .copyWith(color: Colors.white),
+                                ),
+                                horizontalSpace(10),
+                                Icon(
+                                  MdiIcons.redo,
+                                  color: Theme.of(context).colorScheme.surface,
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                : Center(),
           );
         },
       ),
     );
   }
 
-  bool isGeminiAnswerThere(GeminiTextStreamer gemState, TestLoaded state) {
-    return gemState.getByQuestionId(state.getCurrentQuestion().id)?.gemAnswer !=
-        null;
+  String getGeminiAnswer(GeminiState gemState, TestLoaded state) {
+    if (gemState is! GeminiTextStreamer) {
+      return "";
+    }
+    return gemState.getByQuestionId(state.getCurrentQuestion().id)?.gemAnswer ??
+        "";
+  }
+
+  bool isGeminiAnswerThere(GeminiState gemState, TestLoaded state) {
+    if (gemState is GeminiTextStreamer) {
+      return gemState
+              .getByQuestionId(state.getCurrentQuestion().id)
+              ?.gemAnswer
+              ?.isNotEmpty ==
+          true;
+    } else {
+      return false;
+    }
   }
 
   Column questionOptionWidget(BuildContext context, TestLoaded state) {

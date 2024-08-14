@@ -3,6 +3,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:dri_learn/features/gemini/domain/model/gem_question_answer_model.dart';
 import 'package:dri_learn/features/gemini/domain/repository/gemini_repo.dart';
+import 'package:dri_learn/features/gemini/domain/usecase/generate_gemini_question.dart';
 import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
@@ -12,18 +13,19 @@ part 'gemini_state.dart';
 
 class GeminiBloc extends Bloc<GeminiEvent, GeminiState> {
   final GeminiRepo geminiRepo;
+  final GenerateGeminiQuestionUsecase generateGeminiQuestionUsecase;
 
-  GeminiBloc(this.geminiRepo) : super(GeminInitial());
+  GeminiBloc(this.geminiRepo, this.generateGeminiQuestionUsecase)
+      : super(GeminInitial());
 
   @override
   void onEvent(GeminiEvent event) {
     super.onEvent(event);
     if (event is FetchResultEvent) {
       var answer = "";
-      geminiRepo
-          .generateAnswer(
-              "In ontario, ${event.answerModel.question.question} Answer should not be more than 5 lines")
-          .listen(
+      String question = generateGeminiQuestionUsecase(event.answerModel);
+      print(question);
+      geminiRepo.generateAnswer(question).listen(
         (value) {
           answer = "$answer${value.output}";
         },
