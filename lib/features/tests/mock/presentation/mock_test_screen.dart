@@ -242,7 +242,7 @@ class MockTestScreen extends StatelessWidget {
                                                         getGeminiAnswer(
                                                             gemState, state),
                                                         speed: const Duration(
-                                                            milliseconds: 100),
+                                                            milliseconds: 30),
                                                       ),
                                                     ],
                                                     totalRepeatCount: 1,
