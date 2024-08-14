@@ -124,12 +124,14 @@ class MockTestScreen extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: AnsweredHorizontalList(
-                          answers: state.answers.values.toList()),
+                          answers: state.answers.values.toList(),
+                          currentPosition: state.currentPosition,),
                     ),
                     verticalSpace(5),
+                  ] else ...[
+                    questionHeader(context, state),
+                    verticalSpace(8),
                   ],
-                  questionHeader(context, state),
-                  verticalSpace(8),
                 ],
                 Expanded(
                   child: Padding(
@@ -184,7 +186,7 @@ class MockTestScreen extends StatelessWidget {
                                             ),
                                           ),
                                           subtitle: isGeminiAnswerThere(
-                                                      gemState, state) &&
+                                                      gemState, state) ||
                                                   animatedQuestionIds.contains(
                                                       state
                                                           .getCurrentQuestion()

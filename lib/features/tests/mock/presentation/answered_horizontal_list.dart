@@ -7,7 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AnsweredHorizontalList extends StatelessWidget {
   final List<AnswerModel> answers;
-  const AnsweredHorizontalList({super.key, required this.answers});
+  final int currentPosition;
+  const AnsweredHorizontalList(
+      {super.key, required this.answers, required this.currentPosition});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,9 @@ class AnsweredHorizontalList extends StatelessWidget {
         itemBuilder: (context, index) {
           return InkWell(
             child: Container(
-              width: 30, // Set the width of each item
+              width: index == currentPosition
+                  ? 40
+                  : 28, // Set the width of each item
               margin: const EdgeInsets.symmetric(
                   horizontal: 4.0), // Add spacing between items
               decoration: BoxDecoration(
@@ -31,7 +35,7 @@ class AnsweredHorizontalList extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '${index + 1}', // Display the numbers from 1 to 20
+                  '${index + 1}',
                   style: titleSmall(context)
                       .copyWith(color: Theme.of(context).colorScheme.surface),
                 ),
