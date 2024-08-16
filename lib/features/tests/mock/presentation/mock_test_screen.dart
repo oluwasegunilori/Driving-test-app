@@ -58,8 +58,9 @@ class MockTestScreen extends StatelessWidget {
                                           "link")
                                   ? Padding(
                                       padding: const EdgeInsets.only(top: 50),
-                                      child: Image.asset(
-                                        "assets/images/${state.getCurrentQuestion().image!}.jpg",
+                                      child: Image.network(
+                                        state.getCurrentQuestion().imageLink ??
+                                            "",
                                         fit: BoxFit
                                             .fitHeight, // This makes the image cover the entire area
                                         width: double.infinity,
