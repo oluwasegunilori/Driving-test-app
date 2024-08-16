@@ -104,18 +104,30 @@ class MockTestScreen extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                      top: 50,
-                      child: IconButton(
-                        onPressed: () {
-                          if (context.canPop()) {
-                            context.pop();
-                          }
-                        },
-                        icon: Icon(
-                          MdiIcons.chevronLeft,
-                          size: 26,
+                      top: 40,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .surface, // Background color
+                            shape: BoxShape
+                                .circle, // Circle shape for rounded button
+                          ),
+                          child: IconButton(
+                            onPressed: () {
+                              if (context.canPop()) {
+                                context.pop();
+                              }
+                            },
+                            icon: Icon(
+                              MdiIcons.chevronLeft,
+                              size: 26,
+                            ),
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                         ),
-                        color: Theme.of(context).primaryColor,
                       ),
                     )
                   ],
