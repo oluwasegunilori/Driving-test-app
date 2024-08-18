@@ -7,6 +7,7 @@ class QuestionModel extends Equatable {
   final List<String> options;
   final String? image;
   final String? imageLink;
+  final String? geminiQuestion;
   final int answer;
   final TestType testType;
 
@@ -16,6 +17,7 @@ class QuestionModel extends Equatable {
       required this.options,
       this.image,
       this.imageLink,
+      this.geminiQuestion,
       required this.answer,
       required this.testType});
 
@@ -26,13 +28,14 @@ class QuestionModel extends Equatable {
         options: List<String>.from(json['options']),
         image: json['image'],
         imageLink: json['imageLink'],
+        geminiQuestion: json['geminiQuestion'],
         answer: int.parse(json['answer']),
         testType: TestType.fromString(json['type']));
   }
 
   @override
   List<Object?> get props =>
-      [question, options, image, answer, testType, imageLink];
+      [question, options, image, answer, testType, imageLink, geminiQuestion];
 }
 
 // final List<QuestionModel> questionsStat = [

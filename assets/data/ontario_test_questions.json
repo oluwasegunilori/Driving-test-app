@@ -908,5 +908,48 @@
         "answer": "0",
         "type": "Sign",
         "id": "77d78e60-bb6b-4d51-a988-12werfdb0f430"
+    },
+    {
+        "question": "If you have a tire blow out while driving, you should _______",
+        "options": [
+            "Keep driving",
+            "Pump the break repeatedly and pull off the road",
+            "Release the gas pedal for the car to slow down and steer the vehivle in the direction you want to go",
+            "Stop the car immediately by breaking hard"
+        ],
+        "image": null,
+        "imageLink" : null,
+        "answer": "2",
+        "type": "Knowledge",
+        "id": "55bf16a6-3b4a-4631-8309-0f0a7eed3f0e"
+    },
+    {
+        "question": "Lanes of traffic moving in the same direction are divided by ______ lines.",
+        "options": [
+            "White",
+            "Yellow",
+            "Both white and Yellow",
+            "Broken"
+        ],
+        "image": null,
+        "imageLink" : null,
+        "answer": "0",
+        "type": "Knowledge",
+        "id": "bf8f6ae6-6782-44d4-938f-ecbb2e2e36a2"
+    },
+    {
+        "question": "If your phone rings while driving",
+        "options": [
+            "All of the options",
+            "Pull over and park to use the cellphone",
+            "Have a passenger take the call",
+            "Let the call go to voice mail"
+        ],
+        "image": null,
+        "imageLink" : null,
+        "geminiQuestion" : "If my phone rings while driving in ontario, I should only pull over if I need to use the cell phone or have a passenger take the call or let the call go to voice mail right?",
+        "answer": "0",
+        "type": "Knowledge",
+        "id": "e118f6d0-b755-42c8-9c9b-09387436a9b3"
     }
 ]

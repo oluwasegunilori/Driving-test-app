@@ -13,6 +13,9 @@ class GenerateGeminiQuestionUsecase {
       generateQuestion +=
           "${model.question.options[model.question.answer]} and the answer shoul not be ${model.question.options[model.userAnswer]}";
     }
+    if (model.question.geminiQuestion != null) {
+      generateQuestion = model.question.geminiQuestion!;
+    }
     generateQuestion += "Please summarize the answer";
     return generateQuestion;
   }
