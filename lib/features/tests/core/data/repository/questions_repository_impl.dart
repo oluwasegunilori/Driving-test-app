@@ -8,7 +8,7 @@ import 'package:flutter/services.dart' show rootBundle;
 
 const questionLength = 40;
 const knowSignLength = 20;
-const singleKnowSignLength = 10;
+const singleKnowSignLength = 20;
 
 class QuestionsRepositoryImpl extends QuestionsRepository {
   @override
