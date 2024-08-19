@@ -23,7 +23,6 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
       response = await rootBundle
           .loadString('assets/data/ontario_test_questions.json');
     }
-
     final List<dynamic> data = await json.decode(response);
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
