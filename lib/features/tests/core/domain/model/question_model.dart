@@ -8,6 +8,7 @@ class QuestionModel extends Equatable {
   final String? image;
   final String? imageLink;
   final String? geminiQuestion;
+  final String? geminiAnswer;
   final int answer;
   final TestType testType;
 
@@ -18,6 +19,7 @@ class QuestionModel extends Equatable {
       this.image,
       this.imageLink,
       this.geminiQuestion,
+      this.geminiAnswer,
       required this.answer,
       required this.testType});
 
@@ -29,6 +31,7 @@ class QuestionModel extends Equatable {
         image: json['image'],
         imageLink: json['imageLink'],
         geminiQuestion: json['geminiQuestion'],
+        geminiAnswer: json['geminiAnswer'],
         answer: int.parse(json['answer']),
         testType: TestType.fromString(json['type']));
   }
