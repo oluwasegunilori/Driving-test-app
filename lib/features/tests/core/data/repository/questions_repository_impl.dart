@@ -14,12 +14,16 @@ const singleKnowSignLength = 20;
 class QuestionsRepositoryImpl extends QuestionsRepository {
   @override
   Future<List<QuestionModel>> getQuestions({TestType? type}) async {
-    String response = "";
+    String response;
     final remoteResponse = await http
         .get(Uri.parse('https://drilearn.web.app/ontario_test_questions.json'));
     if (remoteResponse.statusCode == 200) {
       response = remoteResponse.body;
-    } 
+    } else {
+      response = await rootBundle
+          .loadString('assets/data/ontario_test_questions.json');
+    }
+
     final List<dynamic> data = await json.decode(response);
     List<QuestionModel> dataList =
         data.map((json) => QuestionModel.fromJson(json)).toList();
