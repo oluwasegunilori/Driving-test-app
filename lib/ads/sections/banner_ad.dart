@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'dart:io' show Platform;
 
 void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
   final bannerAd = BannerAd(
     size: adSize ?? AdSize.largeBanner,
-    adUnitId: "ca-app-pub-8953033025026599/9126790480",
+    adUnitId: Platform.isAndroid
+        ? "ca-app-pub-8953033025026599/2079571372"
+        : "ca-app-pub-8953033025026599/9126790480",
     request: const AdRequest(),
     listener: BannerAdListener(
       // Called when an ad is successfully received.
