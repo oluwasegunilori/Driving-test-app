@@ -22,27 +22,35 @@ class GeminiBloc extends Bloc<GeminiEvent, GeminiState> {
   void onEvent(GeminiEvent event) {
     super.onEvent(event);
     if (event is FetchResultEvent) {
-      var answer = "";
-      String question = generateGeminiQuestionUsecase(event.answerModel);
-      geminiRepo.generateAnswer(question).then((value) {
-        if (value?.output == null) {
-          answer = "No anwser";
-        } else {
-          answer = "$answer${value?.output}";
-        }
-        if (state is GeminInitial) {
-          emit(GeminiTextStreamer(answerModel: [
-            GemQuestionAnswerModel(
-                answerModel: event.answerModel, gemAnswer: answer)
-          ]));
-        } else if (state is GeminiTextStreamer) {
-          List<GemQuestionAnswerModel> currentAnswerModel =
-              List.from((state as GeminiTextStreamer).answerModel);
-          currentAnswerModel.add(GemQuestionAnswerModel(
-              answerModel: event.answerModel, gemAnswer: answer));
-          emit(GeminiTextStreamer(answerModel: currentAnswerModel));
-        }
-      }).catchError((onError) {});
+      if (event.answerModel.question.geminiAnswer == null) {
+        var answer = "";
+        String question = generateGeminiQuestionUsecase(event.answerModel);
+        geminiRepo.generateAnswer(question).then((value) {
+          if (value?.output == null) {
+            answer = "No anwser";
+          } else {
+            answer = "$answer${value?.output}";
+          }
+          emitAnswer(event, answer);
+        }).catchError((onError) {});
+      } else {
+        emitAnswer(event, event.answerModel.question.geminiAnswer!);
+      }
+    }
+  }
+
+  void emitAnswer(FetchResultEvent event, String answer) {
+    if (state is GeminInitial) {
+      emit(GeminiTextStreamer(answerModel: [
+        GemQuestionAnswerModel(
+            answerModel: event.answerModel, gemAnswer: answer)
+      ]));
+    } else if (state is GeminiTextStreamer) {
+      List<GemQuestionAnswerModel> currentAnswerModel =
+          List.from((state as GeminiTextStreamer).answerModel);
+      currentAnswerModel.add(GemQuestionAnswerModel(
+          answerModel: event.answerModel, gemAnswer: answer));
+      emit(GeminiTextStreamer(answerModel: currentAnswerModel));
     }
   }
 
