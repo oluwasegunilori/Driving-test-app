@@ -1,0 +1,70 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build and Deploy Flutter App
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v3
+        with:
+            flutter-version: '3.22.2' # Specify the Flutter version
+
+      - name: Cache Flutter dependencies
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pub-cache
+            .flutter-plugins
+            .packages
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-flutter-
+      - name: Install dependencies
+        run: flutter pub get
+        
+    #Set IOS version
+      - name: Set Version Number Using Fastlane
+        run: |
+          bundle exec fastlane run increment_version_number version_number:"1.1.$GITHUB_RUN_NUMBER"
+        working-directory: ios
+
+      - name: Set Build Number Using Fastlane
+        run: |
+          bundle exec fastlane run increment_build_number build_number:$GITHUB_RUN_NUMBER
+        working-directory: ios
+      - name: Build APK
+        run: flutter build apk --release
+
+      - name: Build iOS
+        run: flutter build ios --release
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2 # Use the Ruby version you have Fastlane installed
+
+      - name: Install Fastlane
+        run: gem install fastlane
+
+    #   - name: Deploy Android
+    #     run: fastlane android beta
+    #     env:
+    #       ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+    #       ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+    #       ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+    #       ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+
+      - name: Deploy iOS
+        run: fastlane ios release
+        env:
+          APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
