@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:dri_learn/config/env.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
@@ -7,6 +9,7 @@ import 'package:dri_learn/core/router_config.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'features/authentication/domain/model/user_entity.dart';
 import 'features/authentication/presentation/authentication_state.dart';
 import 'firebase_options.dart';
@@ -15,6 +18,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  unawaited(MobileAds.instance.initialize());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );

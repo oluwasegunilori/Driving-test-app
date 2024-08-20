@@ -8,7 +8,7 @@
             "Do not pass"
         ],
         "image": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0",
-        "imageLink": "https://i.imgur.com/jMntFSN.jpeg",
+        "imageLink": "https://i.imgur.com/jMntFSN.jpg",
         "answer": "3",
         "type": "Sign",
         "id": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0"
@@ -64,7 +64,7 @@
             "The lane is reserved for bicycles"
         ],
         "image": "050338c3-45b1-4408-838b-a9402b264848",
-        "imageLink": "https://imgur.com/YsE6MOp.jpg",
+        "imageLink": "https://i.imgur.com/YsE6MOp.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "050338c3-45b1-4408-838b-a9402b264848"
@@ -78,7 +78,7 @@
             "no stopping"
         ],
         "image": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5",
-        "imageLink": "https://imgur.com/vFuuBig.jpg",
+        "imageLink": "https://i.imgur.com/vFuuBig.jpg",
         "answer": "3",
         "type": "Sign",
         "id": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5"
@@ -92,7 +92,7 @@
             "no left turn"
         ],
         "image": "858e8441-8eac-47ab-a9a5-9b6459d58a52",
-        "imageLink": "https://imgur.com/mVMvuWb.jpg",
+        "imageLink": "https://i.imgur.com/mVMvuWb.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "858e8441-8eac-47ab-a9a5-9b6459d58a52"
@@ -106,7 +106,7 @@
             "the minimum speed permitted"
         ],
         "image": "32f23d26-7920-4305-9513-96d7789ed829",
-        "imageLink": "https://imgur.com/dfCitBA.jpg",
+        "imageLink": "https://i.imgur.com/dfCitBA.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "32f23d26-7920-4305-9513-96d7789ed829"
@@ -120,7 +120,7 @@
             "dead end ahead"
         ],
         "image": "43f2e36f-e88c-46c0-8f13-10d9bc064393",
-        "imageLink": "https://imgur.com/EUjZHhL.jpg",
+        "imageLink": "https://i.imgur.com/EUjZHhL.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "43f2e36f-e88c-46c0-8f13-10d9bc064393"
@@ -134,7 +134,7 @@
             "there are trucks on the hill"
         ],
         "image": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee",
-        "imageLink" : "https://imgur.com/808ngPM.jpg",
+        "imageLink" : "https://i.imgur.com/808ngPM.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee"
@@ -148,7 +148,7 @@
             "this sign warns you that snowmobile cross this road ahead"
         ],
         "image": "fabb5293-6b33-4d13-8622-1160f2ecf671",
-        "imageLink": "https://imgur.com/FsET3My.jpg",
+        "imageLink": "https://i.imgur.com/FsET3My.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "fabb5293-6b33-4d13-8622-1160f2ecf671"
@@ -162,7 +162,7 @@
             "parking space reserve for emergency"
         ],
         "image": "acdf7747-a423-4541-abfc-19153aaa4c74",
-        "imageLink": "https://imgur.com/GXZAUAT.jpg",
+        "imageLink": "https://i.imgur.com/GXZAUAT.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "acdf7747-a423-4541-abfc-19153aaa4c74"
@@ -176,7 +176,7 @@
             "left turns are permitted on a red light"
         ],
         "image": "cc8ba749-ab9a-4144-933b-9ac826532285",
-        "imageLink": "https://imgur.com/9rNCaZD.jpg",
+        "imageLink": "https://i.imgur.com/9rNCaZD.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "cc8ba749-ab9a-4144-933b-9ac826532285"
@@ -190,7 +190,7 @@
             "pedestrian crossing"
         ],
         "image": "76dfe16e-be36-48b5-8db3-6007a3013f95",
-        "imageLink": "https://imgur.com/LBN5t5V.jpg",
+        "imageLink": "https://i.imgur.com/LBN5t5V.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "76dfe16e-be36-48b5-8db3-6007a3013f95"
@@ -204,7 +204,7 @@
             "construction zone ahead"
         ],
         "image": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f",
-        "imageLink": "https://imgur.com/JMgmm8k.jpg",
+        "imageLink": "https://i.imgur.com/JMgmm8k.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f"
@@ -218,7 +218,7 @@
             "Dangerous goods vehicles not allowed"
         ],
         "image": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff",
-        "imageLink": "https://imgur.com/pr0131t.jpg",
+        "imageLink": "https://i.imgur.com/pr0131t.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff"
@@ -232,7 +232,7 @@
             "highway entrance ramp ahead"
         ],
         "image": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd",
-        "imageLink": "https://imgur.com/da6m9bo.jpg",
+        "imageLink": "https://i.imgur.com/da6m9bo.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd"
@@ -246,7 +246,7 @@
             "sharp curves to the right"
         ],
         "image": "cae92b7a-49b3-4e15-82f0-e9f440be4f85",
-        "imageLink": "https://imgur.com/dGA3Lh2.jpg",
+        "imageLink": "https://i.imgur.com/dGA3Lh2.jpg",
         "answer": "3",
         "type": "Sign",
         "id": "cae92b7a-49b3-4e15-82f0-e9f440be4f85"
@@ -260,7 +260,7 @@
             "stop ahead"
         ],
         "image": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07",
-        "imageLink": "https://imgur.com/jpSTe7Y.jpg",
+        "imageLink": "https://i.imgur.com/jpSTe7Y.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07"
@@ -274,7 +274,7 @@
             "railroad crossing"
         ],
         "image": "50302d1f-aef0-445d-ab80-6262126e8334",
-        "imageLink": "https://imgur.com/rYlQfrh.jpg",
+        "imageLink": "https://i.imgur.com/rYlQfrh.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "50302d1f-aef0-445d-ab80-6262126e8334"
@@ -404,7 +404,7 @@
             "railroad crossing"
         ],
         "image": "9e5937aa-4646-424a-b79e-ed5dcc275683",
-        "imageLink": "https://imgur.com/fMTAOKi.jpg",
+        "imageLink": "https://i.imgur.com/fMTAOKi.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "9e5937aa-4646-424a-b79e-ed5dcc275683"
@@ -418,7 +418,7 @@
             "stop"
         ],
         "image": "54673f76-6557-4735-85c8-e5c7f28f7119",
-        "imageLink": "https://imgur.com/0outkuT.jpg",
+        "imageLink": "https://i.imgur.com/0outkuT.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "54673f76-6557-4735-85c8-e5c7f28f7119"
@@ -432,7 +432,7 @@
             "School crossing"
         ],
         "image": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e",
-        "imageLink": "https://imgur.com/4kBUTsJ.jpg",
+        "imageLink": "https://i.imgur.com/4kBUTsJ.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e"
@@ -446,7 +446,7 @@
             "railway crossing control"
         ],
         "image": "8963e575-54c0-4e77-8b27-7bc2a869c5be",
-        "imageLink": "https://imgur.com/UySyID7.jpg",
+        "imageLink": "https://i.imgur.com/UySyID7.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "8963e575-54c0-4e77-8b27-7bc2a869c5be"
@@ -460,7 +460,7 @@
             "divided highway ahead"
         ],
         "image": "3d20b33f-f6d0-4364-bc54-6956af06fa79",
-        "imageLink": "https://imgur.com/v7h8Xq1.jpg",
+        "imageLink": "https://i.imgur.com/v7h8Xq1.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "3d20b33f-f6d0-4364-bc54-6956af06fa79"
@@ -474,7 +474,7 @@
             "do no drive through"
         ],
         "image": "8709c35d-07f3-4af0-805a-c7db25509707",
-        "imageLink": "https://imgur.com/Uwvrx0B.jpg",
+        "imageLink": "https://i.imgur.com/Uwvrx0B.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "8709c35d-07f3-4af0-805a-c7db25509707"
@@ -488,7 +488,7 @@
             "back up"
         ],
         "image": "0ad8eb00-f83d-43fa-94b8-403158d0faa5",
-        "imageLink": "https://imgur.com/9ul20ru.jpg",
+        "imageLink": "https://i.imgur.com/9ul20ru.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "0ad8eb00-f83d-43fa-94b8-403158d0faa5"
@@ -502,7 +502,7 @@
             "no parking"
         ],
         "image": "2e25573c-4887-4a9b-a350-ffc0a3c90db8",
-        "imageLink": "https://imgur.com/G0PIMOB.jpg",
+        "imageLink": "https://i.imgur.com/G0PIMOB.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "2e25573c-4887-4a9b-a350-ffc0a3c90db8"
@@ -516,7 +516,7 @@
             "Pedestrians must yield right-of-way"
         ],
         "image": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a",
-        "imageLink": "https://imgur.com/DY7F4DP.jpg",
+        "imageLink": "https://i.imgur.com/DY7F4DP.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a"
@@ -530,7 +530,7 @@
             "Lanes of traffic are moving in the same direction and drivers are permitted to pass when it is safe to do so."
         ],
         "image": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd",
-        "imageLink": "https://imgur.com/vrGuxmI.jpg",
+        "imageLink": "https://i.imgur.com/vrGuxmI.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd"
@@ -778,7 +778,7 @@
             "Do not stop"
         ],
         "image": "99d78e60-bb6b-4d51-a988-7abcfdb0f430",
-        "imageLink": "https://imgur.com/0pohNbk.jpg",
+        "imageLink": "https://i.imgur.com/0pohNbk.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "99d78e60-bb6b-4d51-a988-7abcfdb0f430"
@@ -792,7 +792,7 @@
             "The end of a construction zone"
         ],
         "image": "99d78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://imgur.com/05buMBu.jpg",
+        "imageLink": "https://i.imgur.com/05buMBu.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "99d78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -806,7 +806,7 @@
             "Emergency stopping zone ahead"
         ],
         "image": "00d78e60-bb6b-4d51-a988-45rtfdb0f430",
-        "imageLink": "https://imgur.com/jMntFSN.jpg",
+        "imageLink": "https://i.imgur.com/jMntFSN.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "00d78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -820,7 +820,7 @@
             "Do not enter"
         ],
         "image": "11d78e60-bb6b-4d51-a988-45rtfdb0f430",
-        "imageLink": "https://imgur.com/HOOJKvA.jpg",
+        "imageLink": "https://i.imgur.com/HOOJKvA.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "11d78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -834,7 +834,7 @@
             "Do not move"
         ],
         "image": "22e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://imgur.com/WBVWyC0.jpg",
+        "imageLink": "https://i.imgur.com/WBVWyC0.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "22e78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -848,7 +848,7 @@
             "Curve right"
         ],
         "image": "33e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://imgur.com/SZH75IJ.jpg",
+        "imageLink": "https://i.imgur.com/SZH75IJ.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "33e78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -862,7 +862,7 @@
             "Construction is ahead"
         ],
         "image": "44e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://imgur.com/ZlHo8zx.jpg",
+        "imageLink": "https://i.imgur.com/ZlHo8zx.jpg",
         "answer": "2",
         "type": "Sign",
         "id": "44e78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -876,7 +876,7 @@
             "Bus entrance on the right"
         ],
         "image": "55e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://imgur.com/tZVK3Eb.jpg",
+        "imageLink": "https://i.imgur.com/tZVK3Eb.jpg",
         "answer": "1",
         "type": "Sign",
         "id": "55e78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -890,7 +890,7 @@
             "Hidden intersection "
         ],
         "image": "66e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://imgur.com/d7uk3p3.jpg",
+        "imageLink": "https://i.imgur.com/d7uk3p3.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "66e78e60-bb6b-4d51-a988-12werfdb0f430"
@@ -904,7 +904,7 @@
             "Narrow bridge"
         ],
         "image": "77d78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink" : "https://imgur.com/g6MFcWp.jpg",
+        "imageLink" : "https://i.imgur.com/g6MFcWp.jpg",
         "answer": "0",
         "type": "Sign",
         "id": "77d78e60-bb6b-4d51-a988-12werfdb0f430"

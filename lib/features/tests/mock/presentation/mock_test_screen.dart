@@ -1,4 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:dri_learn/ads/sections/banner_ad.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
@@ -12,11 +14,35 @@ import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '/core/di/injection_container.dart' as di;
 
-class MockTestScreen extends StatelessWidget {
+class MockTestScreen extends StatefulWidget {
   const MockTestScreen({super.key});
+
+  @override
+  State<MockTestScreen> createState() => _MockTestScreenState();
+}
+
+class _MockTestScreenState extends State<MockTestScreen> {
+  late BannerAd _bannerAd;
+  bool _isAdLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadAd(onAdLoaded: (ad) {
+      if (!mounted) {
+        ad.dispose();
+        return;
+      }
+      setState(() {
+        _bannerAd = ad as BannerAd;
+      });
+      _isAdLoaded = true;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,101 +61,107 @@ class MockTestScreen extends StatelessWidget {
               children: [
                 Stack(
                   children: [
-                    SizedBox(
-                      height: imageHeight,
-                      child: Stack(
-                        children: [
-                          Card(
-                            margin: const EdgeInsets.all(0),
-                            shadowColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.0),
+                    if (_isAdLoaded &&
+                        (state is TestLoaded) &&
+                        state.getCurrentQuestion().testType !=
+                            TestType.Sign) ...[
+                      SafeArea(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                backIcon(context),
+                                const Spacer(),
+                              ],
                             ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(
-                                  15.0), // Adjust the border radius as needed
-                              child: (state is TestLoaded &&
-                                      state.getCurrentQuestion().image !=
-                                          null &&
-                                      state
-                                              .getCurrentQuestion()
-                                              .image!
-                                              .toLowerCase() !=
-                                          "link")
-                                  ? Padding(
-                                      padding: const EdgeInsets.only(top: 50),
-                                      child: Image.network(
-                                        state.getCurrentQuestion().imageLink ??
-                                            "",
-                                        fit: BoxFit
-                                            .fitHeight, // This makes the image cover the entire area
-                                        width: double.infinity,
-                                        height: double.infinity,
-                                      ),
-                                    )
-                                  : Image.asset(
-                                      "assets/images/onboard_img.jpeg",
-                                      fit: BoxFit
-                                          .cover, // This makes the image cover the entire area
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                    ),
+                            Center(
+                              child: SizedBox(
+                                height: _bannerAd.size.height.toDouble(),
+                                width: _bannerAd.size.width.toDouble(),
+                                child: AdWidget(ad: _bannerAd),
+                              ),
                             ),
-                          ),
-                          Container(
-                            color: Colors.black.withOpacity(0.2),
-                          ),
-                          Positioned(
-                              bottom: 15,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 10),
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      MdiIcons.car,
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      size: 36,
-                                    ),
-                                    horizontalSpace(10),
-                                    Text(
-                                      currentTestType ?? "Mock Test",
-                                      style: titleMedium(context)
-                                          .copyWith(color: Colors.white),
-                                    )
-                                  ],
-                                ),
-                              )),
-                        ],
-                      ),
-                    ),
-                    Positioned(
-                      top: 40,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Theme.of(context)
-                                .colorScheme
-                                .surface, // Background color
-                            shape: BoxShape
-                                .circle, // Circle shape for rounded button
-                          ),
-                          child: IconButton(
-                            onPressed: () {
-                              if (context.canPop()) {
-                                context.pop();
-                              }
-                            },
-                            icon: Icon(
-                              MdiIcons.chevronLeft,
-                              size: 26,
-                            ),
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
+                          ],
                         ),
                       ),
-                    )
+                    ] else if (state is TestLoaded) ...[
+                      SizedBox(
+                        height: imageHeight,
+                        child: Stack(
+                          children: [
+                            Card(
+                              margin: const EdgeInsets.all(0),
+                              shadowColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(
+                                    15.0), // Adjust the border radius as needed
+                                child:
+                                    state.getCurrentQuestion().imageLink != null
+                                        ? SafeArea(
+                                            child: Center(
+                                              child: CachedNetworkImage(
+                                                cacheKey: state
+                                                    .getCurrentQuestion()
+                                                    .imageLink!,
+                                                imageUrl: state
+                                                    .getCurrentQuestion()
+                                                    .imageLink!,
+                                                fit: BoxFit
+                                                    .fitHeight, // This makes the image cover the entire area
+                                                width: double.infinity,
+                                                height: double.infinity,
+                                              ),
+                                            ),
+                                          )
+                                        : Image.asset(
+                                            "assets/images/onboard_img.jpeg",
+                                            fit: BoxFit
+                                                .cover, // This makes the image cover the entire area
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                          ),
+                              ),
+                            ),
+                            Container(
+                              color: Colors.black.withOpacity(0.2),
+                            ),
+                            Positioned(
+                                bottom: 15,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        MdiIcons.car,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        size: 36,
+                                      ),
+                                      horizontalSpace(10),
+                                      Text(
+                                        currentTestType,
+                                        style: titleMedium(context)
+                                            .copyWith(color: Colors.white),
+                                      )
+                                    ],
+                                  ),
+                                )),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: 40,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: backIcon(context),
+                        ),
+                      )
+                    ]
                   ],
                 ),
                 if (state is TestLoaded) ...[
@@ -376,6 +408,27 @@ class MockTestScreen extends StatelessWidget {
                 : Center(),
           );
         },
+      ),
+    );
+  }
+
+  Container backIcon(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface, // Background color
+        shape: BoxShape.circle, // Circle shape for rounded button
+      ),
+      child: IconButton(
+        onPressed: () {
+          if (context.canPop()) {
+            context.pop();
+          }
+        },
+        icon: Icon(
+          MdiIcons.chevronLeft,
+          size: 26,
+        ),
+        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }
