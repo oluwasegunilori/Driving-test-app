@@ -1,3 +1,4 @@
+import 'package:dri_learn/ads/sections/banner_ad.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
@@ -8,13 +9,39 @@ import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart'
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../authentication/domain/model/user_entity.dart';
 
-class LearnTestOptions extends StatelessWidget {
+class LearnTestOptions extends StatefulWidget {
   final User user;
   const LearnTestOptions({super.key, required this.user});
+
+  @override
+  State<LearnTestOptions> createState() => _LearnTestOptionsState();
+}
+
+class _LearnTestOptionsState extends State<LearnTestOptions> {
+  late BannerAd _bannerAd;
+  bool _isAdLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadAd(
+        onAdLoaded: (ad) {
+          if (!mounted) {
+            ad.dispose();
+            return;
+          }
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+          _isAdLoaded = true;
+        },
+        adSize: AdSize.mediumRectangle);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +114,7 @@ class LearnTestOptions extends StatelessWidget {
                                       child: Row(
                                         children: [
                                           Text(
-                                            user.name ?? "",
+                                            widget.user.name ?? "",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .titleSmall,
@@ -152,6 +179,20 @@ class LearnTestOptions extends StatelessWidget {
                       .add(const SetTestType(testType: TestType.Sign));
                   context.push(ScreenRoutes.mockTest().route);
                 }),
+                if (_isAdLoaded) ...[
+                  Column(
+                    children: [
+                      verticalSpace(20),
+                      Center(
+                        child: SizedBox(
+                          height: _bannerAd.size.height.toDouble(),
+                          width: _bannerAd.size.width.toDouble(),
+                          child: AdWidget(ad: _bannerAd),
+                        ),
+                      ),
+                    ],
+                  ),
+                ]
               ],
             ),
           ),
@@ -173,7 +214,7 @@ class LearnTestOptions extends StatelessWidget {
         iconColor: Colors.white,
         onTap: onClick,
         contentPadding:
-            const EdgeInsets.symmetric(vertical: 30, horizontal: 15),
+            const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
       ),
     );
   }

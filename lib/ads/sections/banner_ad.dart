@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-void loadAd({required void Function(Ad) onAdLoaded}) {
+void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
   final bannerAd = BannerAd(
-    size: AdSize.largeBanner,
+    size: adSize ?? AdSize.largeBanner,
     adUnitId: "ca-app-pub-3940256099942544/6300978111",
     request: const AdRequest(),
     listener: BannerAdListener(

@@ -1,15 +1,42 @@
+import 'package:dri_learn/ads/sections/banner_ad.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../authentication/domain/model/user_entity.dart';
 
-class MockTestOptionsScreen extends StatelessWidget {
+class MockTestOptionsScreen extends StatefulWidget {
   final User user;
   const MockTestOptionsScreen({super.key, required this.user});
+
+  @override
+  State<MockTestOptionsScreen> createState() => _MockTestOptionsScreenState();
+}
+
+class _MockTestOptionsScreenState extends State<MockTestOptionsScreen> {
+  late BannerAd _bannerAd;
+  bool _isAdLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadAd(
+        onAdLoaded: (ad) {
+          if (!mounted) {
+            ad.dispose();
+            return;
+          }
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+          _isAdLoaded = true;
+        },
+        adSize: AdSize.mediumRectangle);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +109,7 @@ class MockTestOptionsScreen extends StatelessWidget {
                                       child: Row(
                                         children: [
                                           Text(
-                                            user.name ?? "",
+                                            widget.user.name ?? "",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .titleSmall,
@@ -138,8 +165,20 @@ class MockTestOptionsScreen extends StatelessWidget {
                   context.push(ScreenRoutes.mockTest().route);
                 }),
                 verticalSpace(15),
-                // mockTestOptionCard(
-                //     context, "G2 simulation", MdiIcons.car, () {}),
+                if (_isAdLoaded) ...[
+                  Column(
+                    children: [
+                      verticalSpace(20),
+                      Center(
+                        child: SizedBox(
+                          height: _bannerAd.size.height.toDouble(),
+                          width: _bannerAd.size.width.toDouble(),
+                          child: AdWidget(ad: _bannerAd),
+                        ),
+                      ),
+                    ],
+                  ),
+                ]
               ],
             ),
           ),

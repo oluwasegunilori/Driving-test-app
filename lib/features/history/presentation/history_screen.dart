@@ -1,3 +1,4 @@
+import 'package:dri_learn/ads/sections/banner_ad.dart';
 import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
@@ -8,13 +9,39 @@ import 'package:dri_learn/features/history/presentation/circle_painter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import '/core/di/injection_container.dart' as di;
 
-class HistoryScreen extends StatelessWidget {
+class HistoryScreen extends StatefulWidget {
   final User user;
   final bool showHeader;
   const HistoryScreen({super.key, required this.user, this.showHeader = true});
+
+  @override
+  State<HistoryScreen> createState() => _HistoryScreenState();
+}
+
+class _HistoryScreenState extends State<HistoryScreen> {
+  late BannerAd _bannerAd;
+  bool _isAdLoaded = false;
+
+  @override
+  void initState() {
+    super.initState();
+    loadAd(
+        onAdLoaded: (ad) {
+          if (!mounted) {
+            ad.dispose();
+            return;
+          }
+          setState(() {
+            _bannerAd = ad as BannerAd;
+          });
+          _isAdLoaded = true;
+        },
+        adSize: AdSize.mediumRectangle);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +52,7 @@ class HistoryScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              if (showHeader) ...[
+              if (widget.showHeader) ...[
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.25,
                   child: Card(
@@ -93,7 +120,7 @@ class HistoryScreen extends StatelessWidget {
                                             child: Row(
                                               children: [
                                                 Text(
-                                                  user.name ?? "",
+                                                  widget.user.name ?? "",
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .titleSmall,
@@ -149,9 +176,24 @@ class HistoryScreen extends StatelessWidget {
                 builder: (context, state) {
                   if (state is TestHistoryLoaded) {
                     return Column(
-                        children: state.data.values
-                            .map((e) => mockTestOptionCard(context, e, () {}))
-                            .toList());
+                      children: [
+                        Column(
+                            children: state.data.values
+                                .map((e) =>
+                                    mockTestOptionCard(context, e, () {}))
+                                .toList()),
+                        if (_isAdLoaded) ...[
+                          verticalSpace(20),
+                          Center(
+                            child: SizedBox(
+                              height: _bannerAd.size.height.toDouble(),
+                              width: _bannerAd.size.width.toDouble(),
+                              child: AdWidget(ad: _bannerAd),
+                            ),
+                          ),
+                        ]
+                      ],
+                    );
                   }
                   return Center();
                 },
