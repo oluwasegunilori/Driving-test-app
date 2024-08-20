@@ -32,6 +32,11 @@ jobs:
             ${{ runner.os }}-flutter-
       - name: Install dependencies
         run: flutter pub get
+      - name: Install Fastlane
+        run: gem install fastlane
+  
+      - name: Install bundler
+        run: gem install bundler
 
     #Set IOS version
       - name: Set Version Number Using Fastlane
@@ -57,9 +62,6 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2 # Use the Ruby version you have Fastlane installed
-
-      - name: Install Fastlane
-        run: gem install fastlane
 
       - name: Deploy to TestFlight
         if: github.ref == 'refs/heads/develop'
