@@ -42,13 +42,14 @@ jobs:
       
       - name: Install bundler
         run: gem install bundler
+
+      - name: Install Fastlane
+        run: gem install fastlane
         
       - name: Install bundle
         run: bundle install
   
-      - name: Install Fastlane
-        run: gem install fastlane
-  
+    
 
     #Set IOS version
       - name: Set Version Number Using Fastlane
