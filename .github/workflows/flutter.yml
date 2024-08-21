@@ -48,12 +48,7 @@ jobs:
         
       - name: Install bundle
         run: bundle install
-        working-directory: ios
-      - name: Install Xcode Command Line Tools
-        run: |
-          sudo xcode-select --install  
-  
-    
+        working-directory: ios    
 
     #Set IOS version
       - name: Set Version Number Using Fastlane
