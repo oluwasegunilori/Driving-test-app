@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build and Deploy IOS and Android App
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
@@ -49,6 +49,9 @@ jobs:
       - name: Install bundle
         run: bundle install
         working-directory: ios
+      - name: Install Xcode Command Line Tools
+        run: |
+          sudo xcode-select --install  
   
     
 
