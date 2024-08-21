@@ -38,7 +38,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2 # Use the Ruby version you have Fastlane installed
+          ruby-version: 3.3 # Use the Ruby version you have Fastlane installed
       
       - name: Install bundler
         run: gem install bundler
@@ -48,6 +48,7 @@ jobs:
         
       - name: Install bundle
         run: bundle install
+        working-directory: ios
   
     
 
