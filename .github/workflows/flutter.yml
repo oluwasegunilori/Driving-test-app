@@ -68,8 +68,9 @@ jobs:
     #     run: flutter build apk --release
 
       - name: Build iOS
-        run: flutter build ios --release --no-codesign
-          xcodebuild -workspace ios/Runner.xcworkspace \
+        run: | 
+            flutter build ios --release --no-codesign
+            xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -sdk iphoneos \
             -configuration Release \
@@ -88,14 +89,7 @@ jobs:
 
       - name: Deploy to App Store
         if: github.ref == 'refs/heads/main'
-        run: fastlane ios release --no-codesign
-          xcodebuild -workspace ios/Runner.xcworkspace \
-            -scheme Runner \
-            -sdk iphoneos \
-            -configuration Release \
-            -allowProvisioningUpdates \
-            -archivePath $PWD/build/Runner.xcarchive \
-            archive
+        run: fastlane ios release
         working-directory: ios
         env:
           APP_STORE_CONNECT_API_KEY: ${{ secrets.APP_STORE_CONNECT_API_KEY }}
