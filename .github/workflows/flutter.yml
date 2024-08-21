@@ -73,6 +73,9 @@ jobs:
     #   - name: Build APK
     #     run: flutter build apk --release
 
+      - name: Create Provisioning Profile Directory
+        run: mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles/
+      
       - name: Install Provisioning Profile
         run: |
           echo ${{ secrets.IOS_PROVISIONING_PROFILE_BASE64 }} | base64 --decode > ~/Library/MobileDevice/Provisioning\ Profiles/YourProfile.mobileprovision
