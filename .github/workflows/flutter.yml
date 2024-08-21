@@ -75,7 +75,7 @@ jobs:
 
       - name: Build iOS
         run: | 
-            flutter build ios --release --no-codesign
+            flutter build ios --release --no-codesign --development-team="" CODE_SIGNING_ALLOWED=NO
             xcodebuild -workspace ios/Runner.xcworkspace \
             -scheme Runner \
             -sdk iphoneos \
