@@ -35,10 +35,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Set environment variables
+        run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
+      
       - name: Install runner
-        run: |
-          echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
-          flutter pub run build_runner build --delete-conflicting-outputs
+        run: dart run build_runner build --delete-conflicting-outputs
       
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
