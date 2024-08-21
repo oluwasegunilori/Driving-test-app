@@ -38,8 +38,7 @@ jobs:
       - name: Install runner
         run: |
           echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> $GITHUB_ENV
-          flutter pub run build_runner build
-          dart run build_runner build --delete-conflicting-outputs
+          flutter pub run build_runner build --delete-conflicting-outputs
       
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
