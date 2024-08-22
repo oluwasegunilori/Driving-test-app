@@ -35,7 +35,7 @@ ScoreInfo getScoreInfo(BuildContext context, TestLoaded state) {
         return ScoreInfo(
             rating: state.info.grade,
             description:
-                "Don't be discouraged! You didn't pass this time, but with more practice, you'll get there. Keep pushing forward, and you'll be ready for success!",
+                "Don't be discouraged! You didn't pass this time, but with more practice, you'll get there.",
             score: "${state.info.score}/${state.questions.length}",
             title: "Poor");
       }
