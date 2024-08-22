@@ -165,7 +165,7 @@ class _MockTestOptionsScreenState extends State<MockTestOptionsScreen> {
                     context: context,
                     title: "G1 test",
                     description: const Text(
-                        "The G1 test consists of 40 questions divided into two sections: Road Signs and Traffic Rules, with 20 questions in each section. To pass, you must achieve a score of 80% or higher\n Click to start"),
+                        "The G1 test consists of 40 questions divided into two sections: Road Signs and Traffic Rules, with 20 questions in each section. To pass, you must achieve a score of 80% or higher\nTap to start"),
                     icon: MdiIcons.book,
                     onClick: () {
                       context.push(ScreenRoutes.mockTest().route);
