@@ -12,6 +12,8 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
+require 'dotenv'
+Dotenv.load(File.expand_path('../.env', __FILE__))
 
 default_platform(:ios)
 
@@ -19,17 +21,24 @@ platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :beta do
     build_app(
-      scheme: "Runner", # Replace with your scheme name
-      export_method: "app-store" # This method is required for TestFlight distribution
-    )
-    upload_to_testflight(
-      api_key: {
-        key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
-        issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-        key_content: ENV["APP_STORE_CONNECT_API_KEY"],
-        in_house: false # Set to true if using an Enterprise account
+      scheme: "Runner",
+      workspace: "Runner.xcworkspace", # Replace with your scheme name
+      export_method: "app-store",
+      export_options: {
+      provisioningProfiles: {
+        "com.example.driLearn" => "DriLearn"
+        }
       }
     )
+    
+    upload_to_testflight(
+      api_key: app_store_connect_api_key(
+          key_id: ENV['APP_STORE_CONNECT_KEY_ID'],
+          issuer_id: ENV['APP_STORE_CONNECT_ISSUER_ID'],
+          key_content: ENV['APP_STORE_CONNECT_API_KEY']
+        ) # Ensure this contains the actual key content
+    )
+
   end
 
   desc "Release a new version to the App Store"
