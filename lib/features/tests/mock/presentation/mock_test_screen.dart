@@ -166,7 +166,7 @@ class _MockTestScreenState extends State<MockTestScreen> {
                 ),
                 if (state is TestLoaded) ...[
                   verticalSpace(15),
-                  if (!state.viewMode) ...[
+                  if (state.viewMode) ...[
                     SizedBox(
                       width: MediaQuery.of(context).size.width,
                       child: Padding(
