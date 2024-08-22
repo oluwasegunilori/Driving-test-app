@@ -161,9 +161,15 @@ class _MockTestOptionsScreenState extends State<MockTestOptionsScreen> {
                 right: 15),
             child: Column(
               children: [
-                mockTestOptionCard(context, "G1 test", MdiIcons.book, () {
-                  context.push(ScreenRoutes.mockTest().route);
-                }),
+                mockTestOptionCard(
+                    context: context,
+                    title: "G1 test",
+                    description: const Text(
+                        "The G1 test consists of 40 questions divided into two sections: Road Signs and Traffic Rules, with 20 questions in each section. To pass, you must achieve a score of 80% or higher\n Click to start"),
+                    icon: MdiIcons.book,
+                    onClick: () {
+                      context.push(ScreenRoutes.mockTest().route);
+                    }),
                 verticalSpace(15),
                 if (_isAdLoaded) ...[
                   Column(
@@ -188,12 +194,17 @@ class _MockTestOptionsScreenState extends State<MockTestOptionsScreen> {
   }
 
   Card mockTestOptionCard(
-      BuildContext context, String title, IconData icon, VoidCallback onClick) {
+      {required BuildContext context,
+      required String title,
+      Widget? description,
+      required IconData icon,
+      required VoidCallback onClick}) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       child: ListTile(
         leading: Icon(icon),
         title: Text(title),
+        subtitle: description,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         tileColor: Theme.of(context).colorScheme.secondary,
         textColor: Colors.white,

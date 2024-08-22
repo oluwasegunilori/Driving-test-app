@@ -2,7 +2,6 @@ import 'package:dri_learn/ads/sections/banner_ad.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
-import 'package:dri_learn/features/tests/core/domain/model/question_type_model.dart';
 import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';

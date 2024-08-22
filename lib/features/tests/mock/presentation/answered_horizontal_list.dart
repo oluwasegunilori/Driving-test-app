@@ -20,7 +20,6 @@ class AnsweredHorizontalList extends StatelessWidget {
           Spacer(),
           ListView.builder(
             scrollDirection: Axis.horizontal,
-            shrinkWrap: true,
             itemCount: answers.length,
             itemBuilder: (context, index) {
               return InkWell(
