@@ -166,12 +166,15 @@ class _MockTestScreenState extends State<MockTestScreen> {
                 ),
                 if (state is TestLoaded) ...[
                   verticalSpace(15),
-                  if (state.viewMode) ...[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: AnsweredHorizontalList(
-                        answers: state.answers.values.toList(),
-                        currentPosition: state.currentPosition,
+                  if (!state.viewMode) ...[
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: AnsweredHorizontalList(
+                          answers: state.answers.values.toList(),
+                          currentPosition: state.currentPosition,
+                        ),
                       ),
                     ),
                     verticalSpace(5),

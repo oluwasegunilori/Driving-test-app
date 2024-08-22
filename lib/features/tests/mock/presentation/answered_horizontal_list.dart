@@ -15,44 +15,39 @@ class AnsweredHorizontalList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 50,
-      child: Row(
-        children: [
-          Spacer(),
-          ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: answers.length,
-            itemBuilder: (context, index) {
-              return InkWell(
-                child: Container(
-                  width: index == currentPosition
-                      ? 40
-                      : 28, // Set the width of each item
-                  margin: const EdgeInsets.symmetric(
-                      horizontal: 4.0), // Add spacing between items
-                  decoration: BoxDecoration(
-                    color: answers[index].question.answer ==
-                            answers[index].userAnswer
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        itemCount: answers.length,
+        itemBuilder: (context, index) {
+          return InkWell(
+            child: Container(
+              width: index == currentPosition
+                  ? 40
+                  : 28, // Set the width of each item
+              margin: const EdgeInsets.symmetric(
+                  horizontal: 4.0), // Add spacing between items
+              decoration: BoxDecoration(
+                color:
+                    answers[index].question.answer == answers[index].userAnswer
                         ? Colors.green
                         : Theme.of(context).colorScheme.error,
-                    shape: BoxShape.circle, // Make the corners rounded
-                  ),
-                  child: Center(
-                    child: Text(
-                      '${index + 1}',
-                      style: titleSmall(context).copyWith(
-                          color: Theme.of(context).colorScheme.surface),
-                    ),
-                  ),
+                shape: BoxShape.circle, // Make the corners rounded
+              ),
+              child: Center(
+                child: Text(
+                  '${index + 1}',
+                  style: titleSmall(context)
+                      .copyWith(color: Theme.of(context).colorScheme.surface),
                 ),
-                onTap: () {
-                  BlocProvider.of<MockTestBloc>(context)
-                      .add(NavigateToQuestionEvent(questionNo: index));
-                },
-              );
+              ),
+            ),
+            onTap: () {
+              BlocProvider.of<MockTestBloc>(context)
+                  .add(NavigateToQuestionEvent(questionNo: index));
             },
-          ),
-          Spacer(),
-        ],
+          );
+        },
       ),
     );
   }
