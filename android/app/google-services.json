@@ -58,6 +58,59 @@
         }
       },
       "admob_app_id": "ca-app-pub-8953033025026599~3144939718"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:910080401209:android:71ce0529a0ad6b064112e8",
+        "android_client_info": {
+          "package_name": "com.itsourlives.dri_learn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "910080401209-eu37s74146914u4g0rd2b4etvngboq4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itsourlives.dri_learn",
+            "certificate_hash": "37bc714b686fd6bca3c58fd3cf88189881315454"
+          }
+        },
+        {
+          "client_id": "910080401209-plcvfbcv6el7up37v4u796s9abn3bdv4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.itsourlives.dri_learn",
+            "certificate_hash": "3e5a97279f7bfa5f490d97919b5bf819ce46bdbb"
+          }
+        },
+        {
+          "client_id": "910080401209-krortj99huvif5mg51cc8ebbjodt0kgl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLRJfobLKBTL5FPYxofMfxQz5iKlPZOp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910080401209-krortj99huvif5mg51cc8ebbjodt0kgl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "910080401209-m6g9okone46l39fcsqj63r9b5kgk0v3k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.driLearn"
+              }
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-8953033025026599~2280049216"
     }
   ],
   "configuration_version": "1"
