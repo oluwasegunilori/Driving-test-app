@@ -99,7 +99,7 @@ class OnboardingScreen extends StatelessWidget {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is Done) {
-          context.go(ScreenRoutes.provinceSelection().route, extra: state.user);
+          context.go(ScreenRoutes.homePage().route, extra: state.user);
         } else if (state is Error) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -173,29 +173,13 @@ class OnboardingScreen extends StatelessWidget {
                                   ))
                                 ],
                               ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Expanded(
-                                      child: socialMediaButton(
-                                          context: context,
-                                          text: "Google",
-                                          icon: MdiIcons.google,
-                                          onClick: () {
-                                            authBloc
-                                                .add(GoogleSignInRequested());
-                                          })),
-                                  horizontalSpace(20),
-                                  Expanded(
-                                    child: socialMediaButton(
-                                        context: context,
-                                        text: "Apple",
-                                        icon: MdiIcons.apple,
-                                        onClick: () {}),
-                                  ),
-                                ],
-                              ),
+                              socialMediaButton(
+                                  context: context,
+                                  text: "Google",
+                                  icon: MdiIcons.google,
+                                  onClick: () {
+                                    authBloc.add(GoogleSignInRequested());
+                                  }),
                               if (state is Loading) ...[
                                 const LinearProgressIndicator(),
                               ],
@@ -203,7 +187,8 @@ class OnboardingScreen extends StatelessWidget {
                                   onPressed: () {
                                     authBloc.add(SkipSignIn());
                                     context.go(
-                                        ScreenRoutes.provinceSelection().route);
+                                      ScreenRoutes.homePage().route,
+                                    );
                                   },
                                   child: Text(
                                     AppLocalizations.of(context)!.skipText,
