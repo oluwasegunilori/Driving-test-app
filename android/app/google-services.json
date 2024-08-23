@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "910080401209-6dhcpteh09p7hrfre0oprgrdgr63ghcl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dri_learn",
+            "certificate_hash": "37bc714b686fd6bca3c58fd3cf88189881315454"
+          }
+        },
+        {
           "client_id": "910080401209-r5efu2t1nhvs5jqhtrlmocb33doldr31.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
