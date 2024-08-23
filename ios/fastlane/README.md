@@ -13,18 +13,15 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 # Available Actions
 
-### verify_envs
+## iOS
+
+### ios increment_version_and_build_number
 
 ```sh
-[bundle exec] fastlane verify_envs
+[bundle exec] fastlane ios increment_version_and_build_number
 ```
 
 
-
-----
-
-
-## iOS
 
 ### ios beta
 
