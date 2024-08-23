@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "910080401209",
+    "firebase_url": "https://drilearn-default-rtdb.firebaseio.com",
     "project_id": "drilearn",
     "storage_bucket": "drilearn.appspot.com"
   },
@@ -12,7 +13,20 @@
           "package_name": "com.example.dri_learn"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "910080401209-r5efu2t1nhvs5jqhtrlmocb33doldr31.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dri_learn",
+            "certificate_hash": "3e5a97279f7bfa5f490d97919b5bf819ce46bdbb"
+          }
+        },
+        {
+          "client_id": "910080401209-krortj99huvif5mg51cc8ebbjodt0kgl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCLRJfobLKBTL5FPYxofMfxQz5iKlPZOp8"
@@ -20,9 +34,22 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "910080401209-krortj99huvif5mg51cc8ebbjodt0kgl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "910080401209-m6g9okone46l39fcsqj63r9b5kgk0v3k.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.driLearn"
+              }
+            }
+          ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-8953033025026599~3144939718"
     }
   ],
   "configuration_version": "1"
