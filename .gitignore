@@ -44,3 +44,5 @@ app.*.map.json
 .env
 /lib/config/env.g.dart
 
+ios/Runner.app.dSYM.zip
+ios/Runner.ipa
