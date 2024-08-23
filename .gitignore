@@ -47,3 +47,4 @@ app.*.map.json
 ios/Runner.app.dSYM.zip
 ios/Runner.ipa
 upload-key.jks
+android/drilearn-739e29ed0de0.json
