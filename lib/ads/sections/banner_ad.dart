@@ -6,8 +6,8 @@ void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
   final bannerAd = BannerAd(
     size: adSize ?? AdSize.largeBanner,
     adUnitId: Platform.isAndroid
-        ? "ca-app-pub-8953033025026599/2079571372"
-        : "ca-app-pub-8953033025026599/9126790480",
+        ? "ca-app-pub-8953033025026599~3144939718"
+        : "ca-app-pub-8953033025026599~9822028705",
     request: const AdRequest(),
     listener: BannerAdListener(
       // Called when an ad is successfully received.
