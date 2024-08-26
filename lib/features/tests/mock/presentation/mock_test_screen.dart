@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dri_learn/ads/sections/banner_ad.dart';
+import 'package:dri_learn/core/button_styles.dart';
 import 'package:dri_learn/core/router_config.dart';
 import 'package:dri_learn/core/spaces.dart';
 import 'package:dri_learn/core/text_style.dart';
@@ -411,27 +412,6 @@ class _MockTestScreenState extends State<MockTestScreen> {
                 : Center(),
           );
         },
-      ),
-    );
-  }
-
-  Container backIcon(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface, // Background color
-        shape: BoxShape.circle, // Circle shape for rounded button
-      ),
-      child: IconButton(
-        onPressed: () {
-          if (context.canPop()) {
-            context.pop();
-          }
-        },
-        icon: Icon(
-          MdiIcons.chevronLeft,
-          size: 26,
-        ),
-        color: Theme.of(context).colorScheme.primary,
       ),
     );
   }

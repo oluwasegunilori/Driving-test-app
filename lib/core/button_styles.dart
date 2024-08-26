@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 ElevatedButton primaryButton(
     {required BuildContext context,
@@ -31,3 +33,24 @@ ElevatedButton socialMediaButton(
     icon: Icon(icon),
   );
 }
+
+Container backIcon(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).colorScheme.surface, // Background color
+        shape: BoxShape.circle, // Circle shape for rounded button
+      ),
+      child: IconButton(
+        onPressed: () {
+          if (context.canPop()) {
+            context.pop();
+          }
+        },
+        icon: Icon(
+          MdiIcons.chevronLeft,
+          size: 26,
+        ),
+        color: Theme.of(context).colorScheme.primary,
+      ),
+    );
+  }
