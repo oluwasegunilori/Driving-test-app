@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dri_learn/ads/gdpr/consent_gdpr.dart';
 import 'package:dri_learn/config/env.dart';
+import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
 import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
@@ -25,8 +26,8 @@ void main() async {
   Gemini.init(apiKey: Env.geminiAPIKEY);
   await di.init();
   runApp(const MyApp());
-  updateConsent(callback: (allowed){
-    
+  updateConsent(callback: (allowed) {
+    di.sl<AuthRepository>().updateConsentAllowed(allowed);
   });
   unawaited(MobileAds.instance.initialize());
 }

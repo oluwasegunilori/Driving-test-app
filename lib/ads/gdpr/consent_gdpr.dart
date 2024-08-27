@@ -10,6 +10,10 @@ void updateConsent({required Function(bool) callback}) async {
     info = await UserMessagingPlatform.instance.showConsentForm();
     if (info.consentStatus == ConsentStatus.obtained) {
       callback(true);
+    } else {
+      callback(false);
     }
+  } else {
+    callback(true);
   }
 }

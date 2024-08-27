@@ -1,5 +1,7 @@
+import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import '/../core/di/injection_container.dart' as di;
 
 void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
   final bannerAd = BannerAd(
@@ -20,5 +22,9 @@ void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
   );
 
   // Start loading.
-  bannerAd.load();
+  bool isConsentAllowed = di.sl<AuthRepository>().isConsentAllowed();
+  print(isConsentAllowed);
+  if (isConsentAllowed) {
+    bannerAd.load();
+  }
 }

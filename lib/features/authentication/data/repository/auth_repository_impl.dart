@@ -1,10 +1,14 @@
-import 'package:dri_learn/core/errors/errors.dart';
 import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
-import 'package:either_dart/either.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';
+
+const consentAllowed = "Consent_Allwoed";
 
 class AuthRepositoryImpl extends AuthRepository {
+  final StreamingSharedPreferences sharedPreferences;
+
+  AuthRepositoryImpl({required this.sharedPreferences});
   @override
   Future<UserCredential> googleSignIn() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
@@ -22,9 +26,17 @@ class AuthRepositoryImpl extends AuthRepository {
     // Once signed in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
-  
+
   @override
-  void updateConsentAllowed() {
-    
+  void updateConsentAllowed(bool value) {
+    sharedPreferences.setBool(consentAllowed, value);
+  }
+
+  @override
+  bool isConsentAllowed() {
+    bool result = sharedPreferences
+        .getBool(consentAllowed, defaultValue: false)
+        .getValue();
+    return result;
   }
 }

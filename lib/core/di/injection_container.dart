@@ -52,7 +52,7 @@ Future<void> init() async {
       () => LocalDataSourceImpl(shPf, floorDb.testHistoryDao));
 
   //repositories
-  sl.registerFactory<AuthRepository>(() => AuthRepositoryImpl());
+  sl.registerFactory<AuthRepository>(() => AuthRepositoryImpl(sharedPreferences: shPf));
   sl.registerFactory<ProvinceRepository>(
       () => ProvinceRepositoryImpl(remoteDataSource: sl.call()));
   sl.registerFactory<UserRepository>(() => UserRepositoryImpl(sl.call()));
