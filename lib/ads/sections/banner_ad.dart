@@ -4,10 +4,11 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '/../core/di/injection_container.dart' as di;
 
 void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
+  bool isConsentAllowed = di.sl<AuthRepository>().isConsentAllowed();
   final bannerAd = BannerAd(
     size: adSize ?? AdSize.largeBanner,
     adUnitId: "ca-app-pub-8953033025026599/2079571372",
-    request: const AdRequest(nonPersonalizedAds: true),
+    request: AdRequest(nonPersonalizedAds: !isConsentAllowed),
     listener: BannerAdListener(
       // Called when an ad is successfully received.
       onAdLoaded: (ad) {
@@ -22,8 +23,6 @@ void loadAd({required void Function(Ad) onAdLoaded, AdSize? adSize}) {
   );
 
   // Start loading.
-  bool isConsentAllowed = di.sl<AuthRepository>().isConsentAllowed();
-  print(isConsentAllowed);
   if (isConsentAllowed) {
     bannerAd.load();
   }
