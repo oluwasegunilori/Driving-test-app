@@ -8,7 +8,7 @@ import 'package:dri_learn/core/data/repository/user_repository_impl.dart';
 import 'package:dri_learn/core/domain/repository/user_repository.dart';
 import 'package:dri_learn/core/domain/usecase/get_currrent_user_usecase.dart';
 import 'package:dri_learn/features/authentication/data/repository/auth_repository_impl.dart';
-import 'package:dri_learn/features/authentication/domain/auth_repository.dart';
+import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dri_learn/features/authentication/domain/usecase/google_signin_usecase.dart';
 import 'package:dri_learn/features/authentication/domain/usecase/save_user_data_usecase.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';

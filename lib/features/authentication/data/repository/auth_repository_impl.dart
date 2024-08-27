@@ -1,5 +1,5 @@
 import 'package:dri_learn/core/errors/errors.dart';
-import 'package:dri_learn/features/authentication/domain/auth_repository.dart';
+import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
 import 'package:either_dart/either.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -21,5 +21,10 @@ class AuthRepositoryImpl extends AuthRepository {
 
     // Once signed in, return the UserCredential
     return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+  
+  @override
+  void updateConsentAllowed() {
+    
   }
 }

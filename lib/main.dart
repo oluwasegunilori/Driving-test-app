@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:dri_learn/ads/gdpr/consent_gdpr.dart';
 import 'package:dri_learn/config/env.dart';
 import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
 import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
@@ -18,13 +19,16 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  unawaited(MobileAds.instance.initialize());
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   Gemini.init(apiKey: Env.geminiAPIKEY);
   await di.init();
   runApp(const MyApp());
+  updateConsent(callback: (allowed){
+    
+  });
+  unawaited(MobileAds.instance.initialize());
 }
 
 class MyApp extends StatelessWidget {

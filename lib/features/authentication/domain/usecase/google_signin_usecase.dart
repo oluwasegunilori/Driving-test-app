@@ -1,5 +1,5 @@
 import 'package:dri_learn/core/errors/errors.dart';
-import 'package:dri_learn/features/authentication/domain/auth_repository.dart';
+import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
 import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
 import 'package:either_dart/either.dart';
 import 'package:uuid/uuid.dart';
