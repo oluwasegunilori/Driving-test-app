@@ -10,7 +10,7 @@ Widget titleAndIcon(BuildContext context) {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Text(
-        "DriLearn",
+        "Ontario G1 test 2024",
         style: Theme.of(context).textTheme.titleLarge!.copyWith(
               color: Colors.white,
               fontWeight: FontWeight.bold,

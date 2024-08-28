@@ -10,9 +10,8 @@
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
+		7088A0102C7E7AFE000302F1 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFB3B02C7E69F500F112CE /* AppTrackingTransparency.framework */; };
 		70EFB3B22C7E69F800F112CE /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC7F15BFBBC3EAF388EB01B4 /* Pods_Runner.framework */; };
-		70EFB3B42C7E69FD00F112CE /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFB3B02C7E69F500F112CE /* AppTrackingTransparency.framework */; };
-		70EFB3B52C7E69FD00F112CE /* AppTrackingTransparency.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 70EFB3B02C7E69F500F112CE /* AppTrackingTransparency.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		9179548666A322224AAAB528 /* Pods_RunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF60F4F9837E20D4041B1C5 /* Pods_RunnerTests.framework */; };
 		96788312BC7964377356ECE5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 840DFD6C721066E1CD5CC954 /* GoogleService-Info.plist */; };
@@ -30,20 +29,6 @@
 			remoteInfo = Runner;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		70EFB3B62C7E69FD00F112CE /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				70EFB3B52C7E69FD00F112CE /* AppTrackingTransparency.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
@@ -88,7 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				70EFB3B22C7E69F800F112CE /* Pods_Runner.framework in Frameworks */,
-				70EFB3B42C7E69FD00F112CE /* AppTrackingTransparency.framework in Frameworks */,
+				7088A0102C7E7AFE000302F1 /* AppTrackingTransparency.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +194,6 @@
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				7F171EC186FC8BEDC5094422 /* [CP] Embed Pods Frameworks */,
 				51D18BE3CD4B0AE4675E434D /* [CP] Copy Pods Resources */,
-				70EFB3B62C7E69FD00F112CE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -389,7 +373,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build";
+			shellScript = "/bin/sh \"$FLUTTER_ROOT/packages/flutter_tools/bin/xcode_backend.sh\" build\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -504,7 +488,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PJUFCZT7ZL;
 				ENABLE_BITCODE = NO;
@@ -534,7 +518,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = PJUFCZT7ZL;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
@@ -553,7 +537,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.driLearn.RunnerTests;
@@ -569,7 +553,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.driLearn.RunnerTests;
@@ -704,7 +688,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PJUFCZT7ZL;
 				ENABLE_BITCODE = NO;
@@ -737,7 +721,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = PJUFCZT7ZL;
 				ENABLE_BITCODE = NO;
