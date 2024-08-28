@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dri_learn/features/provinceSelector/domain/model/province_model.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/domain/model/province_model.dart';
 import 'package:equatable/equatable.dart';
 
 class ProvinceDto extends Equatable {

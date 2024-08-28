@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/repository/auth_repository.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:streaming_shared_preferences/streaming_shared_preferences.dart';

@@ -1,5 +1,5 @@
-import 'package:dri_learn/simulation/configs.dart';
-import 'package:dri_learn/simulation/model/custom_sprites.dart';
+import 'package:ontario_g1_test_2024/simulation/configs.dart';
+import 'package:ontario_g1_test_2024/simulation/model/custom_sprites.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/game.dart';

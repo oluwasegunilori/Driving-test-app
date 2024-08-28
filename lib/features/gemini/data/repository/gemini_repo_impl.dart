@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/gemini/domain/repository/gemini_repo.dart';
+import 'package:ontario_g1_test_2024/features/gemini/domain/repository/gemini_repo.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 
 class GeminiRepoImpl extends GeminiRepo {

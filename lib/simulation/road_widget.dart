@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dri_learn/simulation/dragger.dart';
+import 'package:ontario_g1_test_2024/simulation/dragger.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 

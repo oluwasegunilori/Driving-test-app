@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/tests/mock/presentation/mock_test_state.dart';
+import 'package:ontario_g1_test_2024/features/tests/mock/presentation/mock_test_state.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/widgets.dart';
 
@@ -51,7 +51,8 @@ ScoreInfo getScoreInfo(BuildContext context, TestLoaded state) {
       {
         return ScoreInfo(
             rating: state.info.grade,
-            description: "Congratulations! You passed the test! Keep up the great work you're one step closer to acing your driving test!",
+            description:
+                "Congratulations! You passed the test! Keep up the great work you're one step closer to acing your driving test!",
             score: "${state.info.score}/${state.questions.length}",
             title: "Excellent");
       }

@@ -1,7 +1,7 @@
-import 'package:dri_learn/core/data/remote/remote_data_source.dart';
-import 'package:dri_learn/core/errors/errors.dart';
+import 'package:ontario_g1_test_2024/core/data/remote/remote_data_source.dart';
+import 'package:ontario_g1_test_2024/core/errors/errors.dart';
 
-import 'package:dri_learn/features/provinceSelector/domain/model/province_model.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/domain/model/province_model.dart';
 
 import 'package:either_dart/src/either.dart';
 

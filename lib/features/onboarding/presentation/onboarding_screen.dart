@@ -2,18 +2,18 @@
 
 // ignore_for_file: invalid_use_of_protected_member
 
-import 'package:dri_learn/core/router_config.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_event.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
+import 'package:ontario_g1_test_2024/core/router_config.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_bloc.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_event.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:dri_learn/animation/animation_utils.dart';
-import 'package:dri_learn/core/button_styles.dart';
-import 'package:dri_learn/core/spaces.dart';
-import 'package:dri_learn/core/text_style.dart';
+import 'package:ontario_g1_test_2024/animation/animation_utils.dart';
+import 'package:ontario_g1_test_2024/core/button_styles.dart';
+import 'package:ontario_g1_test_2024/core/spaces.dart';
+import 'package:ontario_g1_test_2024/core/text_style.dart';
 import '../../../utils/onboarding_utils.dart';
 import 'onboarding_bloc.dart';
 import 'onboarding_event.dart';

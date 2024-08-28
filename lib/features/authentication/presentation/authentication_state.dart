@@ -1,5 +1,5 @@
-import 'package:dri_learn/core/errors/errors.dart';
-import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
+import 'package:ontario_g1_test_2024/core/errors/errors.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/model/user_entity.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class AuthState extends Equatable {

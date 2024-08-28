@@ -1,5 +1,5 @@
-import 'package:dri_learn/core/domain/repository/user_repository.dart';
-import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
+import 'package:ontario_g1_test_2024/core/domain/repository/user_repository.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/model/user_entity.dart';
 
 class SaveUserDataUsecase {
   final UserRepository _userRepository;

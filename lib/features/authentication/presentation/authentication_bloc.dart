@@ -2,11 +2,11 @@
 
 import 'dart:async';
 
-import 'package:dri_learn/core/domain/usecase/get_currrent_user_usecase.dart';
-import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
-import 'package:dri_learn/features/authentication/domain/usecase/google_signin_usecase.dart';
-import 'package:dri_learn/features/authentication/domain/usecase/save_user_data_usecase.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
+import 'package:ontario_g1_test_2024/core/domain/usecase/get_currrent_user_usecase.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/model/user_entity.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/usecase/google_signin_usecase.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/usecase/save_user_data_usecase.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'authentication_event.dart';
 

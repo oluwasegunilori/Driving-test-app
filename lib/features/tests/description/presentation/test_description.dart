@@ -1,10 +1,10 @@
-import 'package:dri_learn/core/button_styles.dart';
-import 'package:dri_learn/core/router_config.dart';
-import 'package:dri_learn/core/spaces.dart';
-import 'package:dri_learn/core/text_style.dart';
-import 'package:dri_learn/features/tests/core/data/repository/questions_repository_impl.dart';
-import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
-import 'package:dri_learn/features/tests/mock/presentation/mock_test_event.dart';
+import 'package:ontario_g1_test_2024/core/button_styles.dart';
+import 'package:ontario_g1_test_2024/core/router_config.dart';
+import 'package:ontario_g1_test_2024/core/spaces.dart';
+import 'package:ontario_g1_test_2024/core/text_style.dart';
+import 'package:ontario_g1_test_2024/features/tests/core/data/repository/questions_repository_impl.dart';
+import 'package:ontario_g1_test_2024/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:ontario_g1_test_2024/features/tests/mock/presentation/mock_test_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

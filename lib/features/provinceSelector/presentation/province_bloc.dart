@@ -1,8 +1,8 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
-import 'package:dri_learn/features/provinceSelector/domain/model/province_model.dart';
-import 'package:dri_learn/features/provinceSelector/domain/repository/province_repository.dart';
-import 'package:dri_learn/features/provinceSelector/presentation/province_state.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/domain/model/province_model.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/domain/repository/province_repository.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/presentation/province_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'province_event.dart';
 

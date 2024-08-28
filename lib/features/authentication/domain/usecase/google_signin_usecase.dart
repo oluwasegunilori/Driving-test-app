@@ -1,6 +1,6 @@
-import 'package:dri_learn/core/errors/errors.dart';
-import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
-import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
+import 'package:ontario_g1_test_2024/core/errors/errors.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/repository/auth_repository.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/model/user_entity.dart';
 import 'package:either_dart/either.dart';
 import 'package:uuid/uuid.dart';
 

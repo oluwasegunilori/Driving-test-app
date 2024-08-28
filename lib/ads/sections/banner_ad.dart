@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/repository/auth_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '/../core/di/injection_container.dart' as di;

@@ -1,17 +1,17 @@
-import 'package:dri_learn/features/authentication/domain/model/user_entity.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_state.dart';
-import 'package:dri_learn/features/history/presentation/history_screen.dart';
-import 'package:dri_learn/features/home/home_page.dart';
-import 'package:dri_learn/features/provinceSelector/presentation/province_screen.dart';
-import 'package:dri_learn/features/testOptions/learn_test_options.dart';
-import 'package:dri_learn/features/testOptions/mock_test_options.dart';
-import 'package:dri_learn/features/tests/description/presentation/test_description.dart';
-import 'package:dri_learn/features/tests/testComplete/presentation/test_complete.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/model/user_entity.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_bloc.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_state.dart';
+import 'package:ontario_g1_test_2024/features/history/presentation/history_screen.dart';
+import 'package:ontario_g1_test_2024/features/home/home_page.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/presentation/province_screen.dart';
+import 'package:ontario_g1_test_2024/features/testOptions/learn_test_options.dart';
+import 'package:ontario_g1_test_2024/features/testOptions/mock_test_options.dart';
+import 'package:ontario_g1_test_2024/features/tests/description/presentation/test_description.dart';
+import 'package:ontario_g1_test_2024/features/tests/testComplete/presentation/test_complete.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:dri_learn/features/onboarding/presentation/onboarding_screen.dart';
+import 'package:ontario_g1_test_2024/features/onboarding/presentation/onboarding_screen.dart';
 
 import '../features/tests/mock/presentation/mock_test_screen.dart';
 

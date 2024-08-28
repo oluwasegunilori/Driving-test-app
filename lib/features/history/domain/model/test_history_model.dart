@@ -1,5 +1,5 @@
-import 'package:dri_learn/features/history/data/model/test_history_entity.dart';
-import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
+import 'package:ontario_g1_test_2024/features/history/data/model/test_history_entity.dart';
+import 'package:ontario_g1_test_2024/features/tests/core/domain/model/test_type.dart';
 import 'package:equatable/equatable.dart';
 
 class TestHistoryModel extends Equatable {

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:ffi';
-import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
+import 'package:ontario_g1_test_2024/features/tests/core/domain/model/test_type.dart';
 import 'package:floor/floor.dart';
 
 class StringListConverter extends TypeConverter<List<String>, String> {

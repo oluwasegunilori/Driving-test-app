@@ -1,13 +1,13 @@
 import 'dart:async';
 
-import 'package:dri_learn/ads/gdpr/consent_gdpr.dart';
-import 'package:dri_learn/config/env.dart';
-import 'package:dri_learn/features/authentication/domain/repository/auth_repository.dart';
-import 'package:dri_learn/features/authentication/presentation/authentication_bloc.dart';
-import 'package:dri_learn/features/gemini/presentation/bloc/gemini_bloc.dart';
-import 'package:dri_learn/features/tests/mock/presentation/mock_test_bloc.dart';
+import 'package:ontario_g1_test_2024/ads/gdpr/consent_gdpr.dart';
+import 'package:ontario_g1_test_2024/config/env.dart';
+import 'package:ontario_g1_test_2024/features/authentication/domain/repository/auth_repository.dart';
+import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_bloc.dart';
+import 'package:ontario_g1_test_2024/features/gemini/presentation/bloc/gemini_bloc.dart';
+import 'package:ontario_g1_test_2024/features/tests/mock/presentation/mock_test_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:dri_learn/core/router_config.dart';
+import 'package:ontario_g1_test_2024/core/router_config.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';

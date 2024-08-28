@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:dri_learn/features/history/domain/model/test_history_item.dart';
-import 'package:dri_learn/features/history/domain/model/test_history_model.dart';
-import 'package:dri_learn/features/history/domain/usecase/get_test_history_usecase.dart';
-import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
+import 'package:ontario_g1_test_2024/features/history/domain/model/test_history_item.dart';
+import 'package:ontario_g1_test_2024/features/history/domain/model/test_history_model.dart';
+import 'package:ontario_g1_test_2024/features/history/domain/usecase/get_test_history_usecase.dart';
+import 'package:ontario_g1_test_2024/features/tests/core/domain/model/test_type.dart';
 import 'package:equatable/equatable.dart';
 
 part 'test_history_event.dart';

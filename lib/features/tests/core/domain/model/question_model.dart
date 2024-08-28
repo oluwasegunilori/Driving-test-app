@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/tests/core/domain/model/test_type.dart';
+import 'package:ontario_g1_test_2024/features/tests/core/domain/model/test_type.dart';
 import 'package:equatable/equatable.dart';
 
 class QuestionModel extends Equatable {

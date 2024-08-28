@@ -1,10 +1,10 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member
 
 import 'package:bloc/bloc.dart';
-import 'package:dri_learn/features/gemini/domain/model/gem_question_answer_model.dart';
-import 'package:dri_learn/features/gemini/domain/repository/gemini_repo.dart';
-import 'package:dri_learn/features/gemini/domain/usecase/generate_gemini_question.dart';
-import 'package:dri_learn/features/tests/core/domain/model/answer_model.dart';
+import 'package:ontario_g1_test_2024/features/gemini/domain/model/gem_question_answer_model.dart';
+import 'package:ontario_g1_test_2024/features/gemini/domain/repository/gemini_repo.dart';
+import 'package:ontario_g1_test_2024/features/gemini/domain/usecase/generate_gemini_question.dart';
+import 'package:ontario_g1_test_2024/features/tests/core/domain/model/answer_model.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 

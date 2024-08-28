@@ -1,4 +1,4 @@
-import 'package:dri_learn/features/provinceSelector/domain/model/province_model.dart';
+import 'package:ontario_g1_test_2024/features/provinceSelector/domain/model/province_model.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ProvinceEvent extends Equatable {
@@ -12,6 +12,4 @@ class SelectProvinceEvent extends ProvinceEvent {
   SelectProvinceEvent({required this.province});
 }
 
-class GetProvinceEvent extends ProvinceEvent {
-
-}
+class GetProvinceEvent extends ProvinceEvent {}

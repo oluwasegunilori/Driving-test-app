@@ -1,8 +1,8 @@
-import 'package:dri_learn/ads/sections/banner_ad.dart';
-import 'package:dri_learn/core/button_styles.dart';
-import 'package:dri_learn/core/router_config.dart';
-import 'package:dri_learn/core/spaces.dart';
-import 'package:dri_learn/core/text_style.dart';
+import 'package:ontario_g1_test_2024/ads/sections/banner_ad.dart';
+import 'package:ontario_g1_test_2024/core/button_styles.dart';
+import 'package:ontario_g1_test_2024/core/router_config.dart';
+import 'package:ontario_g1_test_2024/core/spaces.dart';
+import 'package:ontario_g1_test_2024/core/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
