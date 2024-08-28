@@ -2,6 +2,8 @@
 
 // ignore_for_file: invalid_use_of_protected_member
 
+import 'dart:io';
+
 import 'package:ontario_g1_test_2024/core/router_config.dart';
 import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_bloc.dart';
 import 'package:ontario_g1_test_2024/features/authentication/presentation/authentication_event.dart';
@@ -133,7 +135,11 @@ class OnboardingScreen extends StatelessWidget {
                     context: context,
                     text: AppLocalizations.of(context)!.getStarted,
                     onClick: () {
-                      onButtonClicked();
+                      if (Platform.isAndroid) {
+                        onButtonClicked();
+                      } else {
+                        authBloc.add(SkipSignIn());
+                      }
                     }),
                 const SizedBox(
                   height: 30,
