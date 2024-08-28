@@ -9,13 +9,16 @@ Widget titleAndIcon(BuildContext context) {
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Text(
-        "Ontario G1 test 2024",
-        style: Theme.of(context).textTheme.titleLarge!.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 45,
-            ),
+      Center(
+        child: Text(
+          "Ontario G1 test 2024",
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 45,
+              ),
+          textAlign: TextAlign.center,
+        ),
       ),
       const SizedBox(
         height: 10,
