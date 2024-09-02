@@ -43,7 +43,7 @@ ScoreInfo getScoreInfo(BuildContext context, TestLoaded state) {
       {
         return ScoreInfo(
             rating: state.info.grade,
-            description: "God job but not enough! You need at let 80%.",
+            description: "God job but not enough! You need at least 80%.",
             score: "${state.info.score}/${state.questions.length}",
             title: "Medium");
       }

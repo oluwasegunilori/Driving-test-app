@@ -18,7 +18,7 @@ class CalculateMockTestScore {
     });
     Grade grade;
     var ratio = count / answers.length;
-    if (ratio > 0.8) {
+    if (ratio >= 0.8) {
       grade = Grade.Excellent;
     } else if (ratio < 0.5) {
       grade = Grade.Poor;
