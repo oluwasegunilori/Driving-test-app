@@ -33,16 +33,19 @@ class _MockTestScreenState extends State<MockTestScreen> {
   @override
   void initState() {
     super.initState();
-    loadAd(onAdLoaded: (ad) {
-      if (!mounted) {
-        ad.dispose();
-        return;
-      }
-      setState(() {
-        _bannerAd = ad as BannerAd;
-      });
-      _isAdLoaded = true;
-    });
+    loadInstAd();
+    loadAd(
+      onAdLoaded: (ad) {
+        if (!mounted) {
+          ad.dispose();
+          return;
+        }
+        setState(() {
+          _bannerAd = ad as BannerAd;
+        });
+        _isAdLoaded = true;
+      },
+    );
   }
 
   @override
@@ -212,12 +215,13 @@ class _MockTestScreenState extends State<MockTestScreen> {
                             questionOptionWidget(context, state),
                             verticalSpace(20),
                             if (state.viewMode &&
-                                state.getCurrentQuestion().testType ==
-                                    TestType.Knowledge || (
-                                      state.viewMode &&
-                                state.getCurrentQuestion().testType ==
-                                    TestType.Sign
-                                    ) && state.getCurrentQuestion().geminiQuestion != null ) ...[
+                                    state.getCurrentQuestion().testType ==
+                                        TestType.Knowledge ||
+                                (state.viewMode &&
+                                        state.getCurrentQuestion().testType ==
+                                            TestType.Sign) &&
+                                    state.getCurrentQuestion().geminiQuestion !=
+                                        null) ...[
                               BlocBuilder<GeminiBloc, GeminiState>(
                                 builder: (context, gemState) {
                                   return Column(
