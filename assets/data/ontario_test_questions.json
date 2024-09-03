@@ -982,7 +982,7 @@
         "options": [
             "Shows route to airport",
             "Shows off-road facilities such as hospitals, airports, universities or carpool lots",
-            "D sign \u2013 Oversize load",
+            "D sign Oversize load",
             "Shows facilities that are accessible by wheelchair"
         ],
         "type": "Sign",
@@ -1026,28 +1026,13 @@
         "geminiAnswer": null,
         "options": [
             "Various exit signs are used on freeways",
-            "D sign \u2013 Oversize load",
+            "D sign Oversize load",
             "Shows route to passenger railway station",
             "Shows facilities that are accessible by wheelchair"
         ],
         "type": "Sign",
         "question": "What does this sign mean?",
         "answer": "3"
-    },
-    {
-        "id": "2a161801-2f94-44f9-909e-5ce924b935e0",
-        "imageLink": "https://i.imgur.com/VAIwPvR.jpeg",
-        "geminiQuestion": null,
-        "geminiAnswer": null,
-        "options": [
-            "Shows route to passenger railway station",
-            "D sign Oversize load",
-            "Various exit signs are used on freeways",
-            "Advance signs use arrows to show which lanes lead off the freeway"
-        ],
-        "type": "Sign",
-        "question": "What does this sign mean?",
-        "answer": "1"
     },
     {
         "id": "d8a1ad6a-63ba-4f2b-b272-ed377e57b722",
