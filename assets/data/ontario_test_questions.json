@@ -1,955 +1,2597 @@
 [
     {
-        "question": "What does this sign mean?",
+        "id": "cd2e2e81-c168-4b94-a458-7f0e33e1d0ad",
+        "imageLink": "https://i.imgur.com/KQhGLqw.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
-            "The divided road is ending",
-            "Double parking is not permitted",
-            "Do not enter, one way traffic only",
-            "Do not pass"
+            "Do not turn left during the times shown",
+            "Do not drive through the intersection",
+            "Do not turn right when facing a red light at the intersection",
+            "U-turns are not allowed in this area"
         ],
-        "image": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0",
-        "imageLink": "https://i.imgur.com/jMntFSN.jpg",
-        "answer": "3",
         "type": "Sign",
-        "id": "3b5e8b78-b2a9-49b8-864b-aa98b73c5de0"
+        "question": "What does this\u00a0sign\u00a0mean?",
+        "answer": "3"
     },
     {
+        "id": "ace3dab5-9a16-4536-bcae-3572f2a8a77f",
+        "imageLink": "https://i.imgur.com/6ESu03o.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Do not turn right when facing a red light at the intersection",
+            "Do not turn left at the intersection",
+            "Do not drive through the intersection",
+            "Keep to the right of the traffic island"
+        ],
+        "type": "Sign",
+        "question": "What is the meaning of this Sign?",
+        "answer": "0"
+    },
+    {
+        "id": "cf6fe48a-0ec9-4606-b98a-d4eed1fd22f8",
+        "imageLink": "https://i.imgur.com/bjSVpxN.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Do not enter this road",
+            "Do not turn left at the intersection",
+            "Do not turn left during the times shown",
+            "Do not pass on this road"
+        ],
+        "type": "Sign",
+        "question": "What is the meaning of this Sign?",
+        "answer": "2"
+    },
+    {
+        "id": "8a315a5f-f120-49ca-8012-c87105114cf9",
+        "imageLink": "https://i.imgur.com/HJCK5gV.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "No pedestrians allowed on this road",
+            "This parking space is only for vehicles displaying a valid Accessible Parking Permit",
+            "Speed limit changes ahead",
+            "Do not turn to go in the opposite direction. (U-turn)"
+        ],
+        "type": "Sign",
         "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "49afbb9f-8c86-4018-b748-1e9cc9bb5075",
+        "imageLink": "https://i.imgur.com/26c9hZW.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Slow traffic on multi-lane roads must keep right",
+            "Snowmobiles may use this road",
+            "Do not turn left during the times shown",
+            "No bicycles allowed on this road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "39dea342-98f7-458b-b7e5-43c5d6da3ac6",
+        "imageLink": "https://i.imgur.com/eytC2gA.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "No bicycles allowed on this road",
+            "Keep to the right of the traffic island",
+            "No pedestrians allowed on this road",
+            "Do not pass on this road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "59704f93-c507-42a0-aba2-9b3487332efa",
+        "imageLink": "https://i.imgur.com/XUpu4Jy.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Keep to the right of the traffic island",
+            "Do not turn left during the times shown",
+            "Do not pass on this road",
+            "Slow traffic on multi-lane roads must keep right"
+        ],
+        "type": "Sign",
+        "question": "What does tis sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "90ef6e23-11dc-4724-87b7-427334bf374e",
+        "imageLink": "https://i.imgur.com/w3Ad0qR.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Do not enter this road",
+            "Do not turn left at the intersection",
+            "Do not pass on this road",
+            "Speed limit changes ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "f50748d0-c8fb-4fb8-8fd8-704cba55f791",
+        "imageLink": "https://i.imgur.com/luUVz7K.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Speed limit changes ahead",
+            "Do not pass on this road",
+            "The speed limit in this zone is lower during school hours",
+            "Stop for school bus when signals are flashing"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "a526ece5-f3cb-45c1-9b4a-f74acc07e1a6",
+        "imageLink": "https://i.imgur.com/Nt6TWSz.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Traffic may travel in one direction only",
+            "This is a pedestrian crossover",
+            "Road forks to the right",
+            "Narrow bridge ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "15718da0-1f62-4342-9987-42f7114ae69c",
+        "imageLink": "https://i.imgur.com/Ci6nmwE.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Sharp bend or turn in the road ahead",
+            "Pavement narrows ahead",
+            "Slight bend or curve in the road ahead",
+            "Road forks to the right"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "de89fcee-708f-4d1a-b328-3253cf71258b",
+        "imageLink": "https://i.imgur.com/XwjvmRB.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pavement narrows ahead",
+            "Narrow bridge ahead",
+            "Road branching off ahead",
+            "Road forks to the right"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "070e404d-3d4f-48ff-9922-ef048e84d9cb",
+        "imageLink": "https://i.imgur.com/5O4b9gl.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Narrow bridge ahead",
+            "Winding road ahead",
+            "Road branching off ahead",
+            "Pavement is slippery when wet. Slow down and drive with caution"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "60f7b72a-62c8-434b-a8b2-1b5970befdc7",
+        "imageLink": "https://i.imgur.com/9M2LrHJ.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Intersection ahead. The arrow shows which direction of traffic has the right-of-way",
+            "Drivers on the sideroad at the intersection ahead don't have a clear view of traffic",
+            "Winding road ahead",
+            "Slight bend or curve in the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "9be93ae0-90b3-4d78-80f0-3ba78cc76f43",
+        "imageLink": "https://i.imgur.com/u11pYeK.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Snowmobiles cross this road",
+            "Narrow bridge ahead",
+            "Two roads going in the same direction are about to join into one",
+            "Roundabout Ahead. Reduce Speed"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "5ede4209-f4a7-4c22-a740-71216fd90648",
+        "imageLink": "https://i.imgur.com/hYavdGi.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pavement narrows ahead",
+            "Slight bend or curve in the road ahead",
+            "Drivers on the sideroad at the intersection ahead don't have a clear view of traffic",
+            "Sharp bend or turn in the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "c71b1918-73f3-4d52-b560-87696ad7e217",
+        "imageLink": "https://i.imgur.com/sdHVKSe.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Road branching off ahead",
+            "Roundabout Ahead. Reduce Speed",
+            "Slight bend or curve in the road ahead",
+            "Pavement narrows ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "4ee84afe-73e2-48d4-8ae8-2b363370fc66",
+        "imageLink": "https://i.imgur.com/Q2tqZpj.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Sharp bend or turn in the road ahead",
+            "Slight bend or curve in the road ahead",
+            "Pavement narrows ahead",
+            "Drivers on the sideroad at the intersection ahead don't have a clear view of traffic"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "5777cac9-0c1f-455b-9c30-5d1d59e8cb03",
+        "imageLink": "https://i.imgur.com/KepWlFX.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Slight bend or curve in the road ahead",
+            "Sharp bend or turn in the road ahead",
+            "Winding road ahead",
+            "Posted under a curve warning, this sign shows the maximum safe speed for the curve"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "4e5d28f4-bcd3-4301-9306-293326221894",
+        "imageLink": "https://i.imgur.com/v4eTu31.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Winding road ahead",
+            "The bridge ahead lifts or swings to let boats pass",
+            "Sharp bend or turn in the road ahead",
+            "Slight bend or curve in the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "2c602b72-7f36-4a85-b549-06fd7ea6de27",
+        "imageLink": "https://i.imgur.com/RePeCDy.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Chevron (arrowhead) signs are posted in groups to guide drivers around sharp curves in the road",
+            "Sharp bend or turn in the road ahead",
+            "Slight bend or curve in the road ahead",
+            "Drivers on the sideroad at the intersection ahead don't have a clear view of traffic"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "4d660616-e80c-49ee-bc96-9f3bf899bb43",
+        "imageLink": "https://i.imgur.com/Iw50kbv.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pavement narrows ahead",
+            "The bridge ahead lifts or swings to let boats pass",
+            "Winding road ahead",
+            "Sharp bend or turn in the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "de18e8a3-5101-4064-9a2e-96fae416ea6c",
+        "imageLink": "https://i.imgur.com/9igPkTX.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Paved surface ends ahead",
+            "Bicycle crossing ahead",
+            "The bridge ahead lifts or swings to let boats pass",
+            "Winding road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "b23179f7-c8fd-4713-8b48-57d4f6fc9d3c",
+        "imageLink": "https://i.imgur.com/wxzCo50.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Chevron (arrowhead) signs are posted in groups to guide drivers around sharp curves in the road",
+            "Sharp bend or turn in the road ahead",
+            "The bridge ahead lifts or swings to let boats pass",
+            "Paved surface ends ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "6adb3f32-9070-4f37-b940-d3fd90847dbc",
+        "imageLink": "https://i.imgur.com/w1BdOhF.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "No bicycles allowed on this road",
+            "Bicycle crossing ahead",
+            "Sharp bend or turn in the road ahead",
+            "Stop sign ahead. Slow down"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "eba4724d-4288-48d7-abcd-2675cc5db5c9",
+        "imageLink": "https://i.imgur.com/8POIEYY.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Stop sign ahead. Slow down",
+            "Share the road with oncoming traffic",
+            "Pavement is slippery when wet. Slow down and drive with caution",
+            "Hazard close to the edge of the road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "dacdda1d-523e-49f4-8fd9-edb43de72185",
+        "imageLink": "https://i.imgur.com/ZiUMUAq.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Steep hill ahead. You may need to use a lower gear",
+            "Right lane ends ahead",
+            "Traffic lights ahead. Slow down",
+            "Share the road with oncoming traffic"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "7e8d5946-54ef-4784-94fe-aab0a7a98271",
+        "imageLink": "https://i.imgur.com/6hXEQlo.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Share the road with oncoming traffic",
+            "Paved surface ends ahead",
+            "Provide safe space on the road for cyclists and other vehicles",
+            "Pavement is slippery when wet. Slow down and drive with caution"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "f4575197-bf71-4741-b13e-cff5c116f88f",
+        "imageLink": "https://i.imgur.com/epUJ4UX.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Bicycle crossing ahead",
+            "Pavement is slippery when wet. Slow down and drive with caution",
+            "Traffic lights ahead. Slow down",
+            "Steep hill ahead. You may need to use a lower gear"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "ddf0fd74-9a57-4014-9649-58bb2f11de4b",
+        "imageLink": "https://i.imgur.com/vQjFT80.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Hazard close to the edge of the road. The downward lines show the side on which you may safely pass",
+            "Steep hill ahead. You may need to use a lower gear",
+            "Divided highway ends",
+            "Railway crossing ahead. Be alert for trains"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "8b22e2ab-36fe-49f3-9d02-1ffe1867df8d",
+        "imageLink": "https://i.imgur.com/5c0BZSh.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Stop sign ahead. Slow down",
+            "Pavement is slippery when wet. Slow down and drive with caution",
+            "Divided highway begins: traffic travels in both directions on separated roads ahead",
+            "Right lane ends ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "97a96307-f7e1-4475-825b-a288438385b3",
+        "imageLink": "blob:https://imgur.com/17d5bbed-171d-4693-ad57-0ce0839c4bc8",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Deer regularly cross this road; be alert for animals",
+            "Steep hill ahead. You may need to use a lower gear",
+            "Bump or uneven pavement on the road ahead. Slow down and keep control of your vehicle",
+            "Right lane ends ahead. If you are in the right-hand lane, you must merge safely with traffic in the lane to the left."
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "12bd5979-160e-4658-8cc7-4528d841262f",
+        "imageLink": "https://i.imgur.com/ASgUThB.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Steep hill ahead",
+            "Traffic lights ahead. Slow down",
+            "Right lane ends ahead",
+            "Divided highway ends"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "fd8d09ff-2f93-4fba-b332-921bf74e5995",
+        "imageLink": "https://i.imgur.com/sVz0Px9.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Steep hill ahead. You may need to use a lower gear",
+            "Two roads going in the same direction are about to join into one",
+            "Underpass ahead",
+            "Railway crossing ahead. Be alert for trains"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "b0005be1-163c-45a6-a0cf-8b15593b5167",
+        "imageLink": "https://i.imgur.com/jO0c5rK.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pavement is slippery when wet. Slow down and drive with caution",
+            "Hazard close to the edge of the road",
+            "Two roads going in the same direction are about to join into one",
+            "Snowmobiles cross this road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "3767c92d-5fd3-4c3b-ae23-002409336db2",
+        "imageLink": "https://i.imgur.com/Elx3i71.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Bump or uneven pavement on the road ahead",
+            "Steep hill ahead. You may need to use a lower gear",
+            "Truck entrance on the right side of the road ahead",
+            "Snowmobiles cross this road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "7550f2e8-8040-4a42-901f-c7f0ffd29a41",
+        "imageLink": "https://i.imgur.com/saaqYoZ.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Right lane ends ahead",
+            "Steep hill ahead. You may need to use a lower gear",
+            "Underpass ahead. Take care if you are driving a tall vehicle",
+            "Divided highway ends"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "1f42897d-df17-44b0-93d4-b1505f1aed3f",
+        "imageLink": "https://i.imgur.com/VORdC5Q.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Sharp turn or bend in the road in the direction of the arrow",
+            "Underpass ahead. Take care if you are driving a tall vehicle",
+            "Slow down and keep control of your vehicle",
+            "Bump or uneven pavement on the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "5980c3d4-4777-4d9e-a08e-2ef037df3aa1",
+        "imageLink": "https://i.imgur.com/p6vpDKe.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Bump or uneven pavement on the road ahead",
+            "Underpass ahead. Take care if you are driving a tall vehicle",
+            "Railway crossing ahead. Be alert for trains",
+            "Truck entrance on the right side of the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "e6074656-d319-483f-a628-2f2af1a9f3f3",
+        "imageLink": "https://i.imgur.com/l1u24Sz.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Underpass ahead. Take care if you are driving a tall vehicle",
+            "Shows maximum safe speed on ramp",
+            "Railway crossing ahead. Be alert for trains",
+            "There may be water flowing over the road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "c647d633-f439-4d01-b5ec-732f489f8872",
+        "imageLink": "blob:https://imgur.com/5c618e88-f1c6-44d5-bd52-13169894a9f0",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "There may be water flowing over the road",
+            "Bump or uneven pavement on the road ahead",
+            "Watch for fallen rock and be prepared to avoid a collision",
+            "Sharp turn or bend in the road in the direction of the arrow"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "cca7f48a-aece-4d08-820e-bba450eacea8",
+        "imageLink": "blob:https://imgur.com/fa01d298-75e9-451e-af91-a0f25e0acaba",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Deer regularly cross this road; be alert for animals",
+            "Watch for pedestrians and be prepared to share the road with them",
+            "his sign warns you that you are coming to a hidden school bus stop",
+            "These signs warn of a school crossing"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "3e080b7a-975c-43fb-bf32-72894e887029",
+        "imageLink": "https://i.imgur.com/SklDh61.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Watch for pedestrians and be prepared to share the road with them",
+            "Truck entrance on the right side of the road ahead",
+            "Watch for fallen rock and be prepared to avoid a collision",
+            "Indicates an upcoming bus entrance on the right and vehicles should be prepared to yield to buses entering the roadway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "58a9c57e-6db7-4a66-b104-b55cae476b23",
+        "imageLink": "https://i.imgur.com/wWom3sJ.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Truck entrance on the right side of the road ahead",
+            "Watch for fallen rock and be prepared to avoid a collision",
+            "Shows maximum safe speed on ramp",
+            "Indicates an upcoming bus entrance on the right and vehicles should be prepared to yield to buses entering the roadway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "1a0deb69-475a-432e-b729-726ba7d8d29f",
+        "imageLink": "https://i.imgur.com/k2M9E2g.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Watch for pedestrians and be prepared to share the road with them",
+            "There may be water flowing over the road",
+            "Hazard close to the edge of the road",
+            "There may be water flowing over the road"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "e73ced0a-95ea-4fb6-93f2-5dd7ebaf3cea",
+        "imageLink": "https://i.imgur.com/msVl2hv.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "There may be water flowing over the road",
+            "These signs warn of a school crossing",
+            "Shows maximum safe speed on ramp",
+            "Watch for fallen rock and be prepared to avoid a collision"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "519ce459-0bd6-4f3e-b5c7-5040a3c6370a",
+        "imageLink": "https://i.imgur.com/Fi5f0qm.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Shows maximum safe speed on ramp",
+            "There may be water flowing over the road",
+            "Truck entrance on the right side of the road ahead",
+            "Bump or uneven pavement on the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "afd5d86f-81a4-4ff8-a1e5-abc8a4af1bdb",
+        "imageLink": "https://i.imgur.com/FELwMGs.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "These signs warn of a school crossing. Watch for children and follow the directions of the crossing guard or school safety patroller",
+            "Snowmobiles cross this road",
+            "This sign warns you that you are coming to a hidden school bus stop",
+            "Indicates an upcoming fire truck entrance on the right and vehicles should be prepared to yield to fire trucks entering the roadway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "ecbe0b9d-9f92-4301-85b8-2b1f5835a33b",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Watch for pedestrians and be prepared to share the road with them",
+            "Indicates an upcoming bus entrance on the right and vehicles should be prepared to yield to buses entering the roadway",
+            "Watch for fallen rock and be prepared to avoid a collision",
+            "Indicates an upcoming fire truck entrance on the right and vehicles should be prepared to yield to fire trucks entering the roadway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "aa24fbb4-e139-4193-b893-9446bf2d1446",
+        "imageLink": "https://i.imgur.com/cBdzMmR.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "There may be water flowing over the road",
+            "Indicates an upcoming bus entrance on the right and vehicles should be prepared to yield to buses entering the roadway",
+            "These signs warn of a school crossing",
+            "Indicates an upcoming fire truck entrance on the right and vehicles should be prepared to yield to fire trucks entering the roadway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "75f16f62-15b1-4f5d-8cb6-8c27b01747eb",
+        "imageLink": "https://i.imgur.com/7cQeVKu.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Watch for fallen rock and be prepared to avoid a collision",
+            "These signs warn of a school crossing. Watch for children and follow the directions of the crossing guard or school safety patroller",
+            "Indicates an upcoming bus entrance on the right and vehicles should be prepared to yield to buses entering the roadway",
+            "Indicates an upcoming fire truck entrance on the right and vehicles should be prepared to yield to fire trucks entering the roadway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "51eb91ca-70d3-4b29-8067-184a0ada068a",
+        "imageLink": "https://i.imgur.com/2hza4Y9.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "These signs warn of a school crossing. Watch for children and follow the directions of the crossing guard or school safety patroller",
+            "Watch for pedestrians and be prepared to share the road with them",
+            "This sign warns you that you are coming to a hidden school bus stop",
+            "Truck entrance on the right side of the road ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "c3da02be-9177-4d98-b39d-6d76e02199fc",
+        "imageLink": "https://i.imgur.com/AYdJiuV.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Temporary detour from normal traffic route",
+            "Survey crew working on the road ahead",
+            "Road work ahead",
+            "Construction work one kilometre ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "cd8ec32d-ff9b-4927-9a88-0c457f807626",
+        "imageLink": "https://i.imgur.com/hKTFE4w.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Survey crew working on the road ahead",
+            "Road work ahead",
+            "Flashing lights on the arrows show the direction to follow",
+            "Construction work one kilometre ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "9908f863-6f0b-4290-9c26-2f524d217d6d",
+        "imageLink": "https://i.imgur.com/WpydozB.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "You are entering a construction zone",
+            "Traffic control person ahead. Drive slowly and watch for instructions",
+            "Survey crew working on the road ahead",
+            "Flashing lights on the arrows show the direction to follow"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "40e018c2-cf19-45b4-9604-c93beecc4fe6",
+        "imageLink": "https://i.imgur.com/cfeSLlB.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Traffic control person ahead. Drive slowly and watch for instructions",
+            "You are entering a construction zone",
+            "Survey crew working on the road ahead",
+            "Construction work one kilometre ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "4fbfd45e-586a-4186-9080-f29ed8ad22fe",
+        "imageLink": "https://i.imgur.com/cn8wh4K.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Survey crew working on the road ahead",
+            "Temporary detour from normal traffic route",
+            "Road work ahead",
+            "You are entering a construction zone"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "2559ea58-b386-47f1-a12b-0d223771f4f8",
+        "imageLink": "https://i.imgur.com/Bfh8yy0.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Traffic control person ahead. Drive slowly and watch for instructions",
+            "Temporary detour from normal traffic route",
+            "Survey crew working on the road ahead",
+            "Closed lane"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "8449cc4e-dedf-41e2-bfbf-1ed013cb0ee7",
+        "imageLink": "https://i.imgur.com/IGr2PsW.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Temporary detour from normal traffic route",
+            "Closed lane",
+            "Flashing lights on the arrows show the direction to follow",
+            "Lane ahead is closed for roadwork"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "aaf49d01-8729-4cb9-82cd-4e689a63b7f1",
+        "imageLink": "https://i.imgur.com/dggpB90.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pavement has been milled or grooved",
+            "Closed lane",
+            "Flashing lights on the arrows show the direction to follow",
+            "Temporary detour from normal traffic route"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "daec6b93-9d82-4857-b256-6e4976408edf",
+        "imageLink": "https://i.imgur.com/N237StO.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Closed lane",
+            "Follow detour marker until you return to regular route",
+            "Do not pass the pilot vehicle or pace vehicle bearing this sign",
+            "Lane ahead is closed for roadwork"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "7662411b-e22f-42b8-9c6b-93da4e187d6e",
+        "imageLink": "https://i.imgur.com/zwz1BaX.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Lane ahead is closed for roadwork",
+            "Closed lane. Adjust speed to merge with traffic in lane indicated by arrow",
+            "Do not pass the pilot vehicle or pace vehicle bearing this sign",
+            "Reduce speed and be prepared to stop"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "ddbded9b-77b0-4acf-a6cb-aa7ef6014569",
+        "imageLink": "https://i.imgur.com/v1ZmF0b.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Reduce speed and be prepared to stop",
+            "Lane ahead is closed for roadwork",
+            "Do not pass the pilot vehicle or pace vehicle bearing this sign",
+            "Closed lane"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "82df138f-7778-4c2d-899d-adbd08770404",
+        "imageLink": "https://i.imgur.com/yAvXWhG.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Reduce speed and be prepared to stop",
+            "Do not pass the pilot vehicle or pace vehicle bearing this sign",
+            "Follow detour marker until you return to regular route",
+            "Lane ahead is closed for roadwork"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "9396a0ee-c0e0-4024-9a3a-83b068cb305e",
+        "imageLink": "https://i.imgur.com/Zp98p3Y.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pavement has been milled or grooved",
+            "Closed lane",
+            "Reduce speed and be prepared to stop",
+            "Follow detour marker until you return to regular route"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "e7556778-1a95-43c9-abdc-50bc3155e82f",
+        "imageLink": "https://i.imgur.com/uLfBnm2.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Shows route to airport",
+            "Shows off-road facilities such as hospitals, airports, universities or carpool lots",
+            "D sign \u2013 Oversize load",
+            "Shows facilities that are accessible by wheelchair"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "648b407d-64d2-4ebb-bccc-ec94a7f682b8",
+        "imageLink": "https://i.imgur.com/QK5h4N4.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Shows facilities that are accessible by wheelchair",
+            "Shows route to airport",
+            "Shows route to passenger railway station",
+            "Shows off-road facilities such as hospitals, airports, universities or carpool lots"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "c6d35460-1427-4a31-b030-024abe46fdd5",
+        "imageLink": "https://i.imgur.com/ljknFBS.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Shows route to airport",
+            "Shows route to passenger railway station",
+            "Shows off-road facilities such as hospitals, airports, universities or carpool lots",
+            "Shows the upcoming roundabout exits and where they will take you"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "07d96d7c-7e7d-42b7-ab3c-e63a4ec72a88",
+        "imageLink": "https://i.imgur.com/eFrK6ff.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Various exit signs are used on freeways",
+            "D sign \u2013 Oversize load",
+            "Shows route to passenger railway station",
+            "Shows facilities that are accessible by wheelchair"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "3"
+    },
+    {
+        "id": "2a161801-2f94-44f9-909e-5ce924b935e0",
+        "imageLink": "https://i.imgur.com/VAIwPvR.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Shows route to passenger railway station",
+            "D sign Oversize load",
+            "Various exit signs are used on freeways",
+            "Advance signs use arrows to show which lanes lead off the freeway"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "d8a1ad6a-63ba-4f2b-b272-ed377e57b722",
+        "imageLink": "https://i.imgur.com/L2vR7vR.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Shows the upcoming roundabout exits and where they will take you",
+            "Shows route to airport",
+            "alerts other drivers that the vehicle ahead will be travelling at 40 km/h or less",
+            "These signs change according to traffic conditions to give drivers current information on delays and lane closures ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "2"
+    },
+    {
+        "id": "aa47abc8-08ce-4dbf-b60d-d2d789895fb6",
+        "imageLink": "https://i.imgur.com/kYfi7To.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "indicates a long commercial vehicle, which is a double trailer and can be up to 40 metres in length",
+            "Shows the distances in kilometres to towns and cities on the road",
+            "Various exit signs are used on freeways",
+            "Shows the upcoming roundabout exits and where they will take you"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "92f0df42-9f13-4016-8cfa-47a4730d16a3",
+        "imageLink": "https://i.imgur.com/GXdJIFI.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Cars from other kind of vehicles",
+            "Traffic travelling on differnt roads",
+            "Traffic travelling in the same direction",
+            "Traffic travelling in opposite directions"
+        ],
+        "type": "Sign",
+        "question": "Yellow lines separate ________",
+        "answer": "3"
+    },
+    {
+        "id": "e957ebc6-80ee-4d33-bf3e-18bf18544536",
+        "imageLink": "https://i.imgur.com/9sF1mtQ.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "You may pass if the way is clear",
+            "It is unsafe to pass. ('A' should not pass.)",
+            "The lane you are in is ending or exiting",
+            "If there is no crosswalk, stop at the edge of the sidewalk"
+        ],
+        "type": "Sign",
+        "question": "A solid line at the left of your lane means _____",
+        "answer": "1"
+    },
+    {
+        "id": "01633d67-043a-4d54-8b3e-4f07ef16996f",
+        "imageLink": "https://i.imgur.com/klPKNJq.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "you may move only in the direction of the arrow",
+            "Travelling in opposite directions",
+            "It is unsafe to pass. ('A' should not pass.)",
+            "You may pass if the way is clear"
+        ],
+        "type": "Sign",
+        "question": "A broken line at the left of your lane means _________",
+        "answer": "3"
+    },
+    {
+        "id": "cce33557-d958-4b13-9902-8d34ee6036a5",
+        "imageLink": "https://i.imgur.com/1gyxZ99.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "you may pass if the way is clear. ('A' may pass if there are enough broken lines ahead to complete the pass safely.)",
+            "the lane you are in is ending or exiting and that you must change lanes if you want to continue in your current direction",
+            "you may move only in the direction of the arrow",
+            "Drivers and cyclists must stop before the line and yield to pedestrians until pedestrians have completely crossed the road and cleared the roadway"
+        ],
+        "type": "Sign",
+        "question": "When you see continuity lines on your left side, it generally means ________",
+        "answer": "1"
+    },
+    {
+        "id": "996683fc-fbd0-459a-b74d-2ddcbc6d2acc",
+        "imageLink": "https://i.imgur.com/dQD3DQH.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "A white arrow painted on a lane",
+            "White double parallel lines across the road with an X in each lane approaching it",
+            "Two parallel white lines painted across the road",
+            "Two solid lines painted on the pavement"
+        ],
+        "type": "Sign",
+        "question": "A crosswalk is marked by __________",
+        "answer": "2"
+    },
+    {
+        "id": "0376359b-766a-4214-8526-f123a8efb582",
+        "imageLink": "https://i.imgur.com/dQD3DQH.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Heavy traffic comming from the opposite lane",
+            "Movement in one direction",
+            "Where you must stop",
+            "Where parking is allowed"
+        ],
+        "type": "Sign",
+        "question": "A single white line painted across the road at an intersection shows _________",
+        "answer": "2"
+    },
+    {
+        "id": "e30fb97e-98c6-413e-afc4-062ece306671",
+        "imageLink": "https://i.imgur.com/PMcjpT9.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "A crosswalk is marked",
+            "An Intersection is ahead",
+            "There is traffic ahead",
+            "Do not stop"
+        ],
+        "type": "Sign",
+        "question": "Two parallel white lines painted across the road mean?",
+        "answer": "0"
+    },
+    {
+        "id": "d0b51585-bc0b-4e3c-bc44-4c9e715d8d6b",
+        "imageLink": "https://i.imgur.com/2jf282I.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "You must stop",
+            "Stop at the edge of the intersection",
+            "Pedestrian crossovers are marked",
+            "You may move only in the direction of the arrow"
+        ],
+        "type": "Sign",
+        "question": "A white arrow painted on a lane means?",
+        "answer": "3"
+    },
+    {
+        "id": "8aa53718-485a-43cd-9a42-2f9eb853ed27",
+        "imageLink": "https://i.imgur.com/e2q0Sbh.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Stop at the edge of the sidewalk",
+            "Drivers and cyclists must stop before the line and yield to pedestrians until pedestrians have completely crossed the road and cleared the roadway",
+            "You may move only in the direction",
+            "The lane you are in is ending or exiting and that you must change lanes if you want to continue in your current direction"
+        ],
+        "type": "Sign",
+        "question": "Pedestrian crossovers mean?",
+        "answer": "1"
+    },
+    {
+        "id": "c79579a1-05e6-4443-bcae-4d9468c9c053",
+        "imageLink": "https://i.imgur.com/ouMLrMX.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pedestrians to crosswalks",
+            "Drivers and cyclists to free lanes",
+            "traffic away from fixed objects such as bridge piers or concrete islands",
+            "Vehicles to intersections"
+        ],
+        "type": "Sign",
+        "question": "Two solid lines painted on the pavement guide __________",
+        "answer": "2"
+    },
+    {
+        "id": "14a76fe4-3c32-4e16-8fff-440a3d45622a",
+        "imageLink": "https://i.imgur.com/jMntFSN.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "School bus stop ahead",
+            "Double parking is not permitted",
+            "Trail the school bus",
+            "Pedestrians are crossing ahead"
+        ],
+        "type": "Sign",
+        "question": "What does this sign mean?",
+        "answer": "0"
+    },
+    {
+        "id": "dc300ab2-712a-41c5-b7c1-ee721ba82203",
+        "imageLink": "https://i.imgur.com/jgwAyhD.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Construction zone",
             "Bump ahead",
             "Bridge ahead",
             "Hills ahead"
         ],
-        "image": "358960bd-ac27-40aa-9e82-ed084851d2e2",
-        "imageLink": "https://i.imgur.com/jgwAyhD.jpg",        
-        "answer": "1",
         "type": "Sign",
-        "id": "358960bd-ac27-40aa-9e82-ed084851d2e2"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "ab6c11ad-83c4-4217-aa38-14a60942e525",
+        "imageLink": "https://i.imgur.com/Zyc6a98.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Road curves right ahead with maximum safe speed",
             "You must turn right ahead with maximum safe speed",
             "Speed limit changes ahead to 60 km/h",
             "Exit to the right with maximum safe speed"
         ],
-        "image": "38a64750-b145-475a-bfd1-14f739f497e8",
-        "imageLink": "https://i.imgur.com/Zyc6a98.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "38a64750-b145-475a-bfd1-14f739f497e8"
+        "question": "What does this sign mean?",
+        "answer": "2"
     },
     {
-        "question": "A red cycle with a slash through it usually means:",
+        "id": "a6d386ab-eb8b-4d2e-b593-32342ca940c1",
+        "imageLink": "https://i.imgur.com/U9N1Wzk.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "A railway crossing Sign",
             "A warning Sign",
             "A information and guide Sign",
             "A prohibition Sign"
         ],
-        "image": "661fd0b1-aca0-4564-a088-8b7b5dc0c474",
-        "imageLink": "https://i.imgur.com/U9N1Wzk.jpg",
-        "answer": "3",
         "type": "Sign",
-        "id": "661fd0b1-aca0-4564-a088-8b7b5dc0c474"
+        "question": "A red cycle with a slash through it usually means:",
+        "answer": "3"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "d985e41e-1290-49e0-9701-d5f9e86d97a1",
+        "imageLink": "https://i.imgur.com/YsE6MOp.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Bicycles are not allowed on this road",
             "Bicycles may use this road",
             "Yield right-of-way to bicycles",
             "The lane is reserved for bicycles"
         ],
-        "image": "050338c3-45b1-4408-838b-a9402b264848",
-        "imageLink": "https://i.imgur.com/YsE6MOp.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "050338c3-45b1-4408-838b-a9402b264848"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "22aa0e02-8695-471b-a6d3-a53c2bf778ea",
+        "imageLink": "https://i.imgur.com/vFuuBig.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "No parking",
             "No enter",
             "No truck",
             "no stopping"
         ],
-        "image": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5",
-        "imageLink": "https://i.imgur.com/vFuuBig.jpg",
-        "answer": "3",
         "type": "Sign",
-        "id": "8963a5d7-6f2e-4fb0-a7ef-5eb2db039db5"
+        "question": "What does this sign mean?",
+        "answer": "3"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "c24dd02e-cf6d-4650-a2fe-dbe8bd0069b5",
+        "imageLink": "https://i.imgur.com/mVMvuWb.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "no right turn",
             "Sharp left turn in the road ahead",
             "exit the highway to left",
             "no left turn"
         ],
-        "image": "858e8441-8eac-47ab-a9a5-9b6459d58a52",
-        "imageLink": "https://i.imgur.com/mVMvuWb.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "858e8441-8eac-47ab-a9a5-9b6459d58a52"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "b1917bca-32cf-4a67-a8a0-92489928259d",
+        "imageLink": "https://i.imgur.com/dfCitBA.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "speed limit changes ahead",
             "the maximum speed permitted",
             "shows maximum safe speed on ramp",
             "the minimum speed permitted"
         ],
-        "image": "32f23d26-7920-4305-9513-96d7789ed829",
-        "imageLink": "https://i.imgur.com/dfCitBA.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "32f23d26-7920-4305-9513-96d7789ed829"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "733d404c-e1b6-44f0-aa3b-f9e51d776755",
+        "imageLink": "https://i.imgur.com/EUjZHhL.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "the pavement ends ahead",
             "road construction ahead",
             "no road past this point",
             "dead end ahead"
         ],
-        "image": "43f2e36f-e88c-46c0-8f13-10d9bc064393",
-        "imageLink": "https://i.imgur.com/EUjZHhL.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "43f2e36f-e88c-46c0-8f13-10d9bc064393"
+        "question": "What does this sign mean?",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "3b78896f-0701-4a2c-986e-cc8bbde64036",
+        "imageLink": "https://i.imgur.com/808ngPM.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "there is a steep grade ahead",
             "no trucks are allowed on the hill",
             "a logging road is ahead",
             "there are trucks on the hill"
         ],
-        "image": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee",
-        "imageLink" : "https://i.imgur.com/808ngPM.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "75f98020-93c3-4a36-8d48-4bfd6e1df1ee"
+        "question": "What does this sign mean?",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "8727e5d4-499c-4713-b302-c104968f8a4c",
+        "imageLink": "https://i.imgur.com/FsET3My.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Snowmobiles may use this road",
             "Snowmobiles may not use this road",
             "parking space reserved for snowmobiles",
             "this sign warns you that snowmobile cross this road ahead"
         ],
-        "image": "fabb5293-6b33-4d13-8622-1160f2ecf671",
-        "imageLink": "https://i.imgur.com/FsET3My.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "fabb5293-6b33-4d13-8622-1160f2ecf671"
+        "question": "What does this sign mean?",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "85beb3e6-d189-4dba-ae66-0a618d4ba6f1",
+        "imageLink": "https://i.imgur.com/GXZAUAT.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "parking space reserved for doctors",
             "parking space reserved for hospital employees",
             "parking space reserved for people with disabled parking privileges",
             "parking space reserve for emergency"
         ],
-        "image": "acdf7747-a423-4541-abfc-19153aaa4c74",
-        "imageLink": "https://i.imgur.com/GXZAUAT.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "acdf7747-a423-4541-abfc-19153aaa4c74"
+        "question": "What does this sign mean?",
+        "answer": "2"
     },
     {
-        "question": "This sign above the road indicates",
+        "id": "50e7f7c2-a341-4aa2-839a-e308adb825ba",
+        "imageLink": "https://i.imgur.com/9rNCaZD.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Designated lane, turn left",
             "a very sharp curve to the left",
             "detour ahead",
             "left turns are permitted on a red light"
         ],
-        "image": "cc8ba749-ab9a-4144-933b-9ac826532285",
-        "imageLink": "https://i.imgur.com/9rNCaZD.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "cc8ba749-ab9a-4144-933b-9ac826532285"
+        "question": "This sign above the road indicates",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "11a36bc6-8640-4c81-b18f-de13a3180ddf",
+        "imageLink": "https://i.imgur.com/LBN5t5V.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "you are near a school. watch for children",
             "Crosswalk for disabled",
             "school bus stop ahead",
             "pedestrian crossing"
         ],
-        "image": "76dfe16e-be36-48b5-8db3-6007a3013f95",
-        "imageLink": "https://i.imgur.com/LBN5t5V.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "76dfe16e-be36-48b5-8db3-6007a3013f95"
+        "question": "What does this sign mean?",
+        "answer": "2"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "a4dd161b-84a3-4355-a172-4a0860ad6b58",
+        "imageLink": "https://i.imgur.com/JMgmm8k.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "signal to ferry service",
             "traffic control signal lights ahead",
             "Dangerous end ahead",
             "construction zone ahead"
         ],
-        "image": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f",
-        "imageLink": "https://i.imgur.com/JMgmm8k.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "b27cc4f4-67d0-4bf2-84ea-2437696c5e7f"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "65c39857-1648-4d5e-ba6c-5ae050eef3df",
+        "imageLink": "https://i.imgur.com/pr0131t.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "a traffic cirlce ahead",
             "do not enter",
             "entry restricted to local traffic only",
             "Dangerous goods vehicles not allowed"
         ],
-        "image": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff",
-        "imageLink": "https://i.imgur.com/pr0131t.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "8782dc27-c3a3-4ea3-bfc6-6b94420fc2ff"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "6e17c646-9694-46cb-a88d-1620e2306f5e",
+        "imageLink": "https://i.imgur.com/da6m9bo.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "divided highway",
             "lane reduction, right lane ends ahead",
             "cross road",
             "highway entrance ramp ahead"
         ],
-        "image": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd",
-        "imageLink": "https://i.imgur.com/da6m9bo.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "6ca2b90e-4213-4a0e-84ee-3bcb6b5284cd"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "f6423cc8-3d7b-4849-b6f6-8d2e7f6f33b4",
+        "imageLink": "https://i.imgur.com/dGA3Lh2.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "keep right",
             "hazard on the right",
             "right turn ahead",
             "sharp curves to the right"
         ],
-        "image": "cae92b7a-49b3-4e15-82f0-e9f440be4f85",
-        "imageLink": "https://i.imgur.com/dGA3Lh2.jpg",
-        "answer": "3",
         "type": "Sign",
-        "id": "cae92b7a-49b3-4e15-82f0-e9f440be4f85"
+        "question": "What does this sign mean?",
+        "answer": "3"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "ae3ab023-ef76-422d-b81c-fdfc0f56f041",
+        "imageLink": "https://i.imgur.com/jpSTe7Y.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "yield ahead",
             "stop then go ahead",
             "Roundabout ahead",
             "stop ahead"
         ],
-        "image": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07",
-        "imageLink": "https://i.imgur.com/jpSTe7Y.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "25ff1d0b-defb-4103-a22c-a7d7d5be0a07"
+        "question": "What does this sign mean?",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "25dc9962-3d42-425f-a357-578e5af94b7f",
+        "imageLink": "https://i.imgur.com/rYlQfrh.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Yield Sign",
             "The vehicle is a slow-moving vechicle traveling at 40km/h or less",
             "this is emergency vechicle",
             "railroad crossing"
         ],
-        "image": "50302d1f-aef0-445d-ab80-6262126e8334",
-        "imageLink": "https://i.imgur.com/rYlQfrh.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "50302d1f-aef0-445d-ab80-6262126e8334"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "If you are involved in a collision that results in injury, you must report to the police:",
+        "id": "5e6bae23-c265-4693-ada6-0a727cc7a1aa",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "within one week",
             "within 48hours",
             "within 24 hours",
             "Immediately"
         ],
-        "answer": "3",
         "type": "Knowledge",
-        "id": "a8474b6a-86e0-450d-8558-c3f12cfac19f"
+        "question": "If you are involved in a collision that results in injury, you must report to the police:",
+        "answer": "3"
     },
     {
-        "question": "To identify harzards in you surroundings while driving, you should",
+        "id": "dc182f37-6c53-4144-9113-3a1d70dd2249",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "scan the driving environment regulary",
             "only keep your eyes directly on the road ahead",
             "avoid using your rear view mirrors",
             "turn your radio to receive local traffic information"
         ],
-        "image": null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "7089687c-78f5-4019-a000-c172aa4d1bc7"
+        "question": "To identify harzards in you surroundings while driving, you should",
+        "answer": "0"
     },
     {
-        "question": "A steady yellow light means that a ______ light will soon appear.",
+        "id": "1f9a1683-ef0f-4cf6-b0b0-4592fe8d7b04",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "flashing yellow",
             "steady green",
             "steady red",
             "flashing red"
         ],
-        "image": null,
-        "answer": "3",
         "type": "Knowledge",
-        "id": "4696a0f1-2395-4eac-be2a-bb90a42c8c61"
+        "question": "A steady yellow light means that a ______ light will soon appear.",
+        "answer": "3"
     },
     {
-        "question": "When parked facing downhill:",
+        "id": "09c8e7f8-b54f-40bb-aaca-47a3ff482a21",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Turn the steering wheel to the left, towards the road",
             "The front wheels must be parallel to the curb",
             "Turn the steering wheel to the right, towards the curb or shoulder",
             "The direction of the wheels doesn't matter as long as the parking brake is set"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "3623bf31-b08c-42e9-8154-cad9521b577a"
+        "question": "When parked facing downhill:",
+        "answer": "2"
     },
     {
-        "question": "If a traffic signal light is green and a police officer signals you to stop, you should:",
+        "id": "d0af2be3-927f-4f9b-b9fd-e56c2be6877b",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Obey the traffic officer",
             "Do what the vehicle in front of you does",
             "Obey the traffic signal",
             "Tell the officer that this is against the law"
         ],
-        "image": null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "6563dc7b-d4a7-4ab8-8c41-35fb5ceb7556"
+        "question": "If a traffic signal light is green and a police officer signals you to stop, you should:",
+        "answer": "0"
     },
     {
-        "question": "The driver's left arm and hand are extended downward. This hand signal means that the driver plans to",
+        "id": "bddd1808-3271-441b-9770-d68bbaaf345c",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "turn left",
             "turn right",
             "stop or slow down",
             "go straight ahead"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "48e01247-472c-4c20-8a03-be13323d7dc1"
+        "question": "The driver's left arm and hand are extended downward. This hand signal means that the driver plans to",
+        "answer": "2"
     },
     {
-        "question": "The \"two second\" following rule refers to how drivers should",
+        "id": "fd451114-3de4-435f-80e9-0fc3b830188d",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "drive behind another vehicle",
             "cross an intersection that is controlled by a flashing red light",
             "allow this amount of time to stop at a stop Sign",
             "yield to other vehicles"
         ],
-        "image": null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "7304137c-373e-4fb5-a292-24009abc4569"
+        "question": "The \"two second\" following rule refers to how drivers should",
+        "answer": "0"
     },
     {
-        "question": "When you approach to a railway crossing and a train is coming, you must:",
+        "id": "e42caaee-bb7c-44d1-9fcc-f4cf31a0d08b",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Stop at least 5 m from the nearest rail or gate",
             "Stop at least 1.5 m from the nearest rail or gate",
             "Slow down and proceed across the tracks with extreme caution",
             "Accelerate and cross the tracks as quickly as possible"
         ],
-        "image": null,
-        "answer": "1",
         "type": "Knowledge",
-        "id": "de5a8d51-e1bd-4ce4-ab5c-3f74a8324249"
+        "question": "When you approach to a railway crossing and a train is coming, you must:",
+        "answer": "1"
     },
     {
-        "question": "On a two-way roadway with a shared center lane, drivers from either direction can make ______ on the center lane.",
+        "id": "9b14ff32-9d24-44da-9c00-09eb19d11efb",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Right turns",
             "A pass",
             "Left turns",
             "U-turns"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "46fb3376-a767-46ab-b00d-dbe1ffda9914"
+        "question": "On a two-way roadway with a shared center lane, drivers from either direction can make ______ on the center lane.",
+        "answer": "2"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "a848ade3-d654-4c6f-ac88-d4b313478f97",
+        "imageLink": "https://i.imgur.com/fMTAOKi.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Hospital",
             "Crosswalk for disabled",
             "intersection",
             "railroad crossing"
         ],
-        "image": "9e5937aa-4646-424a-b79e-ed5dcc275683",
-        "imageLink": "https://i.imgur.com/fMTAOKi.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "9e5937aa-4646-424a-b79e-ed5dcc275683"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "A yellow diamond-shaped sign usually means",
+        "id": "e189e647-b736-4255-89c0-6710e0de3305",
+        "imageLink": "https://i.imgur.com/0outkuT.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "warning of a hazard",
             "Yield right of way",
             "speed limit",
             "stop"
         ],
-        "image": "54673f76-6557-4735-85c8-e5c7f28f7119",
-        "imageLink": "https://i.imgur.com/0outkuT.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "54673f76-6557-4735-85c8-e5c7f28f7119"
+        "question": "A yellow diamond-shaped sign usually means",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "74312a87-5095-43fc-a702-7c1b9b1a226c",
+        "imageLink": "https://i.imgur.com/4kBUTsJ.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "school zone",
             "watch for pedestrians",
             "Playground, watch for children",
             "School crossing"
         ],
-        "image": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e",
-        "imageLink": "https://i.imgur.com/4kBUTsJ.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "3a18574d-eb47-4b9c-a59a-734c3fabbe9e"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "c922a8ae-4a5a-4ee0-a2f6-80ba2cb7f3cf",
+        "imageLink": "https://i.imgur.com/UySyID7.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "The lane is only for two-way left turns",
             "narrow passage",
             "right tun lane control",
             "railway crossing control"
         ],
-        "image": "8963e575-54c0-4e77-8b27-7bc2a869c5be",
-        "imageLink": "https://i.imgur.com/UySyID7.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "8963e575-54c0-4e77-8b27-7bc2a869c5be"
+        "question": "What does this sign mean?",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "a45819d4-fc40-44a6-b3bb-d9f54658ba4d",
+        "imageLink": "https://i.imgur.com/v7h8Xq1.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "added lane",
             "ended divided highway",
             "merging traffic",
             "divided highway ahead"
         ],
-        "image": "3d20b33f-f6d0-4364-bc54-6956af06fa79",
-        "imageLink": "https://i.imgur.com/v7h8Xq1.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "3d20b33f-f6d0-4364-bc54-6956af06fa79"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "fb25095d-fd01-4ab9-9544-f8118a7adda5",
+        "imageLink": "https://i.imgur.com/Uwvrx0B.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "road forks to the right",
             "keep to the right lane except when passing",
             "the driver in this lane must turn right or go straight ahead",
             "do no drive through"
         ],
-        "image": "8709c35d-07f3-4af0-805a-c7db25509707",
-        "imageLink": "https://i.imgur.com/Uwvrx0B.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "8709c35d-07f3-4af0-805a-c7db25509707"
+        "question": "What does this sign mean?",
+        "answer": "2"
     },
     {
-        "question": "The hand signal means:",
+        "id": "343bd56d-9af0-4fdc-9245-358e9b8fa21d",
+        "imageLink": "https://i.imgur.com/9ul20ru.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "stopping or slowing down",
             "left turn",
             "right turn",
             "back up"
         ],
-        "image": "0ad8eb00-f83d-43fa-94b8-403158d0faa5",
-        "imageLink": "https://i.imgur.com/9ul20ru.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "0ad8eb00-f83d-43fa-94b8-403158d0faa5"
+        "question": "The hand signal means:",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "5b05a9a3-fd7a-4321-b22a-775478a88b56",
+        "imageLink": "https://i.imgur.com/G0PIMOB.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "no U-turns",
             "no left turn",
             "no right turn",
             "no parking"
         ],
-        "image": "2e25573c-4887-4a9b-a350-ffc0a3c90db8",
-        "imageLink": "https://i.imgur.com/G0PIMOB.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "2e25573c-4887-4a9b-a350-ffc0a3c90db8"
+        "question": "What does this sign mean?",
+        "answer": "2"
     },
     {
-        "question": "What does this sign mean?",
+        "id": "809b8850-0e88-4451-a2e0-54226b5c76e2",
+        "imageLink": "https://i.imgur.com/DY7F4DP.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Railway crossing ahead",
             "This is a pedestrian crossover",
             "no Pedestrians",
             "Pedestrians must yield right-of-way"
         ],
-        "image": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a",
-        "imageLink": "https://i.imgur.com/DY7F4DP.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "436da5f6-d0cb-4f2b-b0f4-eb9afce5ff5a"
+        "question": "What does this sign mean?",
+        "answer": "1"
     },
     {
-        "question": "Double solid yellow lines painted down the middle of the road mean",
+        "id": "4e17018f-6b64-4cd1-839d-8f3aeef21e74",
+        "imageLink": "https://i.imgur.com/vrGuxmI.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Lanes of traffic are moving in opposite directions and drivers should not pass",
             "Lanes of traffic are moving in opposite directions and drivers are permitted to pass when it is safe to do so",
             "Lanes of traffic are moving in the same direction and drivers should not pass",
             "Lanes of traffic are moving in the same direction and drivers are permitted to pass when it is safe to do so."
         ],
-        "image": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd",
-        "imageLink": "https://i.imgur.com/vrGuxmI.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "f564d7d7-e404-4b75-9efe-ebc1bdf98bfd"
+        "question": "Double solid yellow lines painted down the middle of the road mean",
+        "answer": "2"
     },
     {
-        "question": "When parked facing uphill with a curb:",
+        "id": "1ce1ca6a-e857-4037-8ee3-299bcc459d56",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Turn the steering wheel to the left",
             "The front wheels must be parallel to the curb",
             "Turn the steering wheel to the right",
             "The direction of the wheels doesn't matter as long as the parking brake is set"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "920f1531-df2a-4ca8-8d61-118b6e021668"
+        "question": "When parked facing uphill with a curb:",
+        "answer": "2"
     },
     {
-        "question": "When turning left from a one-way road to another one-way road you must:",
+        "id": "29679d28-e769-42d0-a0a5-021407b2793a",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Turn from the right curb lane to the right curb lane",
             "Turn from the right curb lane to the left curb lane",
             "Turn from the left curb lane to the left curb lane",
             "Turn from the left curb lane to the right curb lane"
         ],
-        "image": null,
-        "answer": "3",
         "type": "Knowledge",
-        "id": "31a30672-33c1-4a17-ad5d-90f019648ef6"
+        "question": "When turning left from a one-way road to another one-way road you must:",
+        "answer": "3"
     },
     {
-        "question": "Driving impaired or with BAC more than _____  is an offence under the than Criminal Code.",
+        "id": "6327564f-b90c-4f77-889c-8a8b88a3f0dc",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "0.02",
             "0.05",
             "0.08",
             "0.1"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "86e3a5a7-23e0-4a56-9a5b-96bc6a28216f"
+        "question": "Driving impaired or with BAC more than _____  is an offence under the than Criminal Code.",
+        "answer": "2"
     },
     {
-        "question": "A driver may park in a space reserved for people with disabilities:",
+        "id": "ad458115-f8f1-42a0-b705-20a1e86fcb2c",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Only if the driver is disabled",
             "If someone in the driver's immediate family is disabled",
             "If an Accessible Parking Permit is displayed in the windshield of the vehicle and the permit belongs to the driver or one of passengers",
             "For a short time regardless of who is in the vehicle"
         ],
-        "image": "link",
-        "answer": "2",
         "type": "Knowledge",
-        "id": "212dc75c-70c7-4b34-907b-c7266cbc61f1"
+        "question": "A driver may park in a space reserved for people with disabilities:",
+        "answer": "2"
     },
     {
-        "question": "After you have passed a car you should return to the right lane when you",
+        "id": "fe226906-2a78-42a2-b7f9-c5e904501bbf",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "See the entire front of the vehicle you are passing in your inside mirror",
             "Have put your turn signal on.",
             "Have turned your headlights on.",
             "Tap your horn to alert the driver been passed"
         ],
-        "image": null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "ca38dc27-9bb9-43bb-832c-fc84160c59ba"
+        "question": "After you have passed a car you should return to the right lane when you",
+        "answer": "0"
     },
     {
-        "question": "Which lights should you use when you are driving in a fog?",
+        "id": "976326a5-468e-4a0a-8544-a07d0f00c61a",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Parking lights",
             "High beam headlights",
             "Low beam headlights",
             "Fog lights only"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "92e8cedb-f2c9-431c-a394-a91520e105d5"
+        "question": "Which lights should you use when you are driving in a fog?",
+        "answer": "2"
     },
     {
-        "question": "Never change lanes in traffic without:",
+        "id": "ee50cd46-302a-4355-be76-5702e5d6235d",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Looking in the rear view mirror only.",
             "Giving proper signal and looking to make sure the move can be made safely.",
             "Blowing your horn and looking to the rear.",
             "Decreasing speed and giving correct signal."
         ],
-        "image": null,
-        "answer": "1",
         "type": "Knowledge",
-        "id": "2868fa67-8072-434f-8575-1b952a4533cb"
+        "question": "Never change lanes in traffic without:",
+        "answer": "1"
     },
     {
-        "question": "What signal at an intersection would be treated the same as a stop sign?",
+        "id": "ccec2322-ab81-4e18-aa4c-2e6f03123b6b",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "A flashing yellow light",
             "A flashing green light",
             "A flashing red light",
             "A steady yellow light"
         ],
-        "image": "link",
-        "answer": "2",
         "type": "Knowledge",
-        "id": "b7b7e3cb-4699-42e5-8922-9c4a241c76e2"
+        "question": "What signal at an intersection would be treated the same as a stop sign?",
+        "answer": "2"
     },
     {
-        "question": "As you approach a curve, you should",
+        "id": "74b1b8f5-4413-4209-893a-dd7653ce5470",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Stop before entering",
             "Slam on your brakes",
             "Slow down before the start of the curve",
             "Speed up"
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "d0e0190c-7268-48a7-baca-8c0cbc84951e"
+        "question": "As you approach a curve, you should",
+        "answer": "2"
     },
     {
-        "question": "If a fully-licensed driver reaches 15 demerit points for the first time, his or her license will be:",
+        "id": "ce9a9f14-aba7-4181-8f07-fdd73ecda8a4",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Suspended for 30 days",
             "Suspended for 15 days",
             "Suspended for 7 days",
             "Suspended for 6 months"
         ],
-        "image": null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "a2643b18-50a3-42ca-b7f2-ddb6a1483f7e"
+        "question": "If a fully-licensed driver reaches 15 demerit points for the first time, his or her license will be:",
+        "answer": "0"
     },
     {
-        "question": "When you are being passed",
+        "id": "836f1fb9-b8f3-4a91-ac2b-41ef275fdc67",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "You should move to the left and let it pass in safety",
             "You should brake hard to reduce your speed",
             "You should speed up",
             "You should move to the right and let it pass in safety"
         ],
-        "image": null,
-        "answer": "3",
         "type": "Knowledge",
-        "id": "95ceb1b8-47c3-49f0-ab0b-032b289db22c"
+        "question": "When you are being passed",
+        "answer": "3"
     },
     {
-        "question": "The car behind you begins to pass you. You should",
+        "id": "04dcb84e-6381-49a2-b398-6fb8cb1cbfd0",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Increase your speed so traffic will flow smoothly.",
             "Pull to the right and stop so he can pass.",
             "Do not increase your speed and stay in your lane",
             "Blow your horn to allow him to pass."
         ],
-        "image": null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "7c084cd9-dd26-4c2a-81b5-d29c1a8f1f08"
+        "question": "The car behind you begins to pass you. You should",
+        "answer": "2"
     },
     {
-        "question": "Using the shoulder of the road to pass to the right of a car",
+        "id": "0a2c6a01-128a-4a9b-9997-e0b135268fba",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "is permitted if the car ahead is waiting to turn left and the shoulder is paved",
             "is always not allowed",
             "is permitted if you are turning right at the next corner.",
             "is permitted if it is safe to do so"
         ],
-        "image": null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "838483fd-85fe-45da-a2d4-de603b03c338"
+        "question": "Using the shoulder of the road to pass to the right of a car",
+        "answer": "0"
     },
     {
-        "question": "You may drive around or under a gate that is being lowered at a railroad crossing:",
+        "id": "6b4f738f-99c0-421e-93c8-12d19c350696",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "You may drive around or under a gate that is being lowered at a railroad crossing:",
             "If your vehicle can do so without damaging the gate.",
             "If you first look carefully in both directions.",
             "Under no circumstances."
         ],
-        "image": "link",
-        "answer": "3",
         "type": "Knowledge",
-        "id": "6a7957ff-75d8-4a67-8a44-6926e52c7cb3"
+        "question": "You may drive around or under a gate that is being lowered at a railroad crossing:",
+        "answer": "3"
     },
     {
-        "question": "When may drivers pass on the right shoulder?",
+        "id": "0401597e-fe8b-475e-88fe-02d228e64dbb",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Never",
             "Only when passing a vehicle turning left and only if the right shoulder is paved",
             "At any time",
             "At any time a vehicle is turning left, even if the right shoulder is unpaved"
         ],
-        "image": null,
-        "answer": "1",
         "type": "Knowledge",
-        "id": "5efe3bde-b0a6-43b5-bf60-f68cd8907d70"
+        "question": "When may drivers pass on the right shoulder?",
+        "answer": "1"
     },
     {
-        "question": "When a large vehicle that swings left before turning right at an intersection becomes dangerous for drivers who",
+        "id": "db996820-46ac-4e09-9155-09ccfa56205f",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "look over their left shoulder to check the blind spot",
             "try to squeeze between the large vehicle and the curb",
             "follow the large vehicle by four second following rule",
             "stay well back waiting for the large vehicle to clear the lane"
         ],
-        "image": null,
-        "answer": "1",
         "type": "Knowledge",
-        "id": "0e677925-65a7-46e5-b913-0a9cc37ec5d5"
+        "question": "When a large vehicle that swings left before turning right at an intersection becomes dangerous for drivers who",
+        "answer": "1"
     },
     {
-        "question": "When following a vehicle at night, lower your high-beam headlights when you are within:",
+        "id": "0025557f-2356-48ff-9e3c-318f4e8f5c4f",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "300 metres",
             "100 metres",
             "60 metres",
             "150 metres"
         ],
-        "image": null,
-        "answer": "3",
         "type": "Knowledge",
-        "id": "1816cccb-d894-4236-8d3a-5f6a21904cca"
+        "question": "When following a vehicle at night, lower your high-beam headlights when you are within:",
+        "answer": "3"
     },
     {
-        "question": "When passing a cyclist, drivers of motor vehicles must maintain a minimum distance of _______ ., where practical between their vehicle and the cyclist.",
+        "id": "8f0f3702-e47c-4490-8afd-b0992c625b8b",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "0.5 metre",
             "1 metre",
             "3 metres",
             "2 metres"
         ],
-        "image": null,
-        "answer": "1",
         "type": "Knowledge",
-        "id": "99d78e60-bb6b-4d51-a988-61d1fdb0f430"
+        "question": "When passing a cyclist, drivers of motor vehicles must maintain a minimum distance of _______ ., where practical between their vehicle and the cyclist.",
+        "answer": "1"
     },
     {
-        "question": "What does this sign mean",
+        "id": "df3edfc8-a14b-4765-b6cf-5d79df2d1135",
+        "imageLink": "https://i.imgur.com/0pohNbk.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "No parking",
             "Do not pass",
             "Railway crossing",
             "Do not stop"
         ],
-        "image": "99d78e60-bb6b-4d51-a988-7abcfdb0f430",
-        "imageLink": "https://i.imgur.com/0pohNbk.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "99d78e60-bb6b-4d51-a988-7abcfdb0f430"
+        "question": "What does this sign mean",
+        "answer": "2"
     },
     {
-        "question": "What does this sign mean",
+        "id": "18778dd8-bd40-4870-8033-7981edcc2b25",
+        "imageLink": "https://i.imgur.com/05buMBu.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
-            "There is a road construction ahead ",
+            "There is a road construction ahead",
             "Closed lane is ahead",
             "Do not enter - Construction ahead",
             "The end of a construction zone"
         ],
-        "image": "99d78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://i.imgur.com/05buMBu.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "99d78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this sign mean",
+        "answer": "0"
     },
     {
-        "question": "What does this sign mean",
+        "id": "b829f32c-b0b0-4045-9ad5-895d0fd98f21",
+        "imageLink": "https://i.imgur.com/jMntFSN.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Public bus ahead",
             "School zone ahead",
             "There is a school bus stop ahead",
             "Emergency stopping zone ahead"
         ],
-        "image": "00d78e60-bb6b-4d51-a988-45rtfdb0f430",
-        "imageLink": "https://i.imgur.com/jMntFSN.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "00d78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this sign mean",
+        "answer": "2"
     },
     {
-        "question": "What does this sign mean",
+        "id": "b4b56c9c-929f-410b-88c7-5c6271020751",
+        "imageLink": "https://i.imgur.com/HOOJKvA.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Do not exit",
             "Do not drive through the intersection",
             "A deadend",
             "Do not enter"
         ],
-        "image": "11d78e60-bb6b-4d51-a988-45rtfdb0f430",
-        "imageLink": "https://i.imgur.com/HOOJKvA.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "11d78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this sign mean",
+        "answer": "1"
     },
     {
-        "question": "This hand signal mean",
+        "id": "3fbc6a8a-96a1-4c8b-a4f4-12c04b6c7d0c",
+        "imageLink": "https://i.imgur.com/WBVWyC0.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Driver is slowing down",
             "Driver is turning right",
             "Driver is turning left",
             "Do not move"
         ],
-        "image": "22e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://i.imgur.com/WBVWyC0.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "22e78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "This hand signal mean",
+        "answer": "1"
     },
     {
-        "question": "What does this sign indicate?",
+        "id": "d3cd184b-483e-4f46-aaa0-6ed2ad9deba2",
+        "imageLink": "https://i.imgur.com/SZH75IJ.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Sharp turn to the right",
             "Keep right",
             "One way at the right",
             "Curve right"
         ],
-        "image": "33e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://i.imgur.com/SZH75IJ.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "33e78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this sign indicate?",
+        "answer": "0"
     },
     {
-        "question": "What does this sign indicate?",
+        "id": "d436116e-e9b0-4011-a5ab-5ece66e83967",
+        "imageLink": "https://i.imgur.com/ZlHo8zx.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Sharp turn to the right",
             "Paved surface ends ahead",
             "Bump ahead",
             "Construction is ahead"
         ],
-        "image": "44e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://i.imgur.com/ZlHo8zx.jpg",
-        "answer": "2",
         "type": "Sign",
-        "id": "44e78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this sign indicate?",
+        "answer": "2"
     },
     {
-        "question": "What does this road sign indicate?",
+        "id": "a3120a4b-9635-40f3-b55b-e5f96cb51c47",
+        "imageLink": "https://i.imgur.com/tZVK3Eb.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "School bus ahead",
             "There is a fire truck entrance on the right",
             "Hidden bus top",
             "Bus entrance on the right"
         ],
-        "image": "55e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://i.imgur.com/tZVK3Eb.jpg",
-        "answer": "1",
         "type": "Sign",
-        "id": "55e78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this road sign indicate?",
+        "answer": "1"
     },
     {
-        "question": "What does this road sign indicate?",
+        "id": "58ff17c1-95b6-4b4f-95fd-16f7b2bc2901",
+        "imageLink": "https://i.imgur.com/d7uk3p3.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Road branching off ahead",
             "Curve right",
             "Merging traffic ahead",
-            "Hidden intersection "
+            "Hidden intersection"
         ],
-        "image": "66e78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink": "https://i.imgur.com/d7uk3p3.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "66e78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this road sign indicate?",
+        "answer": "0"
     },
     {
-        "question": "What does this road sign indicate?",
+        "id": "7d42eb3a-f2b0-45d3-be73-215184954d1b",
+        "imageLink": "https://i.imgur.com/g6MFcWp.jpg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Road narrows both sides",
             "Right lane narrows on the right",
             "Right lane narrows on the left",
             "Narrow bridge"
         ],
-        "image": "77d78e60-bb6b-4d51-a988-12werfdb0f430",
-        "imageLink" : "https://i.imgur.com/g6MFcWp.jpg",
-        "answer": "0",
         "type": "Sign",
-        "id": "77d78e60-bb6b-4d51-a988-12werfdb0f430"
+        "question": "What does this road sign indicate?",
+        "answer": "0"
     },
     {
-        "question": "If you have a tire blow out while driving, you should _______",
+        "id": "f70bdce2-9181-4d76-b72f-ff2391e766d4",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "Keep driving",
             "Pump the break repeatedly and pull off the road",
             "Release the gas pedal for the car to slow down and steer the vehivle in the direction you want to go",
             "Stop the car immediately by breaking hard"
         ],
-        "image": null,
-        "imageLink" : null,
-        "answer": "2",
         "type": "Knowledge",
-        "id": "55bf16a6-3b4a-4631-8309-0f0a7eed3f0e"
+        "question": "If you have a tire blow out while driving, you should _______",
+        "answer": "2"
     },
     {
-        "question": "Lanes of traffic moving in the same direction are divided by ______ lines.",
+        "id": "0997f07a-10b5-4bf2-a5f1-e92e0b5ed2b4",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
         "options": [
             "White",
             "Yellow",
             "Both white and Yellow",
             "Broken"
         ],
-        "image": null,
-        "imageLink" : null,
-        "answer": "0",
         "type": "Knowledge",
-        "id": "bf8f6ae6-6782-44d4-938f-ecbb2e2e36a2"
+        "question": "Lanes of traffic moving in the same direction are divided by ______ lines.",
+        "answer": "0"
     },
     {
-        "question": "If your phone rings while driving",
+        "id": "f33434b3-dc94-4b4a-8e5d-0385934c055f",
+        "imageLink": null,
+        "geminiQuestion": "If my phone rings while driving in ontario, I should only pull over if I need to use the cell phone or have a passenger take the call or let the call go to voice mail right?",
+        "geminiAnswer": null,
         "options": [
             "All of the options",
             "Pull over and park to use the cellphone",
             "Have a passenger take the call",
             "Let the call go to voice mail"
         ],
-        "image": null,
-        "imageLink" : null,
-        "geminiQuestion" : "If my phone rings while driving in ontario, I should only pull over if I need to use the cell phone or have a passenger take the call or let the call go to voice mail right?",
-        "answer": "0",
         "type": "Knowledge",
-        "id": "e118f6d0-b755-42c8-9c9b-09387436a9b3"
+        "question": "If your phone rings while driving",
+        "answer": "0"
+    },
+    {
+        "id": "4b8bc12e-8777-4cef-b0d9-21b112ac5c8b",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "30 km/h",
+            "40 km/h",
+            "50 km/h",
+            "60 km/h"
+        ],
+        "type": "Knowledge",
+        "question": "What is the speed limit in a residential area unless otherwise posted?",
+        "answer": "2"
+    },
+    {
+        "id": "b986f3f6-b20b-4c25-865e-5e981ee9a68f",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Slow down and proceed with caution",
+            "Stop only if there are other vehicles present",
+            "Come to a complete stop",
+            "Speed up to clear the intersection quickly"
+        ],
+        "type": "Knowledge",
+        "question": "When approaching a stop sign, you must:",
+        "answer": "2"
+    },
+    {
+        "id": "f9a7967d-3429-4421-9a17-7a3ebc2bd573",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "When you have a hands-free device",
+            "When you are at a red light",
+            "When you are in a parking lot",
+            "When driving on the highway"
+        ],
+        "type": "Knowledge",
+        "question": "When are you allowed to use your phone while driving?",
+        "answer": "0"
+    },
+    {
+        "id": "fa88ade5-1840-4b00-944a-d51b187fc578",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "You may pass if the road is clear",
+            "You must not pass",
+            "You may park here",
+            "You must stop"
+        ],
+        "type": "Knowledge",
+        "question": "What does a solid yellow line on your side of the road indicate?",
+        "answer": "1"
+    },
+    {
+        "id": "f11b4e60-df00-401e-bc39-98a2f3528f37",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Pull over to the side of the road and stop",
+            "Continue driving at your current speed",
+            "Speed up to clear the area",
+            "Change lanes but keep driving"
+        ],
+        "type": "Knowledge",
+        "question": "What should you do if you see an emergency vehicle with flashing lights behind you?",
+        "answer": "0"
+    },
+    {
+        "id": "c228a283-0ee1-4655-a78b-36159bfe8da3",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "You must stop",
+            "You should slow down and prepare to stop",
+            "You may go if the intersection is clear",
+            "You should speed up"
+        ],
+        "type": "Knowledge",
+        "question": "What does a green traffic light mean?",
+        "answer": "2"
+    },
+    {
+        "id": "41e7e6d9-b917-4dc0-a744-9502826acce4",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "When turning from a one-way street onto another one-way street",
+            "When you are in a hurry",
+            "When there are no other vehicles present",
+            "When there is a sign indicating that you can turn"
+        ],
+        "type": "Knowledge",
+        "question": "When is it legal to turn left on a red light?",
+        "answer": "0"
+    },
+    {
+        "id": "71b5c181-2476-4099-abe7-ea592d90836c",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Regulatory information",
+            "Warning of hazards",
+            "Information about services",
+            "Directions and distances"
+        ],
+        "type": "Knowledge",
+        "question": "What does a blue road sign typically indicate?",
+        "answer": "2"
+    },
+    {
+        "id": "8f5c3111-28d1-4e0a-b20f-85e30ebd8a40",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Yield to traffic in the roundabout",
+            "Enter without checking for other vehicles",
+            "Speed up to merge quickly",
+            "Stop before entering the roundabout"
+        ],
+        "type": "Knowledge",
+        "question": "How should you approach a roundabout?",
+        "answer": "0"
+    },
+    {
+        "id": "a528f812-dfb5-4f78-9f85-a8a8f7cfaf98",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "0.05%",
+            "0.08%",
+            "0.10%",
+            "0.12%"
+        ],
+        "type": "Knowledge",
+        "question": "What is the legal blood alcohol concentration (BAC) limit for fully licensed drivers in Ontario?",
+        "answer": "1"
+    },
+    {
+        "id": "d6036015-4a4f-4b04-8393-9fbda228b931",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Steer in the direction you want to go",
+            "Brake hard to stop the skid",
+            "Turn the steering wheel sharply in the opposite direction",
+            "Accelerate to regain control"
+        ],
+        "type": "Knowledge",
+        "question": "What should you do if your vehicle starts to skid?",
+        "answer": "0"
+    },
+    {
+        "id": "a810830d-8f4d-499a-b3e9-bb818ff709af",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "1.6 mm",
+            "2.0 mm",
+            "2.5 mm",
+            "3.0 mm"
+        ],
+        "type": "Knowledge",
+        "question": "What is the minimum tread depth required for tires in Ontario?",
+        "answer": "0"
+    },
+    {
+        "id": "de43b1b1-16ca-4bf2-a4c9-6f0d5318e4f9",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Between sunset and sunrise",
+            "During foggy conditions only",
+            "When it is raining",
+            "When driving on highways"
+        ],
+        "type": "Knowledge",
+        "question": "When are you required to use your headlights?",
+        "answer": "0"
+    },
+    {
+        "id": "368707be-fbbd-48a4-9c5a-8342b30946b8",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Exchange information with the other driver",
+            "Leave the scene immediately",
+            "Contact your insurance company before stopping",
+            "Only call the police if there are injuries"
+        ],
+        "type": "Knowledge",
+        "question": "What should you do if you are involved in a collision?",
+        "answer": "0"
+    },
+    {
+        "id": "ce5a3ad0-4839-4f1c-95dd-ac54e7adfb28",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Proceed through the intersection without stopping",
+            "Stop and then proceed when safe",
+            "Yield to all traffic",
+            "Speed up to clear the intersection"
+        ],
+        "type": "Knowledge",
+        "question": "What does a flashing red traffic light mean?",
+        "answer": "1"
+    },
+    {
+        "id": "f79eda63-9630-4aff-90c8-b0fee710a5fd",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Regulatory information",
+            "Warning of hazards",
+            "Guidance and directions",
+            "Information about services"
+        ],
+        "type": "Knowledge",
+        "question": "What does a white rectangular road sign usually indicate?",
+        "answer": "0"
+    },
+    {
+        "id": "bcb84da6-f267-4ba8-962c-99c94ca82f79",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "80 km/h",
+            "90 km/h",
+            "100 km/h",
+            "120 km/h"
+        ],
+        "type": "Knowledge",
+        "question": "What is the maximum speed limit on most highways in Ontario?",
+        "answer": "3"
+    },
+    {
+        "id": "f4aa1fd8-8978-4874-92df-8b5119542cbc",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "To alert other drivers of your presence",
+            "When you are angry at another driver",
+            "To greet friends or acquaintances",
+            "When approaching an intersection"
+        ],
+        "type": "Knowledge",
+        "question": "When is it appropriate to use your horn?",
+        "answer": "0"
+    },
+    {
+        "id": "f416a40f-8ecc-4c4d-a055-8d39349a1b5a",
+        "imageLink": null,
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Regulatory information",
+            "Warning of potential hazards",
+            "Directions and distances",
+            "Information about services"
+        ],
+        "type": "Knowledge",
+        "question": "What does a yellow diamond-shaped sign indicate?",
+        "answer": "1"
+    },
+    {
+        "id": "23e542fc-61ff-41fd-bae0-bd9092983c44",
+        "imageLink": "https://i.imgur.com/8xUdT61.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Yield",
+            "Stop",
+            "No entry",
+            "Do not park"
+        ],
+        "type": "Sign",
+        "question": "What does a red octagonal sign mean?",
+        "answer": "1"
+    },
+    {
+        "id": "2dde7d70-83ea-49e4-9edd-bce20f612991",
+        "imageLink": "https://i.imgur.com/0outkuT.jpeg",
+        "geminiQuestion": null,
+        "geminiAnswer": null,
+        "options": [
+            "Regulatory information",
+            "Warning of hazards",
+            "Information about services",
+            "Directions and distances"
+        ],
+        "type": "Sign",
+        "question": "What does a yellow diamond-shaped sign indicate?",
+        "answer": "1"
     }
 ]

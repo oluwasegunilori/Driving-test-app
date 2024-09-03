@@ -213,7 +213,11 @@ class _MockTestScreenState extends State<MockTestScreen> {
                             verticalSpace(20),
                             if (state.viewMode &&
                                 state.getCurrentQuestion().testType ==
-                                    TestType.Knowledge) ...[
+                                    TestType.Knowledge || (
+                                      state.viewMode &&
+                                state.getCurrentQuestion().testType ==
+                                    TestType.Sign
+                                    ) && state.getCurrentQuestion().geminiQuestion != null ) ...[
                               BlocBuilder<GeminiBloc, GeminiState>(
                                 builder: (context, gemState) {
                                   return Column(

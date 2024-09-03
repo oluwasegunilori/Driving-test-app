@@ -17,7 +17,7 @@ class QuestionsRepositoryImpl extends QuestionsRepository {
     String response;
     final remoteResponse = await http
         .get(Uri.parse('https://drilearn.web.app/ontario_test_questions.json'));
-    if (remoteResponse.statusCode == 200) {
+    if (remoteResponse.statusCode != 200) {
       response = remoteResponse.body;
     } else {
       response = await rootBundle
