@@ -7,8 +7,7 @@ const maxCountToShowInterstitial = 3;
 class AdsRecordRepositoryImpl extends AdsRecordRepository {
   final StreamingSharedPreferences _pfDb;
 
-  AdsRecordRepositoryImpl({required StreamingSharedPreferences pfDb})
-      : _pfDb = pfDb;
+  AdsRecordRepositoryImpl(StreamingSharedPreferences pfDb) : _pfDb = pfDb;
 
   @override
   bool canShowInterStitial() {
@@ -20,7 +19,10 @@ class AdsRecordRepositoryImpl extends AdsRecordRepository {
   }
 
   _updateInstAdsCount(int value) {
-    if (value < maxCountToShowInterstitial) {}
-    _pfDb.setInt(interstitialAdsCount, value + 1);
+    if (value < maxCountToShowInterstitial) {
+      _pfDb.setInt(interstitialAdsCount, value + 1);
+    } else {
+      _pfDb.setInt(interstitialAdsCount, 0);
+    }
   }
 }

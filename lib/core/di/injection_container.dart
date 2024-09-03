@@ -1,4 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:ontario_g1_test_2024/ads/data/repository/ads_record_repository_impl.dart';
+import 'package:ontario_g1_test_2024/ads/domain/repository/ads_record_repository.dart';
 import 'package:ontario_g1_test_2024/core/data/local/app_database.dart';
 import 'package:ontario_g1_test_2024/core/data/local/local_data_source.dart';
 import 'package:ontario_g1_test_2024/core/data/local/local_data_source_impl.dart';
@@ -60,6 +62,7 @@ Future<void> init() async {
   sl.registerFactory<QuestionsRepository>(() => QuestionsRepositoryImpl());
   sl.registerFactory<TestHistoryRepository>(
       () => TestHistoryRepositoryImpl(sl.call()));
+  sl.registerFactory<AdsRecordRepository>(() => AdsRecordRepositoryImpl(shPf));
 
   //usecase
   sl.registerFactory<GoogleSignInUseCase>(() => GoogleSignInUseCase(sl.call()));

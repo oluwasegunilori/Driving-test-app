@@ -1,3 +1,4 @@
+import 'package:ontario_g1_test_2024/ads/sections/banner_ad.dart';
 import 'package:ontario_g1_test_2024/core/button_styles.dart';
 import 'package:ontario_g1_test_2024/core/router_config.dart';
 import 'package:ontario_g1_test_2024/core/spaces.dart';
@@ -126,6 +127,7 @@ class TestComplete extends StatelessWidget {
                                     BlocProvider.of<MockTestBloc>(context)
                                         .add(SetViewModeEvent());
                                     context.pop();
+                                    loadInstAd();
                                   }),
                             ],
                           ),
