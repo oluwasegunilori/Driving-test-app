@@ -54,7 +54,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
             children: [
               if (widget.showHeader) ...[
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.18,
                   child: Card(
                     margin: const EdgeInsets.all(0),
                     shadowColor: Colors.white,
@@ -172,36 +172,58 @@ class _HistoryScreenState extends State<HistoryScreen> {
                 ),
                 verticalSpace(13),
               ],
-              BlocBuilder<TestHistoryBloc, TestHistoryState>(
-                builder: (context, state) {
-                  if (state is TestHistoryLoaded) {
-                    return Column(
-                      children: [
-                        Column(
-                            children: state.data.values
-                                .map((e) =>
-                                    mockTestOptionCard(context, e, () {}))
-                                .toList()),
-                        if (_isAdLoaded) ...[
-                          verticalSpace(20),
-                          Center(
-                            child: SizedBox(
-                              height: _bannerAd.size.height.toDouble(),
-                              width: _bannerAd.size.width.toDouble(),
-                              child: AdWidget(ad: _bannerAd),
-                            ),
-                          ),
-                        ]
-                      ],
-                    );
-                  }
-                  return Center();
-                },
-              )
+              historyDetails()
             ],
           ),
         ),
       ),
+    );
+  }
+
+  BlocBuilder<TestHistoryBloc, TestHistoryState> historyDetails() {
+    return BlocBuilder<TestHistoryBloc, TestHistoryState>(
+      builder: (context, state) {
+        if (state is TestHistoryLoaded) {
+          return Column(
+            children: [
+              historyUiBuilder(state, context),
+            ],
+          );
+        }
+        return Center();
+      },
+    );
+  }
+
+  Center historyAd() {
+    return Center(
+      child: SizedBox(
+        height: _bannerAd.size.height.toDouble(),
+        width: _bannerAd.size.width.toDouble(),
+        child: AdWidget(ad: _bannerAd),
+      ),
+    );
+  }
+
+  Column historyUiBuilder(TestHistoryLoaded state, BuildContext context) {
+    return Column(
+      children: state.data.values.toList().asMap().entries.map((entry) {
+        int index = entry.key; // Get the index
+        var value = entry.value; // Get the value
+        if (index == 0) {
+          return Column(
+            children: [
+              mockTestOptionCard(context, value, () {}),
+              if (_isAdLoaded) ...[
+                verticalSpace(10),
+                historyAd(),
+                verticalSpace(10),
+              ]
+            ],
+          );
+        }
+        return mockTestOptionCard(context, value, () {});
+      }).toList(),
     );
   }
 
