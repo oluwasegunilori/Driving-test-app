@@ -1,42 +1,76 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:android)
 
 platform :android do
-  desc "Runs all the tests"
-  lane :test do
-    gradle(task: "test")
-  end
-
-  lane :increment_version_and_build_number do
-    increment_version_code
-  end
-
-  desc "Submit a new Beta Build to Crashlytics Beta"
-  lane :beta do
-    gradle(task: "clean assembleRelease")
-    crashlytics
-  
-    # sh "your_script.sh"
-    # You can also use other beta testing services here
-  end
-
-  desc "Deploy a new version to the Google Play"
+  desc "Increment versionCode and versionName from local.properties, build APK, and upload to Play Store"
   lane :deploy do
-    increment_version_and_build_number
-    gradle(task: "clean assembleRelease")
+    # Increment versionCode and versionName
+    increment_version_properties
+
+    # Build APK
+    gradle(
+      task: "assembleRelease",
+      project_dir: "./",           # Root project directory
+      gradle_path: "./gradlew"      # Path to gradlew
+    )
+
+    # Upload APK to Play Store
+    upload_to_play_store(
+      track: 'production',
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true
+    )
   end
+
+  desc "Custom method to increment versionCode and versionName"
+  lane :increment_version_properties do
+    local_properties_path = "../local.properties" # Path to local.properties
+
+    # Read current versionCode and versionName from local.properties
+    version_code = get_version_code_from_local_properties(local_properties_path)
+    version_name = get_version_name_from_local_properties(local_properties_path)
+
+    # Increment versionCode
+    new_version_code = version_code + 1
+    # Increment versionName (e.g., by increasing the patch number)
+    new_version_name = increment_version_name(version_name)
+
+    # Update local.properties with new values
+    update_local_properties(local_properties_path, new_version_code, new_version_name)
+
+    UI.success("Version Code: #{new_version_code}, Version Name: #{new_version_name}")
+  end
+end
+
+# Helper method to read versionCode from local.properties
+def get_version_code_from_local_properties(local_properties_path)
+  File.open(local_properties_path).each do |line|
+    if line.include?("versionCode")
+      return line.split('=').last.strip.to_i
+    end
+  end
+end
+
+# Helper method to read versionName from local.properties
+def get_version_name_from_local_properties(local_properties_path)
+  File.open(local_properties_path).each do |line|
+    if line.include?("versionName")
+      return line.split('=').last.strip
+    end
+  end
+end
+
+# Helper method to increment versionName (assuming version name is in format x.y.z)
+def increment_version_name(version_name)
+  parts = version_name.split('.')
+  parts[-1] = parts[-1].to_i + 1 # Increment patch version
+  parts.join('.')
+end
+
+# Helper method to update local.properties with new versionCode and versionName
+def update_local_properties(local_properties_path, version_code, version_name)
+  text = File.read(local_properties_path)
+  new_content = text.gsub(/versionCode=\d+/, "versionCode=#{version_code}")
+                    .gsub(/versionName=\S+/, "versionName=#{version_name}")
+  File.open(local_properties_path, "w") { |file| file.puts new_content }
 end
