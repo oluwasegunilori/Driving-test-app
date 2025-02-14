@@ -5,22 +5,35 @@ platform :android do
   lane :deploy do
     # Increment versionCode and versionName
     increment_version_properties
-
+  
+    # Verify updated properties
+    UI.message("Updated local.properties:")
+    UI.message(File.read("../local.properties"))
+  
     # Build APK
     gradle(
-      task: "assembleRelease",
-      project_dir: "./",           # Root project directory
-      gradle_path: "./gradlew"      # Path to gradlew
+      task: "bundleRelease",
+      project_dir: "./",
+      gradle_path: "./gradlew",
+      properties: {
+        "versionCode" => "#{get_version_code_from_local_properties('../local.properties')}",
+        "versionName" => "#{get_version_name_from_local_properties('../local.properties')}"
+      }
     )
 
+    UI.message(File.read("../local.properties"))
+  
     # Upload APK to Play Store
     upload_to_play_store(
       track: 'production',
       skip_upload_metadata: true,
       skip_upload_images: true,
-      skip_upload_screenshots: true
+      skip_upload_screenshots: true,
+      version_code: get_version_code_from_local_properties('../local.properties'),
+      aab: '../build/app/outputs/bundle/release/app-release.aab'
     )
   end
+  
 
   desc "Custom method to increment versionCode and versionName"
   lane :increment_version_properties do

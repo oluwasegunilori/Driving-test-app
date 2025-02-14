@@ -1219,11 +1219,11 @@ PODS:
   - Flutter (1.0.0)
   - flutter_native_splash (0.0.1):
     - Flutter
-  - Google-Mobile-Ads-SDK (11.2.0):
+  - Google-Mobile-Ads-SDK (11.10.0):
     - GoogleUserMessagingPlatform (>= 1.1)
-  - google_mobile_ads (5.1.0):
+  - google_mobile_ads (5.2.0):
     - Flutter
-    - Google-Mobile-Ads-SDK (~> 11.2.0)
+    - Google-Mobile-Ads-SDK (~> 11.10.0)
     - webview_flutter_wkwebview
   - google_sign_in_ios (0.0.1):
     - AppAuth (>= 1.7.4)
@@ -1468,8 +1468,8 @@ SPEC CHECKSUMS:
   FirebaseSharedSwift: d39c2ad64a11a8d936ce25a42b00df47078bb59c
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_native_splash: edf599c81f74d093a4daf8e17bd7a018854bc778
-  Google-Mobile-Ads-SDK: 5a6d005a6cb5b5e8f4c7b69ca05cdea79c181139
-  google_mobile_ads: 9379c80fdfa9988fb0e105a407890ff8deb3cf86
+  Google-Mobile-Ads-SDK: 13e6e98edfd78ad8d8a791edb927658cc260a56f
+  google_mobile_ads: 2a538d8e42b1813809782792e48f8cf4374c2180
   google_sign_in_ios: 07375bfbf2620bc93a602c0e27160d6afc6ead38
   GoogleSignIn: d4281ab6cf21542b1cfaff85c191f230b399d2db
   GoogleUserMessagingPlatform: 0c3a08353e53ce8c2feab7addd0b652cde522450
