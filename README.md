@@ -17,11 +17,10 @@ The G1 Test Prep App helps users pass the Ontario G1 driving test. It includes p
 | ![Home Screen](./screenshots/homee.png) | ![Question Screen](./screenshots/question.png) | ![AI Explanation](./screenshots/ai_explanation.gif) |  
 
 
-### iOS
-- Download from App Store (coming soon).
-- Launch and begin studying.
-
+## Download
+[App Store](https://apps.apple.com/us/app/ontario-g1-test-2024/id6648798401) | [Google Play](https://play.google.com/store/apps/details?id=com.itsourlives.dri_learn)
 ## Deployment
+
 Uses **Fastlane** for automated app releases to Google Play and Apple App Store.
 
 ## Technology Stack
