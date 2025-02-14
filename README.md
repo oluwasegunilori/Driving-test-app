@@ -1,16 +1,41 @@
-# dri_learn
+# Ontario G1 test app
 
-A new Flutter project.
+## Overview
+The G1 Test Prep App helps users pass the Ontario G1 driving test. It includes practice questions, AI explanations, and progress tracking. Available on iOS, Android, and tablets.
 
-## Getting Started
+## Features
+- **Extensive Question Bank** – Realistic test questions.
+- **AI-Powered Explanations** – Understand mistakes with Gemini AI.
+- **Progress Tracking** – Identify weak areas.
+- **Offline Mode** – Study anywhere.
+- **User-Friendly UI** – Smooth learning experience.
 
-This project is a starting point for a Flutter application.
+## Screenshots  
 
-A few resources to get you started if this is your first Flutter project:
+| Home Screen | Question Screen | AI Explanation |  
+|------------|----------------|----------------|  
+| ![Home Screen](./screenshots/homee.png) | ![Question Screen](./screenshots/question.png) | ![AI Explanation](./screenshots/ai_explanation.gif) |  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### iOS
+- Download from App Store (coming soon).
+- Launch and begin studying.
+
+## Deployment
+Uses **Fastlane** for automated app releases to Google Play and Apple App Store.
+
+## Technology Stack
+- Flutter
+- Gemini AI
+- Firebase
+- Fastlane
+
+## Future Enhancements
+- Dark mode support
+- AI interactions
+
+## Contributing
+Open a pull request or submit an issue.
+
+## License
+MIT License.
