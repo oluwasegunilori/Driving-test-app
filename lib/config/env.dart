@@ -5,4 +5,5 @@ part 'env.g.dart';
 abstract class Env {
   @EnviedField(varName: 'GEMINI_API_KEY', obfuscate: true)
   static final String geminiAPIKEY = _Env.geminiAPIKEY;
+  
 }
